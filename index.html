@@ -1,8 +1,6 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
 		<title>Estudio creativo para mascotas</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -10,102 +8,148 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 <style>
-    /* Logo */
-    #header .logo {
-        width: auto; height: 60px;
-        border: none; background: none;
-        padding: 0; margin-bottom: 1.5rem;
-    }
-    #header .logo img {
-        height: 60px; width: auto;
-        display: block; margin: 0 auto;
-    }
 
-    /* Botón dorado */
-    .button.primary, input[type="submit"].primary {
-        background-color: #FFB60F !important;
-        color: #000 !important;
-    }
+@font-face {
+    font-family: 'Campton';
+    src: url('assets/fonts/Campton-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
 
-    /* Fuente tagline */
-    #header .content .inner p {
-        font-family: 'Oswald', sans-serif;
-        letter-spacing: 0.25em;
-        font-size: 0.85rem;
-    }
+@font-face {
+    font-family: 'Campton';
+    src: url('assets/fonts/Campton-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
 
-    /* Header centrado */
-    #header {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: center !important;
-        min-height: 100vh !important;
-    }
-    #header .content {
-        width: 100% !important;
-        text-align: center !important;
-    }
+@font-face {
+    font-family: 'Campton';
+    src: url('assets/fonts/Campton-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
 
-    /* Líneas en blanco */
-    #header::before,
-    #header::after,
-    #header > .content::before,
-    #header > .content::after {
-        background: #FFFFFF !important;
-    }
+/* Fuente global */
+body,
+input,
+textarea,
+select,
+button {
+    font-family: 'Campton', sans-serif !important;
+}
 
-    /* Menús en grid */
-    #header nav ul {
-        display: grid !important;
-        grid-template-columns: repeat(4, 1fr) !important;
-        width: 100% !important;
-        max-width: 640px !important;
-        margin: 0 auto !important;
-    }
-    #header nav ul li a {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        text-align: center !important;
-        padding: 0.75rem 0.5rem !important;
-        font-size: 0.7rem !important;
-        line-height: 1.3 !important;
-        border-color: #FFB60F !important;
-        color: #FFFFFF !important;
-    }
-    #header nav ul li a:hover {
-    background-color: rgba(255, 182, 15, 0.3) !important;
+/* Logo */
+#header .logo {
+    width: auto;
+    height: 60px;
+    border: none !important;
+    border-radius: 0 !important;
+    background: none !important;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+#header .logo img {
+    height: 60px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Botón dorado */
+.button.primary,
+input[type="submit"].primary {
+    background-color: #FFB60F !important;
+    color: #000 !important;
+}
+
+/* Header centrado */
+#header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 100vh !important;
+}
+
+#header .content {
+    width: 100% !important;
+    text-align: center !important;
+}
+
+/* Texto principal */
+#header .content .inner p {
+    font-family: 'Campton', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.18em !important;
+    font-size: 0.9rem !important;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Líneas blancas */
+#header::before,
+#header::after,
+#header > .content::before,
+#header > .content::after {
+    background: #FFFFFF !important;
+}
+
+/* Nav centrado */
+#header nav {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+/* Grid menú */
+#header nav ul {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    width: auto !important;
+    max-width: 640px !important;
+    margin: 0 auto !important;
+}
+
+/* Links menú */
+#header nav ul li a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+
+    padding: 0.75rem 0.5rem !important;
+
+    font-family: 'Campton', sans-serif !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.14em !important;
+    text-transform: uppercase !important;
+
+    font-size: 0.78rem !important;
+    line-height: 1.3 !important;
+
+    color: #FFFFFF !important;
+    border-color: #FFB60F !important;
+
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+#header nav ul li a:hover {
+    background-color: rgba(255, 182, 15, 0.18) !important;
     color: #FFFFFF !important;
     border-color: #FFB60F !important;
 }
-    /* Nav centrado */
-    #header nav {
-        width: 100% !important;
-        display: flex !important;
-        justify-content: center !important;
-    }
-    #header nav ul {
-        display: grid !important;
-        grid-template-columns: repeat(4, 1fr) !important;
-        width: auto !important;
-        max-width: 640px !important;
-        margin: 0 auto !important;
-    }
-    /* Imagen de fondo */
-    #bg::after {
-        background-image: url("images/bg.png") !important;
-        background-position: center !important;
-        background-size: cover !important;
-        background-repeat: no-repeat !important;
-    }
-	/* Eliminar círculo del logo */
-#header .logo {
-    border: none !important;
-    border-radius: 0 !important;
-    width: auto !important;
-    background: none !important;
+
+/* Fondo */
+#bg::after {
+    background-image: url("images/bg.png") !important;
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
 }
+
 </style>
 	</head>
 	<body class="is-preload">
@@ -121,8 +165,10 @@
 						<div class="content">
 							<div class="inner">
 							
-							<p style="font-family: 'Oswald', sans-serif; letter-spacing: 0.3em; font-weight: 300; font-size: 0.9rem;">
-    ESTUDIO CREATIVO ESPECIALIZADO EN MASCOTAS<br />Y MARCAS PETFRIENDLY
+							<p style=font-family:'Campton', sans-serif; letter-spacing: 0.3em; font-weight: 700; font-size: 0.9rem;">
+    <p>
+ESTUDIO CREATIVO ESPECIALIZADO EN MASCOTAS <br />
+Y MARCAS PETFRIENDLY
 </p>
 							</div>
 						</div>
