@@ -1,16 +1,112 @@
 <!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
-		<title>Dimension by HTML5 UP</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+		<title>Estudio creativo para mascotas</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Estudio creativo especializado en mascotas y marcas petfriendly" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<style>
+    /* Logo */
+    #header .logo {
+        width: auto; height: 60px;
+        border: none; background: none;
+        padding: 0; margin-bottom: 1.5rem;
+    }
+    #header .logo img {
+        height: 60px; width: auto;
+        display: block; margin: 0 auto;
+    }
+
+    /* Botón dorado */
+    .button.primary, input[type="submit"].primary {
+        background-color: #FFB60F !important;
+        color: #000 !important;
+    }
+
+    /* Fuente tagline */
+    #header .content .inner p {
+        font-family: 'Oswald', sans-serif;
+        letter-spacing: 0.25em;
+        font-size: 0.85rem;
+    }
+
+    /* Header centrado */
+    #header {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        min-height: 100vh !important;
+    }
+    #header .content {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    /* Líneas en blanco */
+    #header::before,
+    #header::after,
+    #header > .content::before,
+    #header > .content::after {
+        background: #FFFFFF !important;
+    }
+
+    /* Menús en grid */
+    #header nav ul {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        width: 100% !important;
+        max-width: 640px !important;
+        margin: 0 auto !important;
+    }
+    #header nav ul li a {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 0.75rem 0.5rem !important;
+        font-size: 0.7rem !important;
+        line-height: 1.3 !important;
+        border-color: #FFB60F !important;
+        color: #FFFFFF !important;
+    }
+    #header nav ul li a:hover {
+    background-color: rgba(255, 182, 15, 0.3) !important;
+    color: #FFFFFF !important;
+    border-color: #FFB60F !important;
+}
+    /* Nav centrado */
+    #header nav {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+    #header nav ul {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        width: auto !important;
+        max-width: 640px !important;
+        margin: 0 auto !important;
+    }
+    /* Imagen de fondo */
+    #bg::after {
+        background-image: url("images/bg.png") !important;
+        background-position: center !important;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+    }
+	/* Eliminar círculo del logo */
+#header .logo {
+    border: none !important;
+    border-radius: 0 !important;
+    width: auto !important;
+    background: none !important;
+}
+</style>
 	</head>
 	<body class="is-preload">
 
@@ -20,24 +116,24 @@
 				<!-- Header -->
 					<header id="header">
 						<div class="logo">
-							<span class="icon fa-gem"></span>
+							<img src="images/logo-zoox.png" alt="ZOOX Pet Studio" />
 						</div>
 						<div class="content">
 							<div class="inner">
-								<h1>Dimension</h1>
-								<p>A fully responsive site template designed by <a href="https://html5up.net">HTML5 UP</a> and released<br />
-								for free under the <a href="https://html5up.net/license">Creative Commons</a> license.</p>
+							
+							<p style="font-family: 'Oswald', sans-serif; letter-spacing: 0.3em; font-weight: 300; font-size: 0.9rem;">
+    ESTUDIO CREATIVO ESPECIALIZADO EN MASCOTAS<br />Y MARCAS PETFRIENDLY
+</p>
 							</div>
 						</div>
 						<nav>
-							<ul>
-								<li><a href="#intro">Intro</a></li>
-								<li><a href="#work">Work</a></li>
-								<li><a href="#about">About</a></li>
-								<li><a href="#contact">Contact</a></li>
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
+    <ul>
+        <li><a href="#experiencias">Experiencia</a></li>
+        <li><a href="#complementos">Zoox art </a></li>
+        <li><a href="#brands">Brands Pet</a></li>
+        <li><a href="#galeria">Galería</a></li>
+    </ul>
+</nav>
 					</header>
 
 				<!-- Main -->
@@ -341,15 +437,12 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 					</div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
+				
 
 			</div>
 
-		<!-- BG -->
-			<div id="bg"></div>
+	<!-- BG -->
+    <div id="bg"></div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
