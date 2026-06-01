@@ -1,0 +1,496 @@
+<!DOCTYPE HTML>
+<!--
+	<title>Experiencia | ZOOX Pet Studio</title>
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<style>
+    #three .inner {
+        width: 95vw !important;
+        max-width: 95vw !important;
+        padding: 0 2em !important;
+    }
+
+    .pasos-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 0 !important;
+        width: 100% !important;
+        margin-top: 2em !important;
+    }
+
+    .paso-card {
+        width: 160px !important;
+        min-width: 160px !important;
+        height: 160px !important;
+        background: #000 !important;
+        border: 1px solid rgba(255,182,15,0.3) !important;
+        border-radius: 8px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 1.2em !important;
+        transition: all .3s ease !important;
+    }
+
+    .paso-card:hover {
+        border-color: #FFB60F !important;
+        background: rgba(255,182,15,0.05) !important;
+        transform: translateY(-4px) !important;
+    }
+
+    .paso-num {
+        font-family: 'Oswald', sans-serif !important;
+        font-size: 2.2rem !important;
+        color: #FFB60F !important;
+        line-height: 1 !important;
+        margin-bottom: 0.4em !important;
+        display: block !important;
+    }
+
+    .paso-card h3 {
+        color:  #ffffff  !important;
+        font-size: 0.75rem !important;
+        letter-spacing: 0.15em !important;
+        margin-bottom: 0.4em !important;
+        margin-top: 0 !important;
+    }
+
+    .paso-card p {
+        color: #ffffff !important;
+        font-size: 0.65rem !important;
+        line-height: 1.5 !important;
+        margin: 0 !important;
+    }
+
+    .paso-flecha {
+        color: rgba(255,182,15,0.4) !important;
+        font-size: 1.2rem !important;
+        padding: 0 8px !important;
+        flex-shrink: 0 !important;
+    }
+
+    body, html, #page-wrapper {
+        overflow-x: hidden !important;
+    }
+	#one.wrapper.style2 {
+    background-color: #0a0a0a !important;
+}
+#one .inner {
+    text-align: center !important;
+}
+#one p {
+    color: #cccccc !important;
+    max-width: 700px !important;
+    margin: 0 auto 1.5em auto !important;
+    line-height: 1.8 !important;
+}
+#exteriores {
+    background-color: #0a0a0a !important;
+    text-align: center !important;
+}
+#exteriores .inner {
+    text-align: center !important;
+}
+#exteriores p {
+    color: #cccccc !important;
+    max-width: 700px !important;
+    margin: 0 auto 1.5em auto !important;
+    line-height: 1.8 !important;
+}
+#exteriores header.major h2 {
+    color: #FFB60F !important;
+    border-color: rgba(255,182,15,0.3) !important;
+}
+#exteriores header.major p {
+    color: #ffffff !important;
+    font-size: 1.1em !important;
+}
+/* Menú desplegable amarillo */
+#menu {
+    background: #FFB60F !important;
+}
+#menu ul > li > a {
+    color: #000000 !important;
+}
+#menu ul > li > a:hover {
+    color: #ffffff !important;
+}
+#menu ul > li {
+    border-top-color: rgba(0,0,0,0.15) !important;
+}
+/* Paquetes */
+#paquetes-ext {
+    background-color: #000000 !important;
+}
+#paquetes-ext .inner {
+    width: 95vw !important;
+    max-width: 95vw !important;
+}
+#paquetes-ext .proceso-grid {
+    justify-content: center !important;
+    flex-wrap: nowrap !important;
+    gap: 24px !important;
+    overflow: visible !important;
+}
+#paquetes-ext .proceso-card {
+    flex: 0 0 300px !important;
+    width: 300px !important;
+    max-width: 300px !important;
+    max-height: none !important;
+}
+.proceso-card.featured {
+    border-color: #FFB60F !important;
+    border-width: 2px !important;
+}
+.proceso-card.featured::before {
+    content: 'Más popular' !important;
+    display: block !important;
+    background: #FFB60F !important;
+    color: #000 !important;
+    font-size: 0.65rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.1em !important;
+    text-align: center !important;
+    padding: 4px 0 !important;
+    text-transform: uppercase !important;
+}
+.pkg-tagline {
+    color: #888 !important;
+    font-size: 0.72rem !important;
+    font-style: italic !important;
+    margin: 0 0 0.75em 0 !important;
+}
+.pkg-price {
+    font-size: 1.6rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    margin: 0 0 1em 0 !important;
+}
+.pkg-price small {
+    font-size: 0.6rem !important;
+    color: #888 !important;
+    font-weight: 400 !important;
+}
+.pkg-items {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 0 1em 0 !important;
+}
+.pkg-items li {
+    font-size: 0.72rem !important;
+    color: #aaaaaa !important;
+    padding: 4px 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+.pkg-items li::before {
+    content: '—' !important;
+    color: #FFB60F !important;
+    flex-shrink: 0 !important;
+}
+.pkg-items li strong {
+    color: #ffffff !important;
+}
+.pkg-bonus {
+    font-size: 0.68rem !important;
+    color: #FFB60F !important;
+    margin: 0 !important;
+    padding-top: 0.5em !important;
+    border-top: 1px solid rgba(255,182,15,0.2) !important;
+}
+/* Ajustes paquetes sin foto */
+#paquetes-ext .proceso-imagen {
+    display: none !important;
+}
+.pkg-price {
+    font-size: 2.2rem !important;
+    color: #FFB60F !important;
+    font-weight: 700 !important;
+}
+.pkg-items li::before {
+    content: '●' !important;
+    color: #FFB60F !important;
+    font-size: 0.4rem !important;
+    flex-shrink: 0 !important;
+}
+/* Correcciones finales paquetes */
+.pkg-price {
+    font-size: 2.5rem !important;
+    color: #FFB60F !important;
+    font-weight: 700 !important;
+    display: block !important;
+    margin: 0.3em 0 0.8em 0 !important;
+}
+.pkg-items li {
+    list-style: none !important;
+    padding: 6px 0 !important;
+    border-bottom: none !important;
+}
+.pkg-items li::before {
+    content: '●' !important;
+    color: #FFB60F !important;
+    font-size: 0.5rem !important;
+    vertical-align: middle !important;
+    margin-right: 8px !important;
+}
+.pkg-items {
+    margin-bottom: 1.5em !important;
+}
+#paquetes-ext .proceso-card {
+    padding: 0 !important;
+}
+#paquetes-ext .proceso-contenido {
+    padding: 1.5em !important;
+}
+</style>
+
+	<head>
+		<title>Experiencia | ZOOX Pet Studio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="landing is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1>
+    <a href="index.html">
+        <img src="images/logo-zoox.png" alt="ZOOX Pet Studio" />
+    </a>
+</h1>
+						<nav id="nav">
+							<ul>
+								<li class="special">
+									<a href="#menu" class="menuToggle"><span>Menu</span></a>
+									<div id="menu">
+										<ul>
+											 <li><a href="index.html">Inicio</a></li>
+											<li><a href="experiencia.html">Experiencia</a></li>
+											<li><a href="galeria.html">Galería</a></li>
+											 <li><a href="zooxart.html">ZOOX Art</a></li>
+											<li><a href="brandpet.html">Brand Pet</a></li>
+											<li><a href="contacto.html">Contacto</a></li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<h2>Experiencias</h2>
+							<p>
+Más que una sesión fotográfica.<br />
+Una experiencia ZOOX está creada para celebrar<br />
+el vínculo único con tu mascota.
+</p>
+						
+						</div>
+						<a href="#one" class="more scrolly">Descubrir</a>
+					</section>
+
+
+
+				<!-- One -->
+<section id="one" class="wrapper style2 special">
+    <div class="inner">
+
+        <header class="major">
+            <h2>¡BIENVENIDOS!</h2>
+        </header>
+
+        <p><strong>ZOOX Pet Studio</strong> nació en 2021 con la misión de crear recuerdos únicos de las mascotas de las familias. Ofrecemos sesiones fotográficas profesionales y personalizadas, con un estilo moderno que resalta la personalidad y las características de cada ejemplar.</p>
+
+    </div>
+</section>
+
+		<!-- Proceso ZOOX -->
+<section id="three" class="wrapper style3 special">
+    <div class="inner">
+        <header class="major">
+            <h2>¿Cómo es la experiencia ZOOX?</h2>
+            <p>Un proceso diseñado para que disfrutes cada etapa junto a tu mejor amigo.</p>
+        </header>
+
+        <div class="pasos-grid">
+
+            <div class="paso-card">
+                <span class="paso-num">01</span>
+                <h3>Reserva</h3>
+                <p>Elige tu paquete y agenda tu fecha.</p>
+            </div>
+
+            <div class="paso-flecha">→</div>
+
+            <div class="paso-card">
+                <span class="paso-num">02</span>
+                <h3>Sesión</h3>
+                <p>Disfruta una experiencia relajada con tu mascota.</p>
+            </div>
+
+            <div class="paso-flecha">→</div>
+
+            <div class="paso-card">
+                <span class="paso-num">03</span>
+                <h3>Selección</h3>
+                <p>Escoge tus favoritas desde una galería privada.</p>
+            </div>
+
+            <div class="paso-flecha">→</div>
+
+            <div class="paso-card">
+                <span class="paso-num">04</span>
+                <h3>Edición</h3>
+                <p>Aplicamos nuestro proceso artístico profesional.</p>
+            </div>
+
+            <div class="paso-flecha">→</div>
+
+            <div class="paso-card">
+                <span class="paso-num">05</span>
+                <h3>Entrega</h3>
+                <p>Recibes tus imágenes finales listas para compartir.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Línea Exteriores -->
+<section id="exteriores" class="wrapper style2">
+    <div class="inner">
+
+        <header class="major">
+            <h2>Línea Exteriores</h2>
+            <p>Tu hijo de cuatro patas, en fotos artísticas.</p>
+        </header>
+        <p>3 planes digitales diseñados para inmortalizar la esencia y personalidad de tu fiel amigo. ¡Captura la mejor versión de tu mascota con una sesión profesional!</p>
+
+    </div>
+</section>
+<!-- Paquetes Exteriores -->
+<section id="paquetes-ext" class="wrapper style3">
+    <div class="inner">
+
+        <div class="proceso-grid">
+
+            <div class="proceso-card">
+                <div class="proceso-imagen">
+                    <img src="images/petlover.jpg" alt="Petlover">
+                </div>
+                <div class="proceso-contenido">
+                    <span class="paso">PAQUETE 01</span>
+                    <h3>Petlover</h3>
+                    <p class="pkg-tagline">"El primer recuerdo especial"</p>
+                    <p class="pkg-price">S/ 180 <small>· 50 min</small></p>
+                    <ul class="pkg-items">
+                        <li>7 fotos seleccionadas</li>
+                        <li>5 fotos con edición profesional</li>
+                        <li>1 escena digital de ficción</li>
+                        <li>Descarga en alta resolución</li>
+                        <li>Dueño puede participar</li>
+                    </ul>
+                    <p class="pkg-bonus">+ 10% dscto. en Poster ZOOX</p>
+                </div>
+            </div>
+
+            <div class="proceso-card featured">
+                <div class="proceso-imagen">
+                    <img src="images/entrepatas.jpg" alt="Entre Patas">
+                </div>
+                <div class="proceso-contenido">
+                    <span class="paso">PAQUETE 02</span>
+                    <h3>Entre Patas</h3>
+                    <p class="pkg-tagline">"Una sesión con su mejor amigo"</p>
+                    <p class="pkg-price">S/ 260 <small>· 60 min</small></p>
+                    <ul class="pkg-items">
+                        <li>15 fotos seleccionadas</li>
+                        <li>9 fotos con edición profesional</li>
+                        <li>2 escenas digitales de ficción</li>
+                        <li>Descarga en alta resolución</li>
+                        <li>Canes de distintos dueños</li>
+                    </ul>
+                    <p class="pkg-bonus">+ 10% dscto. en Poster ZOOX</p>
+                </div>
+            </div>
+
+            <div class="proceso-card">
+                <div class="proceso-imagen">
+                    <img src="images/lamancha.jpg" alt="La Mancha">
+                </div>
+                <div class="proceso-contenido">
+                    <span class="paso">PAQUETE 03</span>
+                    <h3>La Mancha</h3>
+                    <p class="pkg-tagline">"La sesión grupal definitiva"</p>
+                    <p class="pkg-price">S/ 350 <small>· 90 min</small></p>
+                    <ul class="pkg-items">
+                        <li>20 fotos seleccionadas</li>
+                        <li>12 fotos con edición profesional</li>
+                        <li>4 escenas digitales de ficción</li>
+                        <li>Descarga en alta resolución</li>
+                        <li>Canes de distintos dueños</li>
+                        <li><strong>Polo personalizado incluido</strong></li>
+                    </ul>
+                    <p class="pkg-bonus">+ 15% dscto. en Poster ZOOX</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+				<!-- CTA -->
+					<section id="cta" class="wrapper style4">
+						<div class="inner">
+							<header>
+								<h2>Arcue ut vel commodo</h2>
+								<p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
+							</header>
+							<ul class="actions stacked">
+								<li><a href="#" class="button fit primary">Activate</a></li>
+								<li><a href="#" class="button fit">Learn More</a></li>
+							</ul>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
