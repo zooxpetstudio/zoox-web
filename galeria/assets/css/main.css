@@ -108,7 +108,7 @@ input, select, textarea {
 	}
 
 	html, body {
-		background-color: #000;
+		background-color: #0a0a0a;
 		overflow: hidden;
 	}
 
@@ -135,8 +135,8 @@ input, select, textarea {
 		}
 
 	body {
-		background-color: #000000;
-		color: #000000;
+		background-color: #0a0a0a;
+		color: #0a0a0a;
 	}
 
 	body, input, select, textarea {
@@ -159,7 +159,7 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #00D3B7;
+			color: #ffb60f;
 		}
 
 	strong, b {
@@ -304,8 +304,8 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			border-color: #00D3B7;
-			color: #00D3B7;
+			border-color: #ffb60f;
+			color: #ffb60f;
 		}
 
 			input[type="submit"]:hover:active,
@@ -313,7 +313,7 @@ input, select, textarea {
 			input[type="button"]:hover:active,
 			button:hover:active,
 			.button:hover:active {
-				background-color: rgba(0, 211, 183, 0.15);
+				background-color: rgba(255, 182, 15, 0.15);
 			}
 
 		input[type="submit"].icon,
@@ -416,11 +416,11 @@ input, select, textarea {
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #00D3B7;
+			border-color: #ffb60f;
 		}
 
 	select {
-		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='%23ccc' /%3E%3C/svg%3E");
+		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-₀₂-₀₄-₀₅-₀₄-₀₉ c₀-₀₄,₀₁-₀₆,₀₄-₀₉l3.3-3.3c₀₂-₀₂,₀₅-₀₄,₀₉-₀₄S9.1,12.1,9.4,12.3z' fill='%23ccc' /%3E%3C/svg%3E");
 		background-size: 1.25rem;
 		background-repeat: no-repeat;
 		background-position: calc(100% - 1rem) center;
@@ -551,15 +551,15 @@ input, select, textarea {
 
 		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
-			background-color: #555;
-			border-color: #555;
+			background-color: #ffb60f;
+			border-color: #ffb60f;
 			color: #fff;
 			content: '\f00c';
 		}
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #00D3B7;
+			border-color: #ffb60f;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -837,7 +837,7 @@ input, select, textarea {
 		top: 0;
 		width: 22.5em;
 		height: 100%;
-		background: #000;
+		background: #0a0a0a;
 		outline: 0;
 		overflow-x: hidden;
 		overflow-y: auto;
@@ -888,7 +888,7 @@ input, select, textarea {
 		@media screen and (max-width: 980px) {
 
 			#main {
-				background: #000000 !important;
+				background: #0a0a0a !important;
 			}
 
 				#main .toggle {
@@ -905,7 +905,7 @@ input, select, textarea {
 				-ms-transition: opacity 0.5s ease, visibility 0.5s;
 				transition: opacity 0.5s ease, visibility 0.5s;
 				width: 100%;
-				background: #fff;
+				background: #0a0a0a;
 				text-align: center;
 			}
 
@@ -1005,7 +1005,7 @@ input, select, textarea {
 					top: 0;
 					width: 100%;
 					height: 100%;
-					box-shadow: inset 0 0 0 2px #00D3B7, inset 0 0 0px 3px rgba(0, 0, 0, 0.15);
+					box-shadow: inset 0 0 0 2px #ffb60f, inset 0 0 0px 3px rgba(0, 0, 0, 0.15);
 					opacity: 0;
 					z-index: 1;
 				}
