@@ -389,9 +389,36 @@
 			font-style: italic !important;
 			margin-top: 1em !important;
 		}
-		@media screen and (max-width: 736px) {
-			.zonas-grid { grid-template-columns: repeat(2, 1fr) !important; }
-		}
+		@media screen and (max-width: 768px) {
+    #three .inner {
+        overflow-x: visible !important;
+        padding: 0 1em !important;
+    }
+    .pasos-grid-wrapper {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding-bottom: 1em !important;
+        width: 100% !important;
+    }
+    .pasos-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        width: max-content !important;
+        gap: 0 !important;
+    }
+    .paso-card {
+        width: 140px !important;
+        min-width: 140px !important;
+        height: 140px !important;
+        flex-shrink: 0 !important;
+    }
+    .paso-flecha {
+        display: flex !important;
+        align-items: center !important;
+        flex-shrink: 0 !important;
+    }
+}
 
 		/* ═══════════════════════════════════════
 		   FAQ — COMPARTIDO
@@ -460,7 +487,7 @@
 		   SEPARADOR LÍNEA IN HOME
 		═══════════════════════════════════════ */
 		.linea-separador {
-			background: var(--zoox-azul) !important;
+			background: #505C47 !important;
 			padding: 4em 2em !important;
 			text-align: center !important;
 			border-top: 1px solid rgba(255,182,15,0.2) !important;
@@ -487,7 +514,7 @@
 		   LÍNEA IN HOME — FONDO AZUL ACERO
 		═══════════════════════════════════════ */
 		.inhome-style {
-			background: var(--zoox-azul) !important;
+			background: #505C47 !important;
 		}
 
 		/* Intro In Home */
@@ -754,6 +781,21 @@
         border-radius: 2px !important;
     }
 }
+/* Scroll horizontal solo en pasos-grid, no en el título */
+@media screen and (max-width: 768px) {
+    #three .inner {
+        overflow-x: visible !important;
+        padding: 0 1em !important;
+    }
+    #three .pasos-grid-wrapper {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding-bottom: 1em !important;
+    }
+    .pasos-grid {
+        width: max-content !important;
+    }
+}
 	</style>
 </head>
 
@@ -816,40 +858,50 @@
 				<h2>¿Cómo es la experiencia ZOOX?</h2>
 				<p>Un proceso diseñado para que disfrutes cada etapa junto a tu mejor amigo.</p>
 			</header>
-			<div class="pasos-grid">
+			<div class="pasos-grid-wrapper">
+    <div class="pasos-grid">
+        <!-- las 5 paso-card y flechas aquí -->
+    </div>
+</div>
+<div class="pasos-grid-wrapper">
+    <div class="pasos-grid">
 
-				<div class="paso-card">
-					<span class="paso-num">01</span>
-					<h3>Reserva</h3>
-					<p>Elige tu paquete y agenda tu fecha.</p>
-				</div>
-				<div class="paso-flecha">→</div>
-				<div class="paso-card">
-					<span class="paso-num">02</span>
-					<h3>Sesión</h3>
-					<p>Disfruta una experiencia relajada con tu mascota.</p>
-				</div>
-				<div class="paso-flecha">→</div>
-				<div class="paso-card">
-					<span class="paso-num">03</span>
-					<h3>Selección</h3>
-					<p>Escoge tus favoritas desde una galería privada.</p>
-				</div>
-				<div class="paso-flecha">→</div>
-				<div class="paso-card">
-					<span class="paso-num">04</span>
-					<h3>Edición</h3>
-					<p>Aplicamos nuestro proceso artístico profesional.</p>
-				</div>
-				<div class="paso-flecha">→</div>
-				<div class="paso-card">
-					<span class="paso-num">05</span>
-					<h3>Entrega</h3>
-					<p>Recibes tus imágenes finales listas para compartir.</p>
-				</div>
+        <div class="paso-card">
+            <span class="paso-num">01</span>
+            <h3>Reserva</h3>
+            <p>Elige tu paquete y agenda tu fecha.</p>
+        </div>
+        <div class="paso-flecha">→</div>
 
-			</div>
-		</div>
+        <div class="paso-card">
+            <span class="paso-num">02</span>
+            <h3>Sesión</h3>
+            <p>Disfruta una experiencia relajada con tu mascota.</p>
+        </div>
+        <div class="paso-flecha">→</div>
+
+        <div class="paso-card">
+            <span class="paso-num">03</span>
+            <h3>Selección</h3>
+            <p>Escoge tus favoritas desde una galería privada.</p>
+        </div>
+        <div class="paso-flecha">→</div>
+
+        <div class="paso-card">
+            <span class="paso-num">04</span>
+            <h3>Edición</h3>
+            <p>Aplicamos nuestro proceso artístico profesional.</p>
+        </div>
+        <div class="paso-flecha">→</div>
+
+        <div class="paso-card">
+            <span class="paso-num">05</span>
+            <h3>Entrega</h3>
+            <p>Recibes tus imágenes finales listas para compartir.</p>
+        </div>
+
+    </div>
+</div>
 	</section>
 
 	<!-- ── LÍNEA EXTERIORES INTRO ─────────────── -->
