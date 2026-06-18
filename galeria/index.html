@@ -1,96 +1,278 @@
 <!DOCTYPE HTML>
 <!--
-	Galería | Zoox Pet Studio
+	Galería | ZOOX Pet Studio
 -->
-<html>
-	<head>
-		<title>Galería | Zoox Pet Studio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload-0 is-preload-1 is-preload-2">
+<html lang="es">
+<head>
+	<title>Galería | ZOOX Pet Studio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-		<!-- Main -->
-			<div id="main">
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 
-				<!-- Header -->
-		
-					<header id="header">
-						<h1>Galería</h1>
-						<h2 style="color:#e5e5e5">
-Una muestra de momentos que se volvieron inmortales.
-						</h2>
-							<p>Aquí encontrarás fotos, elegantes, divertidas y muy creativas, un regalo ideal para tu mascota. Como fotógrafo profesional, apuesto por un retrato de autor y doy mi visión artística sobre el modelo canino.</p>
-					
-					</header>
+	<style>
 
-				<!-- Thumbnail -->
-					<section id="thumbnails">
-						<article>
-							<a class="thumbnail" href="images/fulls/zoox1.png" data-position="left center"><img src="images/thumbs/zoox1.png" alt="" /></a>
-					
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/zoox2.png"><img src="images/thumbs/zoox2.png" alt="" /></a>
-							
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/zoox3.png" data-position="top center"><img src="images/thumbs/zoox3.png" alt="" /></a>
-						
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/zoox4.png"><img src="images/thumbs/zoox4.png" alt="" /></a>
-					
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/zoox5.png" data-position="top center"><img src="images/thumbs/zoox5.png" alt="" /></a>
-						
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/zoox6.png"><img src="images/thumbs/zoox6.png" alt="" /></a>
-							
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/zoox7.png"><img src="images/thumbs/zoox7.png" alt="" /></a>
-							
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/zoox8.png"><img src="images/thumbs/zoox8.png" alt="" /></a>
-							
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/zoox9.png"><img src="images/thumbs/zoox9.png" alt="" /></a>
-						
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/zoox10.png"><img src="images/thumbs/zoox10.png" alt="" /></a>
-							
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/zoox11.png"><img src="images/thumbs/zoox11.png" alt="" /></a>
-						
-						</article>
-						<article>
-							<a class="thumbnail" href="images/fulls/zoox12.png"><img src="images/thumbs/zoox12.png" alt="" /></a>
-						
-						</article>
-					</section>
+		/* ═══════════════════════════════════════
+		   VARIABLES ZOOX
+		═══════════════════════════════════════ */
+		:root {
+			--zoox-amarillo: #FFB60F;
+			--zoox-negro:    #0A0A0A;
+			--zoox-gris:     #E5E5E5;
+			--zoox-blanco:   #FFFFFF;
+			--zoox-muted:    #888888;
+		}
 
-				<!-- footer --> 
-				
-			
+		body, html, #page-wrapper {
+			overflow-x: hidden !important;
+			font-family: 'DM Sans', sans-serif !important;
+		}
 
-				 
+		/* ── MENÚ DESPLEGABLE ── */
+		#menu {
+			background: var(--zoox-amarillo) !important;
+		}
+		#menu ul > li > a {
+			color: var(--zoox-negro) !important;
+		}
+		#menu ul > li > a:hover {
+			color: var(--zoox-blanco) !important;
+		}
+		#menu ul > li {
+			border-top-color: rgba(0,0,0,0.15) !important;
+		}
 
-			</div>
+		/* ── FOOTER ── */
+		#footer {
+			background-color: var(--zoox-negro) !important;
+			padding: 3em 2em !important;
+			text-align: center !important;
+		}
+		.footer-inner {
+			display: flex !important;
+			flex-direction: column !important;
+			align-items: center !important;
+			gap: 1em !important;
+		}
+		.footer-logo {
+			height: 36px !important;
+			width: auto !important;
+			opacity: 0.85 !important;
+		}
+		.footer-copy {
+			color: #e5e5e5 !important;
+			font-size: 0.7rem !important;
+			letter-spacing: 0.08em !important;
+			margin: 0 !important;
+		}
+		.footer-redes {
+			list-style: none !important;
+			padding: 0 !important;
+			margin: 0 !important;
+			display: flex !important;
+			gap: 1.5em !important;
+		}
+		.footer-redes li a {
+			color: #e5e5e5 !important;
+			font-size: 1.2rem !important;
+			border: none !important;
+			transition: color 0.3s !important;
+		}
+		.footer-redes li a:hover {
+			color: var(--zoox-amarillo) !important;
+		}
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/main.js"></script>
+		/* ── BOTÓN WHATSAPP ── */
+		.whatsapp-float {
+			position: fixed !important;
+			bottom: 2rem !important;
+			right: 2rem !important;
+			background: #25D366 !important;
+			color: var(--zoox-blanco) !important;
+			border: none !important;
+			border-radius: 50px !important;
+			padding: 0.75em 1.25em !important;
+			display: flex !important;
+			align-items: center !important;
+			gap: 0.5em !important;
+			font-size: 0.8rem !important;
+			font-weight: 600 !important;
+			letter-spacing: 0.05em !important;
+			text-transform: uppercase !important;
+			box-shadow: 0 4px 20px rgba(37,211,102,0.4) !important;
+			z-index: 9999 !important;
+			transition: transform 0.3s, box-shadow 0.3s !important;
+			text-decoration: none !important;
+		}
+		.whatsapp-float:hover {
+			transform: translateY(-3px) !important;
+			box-shadow: 0 8px 25px rgba(37,211,102,0.5) !important;
+			color: var(--zoox-blanco) !important;
+			border: none !important;
+		}
 
-	</body>
+	</style>
+</head>
+
+<body class="is-preload-0 is-preload-1 is-preload-2">
+<div id="page-wrapper">
+
+	<!-- ── HEADER ── -->
+	<header id="header" class="alt">
+		<h1>
+			<a href="index.html">
+				<img src="images/logo-zoox.png" alt="ZOOX Pet Studio" style="height:40px; width:auto;" />
+			</a>
+		</h1>
+		<nav id="nav">
+			<ul>
+				<li class="special">
+					<a href="#menu" class="menuToggle"><span>Menu</span></a>
+					<div id="menu">
+						<ul>
+							<li><a href="index.html">Inicio</a></li>
+							<li><a href="experiencia.html">Experiencia</a></li>
+							<li><a href="galeria.html">Galería</a></li>
+							<li><a href="zooxart.html">ZOOX Art</a></li>
+							<li><a href="brandpet.html">Brand Pet</a></li>
+							<li><a href="contacto.html">Contacto</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- ── BANNER ── -->
+	<section id="banner">
+		<div class="inner">
+			<h2>Galería</h2>
+			<p>
+				Momentos que se volvieron inmortales.<br />
+				Cada imagen, una historia única<br />
+				capturada con mirada de autor.
+			</p>
+		</div>
+		<a href="#main" class="more scrolly">Ver galería</a>
+	</section>
+
+	<!-- ── GALERÍA ORIGINAL (estructura Lens intacta) ── -->
+	<div id="main">
+
+		<!-- Header interno del Lens -->
+		<header id="header">
+			<h1>Galería</h1>
+			<h2 style="color:#e5e5e5">Una muestra de momentos que se volvieron inmortales.</h2>
+			<p>Aquí encontrarás fotos, elegantes, divertidas y muy creativas, un regalo ideal para tu mascota. Como fotógrafo profesional, apuesto por un retrato de autor y doy mi visión artística sobre el modelo canino.</p>
+		</header>
+
+		<!-- Thumbnails — estructura Lens original + 6 nuevas casillas -->
+		<section id="thumbnails">
+
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox1.png" data-position="left center"><img src="images/thumbs/zoox1.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox2.png"><img src="images/thumbs/zoox2.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox3.png" data-position="top center"><img src="images/thumbs/zoox3.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox4.png"><img src="images/thumbs/zoox4.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox5.png" data-position="top center"><img src="images/thumbs/zoox5.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox6.png"><img src="images/thumbs/zoox6.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox7.png"><img src="images/thumbs/zoox7.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox8.png"><img src="images/thumbs/zoox8.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox9.png"><img src="images/thumbs/zoox9.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox10.png"><img src="images/thumbs/zoox10.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox11.png"><img src="images/thumbs/zoox11.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox12.png"><img src="images/thumbs/zoox12.png" alt="" /></a>
+			</article>
+
+			<!-- 6 casillas nuevas (lado derecho, misma estructura) -->
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox13.png"><img src="images/thumbs/zoox13.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox14.png"><img src="images/thumbs/zoox14.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox15.png"><img src="images/thumbs/zoox15.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox16.png"><img src="images/thumbs/zoox16.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox17.png"><img src="images/thumbs/zoox17.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox18.png"><img src="images/thumbs/zoox18.png" alt="" /></a>
+			</article>
+
+		</section>
+
+	</div><!-- /#main -->
+
+	<!-- ── FOOTER ── -->
+	<footer id="footer">
+		<div class="footer-inner">
+			<img src="images/logoblanco-zoox.png" alt="ZOOX Pet Studio" class="footer-logo" />
+			<p class="footer-copy">© 2026 · Lima, Perú · Todos los derechos reservados.</p>
+			<ul class="footer-redes">
+				<li>
+					<a href="https://instagram.com/zoox.petstudio" target="_blank" aria-label="Instagram">
+						<i class="icon brands fa-instagram"></i>
+					</a>
+				</li>
+				<li>
+					<a href="https://facebook.com/zooxpetstudio" target="_blank" aria-label="Facebook">
+						<i class="icon brands fa-facebook-f"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Botón flotante WhatsApp -->
+	<a href="https://wa.me/51977325372?text=Hola%20ZOOX%2C%20tengo%20una%20consulta"
+	   target="_blank"
+	   class="whatsapp-float"
+	   aria-label="WhatsApp">
+		<i class="icon brands fa-whatsapp"></i>
+		<span>Conversemos</span>
+	</a>
+
+</div><!-- /#page-wrapper -->
+
+<!-- Scripts — se agregan los de Spectral para nav/banner, más los originales del Lens -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
 </html>
