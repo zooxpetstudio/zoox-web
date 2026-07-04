@@ -1,0 +1,1350 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+	<title>Experiencia | ZOOX Pet Studio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="Sesiones fotográficas profesionales para mascotas en Lima. Línea Exteriores e In Home." />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+	<!-- Google Fonts: Oswald como sustituto hasta tener Cera Pro -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+	<style>
+
+		/* ═══════════════════════════════════════
+		   VARIABLES ZOOX
+		═══════════════════════════════════════ */
+		:root {
+			--zoox-amarillo:  #FFB60F;
+			--zoox-negro:     #0A0A0A;
+			--zoox-azul:      #3A506B;
+			--zoox-gris:      #E5E5E5;
+			--zoox-blanco:    #FFFFFF;
+			--zoox-muted:     #888888;
+		}
+
+		/* ═══════════════════════════════════════
+		   GLOBAL
+		═══════════════════════════════════════ */
+		body, html, #page-wrapper {
+			overflow-x: hidden !important;
+			font-family: 'DM Sans', sans-serif !important;
+		}
+
+		/* ═══════════════════════════════════════
+		   MENÚ DESPLEGABLE
+		═══════════════════════════════════════ */
+		#menu {
+			background: var(--zoox-amarillo) !important;
+		}
+		#menu ul > li > a {
+			color: var(--zoox-negro) !important;
+		}
+		#menu ul > li > a:hover {
+			color: var(--zoox-blanco) !important;
+		}
+		#menu ul > li {
+			border-top-color: rgba(0,0,0,0.15) !important;
+		}
+
+		/* ═══════════════════════════════════════
+		   SECCIÓN 1 — BIENVENIDOS
+		═══════════════════════════════════════ */
+		#one {
+			background-color: var(--zoox-negro) !important;
+		}
+		#one .inner {
+			text-align: center !important;
+		}
+		#one header.major h2 {
+			color: var(--zoox-blanco) !important;
+			border-color: rgba(255,182,15,0.3) !important;
+		}
+		#one p {
+			color: var(--zoox-gris) !important;
+			max-width: 700px !important;
+			margin: 0 auto 1.5em auto !important;
+			line-height: 1.8 !important;
+		}
+
+		/* ═══════════════════════════════════════
+		   SECCIÓN 3 — PROCESO 5 PASOS
+		═══════════════════════════════════════ */
+		#three .inner {
+			width: 95vw !important;
+			max-width: 95vw !important;
+			padding: 0 2em !important;
+		}
+		#three header.major h2 {
+			color: var(--zoox-blanco) !important;
+			border-color: rgba(255,182,15,0.3) !important;
+		}
+		#three header.major p {
+			color: var(--zoox-gris) !important;
+		}
+
+		.pasos-grid {
+			display: flex !important;
+			flex-direction: row !important;
+			flex-wrap: nowrap !important;
+			justify-content: center !important;
+			align-items: center !important;
+			gap: 0 !important;
+			width: 100% !important;
+			margin-top: 2em !important;
+		}
+		.paso-card {
+			width: 160px !important;
+			min-width: 160px !important;
+			height: 160px !important;
+			background: var(--zoox-negro) !important;
+			border: 1px solid rgba(255,182,15,0.3) !important;
+			border-radius: 8px !important;
+			display: flex !important;
+			flex-direction: column !important;
+			align-items: center !important;
+			justify-content: center !important;
+			text-align: center !important;
+			padding: 1.2em !important;
+			transition: all .3s ease !important;
+		}
+		.paso-card:hover {
+			border-color: var(--zoox-amarillo) !important;
+			background: rgba(255,182,15,0.05) !important;
+			transform: translateY(-4px) !important;
+		}
+		.paso-num {
+			font-family: 'Oswald', sans-serif !important;
+			font-size: 2.2rem !important;
+			color: var(--zoox-amarillo) !important;
+			line-height: 1 !important;
+			margin-bottom: 0.4em !important;
+			display: block !important;
+		}
+		.paso-card h3 {
+			color: var(--zoox-blanco) !important;
+			font-size: 0.75rem !important;
+			letter-spacing: 0.15em !important;
+			margin-bottom: 0.4em !important;
+			margin-top: 0 !important;
+		}
+		.paso-card p {
+			color: var(--zoox-gris) !important;
+			font-size: 0.65rem !important;
+			line-height: 1.5 !important;
+			margin: 0 !important;
+		}
+		.paso-flecha {
+			color: var(--zoox-amarillo) !important;
+			font-size: 1.2rem !important;
+			padding: 0 8px !important;
+			flex-shrink: 0 !important;
+		}
+
+		/* ═══════════════════════════════════════
+		   SECCIÓN — LÍNEA EXTERIORES INTRO
+		═══════════════════════════════════════ */
+		#exteriores {
+			background-color: var(--zoox-negro) !important;
+			text-align: center !important;
+		}
+		#exteriores .inner {
+			text-align: center !important;
+		}
+		#exteriores header.major h2 {
+			color: var(--zoox-amarillo) !important;
+			border-color: rgba(255,182,15,0.3) !important;
+		}
+		#exteriores header.major p {
+			color: var(--zoox-blanco) !important;
+		}
+		#exteriores p {
+			color: var(--zoox-gris) !important;
+			max-width: 700px !important;
+			margin: 0 auto 1.5em auto !important;
+			line-height: 1.8 !important;
+		}
+
+		/* ═══════════════════════════════════════
+		   PAQUETES — COMPONENTES COMPARTIDOS
+		═══════════════════════════════════════ */
+		.proceso-grid {
+			display: flex !important;
+			flex-direction: row !important;
+			flex-wrap: nowrap !important;
+			justify-content: center !important;
+			align-items: flex-start !important;
+			gap: 20px !important;
+			overflow: visible !important;
+			padding: 20px 10px 40px !important;
+		}
+		.proceso-card {
+			flex: 0 0 300px !important;
+			width: 300px !important;
+			max-width: 300px !important;
+			height: auto !important;
+			max-height: none !important;
+			border-radius: 12px !important;
+			overflow: hidden !important;
+			display: flex !important;
+			flex-direction: column !important;
+			transition: transform .3s ease, box-shadow .3s ease !important;
+		}
+		.proceso-card:hover {
+			transform: translateY(-6px) !important;
+			box-shadow: 0 15px 40px rgba(0,0,0,0.3) !important;
+		}
+		.proceso-contenido {
+			padding: 1.5em !important;
+			display: flex !important;
+			flex-direction: column !important;
+			flex: 1 !important;
+		}
+		.featured-badge {
+			display: inline-block !important;
+			background: var(--zoox-amarillo) !important;
+			color: var(--zoox-negro) !important;
+			font-size: 0.65rem !important;
+			font-weight: 700 !important;
+			letter-spacing: 0.1em !important;
+			text-transform: uppercase !important;
+			padding: 4px 12px !important;
+			border-radius: 20px !important;
+			margin-bottom: 0.5em !important;
+		}
+		.paso {
+			font-size: 0.65rem !important;
+			letter-spacing: 0.2em !important;
+			margin-bottom: 0.3em !important;
+			display: block !important;
+		}
+		.proceso-card h3 {
+			font-family: 'Oswald', sans-serif !important;
+			font-size: 1.4rem !important;
+			letter-spacing: 0.05em !important;
+			margin: 0 0 0.2em 0 !important;
+			text-transform: uppercase !important;
+		}
+		.pkg-tagline {
+			font-size: 0.75rem !important;
+			font-style: italic !important;
+			margin: 0 0 0.5em 0 !important;
+		}
+		.pkg-price {
+			font-family: 'Oswald', sans-serif !important;
+			font-size: 3rem !important;
+			font-weight: 700 !important;
+			line-height: 1 !important;
+			margin: 0.3em 0 0.8em 0 !important;
+			display: block !important;
+		}
+		.pkg-price small {
+			font-size: 1.1rem !important;
+			vertical-align: super !important;
+			font-weight: 400 !important;
+		}
+		.pkg-items {
+			list-style: none !important;
+			padding: 0 !important;
+			margin: 0 0 1em 0 !important;
+			border-top: 1px solid rgba(255,255,255,0.08) !important;
+			padding-top: 0.8em !important;
+		}
+		.pkg-items li {
+			font-size: 0.78rem !important;
+			padding: 5px 0 !important;
+			display: flex !important;
+			align-items: center !important;
+			gap: 8px !important;
+			border: none !important;
+			list-style: none !important;
+		}
+		.pkg-items li::before {
+			content: '●' !important;
+			color: var(--zoox-amarillo) !important;
+			font-size: 0.45rem !important;
+			flex-shrink: 0 !important;
+		}
+		.pkg-items li strong {
+			font-weight: 600 !important;
+		}
+		.pkg-footer {
+			border-top: 1px solid rgba(255,255,255,0.08) !important;
+			padding-top: 0.8em !important;
+			margin-top: auto !important;
+		}
+		.pkg-bonus {
+			color: var(--zoox-amarillo) !important;
+			font-size: 0.72rem !important;
+			margin: 0 0 0.2em 0 !important;
+		}
+		.pkg-tiempo {
+			font-size: 0.68rem !important;
+			margin: 0 !important;
+		}
+
+		/* ═══════════════════════════════════════
+		   PAQUETES EXTERIORES
+		═══════════════════════════════════════ */
+		#paquetes-ext {
+			background-color: var(--zoox-negro) !important;
+		}
+		#paquetes-ext .inner {
+			width: 95vw !important;
+			max-width: 95vw !important;
+		}
+		#paquetes-ext .proceso-card {
+			background: #111111 !important;
+			border: 1px solid rgba(255,182,15,0.3) !important;
+		}
+		#paquetes-ext .proceso-card.featured {
+			border: 2px solid var(--zoox-amarillo) !important;
+		}
+		#paquetes-ext .paso {
+			color: var(--zoox-muted) !important;
+		}
+		#paquetes-ext .proceso-card h3 {
+			color: var(--zoox-amarillo) !important;
+		}
+		#paquetes-ext .pkg-tagline {
+			color: var(--zoox-muted) !important;
+		}
+		#paquetes-ext .pkg-price {
+			color: var(--zoox-blanco) !important;
+		}
+		#paquetes-ext .pkg-price small {
+			color: var(--zoox-blanco) !important;
+		}
+		#paquetes-ext .pkg-items li {
+			color: var(--zoox-gris) !important;
+		}
+		#paquetes-ext .pkg-items li strong {
+			color: var(--zoox-blanco) !important;
+		}
+		#paquetes-ext .pkg-tiempo {
+			color: var(--zoox-muted) !important;
+		}
+
+		/* ═══════════════════════════════════════
+		   TARIFAS DE MOVILIDAD
+		═══════════════════════════════════════ */
+		#movilidad {
+			background-color: var(--zoox-negro) !important;
+		}
+		#movilidad .inner {
+			text-align: center !important;
+		}
+		#movilidad header.major h2 {
+			color: var(--zoox-blanco) !important;
+			border-color: rgba(255,182,15,0.3) !important;
+		}
+		#movilidad header.major p {
+			color: var(--zoox-gris) !important;
+		}
+		.zonas-grid {
+			display: grid !important;
+			grid-template-columns: repeat(4, 1fr) !important;
+			gap: 16px !important;
+			margin: 2em 0 1.5em 0 !important;
+		}
+		.zona-card {
+			background: #111111 !important;
+			border: 1px solid rgba(255,182,15,0.2) !important;
+			border-radius: 10px !important;
+			padding: 1.5em 1em !important;
+			text-align: center !important;
+			transition: border-color 0.3s !important;
+		}
+		.zona-card:hover {
+			border-color: var(--zoox-amarillo) !important;
+		}
+		.zona-label {
+			display: block !important;
+			font-size: 0.7rem !important;
+			letter-spacing: 0.2em !important;
+			color: var(--zoox-amarillo) !important;
+			text-transform: uppercase !important;
+			margin-bottom: 0.75em !important;
+			font-weight: 700 !important;
+		}
+		.zona-distritos {
+			font-size: 0.75rem !important;
+			color: var(--zoox-muted) !important;
+			line-height: 1.6 !important;
+			margin: 0 0 1em 0 !important;
+		}
+		.zona-precio {
+			font-family: 'Oswald', sans-serif !important;
+			font-size: 1.6rem !important;
+			font-weight: 600 !important;
+			color: var(--zoox-blanco) !important;
+			margin: 0 !important;
+		}
+		.zona-nota {
+			font-size: 0.7rem !important;
+			color: #555 !important;
+			font-style: italic !important;
+			margin-top: 1em !important;
+		}
+		@media screen and (max-width: 768px) {
+    #three .inner {
+        overflow-x: visible !important;
+        padding: 0 1em !important;
+    }
+    .pasos-grid-wrapper {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding-bottom: 1em !important;
+        width: 100% !important;
+    }
+    .pasos-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        width: max-content !important;
+        gap: 0 !important;
+    }
+    .paso-card {
+        width: 140px !important;
+        min-width: 140px !important;
+        height: 140px !important;
+        flex-shrink: 0 !important;
+    }
+    .paso-flecha {
+        display: flex !important;
+        align-items: center !important;
+        flex-shrink: 0 !important;
+    }
+}
+
+		/* ═══════════════════════════════════════
+		   FAQ — COMPARTIDO
+		═══════════════════════════════════════ */
+		.faq-grid {
+			margin-top: 2em !important;
+			text-align: left !important;
+		}
+		.faq-item {
+			border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+		}
+		.faq-pregunta {
+			width: 100% !important;
+			background: none !important;
+			border: none !important;
+			color: var(--zoox-blanco) !important;
+			font-size: 0.88rem !important;
+			font-family: inherit !important;
+			letter-spacing: 0.05em !important;
+			text-align: left !important;
+			padding: 1.2em 0 !important;
+			cursor: pointer !important;
+			display: flex !important;
+			justify-content: space-between !important;
+			align-items: center !important;
+			transition: color 0.3s !important;
+		}
+		.faq-pregunta:hover { color: var(--zoox-amarillo) !important; }
+		.faq-icono {
+			color: var(--zoox-amarillo) !important;
+			font-size: 1.4rem !important;
+			font-weight: 300 !important;
+			transition: transform 0.3s !important;
+			flex-shrink: 0 !important;
+		}
+		.faq-respuesta {
+			display: none !important;
+			padding: 0 0 1.2em 0 !important;
+		}
+		.faq-respuesta p {
+			font-size: 0.82rem !important;
+			line-height: 1.8 !important;
+			margin: 0 !important;
+		}
+		.faq-item.active .faq-respuesta { display: block !important; }
+		.faq-item.active .faq-icono { transform: rotate(45deg) !important; }
+		.faq-item.active .faq-pregunta { color: var(--zoox-amarillo) !important; }
+
+		/* FAQ Exteriores */
+		#faq {
+			background-color: var(--zoox-negro) !important;
+		}
+		#faq .inner {
+			text-align: center !important;
+			max-width: 800px !important;
+			margin: 0 auto !important;
+		}
+		#faq header.major h2 {
+			color: var(--zoox-blanco) !important;
+			border-color: rgba(255,182,15,0.3) !important;
+		}
+		#faq header.major p { color: var(--zoox-muted) !important; }
+		#faq .faq-respuesta p { color: var(--zoox-muted) !important; }
+
+		/* ═══════════════════════════════════════
+		   SEPARADOR LÍNEA IN HOME
+		═══════════════════════════════════════ */
+		.linea-separador {
+			background: #505C47 !important;
+			padding: 4em 2em !important;
+			text-align: center !important;
+			border-top: 1px solid rgba(255,182,15,0.2) !important;
+			border-bottom: 1px solid rgba(255,182,15,0.2) !important;
+		}
+		.linea-separador-inner {
+			max-width: 600px !important;
+			margin: 0 auto !important;
+		}
+		.linea-separador h2 {
+			font-family: 'Oswald', sans-serif !important;
+			font-size: 2.5rem !important;
+			color: var(--zoox-amarillo) !important;
+			letter-spacing: 0.1em !important;
+			margin-bottom: 0.3em !important;
+		}
+		.linea-separador p {
+			color: var(--zoox-gris) !important;
+			font-size: 0.9rem !important;
+			margin: 0 !important;
+		}
+
+		/* ═══════════════════════════════════════
+		   LÍNEA IN HOME — FONDO AZUL ACERO
+		═══════════════════════════════════════ */
+		.inhome-style {
+			background: #505C47 !important;
+		}
+
+		/* Intro In Home */
+		#inhome-intro .inner {
+			text-align: center !important;
+			max-width: 750px !important;
+			margin: 0 auto !important;
+		}
+		#inhome-intro header.major h2 {
+			color: var(--zoox-blanco) !important;
+			border-color: rgba(255,182,15,0.3) !important;
+		}
+		#inhome-intro p {
+			color: var(--zoox-gris) !important;
+			line-height: 1.8 !important;
+		}
+
+		/* Paquetes In Home */
+		#paquetes-inhome .inner {
+			width: 95vw !important;
+			max-width: 95vw !important;
+		}
+		.inhome-card {
+			background: rgba(0,0,0,0.2) !important;
+			border: 1px solid var(--zoox-amarillo)  !important;
+		}
+		.inhome-card.featured-inhome {
+			border: 2px solid var(--zoox-amarillo) !important;
+		}
+		.inhome-card .paso {
+			color: var(--zoox-gris) !important;
+			opacity: 0.7 !important;
+		}
+		.inhome-card h3 {
+			color: var(--zoox-amarillo) !important;
+		}
+		.inhome-card .pkg-tagline {
+			color: var(--zoox-gris) !important;
+		}
+		.inhome-card .pkg-price {
+			color: var(--zoox-blanco) !important;
+		}
+		.inhome-card .pkg-price small {
+			color: var(--zoox-blanco) !important;
+		}
+		.inhome-card .pkg-items li {
+			color: var(--zoox-gris) !important;
+		}
+		.inhome-card .pkg-items li strong {
+			color: var(--zoox-blanco) !important;
+		}
+		.inhome-card .pkg-tiempo {
+			color: var(--zoox-gris) !important;
+			opacity: 0.7 !important;
+		}
+
+		/* FAQ In Home */
+		#faq-inhome .inner {
+			max-width: 800px !important;
+			margin: 0 auto !important;
+			text-align: center !important;
+		}
+		#faq-inhome header.major h2 {
+			color: var(--zoox-blanco) !important;
+			border-color: rgba(255,182,15,0.3) !important;
+		}
+		#faq-inhome header.major p {
+			color: var(--zoox-gris) !important;
+		}
+		#faq-inhome .faq-item {
+			border-bottom: 1px solid rgba(255,182,15,0.2) !important;
+		}
+		#faq-inhome .faq-pregunta {
+			color: var(--zoox-gris) !important;
+		}
+		#faq-inhome .faq-pregunta:hover {
+			color: var(--zoox-amarillo) !important;
+		}
+		#faq-inhome .faq-item.active .faq-pregunta {
+			color: var(--zoox-amarillo) !important;
+		}
+		#faq-inhome .faq-respuesta p {
+			color: var(--zoox-gris) !important;
+		}
+
+		/* ═══════════════════════════════════════
+		   FOOTER
+		═══════════════════════════════════════ */
+		#footer {
+			background-color: var(--zoox-negro) !important;
+			padding: 3em 2em !important;
+			text-align: center !important;
+			
+		}
+		.footer-inner {
+			display: flex !important;
+			flex-direction: column !important;
+			align-items: center !important;
+			gap: 1em !important;
+		}
+		.footer-logo {
+			height: 36px !important;
+			width: auto !important;
+			opacity: 0.85 !important;
+		}
+		.footer-copy {
+			color: #e5e5e5 !important;
+			font-size: 0.7rem !important;
+			letter-spacing: 0.08em !important;
+			margin: 0 !important;
+		}
+		.footer-redes {
+			list-style: none !important;
+			padding: 0 !important;
+			margin: 0 !important;
+			display: flex !important;
+			gap: 1.5em !important;
+		}
+		.footer-redes li a {
+			color: #e5e5e5 !important;
+			font-size: 1.2rem !important;
+			border: none !important;
+			transition: color 0.3s !important;
+		}
+		.footer-redes li a:hover {
+			color: var(--zoox-amarillo) !important;
+		}
+
+		/* ═══════════════════════════════════════
+		   BOTÓN FLOTANTE WHATSAPP
+		═══════════════════════════════════════ */
+		.whatsapp-float {
+			position: fixed !important;
+			bottom: 2rem !important;
+			right: 2rem !important;
+			background: #25D366 !important;
+			color: var(--zoox-blanco) !important;
+			border: none !important;
+			border-radius: 50px !important;
+			padding: 0.75em 1.25em !important;
+			display: flex !important;
+			align-items: center !important;
+			gap: 0.5em !important;
+			font-size: 0.8rem !important;
+			font-weight: 600 !important;
+			letter-spacing: 0.05em !important;
+			text-transform: uppercase !important;
+			box-shadow: 0 4px 20px rgba(37,211,102,0.4) !important;
+			z-index: 9999 !important;
+			transition: transform 0.3s, box-shadow 0.3s !important;
+			text-decoration: none !important;
+		}
+		.whatsapp-float:hover {
+			transform: translateY(-3px) !important;
+			box-shadow: 0 8px 25px rgba(37,211,102,0.5) !important;
+			color: var(--zoox-blanco) !important;
+			border: none !important;
+		}
+		/* Eliminar recuadros de FAQ */
+#faq-inhome .faq-pregunta,
+#faq .faq-pregunta {
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+}
+#faq-inhome .faq-pregunta:focus,
+#faq .faq-pregunta:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+}
+/* Precio amarillo - override final */
+.proceso-card .pkg-price,
+.inhome-card .pkg-price {
+    font-family: 'Oswald', sans-serif !important;
+    font-size: 3rem !important;
+    color: #FFB60F !important;
+    font-weight: 700 !important;
+}
+.proceso-card .pkg-price small,
+.inhome-card .pkg-price small {
+    font-family: 'Oswald', sans-serif !important;
+    font-size: 1.1rem !important;
+    color: #FFB60F !important;
+    vertical-align: super !important;
+}
+/* Zonas In Home */
+.inhome-zona {
+    background: rgba(0,0,0,0.2) !important;
+    border-color: #FFB60F !important;
+}
+.inhome-zona:hover {
+    border-color: var(--zoox-amarillo) !important;
+}
+.inhome-zona .zona-distritos {
+    color: var(--zoox-gris) !important;
+}
+.inhome-zona .zona-precio {
+    color: var(--zoox-blanco) !important;
+}
+/* Ajustes tarifas In Home */
+#movilidad-inhome .inner {
+    text-align: center !important;
+}
+#movilidad-inhome header.major h2 {
+    color: var(--zoox-blanco) !important;
+    border-color: rgba(255,182,15,0.3) !important;
+}
+#movilidad-inhome header.major p {
+    color: var(--zoox-gris) !important;
+}
+.inhome-zona:hover {
+    border-color: var(--zoox-amarillo) !important;
+    border-width: 2px !important;
+}
+#movilidad-inhome .zona-nota {
+    color: var(--zoox-gris) !important;
+}
+/* ── RESPONSIVE MÓVIL ── */
+@media screen and (max-width: 768px) {
+
+    /* Proceso 5 pasos — scroll horizontal */
+    #three .inner {
+        padding: 0 1em !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    .pasos-grid {
+        width: max-content !important;
+        padding-bottom: 1em !important;
+    }
+
+    /* Paquetes Exteriores — scroll horizontal */
+    #paquetes-ext .inner,
+    #paquetes-inhome .inner {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding: 0 1em !important;
+    }
+    #paquetes-ext .proceso-grid,
+    #paquetes-inhome .proceso-grid {
+        width: max-content !important;
+        padding-bottom: 1.5em !important;
+    }
+
+    /* Tarifas — 2 columnas en móvil */
+    .zonas-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Ocultar scrollbar pero mantener funcionalidad */
+    #three .inner::-webkit-scrollbar,
+    #paquetes-ext .inner::-webkit-scrollbar,
+    #paquetes-inhome .inner::-webkit-scrollbar {
+        height: 3px !important;
+    }
+    #three .inner::-webkit-scrollbar-thumb,
+    #paquetes-ext .inner::-webkit-scrollbar-thumb,
+    #paquetes-inhome .inner::-webkit-scrollbar-thumb {
+        background: rgba(255,182,15,0.4) !important;
+        border-radius: 2px !important;
+    }
+}
+/* Scroll horizontal solo en pasos-grid, no en el título */
+@media screen and (max-width: 768px) {
+    #three .inner {
+        overflow-x: visible !important;
+        padding: 0 1em !important;
+    }
+    #three .pasos-grid-wrapper {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding-bottom: 1em !important;
+    }
+    .pasos-grid {
+        width: max-content !important;
+    }
+}
+	</style>
+</head>
+
+<body class="landing is-preload">
+<div id="page-wrapper">
+
+	<!-- ── HEADER ─────────────────────────────── -->
+	<header id="header" class="alt">
+		<h1>
+			<a href="index.html">
+				<img src="images/logo-zoox.png" alt="ZOOX Pet Studio" style="height:40px; width:auto;" />
+			</a>
+		</h1>
+		<nav id="nav">
+			<ul>
+				<li class="special">
+					<a href="#menu" class="menuToggle"><span>Menu</span></a>
+					<div id="menu">
+						<ul>
+							<li><a href="index.html">Inicio</a></li>
+							<li><a href="experiencia.html">Experiencia</a></li>
+							<li><a href="galeria.html">Galería</a></li>
+							<li><a href="zooxart.html">ZOOX Art</a></li>
+							<li><a href="brandpet.html">Brand Pet</a></li>
+							<li><a href="contacto.html">Contacto</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- ── BANNER ─────────────────────────────── -->
+	<section id="banner">
+		<div class="inner">
+			<h2>Experiencias</h2>
+			<p>
+				Más que una sesión fotográfica.<br />
+				Una experiencia ZOOX está creada para celebrar<br />
+				el vínculo único con tu mascota.
+			</p>
+		</div>
+		<a href="#one" class="more scrolly">Descubrir</a>
+	</section>
+
+	<!-- ── BIENVENIDOS ────────────────────────── -->
+	<section id="one" class="wrapper style2 special">
+		<div class="inner">
+			<header class="major">
+				<h2>¡Bienvenidos!</h2>
+			</header>
+			<p><strong>ZOOX Pet Studio</strong> nació en 2021 con la misión de crear recuerdos únicos de las mascotas de las familias. Ofrecemos sesiones fotográficas profesionales y personalizadas, con un estilo moderno que resalta la personalidad y las características de cada ejemplar.</p>
+		</div>
+	</section>
+
+	<!-- ── PROCESO 5 PASOS ────────────────────── -->
+	<section id="three" class="wrapper style3 special">
+		<div class="inner">
+			<header class="major">
+				<h2>¿Cómo es la experiencia ZOOX?</h2>
+				<p>Un proceso diseñado para que disfrutes cada etapa junto a tu mejor amigo.</p>
+			</header>
+			<div class="pasos-grid-wrapper">
+    <div class="pasos-grid">
+        <!-- las 5 paso-card y flechas aquí -->
+    </div>
+</div>
+<div class="pasos-grid-wrapper">
+    <div class="pasos-grid">
+
+        <div class="paso-card">
+            <span class="paso-num">01</span>
+            <h3>Reserva</h3>
+            <p>Elige tu paquete y agenda tu fecha.</p>
+        </div>
+        <div class="paso-flecha">→</div>
+
+        <div class="paso-card">
+            <span class="paso-num">02</span>
+            <h3>Sesión</h3>
+            <p>Disfruta una experiencia relajada con tu mascota.</p>
+        </div>
+        <div class="paso-flecha">→</div>
+
+        <div class="paso-card">
+            <span class="paso-num">03</span>
+            <h3>Selección</h3>
+            <p>Escoge tus favoritas desde una galería privada.</p>
+        </div>
+        <div class="paso-flecha">→</div>
+
+        <div class="paso-card">
+            <span class="paso-num">04</span>
+            <h3>Edición</h3>
+            <p>Aplicamos nuestro proceso artístico profesional.</p>
+        </div>
+        <div class="paso-flecha">→</div>
+
+        <div class="paso-card">
+            <span class="paso-num">05</span>
+            <h3>Entrega</h3>
+            <p>Recibes tus imágenes finales listas para compartir.</p>
+        </div>
+
+    </div>
+</div>
+	</section>
+
+	<!-- ── LÍNEA EXTERIORES INTRO ─────────────── -->
+	<section id="exteriores" class="wrapper style2">
+		<div class="inner">
+			<header class="major">
+				<h2>Línea Exteriores</h2>
+				<p>Tu hijo de cuatro patas, en fotos artísticas.</p>
+			</header>
+			<p>3 planes digitales diseñados para inmortalizar la esencia y personalidad de tu fiel amigo. Capturamos la mejor versión de tu mascota con una sesión profesional en exteriores de Lima.</p>
+		</div>
+	</section>
+
+	<!-- ── PAQUETES EXTERIORES ────────────────── -->
+	<section id="paquetes-ext" class="wrapper style3">
+		<div class="inner">
+			<div class="proceso-grid">
+
+				<div class="proceso-card">
+					<div class="proceso-contenido">
+						<span class="paso">PAQUETE 01</span>
+						<h3>Petlover</h3>
+						<p class="pkg-tagline">"El primer recuerdo especial"</p>
+						<p class="pkg-tiempo">45 min. de sesión</p>
+						<p class="pkg-price"><small>S/</small>180</p>
+						<ul class="pkg-items">
+							<li>7 fotos seleccionadas</li>
+							<li>5 ediciones profesionales</li>
+							<li>1 escena digital de ficción</li>
+							<li>Descarga en alta resolución</li>
+							<li>Dueño puede participar</li>
+							<li>Para un único can</li>
+						</ul>
+						<div class="pkg-footer">
+							<p class="pkg-bonus">🎁 10% dto. todo Complemento</p>
+						
+						</div>
+					</div>
+				</div>
+
+				<div class="proceso-card featured">
+					<div class="proceso-contenido">
+						<span class="paso">PAQUETE 02</span>
+						<div class="featured-badge">Más popular</div>
+						<h3>Entre Patas</h3>
+						<p class="pkg-tagline">"Una sesión con su mejor amigo"</p>
+						<p class="pkg-tiempo">90 min. de sesión</p>
+						<p class="pkg-price"><small>S/</small>260</p>
+						<ul class="pkg-items">
+							<li>15 fotos seleccionadas</li>
+							<li>9 ediciones profesionales</li>
+							<li><strong>2 escenas digitales de ficción</strong></li>
+							<li>Descarga en alta resolución</li>
+							<li>Dueños pueden participar</li>
+							<li>Canes de distintos dueños</li>
+						</ul>
+						<div class="pkg-footer">
+							<p class="pkg-bonus">🎁 10% dto. todo Complemento</p>
+							
+						</div>
+					</div>
+				</div>
+
+				<div class="proceso-card">
+					<div class="proceso-contenido">
+						<span class="paso">PAQUETE 03</span>
+						<h3>La Mancha</h3>
+						<p class="pkg-tagline">"La sesión grupal definitiva"</p>
+						<p class="pkg-tiempo">120 min. de sesión</p>
+						<p class="pkg-price"><small>S/</small>350</p>
+						<ul class="pkg-items">
+							<li>20 fotos seleccionadas</li>
+							<li>12 ediciones profesionales</li>
+							<li><strong>4 escenas digitales de ficción</strong></li>
+							<li>Dueños pueden participar</li>
+							<li>Descarga en alta resolución</li>
+							<li>Canes de distintos dueños</li>
+							<li><strong>1 Polo personalizado</strong></li>
+						</ul>
+						<div class="pkg-footer">
+							<p class="pkg-bonus">🎁 10% dto. todo Complemento</p>
+							
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- ── TARIFAS DE MOVILIDAD ───────────────── -->
+	<section id="movilidad" class="wrapper style3">
+		<div class="inner">
+			<header class="major">
+				<h2>Tarifas de movilidad</h2>
+				<p>Aplicable solo a la Línea In Home — sesiones a domicilio desde Lince.</p>
+			</header>
+			<div class="zonas-grid">
+				<div class="zona-card">
+					<span class="zona-label">Zona A</span>
+					<p class="zona-distritos">Lince, San Isidro, Miraflores, Magdalena, Jesús María, Surquillo</p>
+					<p class="zona-precio">Sin cargo</p>
+				</div>
+				<div class="zona-card">
+					<span class="zona-label">Zona B</span>
+					<p class="zona-distritos">Barranco, Pueblo Libre, Breña, La Victoria, San Borja</p>
+					<p class="zona-precio">+ S/ 15</p>
+				</div>
+				<div class="zona-card">
+					<span class="zona-label">Zona C</span>
+					<p class="zona-distritos">San Miguel, Chorrillos, Surco, La Molina, San Luis, Ate</p>
+					<p class="zona-precio">+ S/ 18</p>
+				</div>
+				<div class="zona-card">
+					<span class="zona-label">Zona D</span>
+					<p class="zona-distritos">Los Olivos, SJL, Comas, VES, Callao y Lima Norte / Este / Sur</p>
+					<p class="zona-precio">+ S/ 25</p>
+				</div>
+			</div>
+			<p class="zona-nota">* La tarifa de movilidad se suma al paquete elegido. Zona D requiere confirmación previa de disponibilidad.</p>
+		</div>
+	</section>
+
+	<!-- ── FAQ EXTERIORES ─────────────────────── -->
+	<section id="faq" class="wrapper style3">
+		<div class="inner">
+			<header class="major">
+				<h2>Preguntas Frecuentes</h2>
+				<p>Todo lo que necesitas saber antes de tu sesión.</p>
+			</header>
+			<div class="faq-grid">
+
+				<div class="faq-item">
+					<button class="faq-pregunta" onclick="toggleFaq(this)">
+						¿Cuánto dura la sesión?
+						<span class="faq-icono">+</span>
+					</button>
+					<div class="faq-respuesta">
+						<p>Depende del paquete elegido. Petlover dura 45 minutos, Entre Patas 60 minutos y La Mancha 90 minutos. El tiempo incluye el desplazamiento dentro del punto de sesión y los momentos de descanso de tu can.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-pregunta" onclick="toggleFaq(this)">
+						¿Dónde se realizan las sesiones?
+						<span class="faq-icono">+</span>
+					</button>
+					<div class="faq-respuesta">
+						<p>Las sesiones de la Línea Exteriores se realizan en parques y espacios abiertos de Lima, principalmente en zonas céntricas. La Línea In Home se realiza en el domicilio del cliente, con tarifa de movilidad según la zona.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-pregunta" onclick="toggleFaq(this)">
+						¿Puedo participar en las fotos con mi mascota?
+						<span class="faq-icono">+</span>
+					</button>
+					<div class="faq-respuesta">
+						<p>Sí. Todos los paquetes permiten la participación del dueño. En Entre Patas y La Mancha pueden participar varios dueños con sus respectivos canes.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-pregunta" onclick="toggleFaq(this)">
+						¿Cuándo recibo mis fotos?
+						<span class="faq-icono">+</span>
+					</button>
+					<div class="faq-respuesta">
+						<p>El tiempo de entrega es de 7 a 10 días hábiles. Primero recibirás una galería privada para seleccionar tus favoritas, y luego comenzamos el proceso de edición profesional.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-pregunta" onclick="toggleFaq(this)">
+						¿Qué pasa si mi mascota no se comporta bien?
+						<span class="faq-icono">+</span>
+					</button>
+					<div class="faq-respuesta">
+						<p>Trabajamos con la personalidad real de cada can — no buscamos poses forzadas. Si tu peludito es inquieto, tímido o muy activo, lo capturamos tal como es. Eso es lo que hace únicas a las fotos ZOOX.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-pregunta" onclick="toggleFaq(this)">
+						¿Cómo agendo mi sesión?
+						<span class="faq-icono">+</span>
+					</button>
+					<div class="faq-respuesta">
+						<p>Escríbenos por WhatsApp o Instagram y coordinamos fecha, ubicación y paquete. La reserva se confirma con el pago del 50% del total del paquete elegido.</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- ══════════════════════════════════════════
+	     LÍNEA IN HOME
+	══════════════════════════════════════════ -->
+
+	<!-- Separador -->
+	<div class="linea-separador">
+		<div class="linea-separador-inner">
+			<h2>Línea In Home</h2>
+			<p>Acondicionamos un estudio en el hogar de tu can.</p>
+		</div>
+	</div>
+
+	<!-- Intro In Home -->
+	<section id="inhome-intro" class="wrapper inhome-style">
+		<div class="inner">
+			<header class="major">
+				<h2>Tu can, en su entorno natural</h2>
+			</header>
+			<p>Hay peludos que lo dan todo frente a una cámara. Y hay otros que simplemente son más ellos mismos en casa — en su rincón favorito, con su olor, con su rutina. Para esos (y para los que los aman), creamos la Línea In Home.</p>
+			<p>Llevamos el estudio hasta donde vive el protagonista: acondicionamos el espacio, preparamos la iluminación y comenzamos a capturar su personalidad tal como es, sin traslados, sin estrés y sin poses forzadas.</p>
+		</div>
+	</section>
+
+	<!-- Paquetes In Home -->
+	<section id="paquetes-inhome" class="wrapper inhome-style">
+		<div class="inner">
+			<div class="proceso-grid">
+
+				<div class="proceso-card inhome-card">
+					<div class="proceso-contenido">
+						<span class="paso">PAQUETE 01</span>
+						<h3>Bronce</h3>
+						<p class="pkg-tagline">"Su mundo, su sesión"</p>
+						<p class="pkg-tagline">"60 min. de sesión"</p>
+						<p class="pkg-price"><small>S/</small>250</p>
+						<ul class="pkg-items">
+							<li>8 fotos seleccionadas.</li>
+							<li>5 ediciones profesionales.</li>
+							<li>1 escena digital de ficción.</li>
+							<li>Organizar el espacio.</li>
+							<li>Descarga en alta resolución.</li>
+						</ul>
+						<div class="pkg-footer">
+							</ul>
+							<p class="pkg-bonus">🎁 15% dto. todo Complemento</p>
+							
+						</div>
+					</div>
+				</div>
+
+				<div class="proceso-card inhome-card featured-inhome">
+					<div class="proceso-contenido">
+						<span class="paso">PAQUETE 02</span>
+						<div class="featured-badge">Más popular</div>
+						<h3>Plata</h3>
+						<p class="pkg-tagline">"Para el rey de la casa"</p>
+						<p class="pkg-tagline">"90 min. de sesión"</p>
+						<p class="pkg-price"><small>S/</small>350</p>
+						<ul class="pkg-items">
+							<li>12 fotos seleccionadas</li>
+							<li>8 ediciones profesionales</li>
+							<li><strong>2 escenas digitales de ficción</strong></li>
+							<li>Acondicionamiento completo</li>
+							<li><strong>1 foto impresa 20×30 cm</strong></li>
+							<li>Descarga en alta resolución</li>
+						</ul>
+						<div class="pkg-footer">
+						
+							<p class="pkg-bonus">🎁 15% dto. todo Complemento</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="proceso-card inhome-card">
+					<div class="proceso-contenido">
+						<span class="paso">PAQUETE 03</span>
+						<h3>Oro</h3>
+						<p class="pkg-tagline">"Todo para el engreído"</p>
+						<p class="pkg-tagline">"120 min. de sesión"</p>
+						<p class="pkg-price"><small>S/</small>480</p>
+						<ul class="pkg-items">
+							<li>20 fotos seleccionadas</li>
+							<li>12 fotos con edición profesional</li>
+							<li><strong>4 escenas digitales de ficción</strong></li>
+							<li>Acondicionamiento premium</li>
+							<li><strong>2 fotos impresas 20×30 cm</strong></li>
+							<li><strong>Polo personalizado incluido</strong></li>
+							<li>Descarga en alta resolución</li>
+						</ul>
+						<div class="pkg-footer">
+							
+							<p class="pkg-bonus">🎁 15% dto. todo Complemento</p>
+							
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<!-- Tarifas de movilidad In Home -->
+<section id="movilidad-inhome" class="wrapper inhome-style">
+    <div class="inner">
+
+        <header class="major">
+            <h2>Tarifas de movilidad</h2>
+            <p>Sesiones a domicilio desde Lince.</p>
+        </header>
+
+        <div class="zonas-grid">
+            <div class="zona-card inhome-zona">
+                <span class="zona-label">Zona A</span>
+                <p class="zona-distritos">Lince, San Isidro, Miraflores, Magdalena, Jesús María, Surquillo</p>
+                <p class="zona-precio">Sin cargo</p>
+            </div>
+            <div class="zona-card inhome-zona">
+                <span class="zona-label">Zona B</span>
+                <p class="zona-distritos">Barranco, Pueblo Libre, Breña, La Victoria, San Borja</p>
+                <p class="zona-precio">+ S/ 15</p>
+            </div>
+            <div class="zona-card inhome-zona">
+                <span class="zona-label">Zona C</span>
+                <p class="zona-distritos">San Miguel, Chorrillos, Surco, La Molina, San Luis, Ate</p>
+                <p class="zona-precio">+ S/ 18</p>
+            </div>
+            <div class="zona-card inhome-zona">
+                <span class="zona-label">Zona D</span>
+                <p class="zona-distritos">Los Olivos, SJL, Comas, VES, Callao y Lima Norte / Este / Sur</p>
+                <p class="zona-precio">+ S/ 25</p>
+            </div>
+        </div>
+
+        <p class="zona-nota">* La tarifa se suma al paquete elegido. Zona D requiere confirmación previa de disponibilidad.</p>
+
+    </div>
+</section>
+
+	<!-- FAQ In Home -->
+	<section id="faq-inhome" class="wrapper inhome-style">
+		<div class="inner">
+			<header class="major">
+				<h2>Preguntas Frecuentes — In Home</h2>
+				<p>Todo lo que necesitas saber sobre las sesiones a domicilio.</p>
+			</header>
+			<div class="faq-grid">
+
+				<div class="faq-item">
+					<button class="faq-pregunta" onclick="toggleFaq(this)">
+						¿Qué incluye el acondicionamiento del espacio?
+						<span class="faq-icono">+</span>
+					</button>
+					<div class="faq-respuesta">
+						<p>Llevamos equipo de iluminación profesional y preparamos el área donde se realizará la sesión. No necesitas tener un espacio especial — trabajamos con lo que tienes en casa y lo transformamos en el set perfecto para tu can.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-pregunta" onclick="toggleFaq(this)">
+						¿Cuánto espacio necesito en casa?
+						<span class="faq-icono">+</span>
+					</button>
+					<div class="faq-respuesta">
+						<p>Con una sala, dormitorio o cualquier ambiente de al menos 3×3 metros es suficiente. Lo importante es que sea el espacio favorito de tu can para que se sienta cómodo y natural durante la sesión.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-pregunta" onclick="toggleFaq(this)">
+						¿Cómo funciona la tarifa de movilidad?
+						<span class="faq-icono">+</span>
+					</button>
+					<div class="faq-respuesta">
+						<p>La tarifa de movilidad se suma al precio del paquete elegido y varía según la distancia desde Lince. Zona A no tiene cargo adicional. Puedes consultar las tarifas por zona en la sección de movilidad de esta misma página.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-pregunta" onclick="toggleFaq(this)">
+						¿Cómo son las fotos incluidas?
+						<span class="faq-icono">+</span>
+					</button>
+					<div class="faq-respuesta">
+						<p>Son impresiones fotográficas profesionales en papel fotográfico alta calidad, formato 20×30 cm. Se entregan listas para enmarcar. El paquete Plata incluye 1 impresión y el paquete Oro incluye 2.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-pregunta" onclick="toggleFaq(this)">
+						¿Puedo agregar más complementos?
+						<span class="faq-icono">+</span>
+					</button>
+					<div class="faq-respuesta">
+						<p>Sí. Puedes añadir el Panel ZOOX Epóxico o el Polo Personalizado a cualquier paquete In Home. El paquete Oro ya incluye el polo, pero puedes agregar el panel como complemento adicional.</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- ── FOOTER ─────────────────────────────── -->
+	<footer id="footer">
+		<div class="footer-inner">
+			<img src="images/logoblanco-zoox.png" alt="ZOOX Pet Studio" class="footer-logo" />
+			<p class="footer-copy">© 2026 · Lima, Perú · Todos los derechos reservados.</p>
+			<ul class="footer-redes">
+				<li>
+					<a href="https://instagram.com/zoox.petstudio" target="_blank" aria-label="Instagram">
+						<i class="icon brands fa-instagram"></i>
+					</a>
+				</li>
+				<li>
+					<a href="https://facebook.com/zooxpetstudio" target="_blank" aria-label="Facebook">
+						<i class="icon brands fa-facebook-f"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Botón flotante WhatsApp -->
+	<a href="https://wa.me/51977325372?text=Hola%20ZOOX%2C%20tengo%20una%20consulta"
+	   target="_blank"
+	   class="whatsapp-float"
+	   aria-label="WhatsApp">
+		<i class="icon brands fa-whatsapp"></i>
+		<span>Conversemos</span>
+	</a>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+function toggleFaq(btn) {
+	const item = btn.parentElement;
+	const isActive = item.classList.contains('active');
+	document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+	if (!isActive) item.classList.add('active');
+}
+</script>
+
+</body>
+</html>

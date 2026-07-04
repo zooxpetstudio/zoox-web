@@ -1,0 +1,762 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+	<title>ZOOX Art | ZOOX Pet Studio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="Productos personalizados con la imagen de tu mascota. Polos, Panels y Banners ZOOX." />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+	<style>
+		/* ── VARIABLES ── */
+		:root {
+			--zoox-amarillo: #FFB60F;
+			--zoox-negro:    #0A0A0A;
+			--zoox-ebano:    #505C47;
+			--zoox-gris:     #E5E5E5;
+			--zoox-blanco:   #FFFFFF;
+			--zoox-muted:    #888888;
+		}
+
+		/* ── BASE ── */
+		body, html, #page-wrapper {
+			overflow-x: hidden !important;
+			font-family: 'DM Sans', sans-serif !important;
+		}
+
+		/* ── MENÚ ── */
+		#menu { background: var(--zoox-amarillo) !important; }
+		#menu ul > li > a { color: var(--zoox-negro) !important; }
+		#menu ul > li > a:hover { color: var(--zoox-blanco) !important; }
+		#menu ul > li { border-top-color: rgba(0,0,0,0.15) !important; }
+
+		/* ── BANNER ── */
+		#banner { background-color: var(--zoox-negro) !important; }
+		#banner h2 {
+			font-family: 'Oswald', sans-serif !important;
+			font-size: clamp(2.5rem, 6vw, 4.5rem) !important;
+			letter-spacing: 0.08em !important;
+			color: var(--zoox-blanco) !important;
+		}
+		#banner h2 span { color: var(--zoox-amarillo) !important; }
+		#banner p {
+			color: var(--zoox-gris) !important;
+			font-weight: 300 !important;
+			max-width: 500px !important;
+			margin: 0 auto 1.5em !important;
+		}
+		#banner::before,
+		#banner::after { background-color: var(--zoox-blanco) !important; }
+		#banner .button.primary {
+			background-color: var(--zoox-amarillo) !important;
+			border-color: var(--zoox-amarillo) !important;
+			color: var(--zoox-negro) !important;
+		}
+
+		/* ── PRESENTACIÓN ── */
+		#presentacion { background-color: var(--zoox-negro) !important; }
+		#presentacion .inner { text-align: center !important; }
+		#presentacion header.major h2 {
+			color: var(--zoox-blanco) !important;
+			border-color: rgba(255,182,15,0.3) !important;
+		}
+		#presentacion p {
+			color: var(--zoox-gris) !important;
+			max-width: 700px !important;
+			margin: 0 auto 1.5em auto !important;
+			line-height: 1.8 !important;
+		}
+
+		/* ── SEPARADOR ── */
+		.seccion-separador {
+			background: var(--zoox-ebano) !important;
+			padding: 3em 2em !important;
+			text-align: center !important;
+			border-top: 1px solid rgba(255,182,15,0.2) !important;
+			border-bottom: 1px solid rgba(255,182,15,0.2) !important;
+		}
+		.seccion-separador h2 {
+			font-family: 'Oswald', sans-serif !important;
+			font-size: 2rem !important;
+			color: var(--zoox-amarillo) !important;
+			letter-spacing: 0.1em !important;
+			margin: 0 0 0.3em 0 !important;
+		}
+		.seccion-separador p {
+			color: var(--zoox-gris) !important;
+			font-size: 0.88rem !important;
+			margin: 0 !important;
+		}
+
+		/* ── SECCIÓN POLOS ── */
+		#polos {
+			background-color: var(--zoox-gris) !important;
+			padding: 4em 2em !important;
+		}
+		#polos .inner { text-align: center !important; }
+		#polos header.major h2 {
+			color: var(--zoox-ebano) !important;
+			border-color: rgba(80,92,71,0.3) !important;
+		}
+		#polos header.major p { color: var(--zoox-ebano) !important; }
+
+		/* ── GRID DE PRODUCTOS ── */
+		.productos-grid {
+			display: grid !important;
+			grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+			gap: 16px !important;
+			margin-top: 2em !important;
+		}
+
+		/* ── CARDS ── */
+		.producto-card {
+			background: var(--zoox-blanco) !important;
+			border: none !important;
+			border-radius: 4px !important;
+			overflow: hidden !important;
+			cursor: pointer !important;
+			text-align: left !important;
+			transition: box-shadow 0.3s ease !important;
+		}
+		.producto-card:hover {
+			box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;
+		}
+
+		/* ── IMAGEN CUADRADA ── */
+		.producto-imagen {
+			width: 100% !important;
+			aspect-ratio: 1 / 1 !important;
+			overflow: hidden !important;
+			background: #f5f5f5 !important;
+			position: relative !important;
+		}
+		.producto-imagen img {
+			width: 100% !important;
+			height: 100% !important;
+			object-fit: cover !important;
+		}
+
+		/* ── BADGE ── */
+		.producto-badge {
+			position: absolute !important;
+			top: 12px !important;
+			left: 12px !important;
+			background: var(--zoox-amarillo) !important;
+			color: var(--zoox-negro) !important;
+			font-size: 0.6rem !important;
+			font-weight: 700 !important;
+			letter-spacing: 0.1em !important;
+			text-transform: uppercase !important;
+			padding: 4px 10px !important;
+			border-radius: 20px !important;
+		}
+
+		/* ── INFO CARD ── */
+		.producto-info { padding: 0.875em !important; }
+		.producto-marca {
+			font-size: 0.65rem !important;
+			color: var(--zoox-muted) !important;
+			letter-spacing: 0.1em !important;
+			margin: 0 0 0.2em 0 !important;
+			text-transform: uppercase !important;
+		}
+		.producto-nombre {
+			font-size: 0.9rem !important;
+			color: var(--zoox-ebano) !important;
+			font-family: 'DM Sans', sans-serif !important;
+			font-weight: 500 !important;
+			margin: 0 0 0.4em 0 !important;
+		}
+		.producto-precio {
+			font-size: 1.1rem !important;
+			font-weight: 700 !important;
+			color: var(--zoox-ebano) !important;
+			margin: 0 0 0.2em 0 !important;
+			line-height: 1 !important;
+			font-family: 'DM Sans', sans-serif !important;
+		}
+		.producto-precio small {
+			font-size: 0.7rem !important;
+			vertical-align: super !important;
+			font-weight: 400 !important;
+		}
+		.producto-tallas {
+			font-size: 0.72rem !important;
+			color: var(--zoox-ebano) !important;
+			margin: 0 !important;
+		}
+
+		/* ── MODAL ── */
+		.modal-overlay {
+			display: none !important;
+			position: fixed !important;
+			inset: 0 !important;
+			background: rgba(0,0,0,0.6) !important;
+			z-index: 9998 !important;
+			align-items: center !important;
+			justify-content: center !important;
+			padding: 1rem !important;
+		}
+		.modal-overlay.active { display: flex !important; }
+		.modal-box {
+			background: var(--zoox-blanco) !important;
+			border-radius: 8px !important;
+			max-width: 860px !important;
+			width: 100% !important;
+			max-height: 90vh !important;
+			overflow-y: auto !important;
+			display: grid !important;
+			grid-template-columns: 1fr 1fr !important;
+			position: relative !important;
+		}
+		.modal-cerrar {
+			position: absolute !important;
+			top: 1rem !important;
+			right: 1rem !important;
+			background: none !important;
+			border: none !important;
+			font-size: 1.2rem !important;
+			cursor: pointer !important;
+			color: #333 !important;
+			z-index: 1 !important;
+		}
+		.modal-galeria {
+			padding: 1.5rem !important;
+			display: flex !important;
+			flex-direction: column !important;
+			gap: 10px !important;
+		}
+		.modal-img-principal {
+			width: 100% !important;
+			aspect-ratio: 1 / 1 !important;
+			object-fit: cover !important;
+			border-radius: 4px !important;
+			background: #f5f5f5 !important;
+		}
+		.modal-miniaturas {
+			display: flex !important;
+			gap: 8px !important;
+			flex-wrap: wrap !important;
+		}
+		.modal-miniatura {
+			width: 60px !important;
+			height: 60px !important;
+			object-fit: cover !important;
+			border-radius: 4px !important;
+			cursor: pointer !important;
+			border: 2px solid transparent !important;
+			transition: border-color 0.2s !important;
+		}
+		.modal-miniatura:hover,
+		.modal-miniatura.active { border-color: var(--zoox-ebano) !important; }
+		.modal-detalle {
+			padding: 2rem 1.5rem !important;
+			display: flex !important;
+			flex-direction: column !important;
+			gap: 0.75rem !important;
+		}
+		.modal-marca {
+			font-size: 0.65rem !important;
+			color: var(--zoox-muted) !important;
+			letter-spacing: 0.1em !important;
+			text-transform: uppercase !important;
+			margin: 0 !important;
+		}
+		.modal-nombre {
+			font-size: 1.3rem !important;
+			font-weight: 600 !important;
+			color: var(--zoox-ebano) !important;
+			margin: 0 !important;
+			font-family: 'DM Sans', sans-serif !important;
+		}
+		.modal-precio {
+			font-size: 1.6rem !important;
+			font-weight: 700 !important;
+			color: var(--zoox-ebano) !important;
+			margin: 0 !important;
+		}
+		.modal-desc {
+			font-size: 0.82rem !important;
+			color: #666 !important;
+			line-height: 1.7 !important;
+			margin: 0 !important;
+		}
+		.modal-label {
+			font-size: 0.75rem !important;
+			font-weight: 600 !important;
+			color: var(--zoox-ebano) !important;
+			margin: 0 0 0.5em 0 !important;
+			text-transform: uppercase !important;
+			letter-spacing: 0.05em !important;
+		}
+		.tallas-grid {
+			display: flex !important;
+			gap: 8px !important;
+			flex-wrap: wrap !important;
+		}
+		.talla-opcion {
+			border: 1.5px solid var(--zoox-ebano) !important;
+			background: none !important;
+			padding: 6px 14px !important;
+			font-size: 0.8rem !important;
+			cursor: pointer !important;
+			border-radius: 2px !important;
+			font-family: inherit !important;
+			transition: all 0.2s !important;
+		}
+		.talla-opcion:hover,
+		.talla-opcion.active {
+			border-color: var(--zoox-ebano) !important;
+			background: var(--zoox-ebano) !important;
+			color: var(--zoox-blanco) !important;
+		}
+		.btn-pedir-modal {
+			display: block !important;
+			background: var(--zoox-amarillo) !important;
+			color: var(--zoox-ebano) !important;
+			text-align: center !important;
+			padding: 0.9em !important;
+			border-radius: 4px !important;
+			font-weight: 700 !important;
+			font-size: 0.85rem !important;
+			letter-spacing: 0.05em !important;
+			text-decoration: none !important;
+			transition: background 0.2s !important;
+		}
+		.btn-pedir-modal:hover {
+			background: #e5a30d !important;
+			color: var(--zoox-ebano) !important;
+		}
+		.modal-entrega {
+			font-size: 0.72rem !important;
+			color: var(--zoox-muted) !important;
+			margin: 0 !important;
+			text-align: center !important;
+		}
+
+		/* ── FAQ ── */
+		#faq-polos {
+			background-color: var(--zoox-gris) !important;
+		}
+		#faq-polos .inner {
+			text-align: center !important;
+			max-width: 800px !important;
+			margin: 0 auto !important;
+		}
+		#faq-polos header.major h2 {
+			color: var(--zoox-ebano) !important;
+			border-color: rgba(80,92,71,0.3) !important;
+		}
+		#faq-polos header.major p { color: var(--zoox-ebano) !important; }
+
+		.faq-grid {
+			margin-top: 2em !important;
+			text-align: left !important;
+		}
+		.faq-item {
+			border-bottom: 1px solid rgba(80,92,71,0.15) !important;
+		}
+
+		.faq-pregunta {
+			width: 100% !important;
+			background: none !important;
+			border: none !important;
+			box-shadow: none !important;
+			outline: none !important;
+			-webkit-appearance: none !important;
+			font-size: 0.88rem !important;
+			font-family: inherit !important;
+			letter-spacing: 0.05em !important;
+			text-align: left !important;
+			padding: 1.2em 0 !important;
+			cursor: pointer !important;
+			display: flex !important;
+			justify-content: space-between !important;
+			align-items: center !important;
+			color: var(--zoox-ebano) !important;
+			transition: color 0.2s !important;
+		}
+		.faq-pregunta:hover,
+		.faq-pregunta:hover .faq-icono { color: var(--zoox-amarillo) !important; }
+		.faq-pregunta:focus { box-shadow: none !important; outline: none !important; }
+
+		.faq-icono {
+			font-size: 1.4rem !important;
+			font-weight: 300 !important;
+			color: var(--zoox-ebano) !important;
+			transition: transform 0.3s, color 0.2s !important;
+			flex-shrink: 0 !important;
+		}
+		.faq-respuesta {
+			display: none !important;
+			padding: 0 0 1.2em 0 !important;
+		}
+		.faq-respuesta p {
+			color: var(--zoox-muted) !important;
+			font-size: 0.82rem !important;
+			line-height: 1.8 !important;
+			margin: 0 !important;
+		}
+		.faq-item.active .faq-respuesta { display: block !important; }
+		.faq-item.active .faq-icono    { transform: rotate(45deg) !important; }
+
+		/* ── FOOTER ── */
+		#footer {
+			background-color: var(--zoox-negro) !important;
+			padding: 3em 2em !important;
+			text-align: center !important;
+			border-top: 1px solid rgba(255,182,15,0.15) !important;
+		}
+		.footer-inner {
+			display: flex !important;
+			flex-direction: column !important;
+			align-items: center !important;
+			gap: 1em !important;
+		}
+		.footer-logo  { height: 36px !important; width: auto !important; opacity: 0.85 !important; }
+		.footer-copy  { color: #E5E5E5 !important; font-size: 0.7rem !important; letter-spacing: 0.08em !important; margin: 0 !important; }
+		.footer-redes { list-style: none !important; padding: 0 !important; margin: 0 !important; display: flex !important; gap: 1.5em !important; }
+		.footer-redes li a { color: #E5E5E5 !important; font-size: 1.2rem !important; border: none !important; transition: color 0.3s !important; }
+		.footer-redes li a:hover { color: var(--zoox-amarillo) !important; }
+
+		/* ── WHATSAPP FLOTANTE ── */
+		.whatsapp-float {
+			position: fixed !important;
+			bottom: 2rem !important;
+			right: 2rem !important;
+			background: #25D366 !important;
+			color: var(--zoox-blanco) !important;
+			border: none !important;
+			border-radius: 50px !important;
+			padding: 0.75em 1.25em !important;
+			display: flex !important;
+			align-items: center !important;
+			gap: 0.5em !important;
+			font-size: 0.8rem !important;
+			font-weight: 600 !important;
+			letter-spacing: 0.05em !important;
+			text-transform: uppercase !important;
+			box-shadow: 0 4px 20px rgba(37,211,102,0.4) !important;
+			z-index: 9999 !important;
+			transition: transform 0.3s, box-shadow 0.3s !important;
+			text-decoration: none !important;
+		}
+		.whatsapp-float:hover {
+			transform: translateY(-3px) !important;
+			box-shadow: 0 8px 25px rgba(37,211,102,0.5) !important;
+			color: var(--zoox-blanco) !important;
+			border: none !important;
+		}
+
+		/* ── RESPONSIVE ── */
+		@media screen and (max-width: 768px) {
+			.productos-grid { grid-template-columns: 1fr !important; }
+		}
+		@media screen and (max-width: 640px) {
+			.modal-box { grid-template-columns: 1fr !important; }
+		}
+	</style>
+</head>
+
+<body class="landing is-preload">
+<div id="page-wrapper">
+
+	<!-- HEADER -->
+	<header id="header" class="alt">
+		<h1><a href="index.html"><img src="images/logo-zoox.png" alt="ZOOX Pet Studio" style="height:40px; width:auto;" /></a></h1>
+		<nav id="nav">
+			<ul>
+				<li class="special">
+					<a href="#menu" class="menuToggle"><span>Menu</span></a>
+					<div id="menu">
+						<ul>
+							<li><a href="../index.html">Inicio</a></li>
+							<li><a href="../experiencia/index.html">Experiencia</a></li>
+							<li><a href="../galeria.html">Galería</a></li>
+							<li><a href="index.html">ZOOX Art</a></li>
+							<li><a href="../brandpet.html">Brand Pet</a></li>
+							<li><a href="../contacto.html">Contacto</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- BANNER -->
+	<section id="banner">
+		<div class="inner">
+			<h2>ZOOX <span>Art</span></h2>
+			<p>Productos únicos con la esencia de tu mascota.<br/>Diseñados para durar, hechos para destacar.</p>
+			<ul class="actions special">
+				<li><a href="#polos" class="button primary scrolly">Ver productos</a></li>
+			</ul>
+		</div>
+		<a href="#presentacion" class="more scrolly">Descubrir</a>
+	</section>
+
+	<!-- PRESENTACIÓN -->
+	<section id="presentacion" class="wrapper style2 special">
+		<div class="inner">
+			<header class="major"><h2>Arte que te acompaña</h2></header>
+			<p>En ZOOX creemos que no hay mejor manera de expresar tu amor por tu mascota que con productos personalizados. Todas nuestras creaciones son completamente exclusivas para ti y no están disponibles en ningún otro lugar del mundo.</p>
+			<p>Desde cumpleaños y aniversarios hasta regalos navideños, somos tu destino de personalización número uno — productos únicos de alta calidad con diseños irrepetibles, como tus peludos amigos.</p>
+		</div>
+	</section>
+
+	<!-- SEPARADOR -->
+	<div class="seccion-separador">
+		<h2>Polos ZOOX</h2>
+		<p>Lleva a tu mascota contigo a donde vayas.</p>
+	</div>
+
+	<!-- SECCIÓN POLOS -->
+	<section id="polos">
+		<div class="inner">
+			<header class="major">
+				<h2>Nuestros Polos</h2>
+				<p>Algodón Pima. Estampado DTF. Diseño exclusivo con la foto de tu mascota.</p>
+			</header>
+
+			<!-- CARDS -->
+			<div class="productos-grid">
+
+				<div class="producto-card" onclick="abrirModal('negro-sm')">
+					<div class="producto-imagen">
+						<img src="../images/polo-negro-modelo.jpg" alt="Polo ZOOX Negro" />
+					</div>
+					<div class="producto-info">
+						<p class="producto-marca">ZOOX PET STUDIO</p>
+						<h3 class="producto-nombre">Polo ZOOX Negro</h3>
+						<p class="producto-precio"><small>S/</small>65</p>
+						<p class="producto-tallas">Tallas S · M</p>
+					</div>
+				</div>
+
+				<div class="producto-card" onclick="abrirModal('negro-lxl')">
+					<div class="producto-imagen">
+						<img src="../images/polo-negro-modelo.jpg" alt="Polo ZOOX Negro" />
+					</div>
+					<div class="producto-info">
+						<p class="producto-marca">ZOOX PET STUDIO</p>
+						<h3 class="producto-nombre">Polo ZOOX Negro</h3>
+						<p class="producto-precio"><small>S/</small>70</p>
+						<p class="producto-tallas">Tallas L · XL</p>
+					</div>
+				</div>
+
+				<div class="producto-card" onclick="abrirModal('pack')">
+					<div class="producto-imagen">
+						<img src="../images/polo-pack-modelo.jpg" alt="Pack 3 Polos ZOOX" />
+						<span class="producto-badge">🔥 Oferta</span>
+					</div>
+					<div class="producto-info">
+						<p class="producto-marca">ZOOX PET STUDIO</p>
+						<h3 class="producto-nombre">Pack 3 Polos ZOOX</h3>
+						<p class="producto-precio"><small>S/</small>175</p>
+						<p class="producto-tallas">Tallas a elección</p>
+					</div>
+				</div>
+
+			</div><!-- /.productos-grid -->
+		</div><!-- /.inner -->
+	</section><!-- /#polos -->
+
+	<!-- MODAL -->
+	<div id="modalProducto" class="modal-overlay" onclick="cerrarModal(event)">
+		<div class="modal-box">
+			<button class="modal-cerrar" onclick="cerrarModalBtn()">✕</button>
+			<div class="modal-galeria">
+				<img id="modalImgPrincipal" src="" alt="" class="modal-img-principal" />
+				<div class="modal-miniaturas" id="modalMiniaturas"></div>
+			</div>
+			<div class="modal-detalle">
+				<p class="modal-marca">ZOOX PET STUDIO</p>
+				<h2 class="modal-nombre" id="modalNombre"></h2>
+				<p class="modal-precio" id="modalPrecio"></p>
+				<p class="modal-desc" id="modalDesc"></p>
+				<div class="modal-tallas">
+					<p class="modal-label">Selecciona tu talla:</p>
+					<div id="modalTallasOpciones" class="tallas-grid"></div>
+				</div>
+				<a id="modalBtnPedir" href="#" target="_blank" class="btn-pedir-modal">
+					Pedir por WhatsApp →
+				</a>
+				<p class="modal-entrega">🕐 Entrega en 7–10 días hábiles</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- FAQ -->
+	<section id="faq-polos" class="wrapper style3">
+		<div class="inner">
+			<header class="major">
+				<h2>Preguntas Frecuentes</h2>
+				<p>Todo lo que necesitas saber sobre los Polos ZOOX.</p>
+			</header>
+			<div class="faq-grid">
+
+				<div class="faq-item"><!-- verde (odd) -->
+					<button class="faq-pregunta" onclick="toggleFaq(this)">¿Puedo enviar fotos caseras?<span class="faq-icono">+</span></button>
+					<div class="faq-respuesta"><p>¡Claro que sí!, siempre y cuando estén bien logradas y enfocadas. Te sugerimos enviar la foto con fondo unicolor que contraste con el pelaje de tu hijo de cuatro patas.</p></div>
+				</div>
+
+				<div class="faq-item"><!-- amarillo (even) -->
+					<button class="faq-pregunta" onclick="toggleFaq(this)">¿Cuál es el material de la prenda?<span class="faq-icono">+</span></button>
+					<div class="faq-respuesta"><p>Polos básicos hechos con 100% algodón Pima. El estampado DTF permite una mayor vida útil y colores más vibrantes.</p></div>
+				</div>
+
+				<div class="faq-item"><!-- verde (odd) -->
+					<button class="faq-pregunta" onclick="toggleFaq(this)">¿Cuáles son los colores disponibles?<span class="faq-icono">+</span></button>
+					<div class="faq-respuesta"><p>Solo manejamos color negro, que permite que los diseños resalten en su mejor versión.</p></div>
+				</div>
+
+				<div class="faq-item"><!-- amarillo (even) -->
+					<button class="faq-pregunta" onclick="toggleFaq(this)">¿Puedo cambiar la talla si me equivoqué?<span class="faq-icono">+</span></button>
+					<div class="faq-respuesta"><p>Deberás enviar un correo a zoox.petstudio@gmail.com dentro de las 24 horas posteriores al pedido. Cambios posteriores no serán posibles.</p></div>
+				</div>
+
+				<div class="faq-item"><!-- verde (odd) -->
+					<button class="faq-pregunta" onclick="toggleFaq(this)">¿Los diseños son únicos?<span class="faq-icono">+</span></button>
+					<div class="faq-respuesta"><p>¡Absolutamente! Cada diseño se realiza basado en la imagen de tu mascota, por lo tanto es único e irrepetible.</p></div>
+				</div>
+
+				<div class="faq-item"><!-- amarillo (even) -->
+					<button class="faq-pregunta" onclick="toggleFaq(this)">¿Puedo reemplazar la foto que envié?<span class="faq-icono">+</span></button>
+					<div class="faq-respuesta"><p>Envía un correo a zoox.petstudio@gmail.com dentro de las 12 horas posteriores al pedido. Después de ese plazo no será posible el cambio.</p></div>
+				</div>
+
+			</div><!-- /.faq-grid -->
+		</div><!-- /.inner -->
+	</section><!-- /#faq-polos -->
+
+	<!-- FOOTER -->
+	<footer id="footer">
+		<div class="footer-inner">
+			<img src="images/logoblanco-zoox.png" alt="ZOOX Pet Studio" class="footer-logo" />
+			<p class="footer-copy">© 2026 · Lima, Perú · Todos los derechos reservados.</p>
+			<ul class="footer-redes">
+				<li><a href="https://instagram.com/zoox.petstudio" target="_blank"><i class="icon brands fa-instagram"></i></a></li>
+				<li><a href="https://facebook.com/zooxpetstudio" target="_blank"><i class="icon brands fa-facebook-f"></i></a></li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- WHATSAPP FLOTANTE -->
+	<a href="https://wa.me/51977325372?text=Hola%20ZOOX%2C%20tengo%20una%20consulta" target="_blank" class="whatsapp-float">
+		<i class="icon brands fa-whatsapp"></i>
+		<span>Conversemos</span>
+	</a>
+
+</div><!-- /#page-wrapper -->
+
+<!-- SCRIPTS -->
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/jquery.scrollex.min.js"></script>
+<script src="../assets/js/jquery.scrolly.min.js"></script>
+<script src="../assets/js/browser.min.js"></script>
+<script src="../assets/js/breakpoints.min.js"></script>
+<script src="../assets/js/util.js"></script>
+<script src="../assets/js/main.js"></script>
+
+<script>
+const productos = {
+	'negro-sm': {
+		nombre:   'Polo ZOOX Negro',
+		precio:   'S/ 65',
+		desc:     '100% algodón Pima. Estampado DTF en pecho o espalda con el diseño de tu mascota. Colores vibrantes y larga duración.',
+		tallas:   ['S', 'M'],
+		imagenes: ['images/polo-negro-01.jpg', 'images/polo-negro-02.jpg', 'images/polo-negro-03.jpg'],
+		waText:   'Hola ZOOX, quiero pedir:%0A- Producto: Polo ZOOX Negro%0A- Talla: '
+	},
+	'negro-lxl': {
+		nombre:   'Polo ZOOX Negro',
+		precio:   'S/ 70',
+		desc:     '100% algodón Pima. Estampado DTF en pecho o espalda con el diseño de tu mascota. Colores vibrantes y larga duración.',
+		tallas:   ['L', 'XL'],
+		imagenes: ['images/polo-negro-01.jpg', 'images/polo-negro-02.jpg', 'images/polo-negro-03.jpg'],
+		waText:   'Hola ZOOX, quiero pedir:%0A- Producto: Polo ZOOX Negro%0A- Talla: '
+	},
+	'pack': {
+		nombre:   'Pack 3 Polos ZOOX',
+		precio:   'S/ 175',
+		desc:     '3 polos con el mismo diseño personalizado. Tallas independientes por polo. Envío incluido. Ideal para regalar.',
+		tallas:   ['S', 'M', 'L', 'XL'],
+		imagenes: ['images/polo-pack-01.jpg', 'images/polo-pack-02.jpg'],
+		waText:   'Hola ZOOX, quiero pedir:%0A- Producto: Pack 3 Polos ZOOX%0A- Tallas: '
+	}
+};
+
+let tallaSeleccionada = '';
+
+function abrirModal(id) {
+	const p = productos[id];
+	tallaSeleccionada = '';
+
+	document.getElementById('modalNombre').textContent = p.nombre;
+	document.getElementById('modalPrecio').textContent = p.precio;
+	document.getElementById('modalDesc').textContent   = p.desc;
+	document.getElementById('modalImgPrincipal').src   = p.imagenes[0];
+
+	const mins = document.getElementById('modalMiniaturas');
+	mins.innerHTML = '';
+	p.imagenes.forEach((img, i) => {
+		const m     = document.createElement('img');
+		m.src       = img;
+		m.className = 'modal-miniatura' + (i === 0 ? ' active' : '');
+		m.onclick   = () => {
+			document.getElementById('modalImgPrincipal').src = img;
+			document.querySelectorAll('.modal-miniatura').forEach(x => x.classList.remove('active'));
+			m.classList.add('active');
+		};
+		mins.appendChild(m);
+	});
+
+	const tallasDiv = document.getElementById('modalTallasOpciones');
+	tallasDiv.innerHTML = '';
+	p.tallas.forEach(t => {
+		const btn     = document.createElement('button');
+		btn.className = 'talla-opcion';
+		btn.textContent = t;
+		btn.onclick   = () => {
+			document.querySelectorAll('.talla-opcion').forEach(x => x.classList.remove('active'));
+			btn.classList.add('active');
+			tallaSeleccionada = t;
+			document.getElementById('modalBtnPedir').href =
+				`https://wa.me/51977325372?text=${p.waText}${t}`;
+		};
+		tallasDiv.appendChild(btn);
+	});
+
+	document.getElementById('modalBtnPedir').href =
+		`https://wa.me/51977325372?text=${p.waText}`;
+	document.getElementById('modalProducto').classList.add('active');
+	document.body.style.overflow = 'hidden';
+}
+
+function cerrarModalBtn() {
+	document.getElementById('modalProducto').classList.remove('active');
+	document.body.style.overflow = '';
+}
+
+function cerrarModal(e) {
+	if (e.target === document.getElementById('modalProducto')) cerrarModalBtn();
+}
+
+document.addEventListener('keydown', e => {
+	if (e.key === 'Escape') cerrarModalBtn();
+});
+
+function toggleFaq(btn) {
+	const item     = btn.parentElement;
+	const isActive = item.classList.contains('active');
+	document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+	if (!isActive) item.classList.add('active');
+}
+</script>
+
+</body>
+</html>
