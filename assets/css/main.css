@@ -1158,7 +1158,7 @@ input, select, textarea {
 			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
 			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
 			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
-			background-image: url("../../../images/bg");
+			background-image: url("../img/hero-zoox.png");
 			background-position: center;
 			background-size: cover;
 			background-repeat: no-repeat;
@@ -1298,7 +1298,7 @@ input, select, textarea {
 		}
 
 			#header .logo img {
-				max-width: 250px;
+				max-width: 160px;
 				height: auto;
 				display: block;
 			}
