@@ -1,501 +1,278 @@
 <!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Estudio creativo para mascotas</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="Estudio creativo especializado en mascotas y marcas petfriendly" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-<style>
+<!--
+	Galería | ZOOX Pet Studio
+-->
+<html lang="es">
+<head>
+	<title>Galería | ZOOX Pet Studio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-@font-face {
-    font-family: 'Campton';
-    src: url('assets/fonts/Campton-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-}
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 
-@font-face {
-    font-family: 'Campton';
-    src: url('assets/fonts/Campton-Light.woff2') format('woff2');
-    font-weight: 300;
-    font-style: normal;
-}
+	<style>
 
-@font-face {
-    font-family: 'Campton';
-    src: url('assets/fonts/Campton-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-}
+		/* ═══════════════════════════════════════
+		   VARIABLES ZOOX
+		═══════════════════════════════════════ */
+		:root {
+			--zoox-amarillo: #FFB60F;
+			--zoox-negro:    #0A0A0A;
+			--zoox-gris:     #E5E5E5;
+			--zoox-blanco:   #FFFFFF;
+			--zoox-muted:    #888888;
+		}
 
-/* Fuente global */
-body,
-input,
-textarea,
-select,
-button {
-    font-family: 'Campton', sans-serif !important;
-}
+		body, html, #page-wrapper {
+			overflow-x: hidden !important;
+			font-family: 'DM Sans', sans-serif !important;
+		}
 
-/* Logo */
-#header .logo {
-    width: auto;
-    height: 60px;
-    border: none !important;
-    border-radius: 0 !important;
-    background: none !important;
-    padding: 0;
-    margin-bottom: 1.5rem;
-}
+		/* ── MENÚ DESPLEGABLE ── */
+		#menu {
+			background: var(--zoox-amarillo) !important;
+		}
+		#menu ul > li > a {
+			color: var(--zoox-negro) !important;
+		}
+		#menu ul > li > a:hover {
+			color: var(--zoox-blanco) !important;
+		}
+		#menu ul > li {
+			border-top-color: rgba(0,0,0,0.15) !important;
+		}
 
-#header .logo img {
-    height: 60px;
-    width: auto;
-    display: block;
-    margin: 0 auto;
-}
+		/* ── FOOTER ── */
+		#footer {
+			background-color: var(--zoox-negro) !important;
+			padding: 3em 2em !important;
+			text-align: center !important;
+		}
+		.footer-inner {
+			display: flex !important;
+			flex-direction: column !important;
+			align-items: center !important;
+			gap: 1em !important;
+		}
+		.footer-logo {
+			height: 36px !important;
+			width: auto !important;
+			opacity: 0.85 !important;
+		}
+		.footer-copy {
+			color: #e5e5e5 !important;
+			font-size: 0.7rem !important;
+			letter-spacing: 0.08em !important;
+			margin: 0 !important;
+		}
+		.footer-redes {
+			list-style: none !important;
+			padding: 0 !important;
+			margin: 0 !important;
+			display: flex !important;
+			gap: 1.5em !important;
+		}
+		.footer-redes li a {
+			color: #e5e5e5 !important;
+			font-size: 1.2rem !important;
+			border: none !important;
+			transition: color 0.3s !important;
+		}
+		.footer-redes li a:hover {
+			color: var(--zoox-amarillo) !important;
+		}
 
-/* Botón dorado */
-.button.primary,
-input[type="submit"].primary {
-    background-color: #FFB60F !important;
-    color: #0a0a0a !important;
-}
+		/* ── BOTÓN WHATSAPP ── */
+		.whatsapp-float {
+			position: fixed !important;
+			bottom: 2rem !important;
+			right: 2rem !important;
+			background: #25D366 !important;
+			color: var(--zoox-blanco) !important;
+			border: none !important;
+			border-radius: 50px !important;
+			padding: 0.75em 1.25em !important;
+			display: flex !important;
+			align-items: center !important;
+			gap: 0.5em !important;
+			font-size: 0.8rem !important;
+			font-weight: 600 !important;
+			letter-spacing: 0.05em !important;
+			text-transform: uppercase !important;
+			box-shadow: 0 4px 20px rgba(37,211,102,0.4) !important;
+			z-index: 9999 !important;
+			transition: transform 0.3s, box-shadow 0.3s !important;
+			text-decoration: none !important;
+		}
+		.whatsapp-float:hover {
+			transform: translateY(-3px) !important;
+			box-shadow: 0 8px 25px rgba(37,211,102,0.5) !important;
+			color: var(--zoox-blanco) !important;
+			border: none !important;
+		}
 
-/* Header centrado */
-#header {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    min-height: 100vh !important;
-}
+	</style>
+</head>
 
-#header .content {
-    width: 100% !important;
-    text-align: center !important;
-}
+<body class="is-preload-0 is-preload-1 is-preload-2">
+<div id="page-wrapper">
 
-/* Texto principal */
-#header .content .inner p {
-    font-family: 'Campton', sans-serif !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.18em !important;
-    font-size: 0.9rem !important;
-    line-height: 1.6;
-    margin: 0;
-}
-
-/* Líneas blancas */
-#header::before,
-#header::after,
-#header > .content::before,
-#header > .content::after {
-    background: #FFFFFF !important;
-}
-
-/* Nav centrado */
-#header nav {
-    width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-}
-
-/* Grid menú */
-#header nav ul {
-    display: grid !important;
-    grid-template-columns: repeat(4, 1fr) !important;
-    width: auto !important;
-    max-width: 640px !important;
-    margin: 0 auto !important;
-}
-
-/* Links menú */
-#header nav ul li a {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-
-    padding: 0.75rem 0.5rem !important;
-
-    font-family: 'Campton', sans-serif !important;
-    font-weight: 500 !important;
-    letter-spacing: 0.14em !important;
-    text-transform: uppercase !important;
-
-    font-size: 0.78rem !important;
-    line-height: 1.3 !important;
-
-    color: #FFFFFF !important;
-    border-color: #FFB60F !important;
-
-    transition: all 0.3s ease;
-}
-
-/* Hover */
-#header nav ul li a:hover {
-    background-color: rgba(255, 182, 15, 0.18) !important;
-    color: #FFFFFF !important;
-    border-color: #FFB60F !important;
-}
-
-/* Fondo */
-#bg::after {
-    background-image: url("images/bg.png") !important;
-    background-position: center !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-}
-
-</style>
-	</head>
-	<body class="is-preload">
-
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<img src="images/logo-zoox.png" alt="ZOOX Pet Studio" />
-						</div>
-						<div class="content">
-							<div class="inner">
-							
-							<p style=font-family:'Campton', sans-serif; letter-spacing: 0.3em; font-weight: 700; font-size: 0.9rem;">
-    <p>
-ESTUDIO CREATIVO ESPECIALIZADO EN MASCOTAS <br />
-Y MARCAS PETFRIENDLY
-</p>
-							</div>
-						</div>
-<nav>
-    <ul>
-        <li><a href="experiencia/index.html">EXPERIENCIA</a></li>
-        <li><a href="zooxart/index.html">ZOOX ART</a></li>
-        <li><a href="brandspet/index.html">BRANDS PET</a></li>
-        <li><a href="galeria/index.html">GALERÍA</a></li>
-    </ul>
-</nav>
-					</header>
-
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Intro -->
-							<article id="intro">
-								<h2 class="major">Intro</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#work">awesome work</a>.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-							</article>
-
-						<!-- Work -->
-							<article id="work">
-								<h2 class="major">Work</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-								<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
-							</article>
-
-						<!-- About -->
-							<article id="about">
-								<h2 class="major">About</h2>
-								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-								<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
-							</article>
-
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major">Contact</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</article>
-
-						<!-- Elements -->
-							<article id="elements">
-								<h2 class="major">Elements</h2>
-
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
-
-								<section>
-									<h3 class="major">Lists</h3>
-
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										
-									</ul>
-
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
-
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-
-							</article>
-
+	<!-- ── HEADER ── -->
+	<header id="header" class="alt">
+		<h1>
+			<a href="../index.html">
+				<img src="images/logo-zoox.png" alt="ZOOX Pet Studio" style="height:40px; width:auto;" />
+			</a>
+		</h1>
+		<nav id="nav">
+			<ul>
+				<li class="special">
+					<a href="#menu" class="menuToggle"><span>Menu</span></a>
+					<div id="menu">
+						<ul>
+							<li><a href="../index.html">Inicio</a></li>
+							<li><a href="../experiencia/index.html">Experiencia</a></li>
+							<li><a href="index.html">Galería</a></li>
+							<li><a href="../zooxart/zooxart.html">ZOOX Art</a></li>
+							<li><a href="../brandspet.html">Brand Pet</a></li>
+							<li><a href="contacto.html">Contacto</a></li>
+						</ul>
 					</div>
+				</li>
+			</ul>
+		</nav>
+	</header>
 
-				
+	<!-- ── BANNER ── -->
+	<section id="banner">
+		<div class="inner">
+			<h2>Galería</h2>
+			<p>
+				Momentos que se volvieron inmortales.<br />
+				Cada imagen, una historia única<br />
+				capturada con mirada de autor.
+			</p>
+		</div>
+		<a href="#main" class="more scrolly">Ver galería</a>
+	</section>
 
-			</div>
+	<!-- ── GALERÍA ORIGINAL (estructura Lens intacta) ── -->
+	<div id="main">
 
-	<!-- BG -->
-    <div id="bg"></div>
+		<!-- Header interno del Lens -->
+		<header id="header">
+			<h1>Galería</h1>
+			<h2 style="color:#e5e5e5">Una muestra de momentos que se volvieron inmortales.</h2>
+			<p>Aquí encontrarás fotos, elegantes, divertidas y muy creativas, un regalo ideal para tu mascota. Como fotógrafo profesional, apuesto por un retrato de autor y doy mi visión artística sobre el modelo canino.</p>
+		</header>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<!-- Thumbnails — estructura Lens original + 6 nuevas casillas -->
+		<section id="thumbnails">
 
-	</body>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox1.png" data-position="left center"><img src="images/thumbs/zoox1.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox2.png"><img src="images/thumbs/zoox2.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox3.png" data-position="top center"><img src="images/thumbs/zoox3.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox4.png"><img src="images/thumbs/zoox4.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox5.png" data-position="top center"><img src="images/thumbs/zoox5.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox6.png"><img src="images/thumbs/zoox6.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox7.png"><img src="images/thumbs/zoox7.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox8.png"><img src="images/thumbs/zoox8.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox9.png"><img src="images/thumbs/zoox9.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox10.png"><img src="images/thumbs/zoox10.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox11.png"><img src="images/thumbs/zoox11.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox12.png"><img src="images/thumbs/zoox12.png" alt="" /></a>
+			</article>
+
+			<!-- 6 casillas nuevas (lado derecho, misma estructura) -->
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox13.png"><img src="images/thumbs/zoox13.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox14.png"><img src="images/thumbs/zoox14.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox15.png"><img src="images/thumbs/zoox15.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox16.png"><img src="images/thumbs/zoox16.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox17.png"><img src="images/thumbs/zoox17.png" alt="" /></a>
+			</article>
+			<article>
+				<a class="thumbnail" href="images/fulls/zoox18.png"><img src="images/thumbs/zoox18.png" alt="" /></a>
+			</article>
+
+		</section>
+
+	</div><!-- /#main -->
+
+	<!-- ── FOOTER ── -->
+	<footer id="footer">
+		<div class="footer-inner">
+			<img src="images/logoblanco-zoox.png" alt="ZOOX Pet Studio" class="footer-logo" />
+			<p class="footer-copy">© 2026 · Lima, Perú · Todos los derechos reservados.</p>
+			<ul class="footer-redes">
+				<li>
+					<a href="https://instagram.com/zoox.petstudio" target="_blank" aria-label="Instagram">
+						<i class="icon brands fa-instagram"></i>
+					</a>
+				</li>
+				<li>
+					<a href="https://facebook.com/zooxpetstudio" target="_blank" aria-label="Facebook">
+						<i class="icon brands fa-facebook-f"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Botón flotante WhatsApp -->
+	<a href="https://wa.me/51977325372?text=Hola%20ZOOX%2C%20tengo%20una%20consulta"
+	   target="_blank"
+	   class="whatsapp-float"
+	   aria-label="WhatsApp">
+		<i class="icon brands fa-whatsapp"></i>
+		<span>Conversemos</span>
+	</a>
+
+</div><!-- /#page-wrapper -->
+
+<!-- Scripts — se agregan los de Spectral para nav/banner, más los originales del Lens -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
 </html>
