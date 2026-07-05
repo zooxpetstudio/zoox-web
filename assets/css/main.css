@@ -1291,15 +1291,16 @@ input, select, textarea {
 			}
 
 		#header .logo {
-			width: 5.5rem;
-			height: 5.5rem;
-			line-height: 5.5rem;
-			border: solid 1px #ffffff;
-			border-radius: 100%;
+			width: auto;
+			height: auto;
+			border: none;
+			border-radius: 0;
 		}
 
-			#header .logo .icon:before {
-				font-size: 2rem;
+			#header .logo img {
+				max-width: 250px;
+				height: auto;
+				display: block;
 			}
 
 		#header .content {
@@ -1441,13 +1442,12 @@ input, select, textarea {
 				}
 
 			#header .logo {
-				width: 4.75rem;
-				height: 4.75rem;
-				line-height: 4.75rem;
+				width: auto;
+				height: auto;
 			}
 
-				#header .logo .icon:before {
-					font-size: 1.75rem;
+				#header .logo img {
+					max-width: 120px;
 				}
 
 			#header .content .inner {
@@ -1661,6 +1661,29 @@ input, select, textarea {
 		}
 		
 		.whatsapp-float {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	width: 56px;
+	height: 56px;
+	background-color: #25D366;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+	z-index: 999;
+	transition: transform 0.2s ease;
+}
+.whatsapp-float:hover {
+	transform: scale(1.1);
+}
+.whatsapp-float i {
+	color: #FFFFFF;
+	font-size: 28px;
+}
+/* ===== ZOOX Custom ===== */
+.whatsapp-float {
 	position: fixed;
 	bottom: 20px;
 	right: 20px;
