@@ -48,9 +48,7 @@
   </style>
 
   <!-- Vendor CSS -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/css/fontawesome-all.min.css" rel="stylesheet">
 
   <!-- Main CSS -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -116,8 +114,8 @@
     padding: 70px 0;
   }
 }
-    /* ── HEADER ── */
-    #header-brands {
+    /* ── HEADER (patrón estándar: logo + nav #menu, igual que experiencia/index.html) ── */
+    #header {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 999;
@@ -128,90 +126,60 @@
       transition: background 0.35s ease, backdrop-filter 0.35s ease, padding 0.35s ease;
     }
 
-    #header-brands.scrolled {
+    #header.scrolled {
       background: rgba(10,10,10,0.92) !important;
       backdrop-filter: blur(14px) !important;
       padding: 12px 40px !important;
     }
 
-    .brands-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
+    #header h1 { margin: 0; }
 
-    .brands-logo .logo-text {
-      font-family: 'Cera GR', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      color: var(--zoox-blanco);
-      line-height: 1;
-    }
+    #header #nav > ul { list-style: none; margin: 0; padding: 0; }
 
-    .brands-logo .logo-text span {
-      color: var(--zoox-amarillo);
-    }
-
-    .brands-logo .logo-sub {
-      font-family: 'Cera GR', sans-serif;
-      font-size: 0.62rem;
-      letter-spacing: 0.18em;
-      color: var(--zoox-amarillo);
-      text-transform: uppercase;
-      display: block;
-      margin-top: 2px;
-    }
-
-    .brands-nav {
-      display: flex;
-      align-items: center;
-      gap: 36px;
-      list-style: none;
-      margin: 0; padding: 0;
-    }
-
-    .brands-nav a {
+    .menuToggle {
       font-family: 'Cera GR', sans-serif;
       font-size: 0.82rem;
-      font-weight: 400;
+      font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+      color: var(--zoox-blanco);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .menuToggle:hover { color: var(--zoox-amarillo); }
+
+    #menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10,10,10,0.97);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #menu.visible { display: flex; }
+
+    #menu ul {
+      list-style: none;
+      margin: 0; padding: 0;
+      text-align: center;
+    }
+
+    #menu ul li { margin: 18px 0; }
+
+    #menu ul a {
+      font-family: 'Cera GR', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
       color: var(--zoox-blanco);
       text-decoration: none;
       transition: color 0.2s;
     }
 
-    .brands-nav a:hover { color: var(--zoox-amarillo); }
-
-    .brands-nav .nav-cta {
-      background: var(--zoox-amarillo);
-      color: var(--zoox-negro) !important;
-      font-weight: 600;
-      padding: 9px 22px;
-      border-radius: 2px;
-      transition: opacity 0.2s;
-    }
-
-    .brands-nav .nav-cta:hover { opacity: 0.88; }
-
-    /* Mobile nav toggle */
-    .mobile-nav-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--zoox-blanco);
-      font-size: 1.6rem;
-      cursor: pointer;
-      padding: 4px;
-    }
-
-    @media (max-width: 900px) {
-      .brands-nav { display: none; }
-      .mobile-nav-btn { display: block; }
-      #header-brands { padding: 16px 20px; }
-    }
+    #menu ul a:hover { color: var(--zoox-amarillo); }
 
     /* ── HERO ── */
     #hero-brands {
@@ -372,6 +340,12 @@
     }
 
     .zbp-section-dark { background: var(--zoox-gris); }
+    #faq .faq-item { background: var(--zoox-blanco); border: 1px solid rgba(0,0,0,0.08); border-radius: 4px; margin-bottom: 10px; overflow: hidden; }
+    #faq .faq-pregunta { width: 100%; text-align: left; padding: 18px 22px; background: transparent; border: none; cursor: pointer; font-family: 'Cera GR', sans-serif; font-weight: 500; color: var(--zoox-texto); font-size: 0.98rem; display: flex; justify-content: space-between; align-items: center; }
+    #faq .faq-icono { font-size: 1.2rem; color: var(--zoox-muted-dk); transition: transform 0.2s; }
+    #faq .faq-item.active .faq-icono { transform: rotate(45deg); }
+    #faq .faq-respuesta { display: none; padding: 0 22px 20px; font-size: 0.9rem; color: var(--zoox-muted-dk); line-height: 1.7; }
+    #faq .faq-item.active .faq-respuesta { display: block; }
     .zbp-section-mid  { background: var(--zoox-blanco); }
 
     .zbp-label {
@@ -916,21 +890,28 @@
 <body>
 
   <!-- ========== HEADER ========== -->
-  <header id="header-brands">
-    <a href="index.html" class="brands-logo">
-      <img src="assets/img/logo-zoox.png" alt="ZOOX Pet Studio" height="38">
-    </a>
-
-    <nav>
-      <ul class="brands-nav" id="brands-nav">
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#por-que-zoox">Por qué ZOOX</a></li>
-        <li><a href="#portafolio">Portafolio</a></li>
-        <li><a href="#proceso">Proceso</a></li>
+  <header id="header" class="alt">
+    <h1>
+      <a href="../index.html">
+        <img src="assets/img/logo-zoox.png" alt="ZOOX Pet Studio" style="height:40px; width:auto;" />
+      </a>
+    </h1>
+    <nav id="nav">
+      <ul>
+        <li class="special">
+          <a href="#menu" class="menuToggle"><span>Menu</span></a>
+          <div id="menu">
+            <ul>
+              <li><a href="../index.html">Inicio</a></li>
+              <li><a href="../experiencia/index.html">Experiencia</a></li>
+              <li><a href="../galeria/index.html">Galería</a></li>
+              <li><a href="../zooxart/zooxart.html">ZOOX Art</a></li>
+              <li><a href="index.html">Brand Pet</a></li>
+              <li><a href="#contact-brands">Contacto</a></li>
+            </ul>
+          </div>
+        </li>
       </ul>
-      <button class="mobile-nav-btn" id="mobile-nav-btn" aria-label="Abrir menú">
-        <i class="bi bi-list"></i>
-      </button>
     </nav>
   </header>
 
@@ -950,11 +931,11 @@
   <section id="creatividad-section">
     <div class="container">
       <div style="max-width: 800px;">
-        <h2 data-aos="fade-up">La creatividad que <em>conecta</em></h2>
-        <p data-aos="fade-up" data-aos-delay="100">En ZOOX ayudamos a las marcas petfriendly a construir una identidad auténtica mediante branding, fotografía y contenido visual estratégico</p>
-        <p data-aos="fade-up" data-aos-delay="200">Creemos que cada imagen y cada decisión de comunicación deben transmitir el propósito de la marca, generar confianza y crear conexiones reales con las personas que consideran a sus mascotas parte de su familia.</p>
-        <p data-aos="fade-up" data-aos-delay="300">Transformamos la creatividad en una herramienta para diferenciar marcas, fortalecer su identidad y generar resultados.</p>
-        <p data-aos="fade-up" data-aos-delay="400">Somos el estudio creativo especializado en mascotas y marcas petfriendly.</p>
+        <h2>La creatividad que <em>conecta</em></h2>
+        <p>En ZOOX ayudamos a las marcas petfriendly a construir una identidad auténtica mediante branding, fotografía y contenido visual estratégico</p>
+        <p>Creemos que cada imagen y cada decisión de comunicación deben transmitir el propósito de la marca, generar confianza y crear conexiones reales con las personas que consideran a sus mascotas parte de su familia.</p>
+        <p>Transformamos la creatividad en una herramienta para diferenciar marcas, fortalecer su identidad y generar resultados.</p>
+        <p>Somos el estudio creativo especializado en mascotas y marcas petfriendly.</p>
       </div>
     </div>
   </section>
@@ -964,7 +945,7 @@
   <section id="servicios" class="zbp-section zbp-section-dark">
     <div class="container">
 
-      <div class="row mb-60" data-aos="fade-up">
+      <div class="row mb-60">
         <div class="col-lg-7">
           <span class="zbp-label">Qué hacemos</span>
           <h2 class="zbp-title">Producción visual<br><em>especializada en pets</em></h2>
@@ -975,49 +956,49 @@
 
       <div class="row gy-4">
 
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-4 col-md-6">
           <div class="service-card">
-            <div class="icon"><i class="bi bi-camera"></i></div>
+            <div class="icon"><i class="fas fa-camera"></i></div>
             <h4>Fotografía de Producto Pet</h4>
             <p>Sesiones de producto con mascotas reales. Imágenes que convierten en e-commerce, catálogos y redes sociales.</p>
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-4 col-md-6">
           <div class="service-card">
-            <div class="icon"><i class="bi bi-play-circle"></i></div>
+            <div class="icon"><i class="fas fa-play-circle"></i></div>
             <h4>Contenido para Redes Sociales</h4>
             <p>Reels, stories, carruseles y posts diseñados con estrategia. Producción mensual o por campaña.</p>
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="col-lg-4 col-md-6">
           <div class="service-card">
-            <div class="icon"><i class="bi bi-brush"></i></div>
+            <div class="icon"><i class="fas fa-paint-brush"></i></div>
             <h4>Diseño Gráfico & Branding</h4>
             <p>Identidad visual, packaging, materiales y piezas de comunicación con coherencia de marca.</p>
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="col-lg-4 col-md-6">
           <div class="service-card">
-            <div class="icon"><i class="bi bi-megaphone"></i></div>
+            <div class="icon"><i class="fas fa-bullhorn"></i></div>
             <h4>Campañas de Marketing Pet</h4>
             <p>Estrategia + producción de contenido para lanzamientos, fechas especiales y activaciones de marca.</p>
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+        <div class="col-lg-4 col-md-6">
           <div class="service-card">
-            <div class="icon"><i class="bi bi-film"></i></div>
+            <div class="icon"><i class="fas fa-film"></i></div>
             <h4>Video Institucional & Spots</h4>
             <p>Videos cortos y spots publicitarios pensados para digital: narrativos, emocionales, efectivos.</p>
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+        <div class="col-lg-4 col-md-6">
           <div class="service-card">
-            <div class="icon"><i class="bi bi-box-seam"></i></div>
+            <div class="icon"><i class="fas fa-box"></i></div>
             <h4>Pack Mensual de Contenido</h4>
             <p>Servicio recurrente con calendario, producción y entrega de activos digitales listos para publicar.</p>
           </div>
@@ -1032,7 +1013,7 @@
     <div class="container">
       <div class="row gy-5 align-items-center">
 
-        <div class="col-lg-6" data-aos="fade-right">
+        <div class="col-lg-6">
           <span class="zbp-label">Por qué ZOOX Brands</span>
           <h2 class="zbp-title">No le vendemos a<br>todos. <em>Solo a marcas</em><br><em>que lo merecen.</em></h2>
           <div class="zbp-divider"></div>
@@ -1070,9 +1051,9 @@
           </div>
         </div>
 
-        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+        <div class="col-lg-6">
           <div class="brand-visual-block">
-            <i class="bi bi-image"></i>
+            <i class="fas fa-image"></i>
             <span>Imagen de portafolio brands</span>
           </div>
         </div>
@@ -1083,18 +1064,18 @@
 
   <!-- ========== PORTAFOLIO ========== -->
   <section id="portafolio" class="zbp-section zbp-section-dark" style="padding-bottom: 0;">
-    <div class="container" data-aos="fade-up">
+    <div class="container">
       <span class="zbp-label">Portafolio</span>
       <h2 class="zbp-title" style="margin-bottom: 12px;">Trabajo reciente<br>para <em>marcas petfriendly</em></h2>
       <div class="zbp-divider"></div>
     </div>
 
-    <div class="portfolio-grid" data-aos="fade-up" data-aos-delay="100" style="margin-top: 60px;">
+    <div class="portfolio-grid" style="margin-top: 60px;">
 
       <!-- Items: reemplazar src con imágenes reales -->
       <div class="portfolio-item-brands">
         <div class="portfolio-placeholder">
-          <i class="bi bi-camera"></i>
+          <i class="fas fa-camera"></i>
           <span>Proyecto 01</span>
         </div>
         <div class="portfolio-item-hover">
@@ -1105,7 +1086,7 @@
 
       <div class="portfolio-item-brands">
         <div class="portfolio-placeholder">
-          <i class="bi bi-play-circle"></i>
+          <i class="fas fa-play-circle"></i>
           <span>Proyecto 02</span>
         </div>
         <div class="portfolio-item-hover">
@@ -1116,7 +1097,7 @@
 
       <div class="portfolio-item-brands">
         <div class="portfolio-placeholder">
-          <i class="bi bi-brush"></i>
+          <i class="fas fa-paint-brush"></i>
           <span>Proyecto 03</span>
         </div>
         <div class="portfolio-item-hover">
@@ -1127,7 +1108,7 @@
 
       <div class="portfolio-item-brands">
         <div class="portfolio-placeholder">
-          <i class="bi bi-camera"></i>
+          <i class="fas fa-camera"></i>
           <span>Proyecto 04</span>
         </div>
         <div class="portfolio-item-hover">
@@ -1138,7 +1119,7 @@
 
       <div class="portfolio-item-brands">
         <div class="portfolio-placeholder">
-          <i class="bi bi-film"></i>
+          <i class="fas fa-film"></i>
           <span>Proyecto 05</span>
         </div>
         <div class="portfolio-item-hover">
@@ -1149,7 +1130,7 @@
 
       <div class="portfolio-item-brands">
         <div class="portfolio-placeholder">
-          <i class="bi bi-megaphone"></i>
+          <i class="fas fa-bullhorn"></i>
           <span>Proyecto 06</span>
         </div>
         <div class="portfolio-item-hover">
@@ -1165,7 +1146,7 @@
   <section id="proceso" class="zbp-section zbp-section-mid">
     <div class="container">
 
-      <div class="row mb-5" data-aos="fade-up">
+      <div class="row mb-5">
         <div class="col-lg-8">
           <span class="zbp-label">Cómo trabajamos</span>
           <h2 class="zbp-title">Proceso <em>claro</em>,<br>resultados <em>concretos</em></h2>
@@ -1173,7 +1154,7 @@
         </div>
       </div>
 
-      <div class="proceso-steps" data-aos="fade-up" data-aos-delay="100">
+      <div class="proceso-steps">
 
         <div class="paso">
           <div class="paso-num">01</div>
@@ -1206,118 +1187,94 @@
   <!-- ========== FAQ ========== -->
   <section id="faq" class="zbp-section zbp-section-dark">
     <div class="container">
-      <div class="row mb-5" data-aos="fade-up">
+      <div class="row mb-5">
         <div class="col-lg-7">
           <span class="zbp-label">Preguntas frecuentes</span>
           <h2 class="zbp-title">Lo que las marcas<br><em>suelen preguntar</em></h2>
           <div class="zbp-divider"></div>
         </div>
       </div>
-      <div class="row" data-aos="fade-up" data-aos-delay="100">
+      <div class="row">
         <div class="col-lg-9">
-          <div class="accordion" id="faqAccordion">
+          <div class="faq-grid">
 
-            <div class="accordion-item" style="background:var(--zoox-blanco); border:1px solid rgba(0,0,0,0.08); border-radius:4px; margin-bottom:10px;">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" style="font-family:'Cera GR',sans-serif; font-weight:500; color:var(--zoox-texto); background:transparent; font-size:0.98rem;">
-                  ¿Qué tipo de marcas trabajan con ZOOX Brands?
-                </button>
-              </h2>
-              <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body" style="font-size:0.9rem; color:var(--zoox-muted-dk); line-height:1.7;">
-                  Tiendas pet, clínicas veterinarias, alimentos, accesorios, grooming, hoteles para mascotas y cualquier empresa que tenga animales en su propuesta de valor.
-                </div>
+            <div class="faq-item">
+              <button class="faq-pregunta" onclick="toggleFaq(this)">
+                ¿Qué tipo de marcas trabajan con ZOOX Brands?
+                <span class="faq-icono">+</span>
+              </button>
+              <div class="faq-respuesta">
+                <p>Tiendas pet, clínicas veterinarias, alimentos, accesorios, grooming, hoteles para mascotas y cualquier empresa que tenga animales en su propuesta de valor.</p>
               </div>
             </div>
 
-            <div class="accordion-item" style="background:var(--zoox-blanco); border:1px solid rgba(0,0,0,0.08); border-radius:4px; margin-bottom:10px;">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" style="font-family:'Cera GR',sans-serif; font-weight:500; color:var(--zoox-texto); background:transparent; font-size:0.98rem;">
-                  ¿Trabajan solo en Lima?
-                </button>
-              </h2>
-              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body" style="font-size:0.9rem; color:var(--zoox-muted-dk); line-height:1.7;">
-                  Principalmente Lima (Miraflores, San Isidro, Barranco). Proyectos fuera de Lima se evalúan caso a caso.
-                </div>
+            <div class="faq-item">
+              <button class="faq-pregunta" onclick="toggleFaq(this)">
+                ¿Trabajan solo en Lima?
+                <span class="faq-icono">+</span>
+              </button>
+              <div class="faq-respuesta">
+                <p>Principalmente Lima (Miraflores, San Isidro, Barranco). Proyectos fuera de Lima se evalúan caso a caso.</p>
               </div>
             </div>
 
-            <div class="accordion-item" style="background:var(--zoox-blanco); border:1px solid rgba(0,0,0,0.08); border-radius:4px; margin-bottom:10px;">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" style="font-family:'Cera GR',sans-serif; font-weight:500; color:var(--zoox-texto); background:transparent; font-size:0.98rem;">
-                  ¿Cuánto tiempo toma un proyecto?
-                </button>
-              </h2>
-              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body" style="font-size:0.9rem; color:var(--zoox-muted-dk); line-height:1.7;">
-                  Depende del alcance. Una sesión fotográfica se entrega en 5–7 días hábiles. Un pack mensual de contenido tiene calendario fijo.
-                </div>
+            <div class="faq-item">
+              <button class="faq-pregunta" onclick="toggleFaq(this)">
+                ¿Cuánto tiempo toma un proyecto?
+                <span class="faq-icono">+</span>
+              </button>
+              <div class="faq-respuesta">
+                <p>Depende del alcance. Una sesión fotográfica se entrega en 5–7 días hábiles. Un pack mensual de contenido tiene calendario fijo.</p>
               </div>
             </div>
 
-            <div class="accordion-item" style="background:var(--zoox-blanco); border:1px solid rgba(0,0,0,0.08); border-radius:4px; margin-bottom:10px;">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" style="font-family:'Cera GR',sans-serif; font-weight:500; color:var(--zoox-texto); background:transparent; font-size:0.98rem;">
-                  ¿Necesito tener mi marca definida para trabajar con ustedes?
-                </button>
-              </h2>
-              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body" style="font-size:0.9rem; color:var(--zoox-muted-dk); line-height:1.7;">
-                  No. También ayudamos a marcas en etapa de construcción de identidad.
-                </div>
+            <div class="faq-item">
+              <button class="faq-pregunta" onclick="toggleFaq(this)">
+                ¿Necesito tener mi marca definida para trabajar con ustedes?
+                <span class="faq-icono">+</span>
+              </button>
+              <div class="faq-respuesta">
+                <p>No. También ayudamos a marcas en etapa de construcción de identidad.</p>
               </div>
             </div>
 
-            <div class="accordion-item" style="background:var(--zoox-blanco); border:1px solid rgba(0,0,0,0.08); border-radius:4px; margin-bottom:10px;">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" style="font-family:'Cera GR',sans-serif; font-weight:500; color:var(--zoox-texto); background:transparent; font-size:0.98rem;">
-                  ¿Puedo traer a mis propias mascotas para las sesiones?
-                </button>
-              </h2>
-              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body" style="font-size:0.9rem; color:var(--zoox-muted-dk); line-height:1.7;">
-                  Sí, de hecho lo recomendamos. Las mascotas de la marca generan más autenticidad.
-                </div>
+            <div class="faq-item">
+              <button class="faq-pregunta" onclick="toggleFaq(this)">
+                ¿Puedo traer a mis propias mascotas para las sesiones?
+                <span class="faq-icono">+</span>
+              </button>
+              <div class="faq-respuesta">
+                <p>Sí, de hecho lo recomendamos. Las mascotas de la marca generan más autenticidad.</p>
               </div>
             </div>
 
-            <div class="accordion-item" style="background:var(--zoox-blanco); border:1px solid rgba(0,0,0,0.08); border-radius:4px; margin-bottom:10px;">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" style="font-family:'Cera GR',sans-serif; font-weight:500; color:var(--zoox-texto); background:transparent; font-size:0.98rem;">
-                  ¿Hacen fotografía de producto sin mascotas?
-                </button>
-              </h2>
-              <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body" style="font-size:0.9rem; color:var(--zoox-muted-dk); line-height:1.7;">
-                  Sí, ofrecemos fotografía de producto estándar con composición y luz de estudio.
-                </div>
+            <div class="faq-item">
+              <button class="faq-pregunta" onclick="toggleFaq(this)">
+                ¿Hacen fotografía de producto sin mascotas?
+                <span class="faq-icono">+</span>
+              </button>
+              <div class="faq-respuesta">
+                <p>Sí, ofrecemos fotografía de producto estándar con composición y luz de estudio.</p>
               </div>
             </div>
 
-            <div class="accordion-item" style="background:var(--zoox-blanco); border:1px solid rgba(0,0,0,0.08); border-radius:4px; margin-bottom:10px;">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7" style="font-family:'Cera GR',sans-serif; font-weight:500; color:var(--zoox-texto); background:transparent; font-size:0.98rem;">
-                  ¿Cómo es el proceso de pago?
-                </button>
-              </h2>
-              <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body" style="font-size:0.9rem; color:var(--zoox-muted-dk); line-height:1.7;">
-                  50% al inicio del proyecto, 50% contra entrega. Facturamos con RUC.
-                </div>
+            <div class="faq-item">
+              <button class="faq-pregunta" onclick="toggleFaq(this)">
+                ¿Cómo es el proceso de pago?
+                <span class="faq-icono">+</span>
+              </button>
+              <div class="faq-respuesta">
+                <p>50% al inicio del proyecto, 50% contra entrega. Facturamos con RUC.</p>
               </div>
             </div>
 
-            <div class="accordion-item" style="background:var(--zoox-blanco); border:1px solid rgba(0,0,0,0.08); border-radius:4px; margin-bottom:10px;">
-              <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8" style="font-family:'Cera GR',sans-serif; font-weight:500; color:var(--zoox-texto); background:transparent; font-size:0.98rem;">
-                  ¿Cómo empezamos?
-                </button>
-              </h2>
-              <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                <div class="accordion-body" style="font-size:0.9rem; color:var(--zoox-muted-dk); line-height:1.7;">
-                  Escríbenos por WhatsApp o completa el formulario. En menos de 24h te contactamos con una propuesta.
-                </div>
+            <div class="faq-item">
+              <button class="faq-pregunta" onclick="toggleFaq(this)">
+                ¿Cómo empezamos?
+                <span class="faq-icono">+</span>
+              </button>
+              <div class="faq-respuesta">
+                <p>Escríbenos por WhatsApp o completa el formulario. En menos de 24h te contactamos con una propuesta.</p>
               </div>
             </div>
 
@@ -1330,17 +1287,17 @@
 <!-- ========== CONTACT ========== -->
   <section id="contact-brands">
     <div class="container">
-      <div style="text-align: center; margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto;" data-aos="fade-up">
+      <div style="text-align: center; margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto;">
         <h2 style="font-family:'Cera GR',sans-serif; font-size:clamp(2rem,5vw,3.8rem); font-weight:600; color:var(--zoox-texto); margin-bottom:18px; line-height:1.05;">¿Tu marca está lista<br>para <em style="font-style:normal; color:var(--zoox-amarillo);">conectar de verdad?</em></h2>
         <p style="font-size:1rem; color:var(--zoox-muted-dk); line-height:1.7; margin:0;">Cuéntanos qué necesitas. Te respondemos a la brevedad posible con una propuesta personalizada.</p>
       </div>
 
       <div class="contact-container">
         <!-- LEFT: INFO -->
-        <div class="contact-info" data-aos="fade-up">
+        <div class="contact-info">
           <div class="contact-item">
             <div class="contact-icon">
-              <i class="bi bi-geo-alt-fill"></i>
+              <i class="fas fa-map-marker-alt"></i>
             </div>
             <div>
               <h4>Ubicación</h4>
@@ -1350,7 +1307,7 @@
 
           <div class="contact-item">
             <div class="contact-icon">
-              <i class="bi bi-telephone-fill"></i>
+              <i class="fas fa-phone"></i>
             </div>
             <div>
               <h4>Llamar</h4>
@@ -1360,7 +1317,7 @@
 
           <div class="contact-item">
             <div class="contact-icon">
-              <i class="bi bi-envelope-fill"></i>
+              <i class="fas fa-envelope"></i>
             </div>
             <div>
               <h4>Email</h4>
@@ -1370,7 +1327,7 @@
         </div>
 
         <!-- RIGHT: FORM -->
-        <form class="contact-form" action="https://formsubmit.co/zoox.petstudio@gmail.com" method="POST" data-aos="fade-up" data-aos-delay="100">
+        <form class="contact-form" action="https://formsubmit.co/zoox.petstudio@gmail.com" method="POST">
           <input type="text" name="nombre" placeholder="Tu Nombre" required>
           <input type="email" name="email" placeholder="Tu Email" required>
           <input type="text" name="asunto" placeholder="Asunto">
@@ -1383,50 +1340,52 @@
   </section>
 
   <!-- ========== FOOTER ========== -->
-  <footer id="footer-brands" style="background:#0A0A0A; padding:52px 0 36px; text-align:center; border-top:1px solid rgba(255,255,255,0.06);">
-    <div class="container">
-      <img src="assets/img/logoblanco-zoox.png" alt="ZOOX Pet Studio" height="44" style="margin-bottom:20px; opacity:0.88;">
-      <p style="font-family:'Cera GR',sans-serif; font-size:0.78rem; color:rgba(255,255,255,0.35); letter-spacing:0.06em; margin-bottom:24px;">
-        © 2026 · Lima, Perú · Todos los derechos reservados
-      </p>
-      <div style="display:flex; justify-content:center; gap:32px;">
-        <a href="https://instagram.com/zoox.petstudio" target="_blank" aria-label="Instagram"
-           style="color:rgba(255,255,255,0.40); font-size:1.3rem; transition:color 0.2s;"
-           onmouseover="this.style.color='#FFB60F'" onmouseout="this.style.color='rgba(255,255,255,0.40)'">
-          <i class="bi bi-instagram"></i>
-        </a>
-        <a href="https://facebook.com/zooxpetstudio" target="_blank" aria-label="Facebook"
-           style="color:rgba(255,255,255,0.40); font-size:1.3rem; transition:color 0.2s;"
-           onmouseover="this.style.color='#FFB60F'" onmouseout="this.style.color='rgba(255,255,255,0.40)'">
-          <i class="bi bi-facebook"></i>
-        </a>
-      </div>
+  <footer id="footer">
+    <div class="footer-inner">
+      <img src="assets/img/logoblanco-zoox.png" alt="ZOOX Pet Studio" class="footer-logo" />
+      <p class="footer-copy">© 2026 · Lima, Perú · Todos los derechos reservados.</p>
+      <ul class="footer-redes">
+        <li>
+          <a href="https://instagram.com/zoox.petstudio" target="_blank" aria-label="Instagram">
+            <i class="icon brands fa-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://facebook.com/zooxpetstudio" target="_blank" aria-label="Facebook">
+            <i class="icon brands fa-facebook-f"></i>
+          </a>
+        </li>
+      </ul>
     </div>
   </footer>
 
-  <!-- Botón flotante CONVERSEMOS -->
+  <!-- Botón flotante WhatsApp -->
   <a href="https://wa.me/51977325372?text=Hola,%20quiero%20conocer%20ZOOX%20Brands%20Pet%20🐾"
      class="wa-float" target="_blank" aria-label="Conversemos">
-    <i class="bi bi-whatsapp"></i>
+    <i class="fab fa-whatsapp"></i>
     <span style="font-size:0.72rem; font-weight:600; letter-spacing:0.06em;">CONVERSEMOS</span>
   </a>
 
-  <!-- Vendor JS -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-
   <script>
-    // ── AOS init ──
-    AOS.init({ duration: 700, once: true, offset: 60 });
 
     // ── Header scroll ──
-    const header = document.getElementById('header-brands');
+    const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
       header.classList.toggle('scrolled', window.scrollY > 60);
     });
 
-    // ── Smooth scroll ──
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
+    // ── Menu toggle (#menu) ──
+    const menu = document.getElementById('menu');
+    document.querySelector('.menuToggle').addEventListener('click', (e) => {
+      e.preventDefault();
+      menu.classList.toggle('visible');
+    });
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => menu.classList.remove('visible'));
+    });
+
+    // ── Smooth scroll (anclas internas) ──
+    document.querySelectorAll('a[href^="#"]:not(.menuToggle)').forEach(a => {
       a.addEventListener('click', e => {
         const target = document.querySelector(a.getAttribute('href'));
         if (target) {
@@ -1435,16 +1394,15 @@
         }
       });
     });
+  </script>
 
-    // ── Mobile nav (basic toggle) ──
-    document.getElementById('mobile-nav-btn').addEventListener('click', () => {
-      const nav = document.getElementById('brands-nav');
-      if (nav.style.display === 'flex') {
-        nav.style.display = 'none';
-      } else {
-        nav.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(10,10,10,0.97);align-items:center;justify-content:center;gap:32px;z-index:1000;';
-      }
-    });
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const isActive = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      if (!isActive) item.classList.add('active');
+    }
   </script>
 
 </body>
