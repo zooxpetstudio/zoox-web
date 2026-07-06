@@ -375,15 +375,15 @@
     }
 
     .zbp-section-dark { background: var(--zoox-gris); }
-#faq .faq-grid { margin-top: 2em; text-align: left; }
+#faq .faq-grid { margin-top: 2em; text-align: left; }#faq .faq-grid { max-width: 700px; margin: 2em auto 0; }
 #faq .faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); background: none; border-radius: 0; margin-bottom: 0; }
-#faq .faq-pregunta { width: 100%; text-align: left; padding: 1.2em 0; background: none; border: none; cursor: pointer; font-family: 'Cera GR', sans-serif; font-weight: 600; color: var(--zoox-blanco); font-size: 0.95rem; letter-spacing: 0.03em; display: flex; justify-content: space-between; align-items: center; transition: color 0.3s; }
+#faq .faq-pregunta { width: 100%; text-align: left; padding: 1.2em 0; background: none; border: none; cursor: pointer; font-family: 'Cera GR', sans-serif; font-weight: 600; color: var(--zoox-negro); font-size: 0.95rem; letter-spacing: 0.03em; display: flex; justify-content: space-between; align-items: center; transition: color 0.3s; }
 #faq .faq-pregunta:hover { color: var(--zoox-amarillo); }
 #faq .faq-icono { font-size: 1.4rem; font-weight: 300; color: var(--zoox-amarillo); transition: transform 0.3s; flex-shrink: 0; }
 #faq .faq-item.active .faq-icono { transform: rotate(45deg); }
 #faq .faq-item.active .faq-pregunta { color: var(--zoox-amarillo); }
 #faq .faq-respuesta { display: none; padding: 0 0 1.2em 0; }
-#faq .faq-respuesta p { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.8; margin: 0; }
+#faq .faq-respuesta p { font-size: 0.85rem; color: var(--zoox-verde); line-height: 1.8; margin: 0; }
 #faq .faq-item.active .faq-respuesta { display: block; }
 
     .zbp-label {
@@ -836,53 +836,55 @@ margin-right: auto;
     }
     /* ── CONTACT SECTION ── */
 #contact-brands {
-  background: var(--zoox-blanco);
+  background: #0a0a0a;
   padding: 80px 0;
 }
 
+
+
 .contact-container {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 60px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 300px;
+  align-items: center;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .contact-info {
   display: flex;
-  flex-direction: column;
-  gap: 36px;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .contact-item {
   display: flex;
-  gap: 20px;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
 }
 
 .contact-icon {
-  width: 56px;
-  height: 56px;
-  background: var(--zoox-amarillo);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--zoox-negro);
-  font-size: 1.5rem;
-  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  font-size: 1rem;
 }
 
 .contact-item h4 {
   font-family: 'Cera GR', sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--zoox-texto);
+  color: var(--zoox-amarillo);
   margin: 0 0 4px;
 }
 
 .contact-item p {
   font-size: 0.95rem;
-  color: var(--zoox-muted-dk);
+  color: var(--zoox-blanco);
   margin: 0;
 }
 
@@ -1256,7 +1258,7 @@ margin-right: auto;
   <section id="faq" class="zbp-section zbp-section-dark">
     <div class="container">
       <div class="row mb-5">
-        <div class="col-lg-7">
+        <div class="col-lg-7" style="margin: 0 auto; text-align: center;">
           <span class="zbp-label">Preguntas frecuentes</span>
           <h2 class="zbp-title">Lo que las marcas<br><em>suelen preguntar</em></h2>
           <div class="zbp-divider"></div>
@@ -1356,11 +1358,22 @@ margin-right: auto;
   <section id="contact-brands">
     <div class="container">
       <div style="text-align: center; margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto;">
-        <h2 style="font-family:'Cera GR',sans-serif; font-size:clamp(2rem,5vw,3.8rem); font-weight:600; color:var(--zoox-texto); margin-bottom:18px; line-height:1.05;">¿Tu marca está lista<br>para <em style="font-style:normal; color:var(--zoox-amarillo);">crecer?</em></h2>
-        <p style="font-size:1rem; color:var(--zoox-muted-dk); line-height:1.7; margin:0;">Cuéntanos qué necesitas. Te respondemos a la brevedad posible con una propuesta personalizada.</p>
+        <h2 style="font-family:'Cera GR',sans-serif; font-size:clamp(2rem,5vw,3.8rem); font-weight:600; color:var(--zoox-blanco); margin-bottom:18px; line-height:1.05;">¿Tu marca está lista<br>para <em style="font-style:normal; color:var(--zoox-amarillo);">crecer?</em></h2>
+        <p style="font-size:1rem; color:var(--zoox-blanco); line-height:1.7; margin:0;">Cuéntanos qué necesitas. Te respondemos a la brevedad posible con una propuesta personalizada.</p>
       </div>
 
       <div class="contact-container">
+        <!-- RIGHT: FORM -->
+        <form class="contact-form" action="https://formsubmit.co/zoox.petstudio@gmail.com" method="POST">
+          <input type="text" name="nombre" placeholder="Tu Nombre" required>
+          <input type="email" name="email" placeholder="Tu Email" required>
+          <input type="text" name="asunto" placeholder="Asunto">
+          <textarea name="mensaje" placeholder="Tu Mensaje"></textarea>
+          <input type="hidden" name="_captcha" value="false">
+          <button type="submit">Enviar Mensaje</button>
+        </form>
+      </div>
+    </div>
         <!-- LEFT: INFO -->
         <div class="contact-info">
           <div class="contact-item">
@@ -1394,17 +1407,7 @@ margin-right: auto;
           </div>
         </div>
 
-        <!-- RIGHT: FORM -->
-        <form class="contact-form" action="https://formsubmit.co/zoox.petstudio@gmail.com" method="POST">
-          <input type="text" name="nombre" placeholder="Tu Nombre" required>
-          <input type="email" name="email" placeholder="Tu Email" required>
-          <input type="text" name="asunto" placeholder="Asunto">
-          <textarea name="mensaje" placeholder="Tu Mensaje"></textarea>
-          <input type="hidden" name="_captcha" value="false">
-          <button type="submit">Enviar Mensaje</button>
-        </form>
-      </div>
-    </div>
+        
     
   </section>
 
