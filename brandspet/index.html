@@ -145,41 +145,76 @@
       color: var(--zoox-blanco);
       text-decoration: none;
       display: inline-block;
+      
     }
 
     .menuToggle:hover { color: var(--zoox-amarillo); }
+    .hamburger {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 26px;
+  
+}
+.hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--zoox-blanco);
+  transition: background 0.2s;
+}
+.menuToggle:hover .hamburger span { background: var(--zoox-amarillo); }
 
-    #menu {
-      display: none;
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(10,10,10,0.97);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-    }
+#menu {
+  display: flex;
+  position: fixed;
+  top: 0; right: -400px; bottom: 0;
+  width: 380px;
+  background: var(--zoox-amarillo);
+  z-index: 1000;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 60px;
+  transition: right 0.35s ease;
+}
+#menu.visible { right: 0; }
 
-    #menu.visible { display: flex; }
+.menu-close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 1.8rem;
+  color: var(--zoox-negro);
+  cursor: pointer;
+  line-height: 1;
+}
 
-    #menu ul {
-      list-style: none;
-      margin: 0; padding: 0;
-      text-align: center;
-    }
+.menu-close:hover { color: var(--zoox-blanco); }
 
-    #menu ul li { margin: 18px 0; }
+#menu ul {
+  list-style: none;
+  margin: 0; padding: 0;
+  text-align: left;
+  width: 100%;
+}
 
-    #menu ul a {
-      font-family: 'Cera GR', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      color: var(--zoox-blanco);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
+#menu ul li {
+  margin: 0;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(10,10,10,0.25);
+}
 
-    #menu ul a:hover { color: var(--zoox-amarillo); }
+#menu ul a {
+  font-family: 'Cera GR', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--zoox-negro);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+#menu ul a:hover { color: var(--zoox-blanco); }
 
     /* ── HERO ── */
     #hero-brands {
@@ -355,6 +390,7 @@
       color: var(--zoox-amarillo);
       margin-bottom: 12px;
       display: block;
+      text-align: center;
     }
 
     .zbp-title {
@@ -364,11 +400,13 @@
       line-height: 1.05;
       color: var(--zoox-texto);
       margin-bottom: 20px;
+      text-align: center;
     }
 
     .zbp-title em {
       font-style: normal;
       color: var(--zoox-amarillo);
+      text-align: center;
     }
 
     .zbp-body {
@@ -376,9 +414,18 @@
       line-height: 1.75;
       color: var(--zoox-muted-dk);
       max-width: 540px;
+      text-align: center;
+      margin-left: auto;
+margin-right: auto;
     }
-
+.zbp-divider {
+  width: 60px;
+  height: 3px;
+  background: var(--zoox-amarillo);
+  margin: 0 auto 20px;
+}
     /* ── SERVICIOS ── */
+    
     .service-card {
       background: var(--zoox-blanco);
       border: 1px solid rgba(0,0,0,0.07);
@@ -387,7 +434,16 @@
       height: 100%;
       transition: border-color 0.25s, transform 0.25s;
     }
-
+#servicios .row.gy-4 {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+}
+@media (max-width: 768px) {
+  #servicios .row.gy-4 {
+    grid-template-columns: 1fr !important;
+  }
+}
     .service-card:hover {
       border-color: var(--zoox-amarillo);
       transform: translateY(-4px);
@@ -567,11 +623,13 @@
 
     /* ── PROCESO ── */
     .proceso-steps {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      position: relative;
-    }
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  max-width: 850px;
+  margin: 0 auto;
+  position: relative;
+}
 
     @media (max-width: 768px) {
       .proceso-steps { grid-template-columns: repeat(2, 1fr); }
@@ -616,7 +674,7 @@
       background: var(--zoox-negro);
       position: relative;
       z-index: 1;
-      margin-bottom: 22px;
+      margin-bottom: 14px;
     }
 
     .paso h5 {
@@ -691,40 +749,44 @@
     .btn-wa:hover { background: var(--zoox-amarillo); color: var(--zoox-negro); }
 
     /* ── FOOTER ── */
-    #footer-brands {
-      background: #050505;
-      padding: 40px 0 28px;
-      border-top: 1px solid rgba(255,255,255,0.06);
+    #footer {
+      background-color: var(--zoox-negro) !important;
+      padding: 3em 2em !important;
+      text-align: center !important;
     }
-
-    .footer-brands-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
+    .footer-inner {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 1em !important;
     }
-
-    .footer-brands-copy {
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.35);
-      letter-spacing: 0.05em;
+    .footer-logo {
+      height: 36px !important;
+      width: auto !important;
+      opacity: 0.85 !important;
     }
-
-    .footer-brands-copy a {
-      color: var(--zoox-amarillo);
-      text-decoration: none;
+    .footer-copy {
+      color: #e5e5e5 !important;
+      font-size: 0.7rem !important;
+      letter-spacing: 0.08em !important;
+      margin: 0 !important;
     }
-
-    .footer-social { display: flex; gap: 20px; }
-
-    .footer-social a {
-      color: rgba(255,255,255,0.35);
-      font-size: 1rem;
-      transition: color 0.2s;
+    .footer-redes {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      display: flex !important;
+      gap: 1.5em !important;
     }
-
-    .footer-social a:hover { color: var(--zoox-amarillo); }
+    .footer-redes li a {
+      color: #e5e5e5 !important;
+      font-size: 1.2rem !important;
+      border: none !important;
+      transition: color 0.3s !important;
+    }
+    .footer-redes li a:hover {
+      color: var(--zoox-amarillo) !important;
+    }
 
     /* ── FLOATING WA ── */
     .wa-float {
@@ -733,12 +795,12 @@
       right: 28px;
       z-index: 998;
       background: #25D366;
-      height: 48px;
-      padding: 0 20px;
-      border-radius: 50px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
       box-shadow: 0 4px 20px rgba(37,211,102,0.35);
       transition: transform 0.2s;
       text-decoration: none;
@@ -747,7 +809,7 @@
 
     .wa-float:hover { transform: scale(1.05); color: white; }
 
-    .wa-float i { font-size: 1.2rem; }
+    .wa-float i { font-size: 1.6rem; }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
@@ -767,6 +829,7 @@
       height: 2px;
       background: var(--zoox-amarillo);
       margin-bottom: 40px;
+      margin-left: auto;
     }
     /* ── CONTACT SECTION ── */
 #contact-brands {
@@ -899,15 +962,15 @@
     <nav id="nav">
       <ul>
         <li class="special">
-          <a href="#menu" class="menuToggle"><span>Menu</span></a>
+          <a href="#menu" class="menuToggle"><span class="hamburger"><span></span><span></span><span></span></span> Menú</a>
           <div id="menu">
+            <span class="menu-close">&times;</span>
             <ul>
               <li><a href="../index.html">Inicio</a></li>
               <li><a href="../experiencia/index.html">Experiencia</a></li>
               <li><a href="../galeria/index.html">Galería</a></li>
               <li><a href="../zooxart/zooxart.html">ZOOX Art</a></li>
               <li><a href="index.html">Brand Pet</a></li>
-              <li><a href="#contact-brands">Contacto</a></li>
             </ul>
           </div>
         </li>
@@ -930,14 +993,15 @@
 <!-- ========== CREATIVIDAD ========== -->
   <section id="creatividad-section">
     <div class="container">
-      <div style="max-width: 800px;">
-        <h2>La creatividad que <em>conecta</em></h2>
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <h2>Creatividad que <em>conecta</em></h2>
         <p>En ZOOX ayudamos a las marcas petfriendly a construir una identidad auténtica mediante branding, fotografía y contenido visual estratégico</p>
         <p>Creemos que cada imagen y cada decisión de comunicación deben transmitir el propósito de la marca, generar confianza y crear conexiones reales con las personas que consideran a sus mascotas parte de su familia.</p>
         <p>Transformamos la creatividad en una herramienta para diferenciar marcas, fortalecer su identidad y generar resultados.</p>
         <p>Somos el estudio creativo especializado en mascotas y marcas petfriendly.</p>
       </div>
     </div>
+     
   </section>
   
 
@@ -946,11 +1010,12 @@
     <div class="container">
 
       <div class="row mb-60">
-        <div class="col-lg-7">
+        <div class="col-lg-7" style="margin: 0 auto; text-align: center;">
           <span class="zbp-label">Qué hacemos</span>
           <h2 class="zbp-title">Producción visual<br><em>especializada en pets</em></h2>
           <div class="zbp-divider"></div>
           <p class="zbp-body">No somos una agencia generalista. Conocemos el comportamiento animal, sabemos cómo capturar la personalidad de una mascota y entendemos qué activa a una audiencia petlover. Eso marca la diferencia.</p>
+        
         </div>
       </div>
 
@@ -1013,7 +1078,7 @@
     <div class="container">
       <div class="row gy-5 align-items-center">
 
-        <div class="col-lg-6">
+        <div class="col-lg-6"> 
           <span class="zbp-label">Por qué ZOOX Brands</span>
           <h2 class="zbp-title">No le vendemos a<br>todos. <em>Solo a marcas</em><br><em>que lo merecen.</em></h2>
           <div class="zbp-divider"></div>
@@ -1157,25 +1222,25 @@
       <div class="proceso-steps">
 
         <div class="paso">
-          <div class="paso-num">01</div>
+          <div class="paso-num">1</div>
           <h5>Brief & Diagnóstico</h5>
           <p>Entendemos tu marca, audiencia, objetivos y qué tipo de contenido te está faltando.</p>
         </div>
 
         <div class="paso">
-          <div class="paso-num">02</div>
+          <div class="paso-num">2</div>
           <h5>Propuesta Creativa</h5>
           <p>Desarrollamos el concepto, moodboard y plan de producción alineado a tu identidad.</p>
         </div>
 
         <div class="paso">
-          <div class="paso-num">03</div>
+          <div class="paso-num">3</div>
           <h5>Producción</h5>
           <p>Fotografía, video y diseño. Coordinamos locación, modelos (mascotas incluidas) y todo el flujo.</p>
         </div>
 
         <div class="paso" style="padding-right: 0;">
-          <div class="paso-num">04</div>
+          <div class="paso-num">4</div>
           <h5>Entrega & Activación</h5>
           <p>Archivos listos para cada plataforma. Opcional: acompañamiento en publicación y estrategia.</p>
         </div>
@@ -1288,7 +1353,7 @@
   <section id="contact-brands">
     <div class="container">
       <div style="text-align: center; margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto;">
-        <h2 style="font-family:'Cera GR',sans-serif; font-size:clamp(2rem,5vw,3.8rem); font-weight:600; color:var(--zoox-texto); margin-bottom:18px; line-height:1.05;">¿Tu marca está lista<br>para <em style="font-style:normal; color:var(--zoox-amarillo);">conectar de verdad?</em></h2>
+        <h2 style="font-family:'Cera GR',sans-serif; font-size:clamp(2rem,5vw,3.8rem); font-weight:600; color:var(--zoox-texto); margin-bottom:18px; line-height:1.05;">¿Tu marca está lista<br>para <em style="font-style:normal; color:var(--zoox-amarillo);">crecer?</em></h2>
         <p style="font-size:1rem; color:var(--zoox-muted-dk); line-height:1.7; margin:0;">Cuéntanos qué necesitas. Te respondemos a la brevedad posible con una propuesta personalizada.</p>
       </div>
 
@@ -1337,6 +1402,7 @@
         </form>
       </div>
     </div>
+    
   </section>
 
   <!-- ========== FOOTER ========== -->
@@ -1363,7 +1429,6 @@
   <a href="https://wa.me/51977325372?text=Hola,%20quiero%20conocer%20ZOOX%20Brands%20Pet%20🐾"
      class="wa-float" target="_blank" aria-label="Conversemos">
     <i class="fab fa-whatsapp"></i>
-    <span style="font-size:0.72rem; font-weight:600; letter-spacing:0.06em;">CONVERSEMOS</span>
   </a>
 
   <script>
@@ -1379,6 +1444,7 @@
     document.querySelector('.menuToggle').addEventListener('click', (e) => {
       e.preventDefault();
       menu.classList.toggle('visible');
+      document.querySelector('.menu-close').addEventListener('click', () => menu.classList.remove('visible'));
     });
     menu.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => menu.classList.remove('visible'));
