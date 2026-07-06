@@ -375,13 +375,16 @@
     }
 
     .zbp-section-dark { background: var(--zoox-gris); }
-    #faq .faq-item { background: var(--zoox-blanco); border: 1px solid rgba(0,0,0,0.08); border-radius: 4px; margin-bottom: 10px; overflow: hidden; }
-    #faq .faq-pregunta { width: 100%; text-align: left; padding: 18px 22px; background: transparent; border: none; cursor: pointer; font-family: 'Cera GR', sans-serif; font-weight: 500; color: var(--zoox-texto); font-size: 0.98rem; display: flex; justify-content: space-between; align-items: center; }
-    #faq .faq-icono { font-size: 1.2rem; color: var(--zoox-muted-dk); transition: transform 0.2s; }
-    #faq .faq-item.active .faq-icono { transform: rotate(45deg); }
-    #faq .faq-respuesta { display: none; padding: 0 22px 20px; font-size: 0.9rem; color: var(--zoox-muted-dk); line-height: 1.7; }
-    #faq .faq-item.active .faq-respuesta { display: block; }
-    .zbp-section-mid  { background: var(--zoox-blanco); }
+#faq .faq-grid { margin-top: 2em; text-align: left; }
+#faq .faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); background: none; border-radius: 0; margin-bottom: 0; }
+#faq .faq-pregunta { width: 100%; text-align: left; padding: 1.2em 0; background: none; border: none; cursor: pointer; font-family: 'Cera GR', sans-serif; font-weight: 600; color: var(--zoox-blanco); font-size: 0.95rem; letter-spacing: 0.03em; display: flex; justify-content: space-between; align-items: center; transition: color 0.3s; }
+#faq .faq-pregunta:hover { color: var(--zoox-amarillo); }
+#faq .faq-icono { font-size: 1.4rem; font-weight: 300; color: var(--zoox-amarillo); transition: transform 0.3s; flex-shrink: 0; }
+#faq .faq-item.active .faq-icono { transform: rotate(45deg); }
+#faq .faq-item.active .faq-pregunta { color: var(--zoox-amarillo); }
+#faq .faq-respuesta { display: none; padding: 0 0 1.2em 0; }
+#faq .faq-respuesta p { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.8; margin: 0; }
+#faq .faq-item.active .faq-respuesta { display: block; }
 
     .zbp-label {
       font-size: 0.68rem;
