@@ -429,18 +429,25 @@ margin-right: auto;
 }
     /* ── SERVICIOS ── */
     
-    .service-card {
-      background: var(--zoox-blanco);
-      border: 1px solid rgba(0,0,0,0.07);
-      border-radius: 4px;
-      padding: 36px 32px;
-      height: 100%;
-      transition: border-color 0.25s, transform 0.25s;
+ .service-card {
+  background: var(--zoox-negro);
+  border: 2px solid var(--zoox-amarillo);
+  border-radius: 0px;
+  aspect-ratio: 1 / 1;
+  min-width: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 16px;
+  transition: transform 0.3s ease;
     }
 #servicios .row.gy-4 {
   display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 24px !important;
+  grid-template-columns: repeat(6, 1fr) !important;
+  gap: 10px !important;
 }
 @media (max-width: 768px) {
   #servicios .row.gy-4 {
@@ -472,13 +479,13 @@ margin-right: auto;
       font-family: 'Cera GR', sans-serif;
       font-size: 1.15rem;
       font-weight: 500;
-      color: var(--zoox-texto);
+      color: var(--zoox-blanco);
       margin-bottom: 10px;
     }
 
     .service-card p {
       font-size: 0.9rem;
-      color: var(--zoox-muted-dk);
+      color: var(--zoox-blanco);;
       line-height: 1.65;
       margin: 0;
     }
@@ -1024,51 +1031,51 @@ margin-right: auto;
         </div>
       </div>
 
-      <div class="row gy-4">
+      <div class="row gy-4 justify-content-center flex-nowrap">
 
-        <div class="col-lg-4 col-md-6">
-          <div class="service-card">
-            <div class="icon"><i class="fas fa-camera"></i></div>
+<div class="col-lg-2 col-md-4 col-6">
+  <div class="service-card">
+    <div class="icon"><i class="fas fa-camera"></i></div>
             <h4>Fotografía de Producto Pet</h4>
             <p>Sesiones de producto con mascotas reales. Imágenes que convierten en e-commerce, catálogos y redes sociales.</p>
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6">
-          <div class="service-card">
-            <div class="icon"><i class="fas fa-play-circle"></i></div>
+<div class="col-lg-2 col-md-4 col-6">
+  <div class="service-card">
+    <div class="icon"><i class="fas fa-play-circle"></i></div>
             <h4>Contenido para Redes Sociales</h4>
             <p>Reels, stories, carruseles y posts diseñados con estrategia. Producción mensual o por campaña.</p>
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6">
-          <div class="service-card">
-            <div class="icon"><i class="fas fa-paint-brush"></i></div>
+<div class="col-lg-2 col-md-4 col-6">
+  <div class="service-card">
+    <div class="icon"><i class="fas fa-paint-brush"></i></div>
             <h4>Diseño Gráfico & Branding</h4>
             <p>Identidad visual, packaging, materiales y piezas de comunicación con coherencia de marca.</p>
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6">
-          <div class="service-card">
-            <div class="icon"><i class="fas fa-bullhorn"></i></div>
+<div class="col-lg-2 col-md-4 col-6">
+  <div class="service-card">
+    <div class="icon"><i class="fas fa-bullhorn"></i></div>
             <h4>Campañas de Marketing Pet</h4>
             <p>Estrategia + producción de contenido para lanzamientos, fechas especiales y activaciones de marca.</p>
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6">
-          <div class="service-card">
-            <div class="icon"><i class="fas fa-film"></i></div>
+ <div class="col-lg-2 col-md-4 col-6">
+  <div class="service-card">
+    <div class="icon"><i class="fas fa-film"></i></div>
             <h4>Video Institucional & Spots</h4>
             <p>Videos cortos y spots publicitarios pensados para digital: narrativos, emocionales, efectivos.</p>
           </div>
         </div>
 
-        <div class="col-lg-4 col-md-6">
-          <div class="service-card">
-            <div class="icon"><i class="fas fa-box"></i></div>
+<div class="col-lg-2 col-md-4 col-6">
+  <div class="service-card">
+    <div class="icon"><i class="fas fa-box"></i></div>
             <h4>Pack Mensual de Contenido</h4>
             <p>Servicio recurrente con calendario, producción y entrega de activos digitales listos para publicar.</p>
           </div>
