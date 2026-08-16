@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+<title>Polos ZOOX | ZOOX Pet Studio</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+@font-face{font-family:'Cera GR';src:url('assets/fonts/Cera GR Light.otf') format('opentype');font-weight:300}
+@font-face{font-family:'Cera GR';src:url('assets/fonts/Cera GR Regular.otf') format('opentype');font-weight:400}
+@font-face{font-family:'Cera GR';src:url('assets/fonts/Cera GR Bold.otf') format('opentype');font-weight:700}
+@font-face{font-family:'Cera GR';src:url('assets/fonts/Cera GR Black.otf') format('opentype');font-weight:900}
+:root{--amarillo:#FFB60F;--negro:#0A0A0A;--blanco:#fff}
+*{font-family:'Cera GR',sans-serif !important; box-sizing:border-box; margin:0; padding:0}
+body{background:var(--negro); color:var(--blanco); overflow-x:hidden}
+#zoox-header{position:fixed;top:0;left:0;right:0;height:64px;z-index:1000;background:rgba(10,10,10,0.92);backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;padding:0 2em;border-bottom:1px solid rgba(255,255,255,0.08)}
+#zoox-header img{height:32px}
+#zoox-menu-toggle{background:none;border:none;display:flex;flex-direction:column;gap:5px;cursor:pointer}
+#zoox-menu-toggle span{width:24px;height:2px;background:#fff;display:block}
+#zoox-menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1001;opacity:0;pointer-events:none;transition:.3s}
+#zoox-menu-overlay.is-active{opacity:1;pointer-events:all}
+#zoox-menu{position:fixed;top:0;right:0;bottom:0;width:340px;max-width:85vw;background:var(--amarillo);z-index:1002;transform:translateX(100%);transition:transform .4s cubic-bezier(.77,0,.175,1);padding:2em;display:flex;flex-direction:column}
+#zoox-menu.is-active{transform:translateX(0)}
+#zoox-menu ul{list-style:none;flex:1;margin-top:3em}
+#zoox-menu ul li{border-top:1px solid rgba(0,0,0,0.12)}
+#zoox-menu ul li a{display:block;padding:1em 0;color:#0A0A0A !important;font-weight:700;text-transform:uppercase;text-decoration:none}
+#zoox-menu ul li a.active{color:#fff !important}
+.banner{padding:9em 2em 4em 2em;text-align:center;background:linear-gradient(180deg,#0A0A0A,#151515)}
+.banner h1{font-weight:900;font-size:3.2em;letter-spacing:-0.02em}
+.banner p{font-weight:300;color:#999;margin-top:0.5em}
+.gallery-wrap{max-width:1400px;margin:0 auto;padding:2em;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gallery-wrap a{position:relative;overflow:hidden;display:block;aspect-ratio:4/5;background:#111}
+.gallery-wrap a img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gallery-wrap a:hover img{transform:scale(1.06)}
+.gallery-wrap a::after{content:'';position:absolute;inset:0;border:0 solid var(--amarillo);transition:.3s}
+.gallery-wrap a:hover::after{border-width:3px}
+@media(max-width:980px){.gallery-wrap{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.gallery-wrap{grid-template-columns:1fr}}
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.94);z-index:2000;display:none;align-items:center;justify-content:center;padding:2em}
+#lightbox.is-active{display:flex}
+#lightbox-inner{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+#lightbox img#lb-img{max-width:90vw;max-height:84vh;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,0.7);animation:fadeIn .3s}
+@keyframes fadeIn{from{opacity:0;transform:scale(0.98)}to{opacity:1;transform:scale(1)}}
+.lb-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);color:#fff;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.4em;transition:all .2s;backdrop-filter:blur(6px)}
+.lb-btn:hover{background:var(--amarillo);color:#000;border-color:var(--amarillo)}
+#lb-prev{left:2vw}
+#lb-next{right:2vw}
+#lightbox-close{position:fixed;top:1.5em;right:1.5em;background:none;border:none;color:#fff;font-size:1.4em;cursor:pointer;z-index:2002;line-height:1}
+#lb-counter{position:fixed;bottom:1.5em;left:50%;transform:translateX(-50%);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.12);padding:0.4em 1em;border-radius:20px;font-size:0.8em;font-weight:300;letter-spacing:0.06em;backdrop-filter:blur(6px)}
+#zoox-footer{background:#000;padding:3.5em 2em 3em 2em;text-align:center;border-top:1px solid rgba(255,255,255,0.06)}
+#zoox-footer .footer-inner{display:flex;flex-direction:column;align-items:center;gap:1.2em}
+#zoox-footer img{height:36px;opacity:0.9}
+#zoox-footer p{color:#777;font-size:0.72em;letter-spacing:0.08em;font-weight:300;margin:0}
+.footer-redes{list-style:none;display:flex;gap:1.8em;padding:0;margin:0}
+.footer-redes a{color:#aaa;font-size:0.9em;text-decoration:none;font-weight:700;letter-spacing:0.05em;border:none;display:flex;align-items:center;gap:0.4em;transition:color .2s}
+.footer-redes a:hover{color:var(--amarillo)}
+.whatsapp-float{position:fixed;bottom:1.8rem;right:1.8rem;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.45);z-index:9999;text-decoration:none;animation:zoox-pulse 2s infinite}
+@keyframes zoox-pulse{0%{box-shadow:0 4px 20px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0.5)}70%{box-shadow:0 4px 20px rgba(37,211,102,0.45), 0 0 0 14px rgba(37,211,102,0)}100%{box-shadow:0 4px 20px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0)}}
+</style>
+</head>
+<body>
+<div id="zoox-menu-overlay"></div>
+<nav id="zoox-menu">
+<div style="display:flex;justify-content:space-between;align-items:center"><strong style="color:#000">ZOOX</strong><button id="zoox-menu-close" style="background:none;border:none;font-size:1.4em;cursor:pointer">✕</button></div>
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="experiencia.html">Experiencia</a></li>
+<li><a href="galeria.html">Galería</a></li>
+<li><a href="zooxart.html" class="active">ZOOX Art</a></li>
+<li><a href="brandpet.html">Brand Pet</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+</ul>
+</nav>
+<header id="zoox-header">
+<a href="index.html"><img src="images/logo-zoox.png" alt="ZOOX"></a>
+<button id="zoox-menu-toggle"><span></span><span></span><span></span></button>
+</header>
+<section class="banner">
+<h1>Polos ZOOX</h1>
+<p>Todos los diseños disponibles - Algodón Pima 100% Negro</p>
+</section>
+<div class="gallery-wrap" id="gallery">
+<a href="images/polos/fulls/polos1.jpg" data-index="0"><img src="images/polos/thumbs/polos1.jpg" alt="Polos ZOOX 1"></a>
+<a href="images/polos/fulls/polos2.jpg" data-index="1"><img src="images/polos/thumbs/polos2.jpg" alt="Polos ZOOX 2"></a>
+<a href="images/polos/fulls/polos3.jpg" data-index="2"><img src="images/polos/thumbs/polos3.jpg" alt="Polos ZOOX 3"></a>
+<a href="images/polos/fulls/polos4.jpg" data-index="3"><img src="images/polos/thumbs/polos4.jpg" alt="Polos ZOOX 4"></a>
+<a href="images/polos/fulls/polos5.jpg" data-index="4"><img src="images/polos/thumbs/polos5.jpg" alt="Polos ZOOX 5"></a>
+<a href="images/polos/fulls/polos6.jpg" data-index="5"><img src="images/polos/thumbs/polos6.jpg" alt="Polos ZOOX 6"></a>
+<a href="images/polos/fulls/polos7.jpg" data-index="6"><img src="images/polos/thumbs/polos7.jpg" alt="Polos ZOOX 7"></a>
+<a href="images/polos/fulls/polos8.jpg" data-index="7"><img src="images/polos/thumbs/polos8.jpg" alt="Polos ZOOX 8"></a>
+<a href="images/polos/fulls/polos9.jpg" data-index="8"><img src="images/polos/thumbs/polos9.jpg" alt="Polos ZOOX 9"></a>
+<a href="images/polos/fulls/polos10.jpg" data-index="9"><img src="images/polos/thumbs/polos10.jpg" alt="Polos ZOOX 10"></a>
+<a href="images/polos/fulls/polos11.jpg" data-index="10"><img src="images/polos/thumbs/polos11.jpg" alt="Polos ZOOX 11"></a>
+<a href="images/polos/fulls/polos12.jpg" data-index="11"><img src="images/polos/thumbs/polos12.jpg" alt="Polos ZOOX 12"></a>
+<a href="images/polos/fulls/polos13.jpg" data-index="12"><img src="images/polos/thumbs/polos13.jpg" alt="Polos ZOOX 13"></a>
+<a href="images/polos/fulls/polos14.jpg" data-index="13"><img src="images/polos/thumbs/polos14.jpg" alt="Polos ZOOX 14"></a>
+<a href="images/polos/fulls/polos15.jpg" data-index="14"><img src="images/polos/thumbs/polos15.jpg" alt="Polos ZOOX 15"></a>
+<a href="images/polos/fulls/polos16.jpg" data-index="15"><img src="images/polos/thumbs/polos16.jpg" alt="Polos ZOOX 16"></a>
+<a href="images/polos/fulls/polos17.jpg" data-index="16"><img src="images/polos/thumbs/polos17.jpg" alt="Polos ZOOX 17"></a>
+<a href="images/polos/fulls/polos18.jpg" data-index="17"><img src="images/polos/thumbs/polos18.jpg" alt="Polos ZOOX 18"></a>
+</div>
+<div id="lightbox">
+<button id="lightbox-close">✕</button>
+<div id="lightbox-inner">
+<button class="lb-btn" id="lb-prev">‹</button>
+<img id="lb-img" src="" alt="">
+<button class="lb-btn" id="lb-next">›</button>
+</div>
+<div id="lb-counter">1 / 18</div>
+</div>
+<footer id="zoox-footer">
+<div class="footer-inner">
+<img src="images/logo-zoox.png" alt="ZOOX">
+<p>© 2026 · Lima, Perú · Todos los derechos reservados.</p>
+</div>
+</footer>
+<a href="https://wa.me/51977325372" class="whatsapp-float" target="_blank"><svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:#fff"><path d="M19.05 4.91A9.9 9.9 0 0 0 12.03 2C6.52 2 2.04 6.47 2.04 11.97c0 1.76.46 3.48 1.33 5L2 22l5.18-1.36a9.9 9.9 0 0 0 4.75 1.21h.01c5.51 0 9.99-4.47 9.99-9.97 0-2.66-1.04-5.16-2.92-7.05l-.01.06z"/></svg></a>
+<script>
+const toggle=document.getElementById('zoox-menu-toggle'), close=document.getElementById('zoox-menu-close'), menu=document.getElementById('zoox-menu'), overlay=document.getElementById('zoox-menu-overlay');
+function openM(){menu.classList.add('is-active');overlay.classList.add('is-active');document.body.style.overflow='hidden'}
+function closeM(){menu.classList.remove('is-active');overlay.classList.remove('is-active');document.body.style.overflow=''}
+toggle.addEventListener('click',openM);close.addEventListener('click',closeM);overlay.addEventListener('click',closeM);
+const items = Array.from(document.querySelectorAll('#gallery a'));
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lb-img');
+const lbCounter = document.getElementById('lb-counter');
+const lbPrev = document.getElementById('lb-prev');
+const lbNext = document.getElementById('lb-next');
+const lbClose = document.getElementById('lightbox-close');
+let current = 0;
+function openLB(index){current=index;updateLB();lb.classList.add('is-active');document.body.style.overflow='hidden';}
+function updateLB(){lbImg.src=items[current].href;lbCounter.textContent=(current+1)+' / '+items.length;}
+function next(){current=(current+1)%items.length;updateLB();}
+function prev(){current=(current-1+items.length)%items.length;updateLB();}
+function closeLB(){lb.classList.remove('is-active');document.body.style.overflow='';}
+items.forEach((a,i)=>{a.addEventListener('click',e=>{e.preventDefault();openLB(i);});});
+lbNext.addEventListener('click',next);lbPrev.addEventListener('click',prev);lbClose.addEventListener('click',closeLB);
+lb.addEventListener('click',e=>{if(e.target===lb) closeLB();});
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('is-active')) return;if(e.key==='ArrowRight') next();if(e.key==='ArrowLeft') prev();if(e.key==='Escape') closeLB();});
+let startX=0;lb.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;});lb.addEventListener('touchend',e=>{let diff=e.changedTouches[0].clientX-startX;if(Math.abs(diff)>50){if(diff>0) prev(); else next();}});
+</script>
+</body>
+</html>

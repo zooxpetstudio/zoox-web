@@ -1,277 +1,211 @@
 <!DOCTYPE HTML>
-<!--
-	Galería | ZOOX Pet Studio
--->
 <html lang="es">
 <head>
-	<title>Galería | ZOOX Pet Studio</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="galeria/assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="galeria/assets/css/noscript.css" /></noscript>
+        <title>Galería | ZOOX Pet Studio - Navegación Completa</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+@font-face{font-family:'Cera GR';src:url('assets/fonts/Cera GR Light.otf') format('opentype');font-weight:300}
+@font-face{font-family:'Cera GR';src:url('assets/fonts/Cera GR Regular.otf') format('opentype');font-weight:400}
+@font-face{font-family:'Cera GR';src:url('assets/fonts/Cera GR Bold.otf') format('opentype');font-weight:700}
+@font-face{font-family:'Cera GR';src:url('assets/fonts/Cera GR Black.otf') format('opentype');font-weight:900}
+:root{--amarillo:#FFB60F;--negro:#0A0A0A;--blanco:#fff}
+*{font-family:'Cera GR',sans-serif !important; box-sizing:border-box; margin:0; padding:0}
+body{background:var(--negro); color:var(--blanco); overflow-x:hidden}
+#zoox-header{position:fixed;top:0;left:0;right:0;height:64px;z-index:1000;background:rgba(10,10,10,0.92);backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;padding:0 2em;border-bottom:1px solid rgba(255,255,255,0.08)}
+#zoox-header img{height:32px}
+#zoox-menu-toggle{background:none;border:none;display:flex;flex-direction:column;gap:5px;cursor:pointer}
+#zoox-menu-toggle span{width:24px;height:2px;background:#fff;display:block}
+#zoox-menu-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:1001;opacity:0;pointer-events:none;transition:.3s}
+#zoox-menu-overlay.is-active{opacity:1;pointer-events:all}
+#zoox-menu{position:fixed;top:0;right:0;bottom:0;width:340px;max-width:85vw;background:var(--amarillo);z-index:1002;transform:translateX(100%);transition:transform .4s cubic-bezier(.77,0,.175,1);padding:2em;display:flex;flex-direction:column}
+#zoox-menu.is-active{transform:translateX(0)}
+#zoox-menu ul{list-style:none;flex:1;margin-top:3em}
+#zoox-menu ul li{border-top:1px solid rgba(0,0,0,0.12)}
+#zoox-menu ul li a{display:block;padding:1em 0;color:#0A0A0A !important;font-weight:700;text-transform:uppercase;text-decoration:none}
+#zoox-menu ul li a.active{color:#fff !important}
+.banner{padding:9em 2em 4em 2em;text-align:center;background:linear-gradient(180deg,#0A0A0A,#151515)}
+.banner h1{font-weight:900;font-size:3.2em;letter-spacing:-0.02em}
+.banner p{font-weight:300;color:#999;margin-top:0.5em}
+.gallery-wrap{max-width:1400px;margin:0 auto;padding:2em;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.gallery-wrap a{position:relative;overflow:hidden;display:block;aspect-ratio:4/5;background:#111}
+.gallery-wrap a img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gallery-wrap a:hover img{transform:scale(1.06)}
+.gallery-wrap a::after{content:'';position:absolute;inset:0;border:0 solid var(--amarillo);transition:.3s}
+.gallery-wrap a:hover::after{border-width:3px}
+@media(max-width:980px){.gallery-wrap{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.gallery-wrap{grid-template-columns:1fr}}
 
-	<!-- Google Fonts -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+/* LIGHTBOX PRO con navegación */
+#lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.94);z-index:2000;display:none;align-items:center;justify-content:center;padding:2em}
+#lightbox.is-active{display:flex}
+#lightbox-inner{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+#lightbox img#lb-img{max-width:90vw;max-height:84vh;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,0.7);animation:fadeIn .3s}
+@keyframes fadeIn{from{opacity:0;transform:scale(0.98)}to{opacity:1;transform:scale(1)}}
+.lb-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);color:#fff;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.4em;transition:all .2s;backdrop-filter:blur(6px)}
+.lb-btn:hover{background:var(--amarillo);color:#000;border-color:var(--amarillo)}
+#lb-prev{left:2vw}
+#lb-next{right:2vw}
+#lightbox-close{position:fixed;top:1em;right:1.5em;background:none;border:none;color:#fff;font-size:2.6em;cursor:pointer;z-index:2002;line-height:1}
+#lb-counter{position:fixed;bottom:1.5em;left:50%;transform:translateX(-50%);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.12);padding:0.4em 1em;border-radius:20px;font-size:0.8em;font-weight:300;letter-spacing:0.06em;backdrop-filter:blur(6px)}
+#lb-caption{position:fixed;bottom:4.5em;left:50%;transform:translateX(-50%);color:#aaa;font-size:0.85em;font-weight:300;text-align:center;max-width:80vw}
+@media(max-width:600px){.lb-btn{width:40px;height:40px} #lb-prev{left:1vw} #lb-next{right:1vw}}
 
-	<style>
-		:root {
-			--zoox-amarillo: #FFB60F;
-			--zoox-negro:    #0A0A0A;
-			--zoox-gris:     #E5E5E5;
-			--zoox-blanco:   #FFFFFF;
-			--zoox-muted:    #888888;
-		}
-
-		body, html, #page-wrapper {
-			overflow-x: hidden !important;
-			font-family: 'DM Sans', sans-serif !important;
-		}
-
-		/* ── MENÚ DESPLEGABLE ── */
-		#menu {
-			background: var(--zoox-amarillo) !important;
-		}
-		#menu ul > li > a {
-			color: var(--zoox-negro) !important;
-		}
-		#menu ul > li > a:hover {
-			color: var(--zoox-blanco) !important;
-		}
-		#menu ul > li {
-			border-top-color: rgba(0,0,0,0.15) !important;
-		}
-
-		/* ── FOOTER ── */
-		#footer {
-			background-color: var(--zoox-negro) !important;
-			padding: 3em 2em !important;
-			text-align: center !important;
-		}
-		.footer-inner {
-			display: flex !important;
-			flex-direction: column !important;
-			align-items: center !important;
-			gap: 1em !important;
-		}
-		.footer-logo {
-			height: 36px !important;
-			width: auto !important;
-			opacity: 0.85 !important;
-		}
-		.footer-copy {
-			color: #e5e5e5 !important;
-			font-size: 0.7rem !important;
-			letter-spacing: 0.08em !important;
-			margin: 0 !important;
-		}
-		.footer-redes {
-			list-style: none !important;
-			padding: 0 !important;
-			margin: 0 !important;
-			display: flex !important;
-			gap: 1.5em !important;
-		}
-		.footer-redes li a {
-			color: #e5e5e5 !important;
-			font-size: 1.2rem !important;
-			border: none !important;
-			transition: color 0.3s !important;
-		}
-		.footer-redes li a:hover {
-			color: var(--zoox-amarillo) !important;
-		}
-
-		/* ── BOTÓN WHATSAPP ── */
-		.whatsapp-float {
-			position: fixed !important;
-			bottom: 2rem !important;
-			right: 2rem !important;
-			background: #25D366 !important;
-			color: var(--zoox-blanco) !important;
-			border: none !important;
-			border-radius: 50px !important;
-			padding: 0.75em 1.25em !important;
-			display: flex !important;
-			align-items: center !important;
-			gap: 0.5em !important;
-			font-size: 0.8rem !important;
-			font-weight: 600 !important;
-			letter-spacing: 0.05em !important;
-			text-transform: uppercase !important;
-			box-shadow: 0 4px 20px rgba(37,211,102,0.4) !important;
-			z-index: 9999 !important;
-			transition: transform 0.3s, box-shadow 0.3s !important;
-			text-decoration: none !important;
-		}
-		.whatsapp-float:hover {
-			transform: translateY(-3px) !important;
-			box-shadow: 0 8px 25px rgba(37,211,102,0.5) !important;
-			color: var(--zoox-blanco) !important;
-			border: none !important;
-		}
-	</style>
+#zoox-footer{background:#000;padding:3.5em 2em 3em 2em;text-align:center;border-top:1px solid rgba(255,255,255,0.06)}
+#zoox-footer .footer-inner{display:flex;flex-direction:column;align-items:center;gap:1.2em}
+#zoox-footer img{height:36px;opacity:0.9}
+#zoox-footer p{color:#777;font-size:0.72em;letter-spacing:0.08em;font-weight:300;margin:0}
+.footer-redes{list-style:none;display:flex;gap:1.8em;padding:0;margin:0}
+.footer-redes a{color:#aaa;font-size:0.9em;text-decoration:none;font-weight:700;letter-spacing:0.05em;border:none;display:flex;align-items:center;gap:0.4em;transition:color .2s}
+.footer-redes a:hover{color:var(--amarillo)}
+.footer-redes a svg{width:18px;height:18px;fill:currentColor}
+.whatsapp-float{
+  position:fixed; bottom:1.8rem; right:1.8rem;
+  width:56px; height:56px;
+  background:#25D366; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0.5);
+  z-index:9999; text-decoration:none;
+  animation:zoox-pulse 2s infinite;
+}
+.whatsapp-float svg{width:28px; height:28px; fill:#fff}
+.whatsapp-float:hover{transform:scale(1.08); background:#20b857}
+@keyframes zoox-pulse{
+  0%{box-shadow:0 4px 20px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0.5)}
+  70%{box-shadow:0 4px 20px rgba(37,211,102,0.45), 0 0 0 14px rgba(37,211,102,0)}
+  100%{box-shadow:0 4px 20px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0)}
+}
+        </style>
 </head>
+<body>
+<div id="zoox-menu-overlay"></div>
+<nav id="zoox-menu">
+<div style="display:flex;justify-content:space-between;align-items:center"><strong style="color:#000"></strong><button id="zoox-menu-close" style="background:none;border:none;font-size:2em;cursor:pointer">×</button></div>
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="experiencia.html">Experiencia</a></li>
+<li><a href="zooxart.html">ZOOX Art</a></li>
+<li><a href="brandspet.html">Brands Pet</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+</ul>
+</nav>
+<header id="zoox-header">
+<a href="index.html"><img src="images/logo-zoox.png" alt="ZOOX" onerror="this.outerHTML='ZOOX PET STUDIO'"></a>
+<button id="zoox-menu-toggle"><span></span><span></span><span></span></button>
+</header>
+<section class="banner">
+<h1>Momentos ZOOX</h1>
+<p>Fotos elegantes, divertidas y muy creativas. Un regalo ideal para tu mascota.</p>
+</section>
+<div class="gallery-wrap" id="gallery">
+<a href="images/fulls/zoox1.png" data-index="0"><img src="images/thumbs/zoox1.png" alt=""></a>
+<a href="images/fulls/zoox2.png" data-index="1"><img src="images/thumbs/zoox2.png" alt=""></a>
+<a href="images/fulls/zoox3.png" data-index="2"><img src="images/thumbs/zoox3.png" alt=""></a>
+<a href="images/fulls/zoox4.png" data-index="3"><img src="images/thumbs/zoox4.png" alt=""></a>
+<a href="images/fulls/zoox5.png" data-index="4"><img src="images/thumbs/zoox5.png" alt=""></a>
+<a href="images/fulls/zoox6.png" data-index="5"><img src="images/thumbs/zoox6.png" alt=""></a>
+<a href="images/fulls/zoox7.png" data-index="6"><img src="images/thumbs/zoox7.png" alt=""></a>
+<a href="images/fulls/zoox8.png" data-index="7"><img src="images/thumbs/zoox8.png" alt=""></a>
+<a href="images/fulls/zoox9.png" data-index="8"><img src="images/thumbs/zoox9.png" alt=""></a>
+<a href="images/fulls/zoox10.png" data-index="9"><img src="images/thumbs/zoox10.png" alt=""></a>
+<a href="images/fulls/zoox11.png" data-index="10"><img src="images/thumbs/zoox11.png" alt=""></a>
+<a href="images/fulls/zoox12.png" data-index="11"><img src="images/thumbs/zoox12.png" alt=""></a>
+<a href="images/fulls/zoox13.png" data-index="12"><img src="images/thumbs/zoox13.png" alt=""></a>
+<a href="images/fulls/zoox14.png" data-index="13"><img src="images/thumbs/zoox14.png" alt=""></a>
+<a href="images/fulls/zoox15.png" data-index="14"><img src="images/thumbs/zoox15.png" alt=""></a>
+<a href="images/fulls/zoox16.png" data-index="15"><img src="images/thumbs/zoox16.png" alt=""></a>
+<a href="images/fulls/zoox17.png" data-index="16"><img src="images/thumbs/zoox17.png" alt=""></a>
+<a href="images/fulls/zoox18.png" data-index="17"><img src="images/thumbs/zoox18.png" alt=""></a>
+<a href="images/fulls/zoox19.png" data-index="18"><img src="images/thumbs/zoox19.png" alt=""></a>
+<a href="images/fulls/zoox20.png" data-index="19"><img src="images/thumbs/zoox20.png" alt=""></a>
+</div>
 
-<!-- CLASE CORRECTA para Spectral: landing is-preload -->
-<body class="landing is-preload">
-<div id="page-wrapper">
+<!-- LIGHTBOX NAVEGABLE -->
+<div id="lightbox">
+<button id="lightbox-close">×</button>
+<div id="lightbox-inner">
+<button class="lb-btn" id="lb-prev">‹</button>
+<img id="lb-img" src="" alt="">
+<button class="lb-btn" id="lb-next">›</button>
+</div>
+<div id="lb-counter">1 / 20</div>
+<div id="lb-caption"></div>
+</div>
 
-	<!-- ── HEADER ── -->
-	<header id="header" class="alt">
-		<h1>
-			<a href="index.html">
-				<img src="galeria/images/logo-zoox.png" alt="ZOOX Pet Studio" style="height:40px; width:auto;" />
-			</a>
-		</h1>
-		<nav id="nav">
-			<ul>
-				<li class="special">
-					<a href="#menu" class="menuToggle"><span>Menu</span></a>
-					<div id="menu">
-						<ul>
-							<li><a href="index.html">Inicio</a></li>
-							<li><a href="experiencia.html">Experiencia</a></li>
-							<li><a href="galeria.html">Galería</a></li>
-							<li><a href="zooxart.html">ZOOX Art</a></li>
-							<li><a href="brandpet.html">Brand Pet</a></li>
-							<li><a href="contacto.html">Contacto</a></li>
-						</ul>
-					</div>
-				</li>
-			</ul>
-		</nav>
-	</header>
+<footer id="zoox-footer">
+<div class="footer-inner">
+<img src="images/logoblanco-zoox.png" alt="ZOOX" onerror="this.style.display='none'">
+<p>© 2026 · Lima, Perú · Todos los derechos reservados.</p>
+<ul class="footer-redes">
+<li><a href="https://instagram.com/zoox.petstudio" target="_blank"><svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.2 5.2 0 0 1-5.2 5.2H7.8C4.6 22 2 19.4 2 16.2V7.8A5.2 5.2 0 0 1 7.8 2m-.2 2A3.2 3.2 0 0 0 4.4 7.2v8.4C4.4 17.5 5.9 19 7.8 19h8.4a3.2 3.2 0 0 0 3.2-3.2V7.2A3.2 3.2 0 0 0 16.2 4H7.6m9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg></a></li>
+<li><a href="https://facebook.com/zooxpetstudio" target="_blank"><svg viewBox="0 0 24 24"><path d="M14 8h2V4h-2c-2.2 0-4 1.8-4 4v2H8v4h2v6h4v-6h2.5l0.5-4H14V8c0-.6 0.4-1 1-1z"/></svg></a></li>
+</ul>
+</div>
+</footer>
 
-	<!-- ── BANNER ── -->
-	<section id="banner">
-		<div class="inner">
-			<h2>Galería</h2>
-			<p>
-				Momentos que se volvieron inmortales.<br />
-				Cada imagen, una historia única<br />
-				capturada con mirada de autor.
-			</p>
-		</div>
-		<a href="#main" class="more scrolly">Ver galería</a>
-	</section>
+<script>
+// Menú
+const toggle=document.getElementById('zoox-menu-toggle'), close=document.getElementById('zoox-menu-close'), menu=document.getElementById('zoox-menu'), overlay=document.getElementById('zoox-menu-overlay');
+function openM(){menu.classList.add('is-active');overlay.classList.add('is-active');document.body.style.overflow='hidden'}
+function closeM(){menu.classList.remove('is-active');overlay.classList.remove('is-active');document.body.style.overflow=''}
+toggle.addEventListener('click',openM);close.addEventListener('click',closeM);overlay.addEventListener('click',closeM);
 
-	<!-- ── GALERÍA (estructura Lens intacta) ── -->
-	<div id="main">
+// Galería navegable
+const items = Array.from(document.querySelectorAll('#gallery a'));
+const lb = document.getElementById('lightbox');
+const lbImg = document.getElementById('lb-img');
+const lbCounter = document.getElementById('lb-counter');
+const lbPrev = document.getElementById('lb-prev');
+const lbNext = document.getElementById('lb-next');
+const lbClose = document.getElementById('lightbox-close');
+let current = 0;
 
-		<header id="header">
-			<h1>Galería</h1>
-			<h2 style="color:#e5e5e5">Una muestra de momentos que se volvieron inmortales.</h2>
-			<p>Aquí encontrarás fotos, elegantes, divertidas y muy creativas, un regalo ideal para tu mascota. Como fotógrafo profesional, apuesto por un retrato de autor y doy mi visión artística sobre el modelo canino.</p>
-		</header>
+function openLB(index){
+  current = index;
+  updateLB();
+  lb.classList.add('is-active');
+  document.body.style.overflow='hidden';
+}
+function updateLB(){
+  lbImg.src = items[current].href;
+  lbCounter.textContent = (current+1)+' / '+items.length;
+}
+function next(){ current = (current+1)%items.length; updateLB(); }
+function prev(){ current = (current-1+items.length)%items.length; updateLB(); }
+function closeLB(){ lb.classList.remove('is-active'); document.body.style.overflow=''; }
 
-		<section id="thumbnails">
+items.forEach((a,i)=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    openLB(i);
+  });
+});
 
-			<article>
-				<a class="thumbnail" href="galeria/images/fulls/zoox1.png" data-position="left center"><img src="galeria/images/thumbs/zoox1.png" alt="" /></a>
-			</article>
-			<article>
-				<a class="thumbnail" href="galeria/images/fulls/zoox2.png"><img src="galeria/images/thumbs/zoox2.png" alt="" /></a>
-			</article>
-			<article>
-				<a class="thumbnail" href="galeria/images/fulls/zoox3.png" data-position="top center"><img src="galeria/images/thumbs/zoox3.png" alt="" /></a>
-			</article>
-			<article>
-				<a class="thumbnail" href="galeria/images/fulls/zoox4.png"><img src="galeria/images/thumbs/zoox4.png" alt="" /></a>
-			</article>
-			<article>
-				<a class="thumbnail" href="galeria/images/fulls/zoox5.png" data-position="top center"><img src="galeria/images/thumbs/zoox5.png" alt="" /></a>
-			</article>
-			<article>
-				<a class="thumbnail" href="galeria/images/fulls/zoox6.png"><img src="galeria/images/thumbs/zoox6.png" alt="" /></a>
-			</article>
-			<article>
-				<a class="thumbnail" href="galeria/images/fulls/zoox7.png"><img src="galeria/images/thumbs/zoox7.png" alt="" /></a>
-			</article>
-			<article>
-				<a class="thumbnail" href="galeria/images/fulls/zoox8.png"><img src="galeria/images/thumbs/zoox8.png" alt="" /></a>
-			</article>
-			<article>
-				<a class="thumbnail" href="galeria/images/fulls/zoox9.png"><img src="galeria/images/thumbs/zoox9.png" alt="" /></a>
-			</article>
-			<article>
-				<a class="thumbnail" href="galeria/images/fulls/zoox10.png"><img src="galeria/images/thumbs/zoox10.png" alt="" /></a>
-			</article>
-			<article>
-				<a class="thumbnail" href="galeria/images/fulls/zoox11.png"><img src="galeria/images/thumbs/zoox11.png" alt="" /></a>
-			</article>
-			<article>
-				<a class="thumbnail" href="galeria/images/fulls/zoox12.png"><img src="galeria/images/thumbs/zoox12.png" alt="" /></a>
-			</article>
+lbNext.addEventListener('click',next);
+lbPrev.addEventListener('click',prev);
+lbClose.addEventListener('click',closeLB);
+lb.addEventListener('click',e=>{ if(e.target===lb) closeLB(); });
 
-			<!-- 6 casillas nuevas -->
-			<article>
-				<a class="thumbnail" href="galeria/images/fulls/zoox13.png"><img src="galeria/images/thumbs/zoox13.png" alt="" /></a>
-			</article>
-			<article>
-				<a class="thumbnail" href="galeria/images/fulls/zoox14.png"><img src="galeria/images/thumbs/zoox14.png" alt="" /></a>
-			</article>
-			<article>
-				<a class="thumbnail" href="galeria/images/fulls/zoox15.png"><img src="galeria/images/thumbs/zoox15.png" alt="" /></a>
-			</article>
-			<article>
-				<a class="thumbnail" href="galeria/images/fulls/zoox16.png"><img src="galeria/images/thumbs/zoox16.png" alt="" /></a>
-			</article>
-			<article>
-				<a class="thumbnail" href="galeria/images/fulls/zoox17.png"><img src="galeria/images/thumbs/zoox17.png" alt="" /></a>
-			</article>
-			<article>
-				<a class="thumbnail" href="galeria/images/fulls/zoox18.png"><img src="galeria/images/thumbs/zoox18.png" alt="" /></a>
-			</article>
+// Teclado
+document.addEventListener('keydown',e=>{
+  if(!lb.classList.contains('is-active')) return;
+  if(e.key==='ArrowRight') next();
+  if(e.key==='ArrowLeft') prev();
+  if(e.key==='Escape') closeLB();
+});
 
-		</section>
-
-	</div><!-- /#main -->
-
-	<!-- ── FOOTER ── -->
-	<footer id="footer">
-		<div class="footer-inner">
-			<img src="galeria/images/logoblanco-zoox.png" alt="ZOOX Pet Studio" class="footer-logo" />
-			<p class="footer-copy">© 2026 · Lima, Perú · Todos los derechos reservados.</p>
-			<ul class="footer-redes">
-				<li>
-					<a href="https://instagram.com/zoox.petstudio" target="_blank" aria-label="Instagram">
-						<i class="icon brands fa-instagram"></i>
-					</a>
-				</li>
-				<li>
-					<a href="https://facebook.com/zooxpetstudio" target="_blank" aria-label="Facebook">
-						<i class="icon brands fa-facebook-f"></i>
-					</a>
-				</li>
-			</ul>
-		</div>
-	</footer>
-
-	<!-- Botón flotante WhatsApp -->
-	<a href="https://wa.me/51977325372?text=Hola%20ZOOX%2C%20tengo%20una%20consulta"
-	   target="_blank"
-	   class="whatsapp-float"
-	   aria-label="WhatsApp">
-		<i class="icon brands fa-whatsapp"></i>
-		<span>Conversemos</span>
-	</a>
-
-</div><!-- /#page-wrapper -->
-
-
-<!-- Scripts Lens (lightbox) -->
-<script src="galeria/assets/js/jquery.min.js"></script>
-<script src="galeria/assets/js/browser.min.js"></script>
-<script src="galeria/assets/js/breakpoints.min.js"></script>
-<script src="galeria/assets/js/main.js"></script>
-
-<!-- Scripts Spectral (banner + header) -->
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-
-
+// Swipe móvil
+let startX=0;
+lb.addEventListener('touchstart',e=>{ startX=e.touches[0].clientX; });
+lb.addEventListener('touchend',e=>{
+  let diff = e.changedTouches[0].clientX - startX;
+  if(Math.abs(diff)>50){
+    if(diff>0) prev(); else next();
+  }
+});
+</script>
+<a href="https://wa.me/51977325372?text=Hola%20ZOOX,%20tengo%20una%20consulta" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.16 6.42 2.16 11.88C2.16 13.62 2.61 15.32 3.45 16.81L2.05 22L7.41 20.62C8.82 21.39 10.41 21.81 12.04 21.81C17.5 21.81 21.92 17.39 21.92 11.93C21.92 6.47 17.5 2 12.04 2M12.04 19.64C10.65 19.64 9.29 19.27 8.13 18.57L7.81 18.38L4.62 19.23L5.5 16.13L5.28 15.79C4.47 14.52 4.05 13.06 4.05 11.56C4.05 7.16 7.64 3.57 12.04 3.57C16.44 3.57 20.03 7.16 20.03 11.56C20.03 15.96 16.44 19.64 12.04 19.64M14.97 14.32C14.82 14.24 13.99 13.84 13.84 13.79C13.69 13.74 13.58 13.71 13.47 13.86C13.36 14.01 13.04 14.39 12.94 14.5C12.84 14.61 12.74 14.62 12.59 14.55C12.44 14.47 11.96 14.32 11.38 13.81C10.93 13.41 10.63 12.91 10.53 12.76C10.43 12.61 10.52 12.53 10.6 12.45C10.67 12.38 10.76 12.26 10.84 12.16C10.92 12.06 10.95 11.98 11.02 11.83C11.09 11.68 11.05 11.55 11.01 11.47C10.97 11.4 10.67 10.57 10.54 10.23C10.42 9.9 10.3 9.94 10.2 9.94H9.91C9.81 9.94 9.65 9.98 9.51 10.13C9.37 10.28 8.98 10.66 8.98 11.49C8.98 12.32 9.59 13.12 9.67 13.23C9.75 13.34 10.86 15.04 12.54 15.76C12.94 15.93 13.25 16.03 13.49 16.1C13.87 16.22 14.22 16.2 14.5 16.16C14.81 16.11 15.45 15.77 15.58 15.41C15.71 15.05 15.71 14.74 15.67 14.66C15.63 14.58 15.53 14.54 15.38 14.46C15.23 14.39 14.97 14.32 14.97 14.32Z"/></svg>
+</a>
 </body>
 </html>

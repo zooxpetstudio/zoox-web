@@ -1,5 +1,30 @@
+
+/* ═══════════════════════════════════════════
+   1. CERA GR - BASE ZOOX ART (12 pesos)
+   ═══════════════════════════════════════════ */
+@font-face { font-family: 'Cera GR'; src: url('../fonts/Cera GR Thin.otf') format('opentype'); font-weight: 100; font-style: normal; }
+@font-face { font-family: 'Cera GR'; src: url('../fonts/Cera GR Thin Italic.otf') format('opentype'); font-weight: 100; font-style: italic; }
+@font-face { font-family: 'Cera GR'; src: url('../fonts/Cera GR Light.otf') format('opentype'); font-weight: 300; font-style: normal; }
+@font-face { font-family: 'Cera GR'; src: url('../fonts/Cera GR Light Italic.otf') format('opentype'); font-weight: 300; font-style: italic; }
+@font-face { font-family: 'Cera GR'; src: url('../fonts/Cera GR Regular.otf') format('opentype'); font-weight: 400; font-style: normal; }
+@font-face { font-family: 'Cera GR'; src: url('../fonts/Cera GR Regular Italic.otf') format('opentype'); font-weight: 400; font-style: italic; }
+@font-face { font-family: 'Cera GR'; src: url('../fonts/Cera GR Medium.otf') format('opentype'); font-weight: 500; font-style: normal; }
+@font-face { font-family: 'Cera GR'; src: url('../fonts/Cera GR Medium Italic.otf') format('opentype'); font-weight: 500; font-style: italic; }
+@font-face { font-family: 'Cera GR'; src: url('../fonts/Cera GR Bold.otf') format('opentype'); font-weight: 700; font-style: normal; }
+@font-face { font-family: 'Cera GR'; src: url('../fonts/Cera GR Bold Italic.otf') format('opentype'); font-weight: 700; font-style: italic; }
+@font-face { font-family: 'Cera GR'; src: url('../fonts/Cera GR Black.otf') format('opentype'); font-weight: 900; font-style: normal; }
+@font-face { font-family: 'Cera GR'; src: url('../fonts/Cera GR Black Italic.otf') format('opentype'); font-weight: 900; font-style: italic; }
+
+:root {
+  --zoox-amarillo: #FFB60F;
+  --zoox-negro: #0A0A0A;
+  --zoox-verde: #505C47;
+  --zoox-blanco: #FFFFFF;
+  --zoox-gris: #E5E5E5;
+}
+
 @import url(fontawesome-all.min.css);
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+/* Roboto removido - usamos Cera GR */
 
 /*
 	Lens by HTML5 UP
@@ -1349,3 +1374,109 @@ input, select, textarea {
 				}
 
 		}
+
+/* ═══════════════════════════════════════════
+   2. OVERRIDES ZOOX ART - CERA GR EN TODO
+   ═══════════════════════════════════════════ */
+html, body, div, span, p, a, li, ul, ol, h1, h2, h3, h4, h5, h6, input, select, textarea, button {
+  font-family: 'Cera GR', sans-serif !important;
+}
+body, input, select, textarea {
+  font-family: 'Cera GR', sans-serif !important;
+  font-weight: 400 !important;
+  color: #FFFFFF !important;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Cera GR', sans-serif !important;
+  font-weight: 700 !important;
+  color: var(--zoox-amarillo) !important;
+}
+
+/* ═══════════════════════════════════════════
+   3. HEADER SUPERIOR ZOOX
+   ═══════════════════════════════════════════ */
+#zoox-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.2em 2em; background: rgba(10,10,10,0.88); backdrop-filter: blur(10px);
+}
+#zoox-header .zoox-header-logo img { height: 36px; width: auto; }
+#zoox-menu-toggle {
+  background: none; border: none; cursor: pointer;
+  display: flex; flex-direction: column; gap: 5px; width: 28px;
+}
+#zoox-menu-toggle span {
+  display: block; height: 2px; width: 100%; background: var(--zoox-blanco);
+  border-radius: 2px; transition: all 0.3s;
+}
+
+/* ═══════════════════════════════════════════
+   4. MENÚ LATERAL DEFINITIVO ZOOX ART
+   ═══════════════════════════════════════════ */
+#zoox-menu-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+  z-index: 1001; opacity: 0; pointer-events: none; transition: opacity 0.35s;
+}
+#zoox-menu-overlay.is-active { opacity: 1; pointer-events: all; }
+#zoox-menu {
+  position: fixed; top: 0; right: 0; bottom: 0; width: 340px; max-width: 85vw;
+  background: var(--zoox-amarillo); z-index: 1002;
+  transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.77,0,0.175,1);
+  display: flex; flex-direction: column; padding: 2em;
+  box-shadow: -10px 0 40px rgba(0,0,0,0.3);
+}
+#zoox-menu.is-active { transform: translateX(0); }
+.zoox-menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 3em; }
+.zoox-menu-logo { height: 30px; }
+#zoox-menu-close { background: none; border: none; font-size: 2rem; cursor: pointer; color: var(--zoox-negro); line-height: 1; }
+#zoox-menu ul { list-style: none; padding: 0; margin: 0; flex: 1; }
+#zoox-menu ul li { border-top: 1px solid rgba(0,0,0,0.12); }
+#zoox-menu ul li:first-child { border-top: none; }
+#zoox-menu ul li a {
+  display: block; padding: 1em 0; color: var(--zoox-negro) !important;
+  font-weight: 700 !important; font-size: 1.05rem; letter-spacing: 0.02em;
+  text-transform: uppercase; text-decoration: none; border: none !important;
+  transition: all 0.2s;
+}
+#zoox-menu ul li a:hover, #zoox-menu ul li a.active { color: var(--zoox-blanco) !important; padding-left: 0.5em; }
+.zoox-menu-footer { margin-top: auto; padding-top: 2em; border-top: 1px solid rgba(0,0,0,0.12); }
+.zoox-menu-footer p { font-size: 0.7rem; color: rgba(0,0,0,0.6); font-weight: 300; line-height: 1.6; margin: 0 0 1em 0; }
+.zoox-menu-social { display: flex; gap: 1em; }
+.zoox-menu-social a { color: var(--zoox-negro); font-size: 1.2rem; border: none !important; }
+
+/* Banner ZOOX */
+.zoox-banner {
+  background: linear-gradient(180deg, #0A0A0A 0%, #1a1a1a 100%) !important;
+  padding: 9em 2em 5em 2em !important; text-align: center;
+}
+.zoox-banner h2 { color: var(--zoox-blanco) !important; font-size: 3rem !important; font-weight: 900 !important; }
+.zoox-banner p { color: var(--zoox-gris) !important; font-weight: 300 !important; font-size: 1.1rem !important; }
+
+/* Fix conflicto #header - renombrado a #gallery-header */
+#gallery-header { padding: 3em 2em; text-align: center; max-width: 700px; margin: 0 auto; }
+#gallery-header h1 { color: var(--zoox-blanco) !important; font-size: 2.2rem !important; }
+#gallery-header p { color: #999 !important; font-weight: 300 !important; }
+
+/* Footer ZOOX ART definitivo - pisa el #footer de Lens */
+#zoox-footer {
+  background: var(--zoox-negro) !important; padding: 3.5em 2em !important;
+  text-align: center; border-top: 1px solid rgba(255,255,255,0.06);
+  position: relative !important; z-index: 2;
+}
+#zoox-footer .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 1.2em; }
+#zoox-footer .footer-logo { height: 36px; width: auto; opacity: 0.9; }
+#zoox-footer .footer-copy { color: #777 !important; font-size: 0.72rem !important; font-weight: 300 !important; letter-spacing: 0.08em !important; margin: 0 !important; }
+#zoox-footer .footer-redes { list-style: none; padding: 0; margin: 0; display: flex; gap: 1.8em; }
+#zoox-footer .footer-redes li a { color: #aaa !important; font-size: 1.25rem !important; border: none !important; }
+#zoox-footer .footer-redes li a:hover { color: var(--zoox-amarillo) !important; }
+
+/* WhatsApp */
+.whatsapp-float {
+  position: fixed !important; bottom: 2rem !important; right: 2rem !important;
+  background: #25D366 !important; color: var(--zoox-blanco) !important;
+  border-radius: 50px !important; padding: 0.8em 1.4em !important;
+  display: flex !important; align-items: center !important; gap: 0.6em !important;
+  font-size: 0.8rem !important; font-weight: 700 !important; letter-spacing: 0.05em !important;
+  text-transform: uppercase !important; box-shadow: 0 4px 20px rgba(37,211,102,0.4) !important;
+  z-index: 9999 !important; text-decoration: none !important; border: none !important;
+}
