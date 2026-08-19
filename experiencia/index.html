@@ -1,0 +1,1336 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+	<title>Experiencia | ZOOX Pet Studio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="Sesiones fotográficas profesionales para mascotas en Lima. Línea Exteriores e In Home." />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+	<!-- Google Fonts: Oswald como sustituto hasta tener Cera Pro -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+	<style>
+
+		/* ═══════════════════════════════════════
+		   VARIABLES ZOOX
+		═══════════════════════════════════════ */
+		:root {
+			--zoox-amarillo:  #FFB60F;
+			--zoox-negro:     #0A0A0A;
+			--zoox-azul:      #3A506B;
+			--zoox-gris:      #E5E5E5;
+			--zoox-blanco:    #FFFFFF;
+			--zoox-muted:     #888888;
+		}
+
+		/* ═══════════════════════════════════════
+		   GLOBAL
+		═══════════════════════════════════════ */
+		body, html, #page-wrapper {
+			overflow-x: hidden !important;
+			font-family: 'DM Sans', sans-serif !important;
+		}
+
+		/* ═══════════════════════════════════════
+		   MENÚ DESPLEGABLE
+		═══════════════════════════════════════ */
+		#menu {
+			background: var(--zoox-amarillo) !important;
+		}
+		#menu ul > li > a {
+			color: var(--zoox-negro) !important;
+		}
+		#menu ul > li > a:hover {
+			color: var(--zoox-blanco) !important;
+		}
+		#menu ul > li {
+			border-top-color: rgba(0,0,0,0.15) !important;
+		}
+
+		/* ═══════════════════════════════════════
+		   SECCIÓN 1 — BIENVENIDOS
+		═══════════════════════════════════════ */
+		#one {
+			background-color: var(--zoox-negro) !important;
+		}
+		#one .inner {
+			text-align: center !important;
+		}
+		#one header.major h2 {
+			color: var(--zoox-blanco) !important;
+			border-color: rgba(255,182,15,0.3) !important;
+		}
+		#one p {
+			color: var(--zoox-gris) !important;
+			max-width: 700px !important;
+			margin: 0 auto 1.5em auto !important;
+			line-height: 1.8 !important;
+		}
+
+		/* ═══════════════════════════════════════
+		   SECCIÓN 3 — PROCESO 5 PASOS
+		═══════════════════════════════════════ */
+		#three .inner {
+			width: 95vw !important;
+			max-width: 95vw !important;
+			padding: 0 2em !important;
+		}
+		#three header.major h2 {
+			color: var(--zoox-blanco) !important;
+			border-color: rgba(255,182,15,0.3) !important;
+		}
+		#three header.major p {
+			color: var(--zoox-gris) !important;
+		}
+
+		.pasos-grid {
+			display: flex !important;
+			flex-direction: row !important;
+			flex-wrap: nowrap !important;
+			justify-content: center !important;
+			align-items: center !important;
+			gap: 0 !important;
+			width: 100% !important;
+			margin-top: 2em !important;
+		}
+		.paso-card {
+			width: 160px !important;
+			min-width: 160px !important;
+			height: 160px !important;
+			background: var(--zoox-negro) !important;
+			border: 1px solid rgba(255,182,15,0.3) !important;
+			border-radius: 8px !important;
+			display: flex !important;
+			flex-direction: column !important;
+			align-items: center !important;
+			justify-content: center !important;
+			text-align: center !important;
+			padding: 1.2em !important;
+			transition: all .3s ease !important;
+		}
+		.paso-card:hover {
+			border-color: var(--zoox-amarillo) !important;
+			background: rgba(255,182,15,0.05) !important;
+			transform: translateY(-4px) !important;
+		}
+		.paso-num {
+			font-family: 'Oswald', sans-serif !important;
+			font-size: 2.2rem !important;
+			color: var(--zoox-amarillo) !important;
+			line-height: 1 !important;
+			margin-bottom: 0.4em !important;
+			display: block !important;
+		}
+		.paso-card h3 {
+			color: var(--zoox-blanco) !important;
+			font-size: 0.75rem !important;
+			letter-spacing: 0.15em !important;
+			margin-bottom: 0.4em !important;
+			margin-top: 0 !important;
+		}
+		.paso-card p {
+			color: var(--zoox-gris) !important;
+			font-size: 0.65rem !important;
+			line-height: 1.5 !important;
+			margin: 0 !important;
+		}
+		.paso-flecha {
+			color: var(--zoox-amarillo) !important;
+			font-size: 1.2rem !important;
+			padding: 0 8px !important;
+			flex-shrink: 0 !important;
+		}
+
+		/* ═══════════════════════════════════════
+		   SECCIÓN — LÍNEA EXTERIORES INTRO
+		═══════════════════════════════════════ */
+		#exteriores {
+			background-color: var(--zoox-negro) !important;
+			text-align: center !important;
+		}
+		#exteriores .inner {
+			text-align: center !important;
+		}
+		#exteriores header.major h2 {
+			color: var(--zoox-amarillo) !important;
+			border-color: rgba(255,182,15,0.3) !important;
+		}
+		#exteriores header.major p {
+			color: var(--zoox-blanco) !important;
+		}
+		#exteriores p {
+			color: var(--zoox-gris) !important;
+			max-width: 700px !important;
+			margin: 0 auto 1.5em auto !important;
+			line-height: 1.8 !important;
+		}
+
+		/* ═══════════════════════════════════════
+		   PAQUETES — COMPONENTES COMPARTIDOS
+		═══════════════════════════════════════ */
+		.proceso-grid {
+			display: flex !important;
+			flex-direction: row !important;
+			flex-wrap: nowrap !important;
+			justify-content: center !important;
+			align-items: flex-start !important;
+			gap: 20px !important;
+			overflow: visible !important;
+			padding: 20px 10px 40px !important;
+		}
+		.proceso-card {
+			flex: 0 0 300px !important;
+			width: 300px !important;
+			max-width: 300px !important;
+			height: auto !important;
+			max-height: none !important;
+			border-radius: 12px !important;
+			overflow: hidden !important;
+			display: flex !important;
+			flex-direction: column !important;
+			transition: transform .3s ease, box-shadow .3s ease !important;
+		}
+		.proceso-card:hover {
+			transform: translateY(-6px) !important;
+			box-shadow: 0 15px 40px rgba(0,0,0,0.3) !important;
+		}
+		.proceso-contenido {
+			padding: 1.5em !important;
+			display: flex !important;
+			flex-direction: column !important;
+			flex: 1 !important;
+		}
+		.featured-badge {
+			display: inline-block !important;
+			background: var(--zoox-amarillo) !important;
+			color: var(--zoox-negro) !important;
+			font-size: 0.65rem !important;
+			font-weight: 700 !important;
+			letter-spacing: 0.1em !important;
+			text-transform: uppercase !important;
+			padding: 4px 12px !important;
+			border-radius: 20px !important;
+			margin-bottom: 0.5em !important;
+		}
+		.paso {
+			font-size: 0.65rem !important;
+			letter-spacing: 0.2em !important;
+			margin-bottom: 0.3em !important;
+			display: block !important;
+		}
+		.proceso-card h3 {
+			font-family: 'Oswald', sans-serif !important;
+			font-size: 1.4rem !important;
+			letter-spacing: 0.05em !important;
+			margin: 0 0 0.2em 0 !important;
+			text-transform: uppercase !important;
+		}
+		.pkg-tagline {
+			font-size: 0.75rem !important;
+			font-style: italic !important;
+			margin: 0 0 0.5em 0 !important;
+		}
+		.pkg-price {
+			font-family: 'Oswald', sans-serif !important;
+			font-size: 3rem !important;
+			font-weight: 700 !important;
+			line-height: 1 !important;
+			margin: 0.3em 0 0.8em 0 !important;
+			display: block !important;
+		}
+		.pkg-price small {
+			font-size: 1.1rem !important;
+			vertical-align: super !important;
+			font-weight: 400 !important;
+		}
+		.pkg-items {
+			list-style: none !important;
+			padding: 0 !important;
+			margin: 0 0 1em 0 !important;
+			border-top: 1px solid rgba(255,255,255,0.08) !important;
+			padding-top: 0.8em !important;
+		}
+		.pkg-items li {
+			font-size: 0.78rem !important;
+			padding: 5px 0 !important;
+			display: flex !important;
+			align-items: center !important;
+			gap: 8px !important;
+			border: none !important;
+			list-style: none !important;
+		}
+		.pkg-items li::before {
+			content: '●' !important;
+			color: var(--zoox-amarillo) !important;
+			font-size: 0.45rem !important;
+			flex-shrink: 0 !important;
+		}
+		.pkg-items li strong {
+			font-weight: 600 !important;
+		}
+		.pkg-footer {
+			border-top: 1px solid rgba(255,255,255,0.08) !important;
+			padding-top: 0.8em !important;
+			margin-top: auto !important;
+		}
+		.pkg-bonus {
+			color: var(--zoox-amarillo) !important;
+			font-size: 0.72rem !important;
+			margin: 0 0 0.2em 0 !important;
+		}
+		.pkg-tiempo {
+			font-size: 0.68rem !important;
+			margin: 0 !important;
+		}
+
+		/* ═══════════════════════════════════════
+		   PAQUETES EXTERIORES
+		═══════════════════════════════════════ */
+		#paquetes-ext {
+			background-color: var(--zoox-negro) !important;
+		}
+		#paquetes-ext .inner {
+			width: 95vw !important;
+			max-width: 95vw !important;
+		}
+		#paquetes-ext .proceso-card {
+			background: #111111 !important;
+			border: 1px solid rgba(255,182,15,0.3) !important;
+		}
+		#paquetes-ext .proceso-card.featured {
+			border: 2px solid var(--zoox-amarillo) !important;
+		}
+		#paquetes-ext .paso {
+			color: var(--zoox-muted) !important;
+		}
+		#paquetes-ext .proceso-card h3 {
+			color: var(--zoox-amarillo) !important;
+		}
+		#paquetes-ext .pkg-tagline {
+			color: var(--zoox-muted) !important;
+		}
+		#paquetes-ext .pkg-price {
+			color: var(--zoox-blanco) !important;
+		}
+		#paquetes-ext .pkg-price small {
+			color: var(--zoox-blanco) !important;
+		}
+		#paquetes-ext .pkg-items li {
+			color: var(--zoox-gris) !important;
+		}
+		#paquetes-ext .pkg-items li strong {
+			color: var(--zoox-blanco) !important;
+		}
+		#paquetes-ext .pkg-tiempo {
+			color: var(--zoox-muted) !important;
+		}
+
+		/* ═══════════════════════════════════════
+		   TARIFAS DE MOVILIDAD
+		═══════════════════════════════════════ */
+		#movilidad {
+			background-color: var(--zoox-negro) !important;
+		}
+		#movilidad .inner {
+			text-align: center !important;
+		}
+		#movilidad header.major h2 {
+			color: var(--zoox-blanco) !important;
+			border-color: rgba(255,182,15,0.3) !important;
+		}
+		#movilidad header.major p {
+			color: var(--zoox-gris) !important;
+		}
+		.zonas-grid {
+			display: grid !important;
+			grid-template-columns: repeat(4, 1fr) !important;
+			gap: 16px !important;
+			margin: 2em 0 1.5em 0 !important;
+		}
+		.zona-card {
+			background: #111111 !important;
+			border: 1px solid rgba(255,182,15,0.2) !important;
+			border-radius: 10px !important;
+			padding: 1.5em 1em !important;
+			text-align: center !important;
+			transition: border-color 0.3s !important;
+		}
+		.zona-card:hover {
+			border-color: var(--zoox-amarillo) !important;
+		}
+		.zona-label {
+			display: block !important;
+			font-size: 0.7rem !important;
+			letter-spacing: 0.2em !important;
+			color: var(--zoox-amarillo) !important;
+			text-transform: uppercase !important;
+			margin-bottom: 0.75em !important;
+			font-weight: 700 !important;
+		}
+		.zona-distritos {
+			font-size: 0.75rem !important;
+			color: var(--zoox-muted) !important;
+			line-height: 1.6 !important;
+			margin: 0 0 1em 0 !important;
+		}
+		.zona-precio {
+			font-family: 'Oswald', sans-serif !important;
+			font-size: 1.6rem !important;
+			font-weight: 600 !important;
+			color: var(--zoox-blanco) !important;
+			margin: 0 !important;
+		}
+		.zona-nota {
+			font-size: 0.7rem !important;
+			color: #555 !important;
+			font-style: italic !important;
+			margin-top: 1em !important;
+		}
+		@media screen and (max-width: 768px) {
+    #three .inner {
+        overflow-x: visible !important;
+        padding: 0 1em !important;
+    }
+    .pasos-grid-wrapper {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding-bottom: 1em !important;
+        width: 100% !important;
+    }
+    .pasos-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        width: max-content !important;
+        gap: 0 !important;
+    }
+    .paso-card {
+        width: 140px !important;
+        min-width: 140px !important;
+        height: 140px !important;
+        flex-shrink: 0 !important;
+    }
+    .paso-flecha {
+        display: flex !important;
+        align-items: center !important;
+        flex-shrink: 0 !important;
+    }
+}
+
+		/* ═══════════════════════════════════════
+		   FAQ — COMPARTIDO
+		═══════════════════════════════════════ */
+		.faq-grid {
+			margin-top: 2em !important;
+			text-align: left !important;
+		}
+		.faq-item {
+			border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+		}
+		.faq-pregunta {
+			width: 100% !important;
+			background: none !important;
+			border: none !important;
+			color: var(--zoox-blanco) !important;
+			font-size: 0.88rem !important;
+			font-family: inherit !important;
+			letter-spacing: 0.05em !important;
+			text-align: left !important;
+			padding: 1.2em 0 !important;
+			cursor: pointer !important;
+			display: flex !important;
+			justify-content: space-between !important;
+			align-items: center !important;
+			transition: color 0.3s !important;
+		}
+		.faq-pregunta:hover { color: var(--zoox-amarillo) !important; }
+		.faq-icono {
+			color: var(--zoox-amarillo) !important;
+			font-size: 1.4rem !important;
+			font-weight: 300 !important;
+			transition: transform 0.3s !important;
+			flex-shrink: 0 !important;
+		}
+		.faq-respuesta {
+			display: none !important;
+			padding: 0 0 1.2em 0 !important;
+		}
+		.faq-respuesta p {
+			font-size: 0.82rem !important;
+			line-height: 1.8 !important;
+			margin: 0 !important;
+		}
+		.faq-item.active .faq-respuesta { display: block !important; }
+		.faq-item.active .faq-icono { transform: rotate(45deg) !important; }
+		.faq-item.active .faq-pregunta { color: var(--zoox-amarillo) !important; }
+
+		/* FAQ Exteriores */
+		#faq {
+			background-color: var(--zoox-negro) !important;
+		}
+		#faq .inner {
+			text-align: center !important;
+			max-width: 800px !important;
+			margin: 0 auto !important;
+		}
+		#faq header.major h2 {
+			color: var(--zoox-blanco) !important;
+			border-color: rgba(255,182,15,0.3) !important;
+		}
+		#faq header.major p { color: var(--zoox-muted) !important; }
+		#faq .faq-respuesta p { color: var(--zoox-muted) !important; }
+
+		/* ═══════════════════════════════════════
+		   SEPARADOR LÍNEA IN HOME
+		═══════════════════════════════════════ */
+		.linea-separador {
+			background: #505C47 !important;
+			padding: 4em 2em !important;
+			text-align: center !important;
+			border-top: none !important;
+			border-bottom: none !important;
+		}
+		.linea-separador-inner {
+			max-width: 600px !important;
+			margin: 0 auto !important;
+		}
+		.linea-separador h2 {
+			font-family: 'Oswald', sans-serif !important;
+			font-size: 2.5rem !important;
+			color: var(--zoox-amarillo) !important;
+			letter-spacing: 0.1em !important;
+			margin-bottom: 0.3em !important;
+		}
+		.linea-separador p {
+			color: var(--zoox-gris) !important;
+			font-size: 0.9rem !important;
+			margin: 0 !important;
+		}
+
+		/* ═══════════════════════════════════════
+		   LÍNEA IN HOME — FONDO AZUL ACERO
+		═══════════════════════════════════════ */
+		.inhome-style {
+			background: #505C47 !important;
+		}
+
+		/* Intro In Home */
+		#inhome-intro .inner {
+			text-align: center !important;
+			max-width: 750px !important;
+			margin: 0 auto !important;
+		}
+		#inhome-intro header.major h2 {
+			color: var(--zoox-blanco) !important;
+			border-color: rgba(255,182,15,0.3) !important;
+		}
+		#inhome-intro p {
+			color: var(--zoox-gris) !important;
+			line-height: 1.8 !important;
+		}
+
+		/* Paquetes In Home */
+		#paquetes-inhome .inner {
+			width: 95vw !important;
+			max-width: 95vw !important;
+		}
+		.inhome-card {
+			background: rgba(0,0,0,0.2) !important;
+			border: 1px solid var(--zoox-amarillo)  !important;
+		}
+		.inhome-card.featured-inhome {
+			border: 2px solid var(--zoox-amarillo) !important;
+		}
+		.inhome-card .paso {
+			color: var(--zoox-gris) !important;
+			opacity: 0.7 !important;
+		}
+		.inhome-card h3 {
+			color: var(--zoox-amarillo) !important;
+		}
+		.inhome-card .pkg-tagline {
+			color: var(--zoox-gris) !important;
+		}
+		.inhome-card .pkg-price {
+			color: var(--zoox-blanco) !important;
+		}
+		.inhome-card .pkg-price small {
+			color: var(--zoox-blanco) !important;
+		}
+		.inhome-card .pkg-items li {
+			color: var(--zoox-gris) !important;
+		}
+		.inhome-card .pkg-items li strong {
+			color: var(--zoox-blanco) !important;
+		}
+		.inhome-card .pkg-tiempo {
+			color: var(--zoox-gris) !important;
+			opacity: 0.7 !important;
+		}
+
+		/* FAQ In Home */
+		#faq-inhome .inner {
+			max-width: 800px !important;
+			margin: 0 auto !important;
+			text-align: center !important;
+		}
+		#faq-inhome header.major h2 {
+			color: var(--zoox-blanco) !important;
+			border-color: rgba(255,182,15,0.3) !important;
+		}
+		#faq-inhome header.major p {
+			color: var(--zoox-gris) !important;
+		}
+		#faq-inhome .faq-item {
+			border-bottom: none !important;
+		}
+		#faq-inhome .faq-pregunta {
+			color: var(--zoox-gris) !important;
+		}
+		#faq-inhome .faq-pregunta:hover {
+			color: var(--zoox-amarillo) !important;
+		}
+		#faq-inhome .faq-item.active .faq-pregunta {
+			color: var(--zoox-amarillo) !important;
+		}
+		#faq-inhome .faq-respuesta p {
+			color: var(--zoox-gris) !important;
+		}
+/* Formulario */
+        #formulario { background: var(--zoox-negro); padding:4em 2em; border-top:1px solid rgba(255,182,15,0.15); }
+        #formulario .inner { max-width:750px; margin:0 auto; }
+        #formulario header.major { text-align:center; margin-bottom:2.5em; }
+        #formulario header.major h2 { color:#fff; font-size:2rem; }
+        #formulario header.major p { color:#888; max-width:600px; margin:1em auto; line-height:1.6; }
+        .zoox-form { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+        @media(max-width:600px){ .zoox-form{grid-template-columns:1fr;} }
+        .form-group { display:flex; flex-direction:column; text-align:left; }
+        .form-group.full { grid-column:1 / -1; }
+        .form-group label { font-size:0.7rem; letter-spacing:0.08em; color:#888; text-transform:uppercase; margin-bottom:6px; font-family:'Oswald'; }
+        .form-group input, .form-group select, .form-group textarea {
+            background:#111; border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:12px 14px; color:#fff; font-family:'Inter'; font-size:0.85rem; outline:none; transition:border 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--zoox-amarillo); }
+        .form-group textarea { min-height:110px; resize:vertical; }
+        .form-check { grid-column:1 / -1; display:flex; gap:10px; align-items:flex-start; margin-top:0.5em; text-align:left; }
+        .form-check input { margin-top:4px; accent-color: var(--zoox-amarillo); }
+        .form-check label { font-size:0.7rem; color:#666; line-height:1.5; }
+        .form-submit { grid-column:1 / -1; text-align:center; margin-top:1em; }
+		/* ═══════════════════════════════════════
+		   FOOTER
+		═══════════════════════════════════════ */
+		#footer {
+			background-color: var(--zoox-negro) !important;
+			padding: 3em 2em !important;
+			text-align: center !important;
+			
+		}
+		.footer-inner {
+			display: flex !important;
+			flex-direction: column !important;
+			align-items: center !important;
+			gap: 1em !important;
+		}
+		.footer-logo {
+			height: 36px !important;
+			width: auto !important;
+			opacity: 0.85 !important;
+		}
+		.footer-copy {
+			color: #e5e5e5 !important;
+			font-size: 0.7rem !important;
+			letter-spacing: 0.08em !important;
+			margin: 0 !important;
+		}
+		.footer-redes {
+			list-style: none !important;
+			padding: 0 !important;
+			margin: 0 !important;
+			display: flex !important;
+			gap: 1.5em !important;
+		}
+		.footer-redes li a {
+			color: #e5e5e5 !important;
+			font-size: 1.2rem !important;
+			border: none !important;
+			transition: color 0.3s !important;
+		}
+		.footer-redes li a:hover {
+			color: var(--zoox-amarillo) !important;
+		}
+
+		/* ═══════════════════════════════════════
+		   BOTÓN FLOTANTE WHATSAPP
+		═══════════════════════════════════════ */
+		.whatsapp-float{
+  position:fixed; bottom:1.8rem; right:1.8rem;
+  width:56px; height:56px;
+  background:#25D366; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0.5);
+  z-index:9999; text-decoration:none;
+  animation:zoox-pulse 2s infinite;
+}
+.whatsapp-float svg{width:28px; height:28px; fill:#fff}
+.whatsapp-float:hover{transform:scale(1.08); background:#20b857}
+@keyframes zoox-pulse{
+  0%{box-shadow:0 4px 20px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0.5)}
+  70%{box-shadow:0 4px 20px rgba(37,211,102,0.45), 0 0 0 14px rgba(37,211,102,0)}
+  100%{box-shadow:0 4px 20px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0)}
+}
+		/* Eliminar recuadros de FAQ */
+#faq-inhome .faq-pregunta,
+#faq .faq-pregunta {
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+}
+#faq-inhome .faq-pregunta:focus,
+#faq .faq-pregunta:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+}
+/* Precio amarillo - override final */
+.proceso-card .pkg-price,
+.inhome-card .pkg-price {
+    font-family: 'Oswald', sans-serif !important;
+    font-size: 3rem !important;
+    color: #FFB60F !important;
+    font-weight: 700 !important;
+}
+.proceso-card .pkg-price small,
+.inhome-card .pkg-price small {
+    font-family: 'Oswald', sans-serif !important;
+    font-size: 1.1rem !important;
+    color: #FFB60F !important;
+    vertical-align: super !important;
+}
+/* Zonas In Home */
+.inhome-zona {
+    background: rgba(0,0,0,0.2) !important;
+    border-color: #FFB60F !important;
+}
+.inhome-zona:hover {
+    border-color: var(--zoox-amarillo) !important;
+}
+.inhome-zona .zona-distritos {
+    color: var(--zoox-gris) !important;
+}
+.inhome-zona .zona-precio {
+    color: var(--zoox-blanco) !important;
+}
+/* Ajustes tarifas In Home */
+#movilidad-inhome .inner {
+    text-align: center !important;
+}
+#movilidad-inhome header.major h2 {
+    color: var(--zoox-blanco) !important;
+    border-color: rgba(255,182,15,0.3) !important;
+}
+#movilidad-inhome header.major p {
+    color: var(--zoox-gris) !important;
+}
+.inhome-zona:hover {
+    border-color: var(--zoox-amarillo) !important;
+    border-width: 2px !important;
+}
+#movilidad-inhome .zona-nota {
+    color: var(--zoox-gris) !important;
+}
+/* ── RESPONSIVE MÓVIL ── */
+@media screen and (max-width: 768px) {
+
+    /* Proceso 5 pasos — scroll horizontal */
+    #three .inner {
+        padding: 0 1em !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+    }
+    .pasos-grid {
+        width: max-content !important;
+        padding-bottom: 1em !important;
+    }
+
+    /* Paquetes Exteriores — scroll horizontal */
+    #paquetes-ext .inner,
+    #paquetes-inhome .inner {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding: 0 1em !important;
+    }
+    #paquetes-ext .proceso-grid,
+    #paquetes-inhome .proceso-grid {
+        width: max-content !important;
+        padding-bottom: 1.5em !important;
+    }
+
+    /* Tarifas — 2 columnas en móvil */
+    .zonas-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Ocultar scrollbar pero mantener funcionalidad */
+    #three .inner::-webkit-scrollbar,
+    #paquetes-ext .inner::-webkit-scrollbar,
+    #paquetes-inhome .inner::-webkit-scrollbar {
+        height: 3px !important;
+    }
+    #three .inner::-webkit-scrollbar-thumb,
+    #paquetes-ext .inner::-webkit-scrollbar-thumb,
+    #paquetes-inhome .inner::-webkit-scrollbar-thumb {
+        background: rgba(255,182,15,0.4) !important;
+        border-radius: 2px !important;
+    }
+}
+/* Scroll horizontal solo en pasos-grid, no en el título */
+@media screen and (max-width: 768px) {
+    #three .inner {
+        overflow-x: visible !important;
+        padding: 0 1em !important;
+    }
+    #three .pasos-grid-wrapper {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding-bottom: 1em !important;
+    }
+    .pasos-grid {
+        width: max-content !important;
+    }
+}
+	
+                /* === FIX: Espaciados pronunciados entre secciones - compactado === */
+                .wrapper {
+                        padding: 3em 0 2em 0 !important;
+                }
+                .wrapper > .inner {
+                        padding-top: 0 !important;
+                        padding-bottom: 0 !important;
+                }
+                #one, #three, #paquetes-ext, #faq, #inhome-intro, #paquetes-inhome, #faq-inhome, #footer {
+                        padding-top: 2.5em !important;
+                        padding-bottom: 2.5em !important;
+                        margin: 0 !important;
+                }
+                .linea-separador {
+                        padding: 2.5em 2em !important;
+                        border-top: none !important;
+                        border-bottom: none !important;
+                }
+                header.major {
+                        margin-bottom: 1.5em !important;
+                }
+                /* Eliminar líneas amarillas innecesarias de separación */
+                header.major h2 {
+                        border-bottom: none !important;
+                }
+                .wrapper.style3::before, .wrapper.style3::after {
+                        display: none !important;
+                }
+                
+
+                /* ===== ZOOX V2 - MENU DESPLEGABLE COMPONENTE REPLICABLE ===== */
+                /* Este bloque cópialo tal cual en todos tus html: galeria, zooxart, brandpet, contacto */
+                #menu {
+                        background: var(--zoox-amarillo) !important;
+                        box-shadow: -5px 0 25px rgba(0,0,0,0.15) !important;
+                }
+                #menu .close {
+                        color: var(--zoox-negro) !important;
+                }
+                #menu ul > li > a {
+                        color: var(--zoox-negro) !important;
+                        font-family: 'Oswald', sans-serif !important;
+                        letter-spacing: 0.08em !important;
+                        font-weight: 500 !important;
+                }
+                #menu ul > li > a:hover {
+                        color: var(--zoox-blanco) !important;
+                        background: rgba(0,0,0,0.05) !important;
+                }
+                #menu ul > li {
+                        border-top-color: rgba(0,0,0,0.12) !important;
+                }
+
+                /* ===== FIX V2: PROCESO RESPONSIVE REAL ===== */
+                @media screen and (max-width: 980px) {
+                    .pasos-grid {
+                        flex-wrap: wrap !important;
+                        width: 100% !important;
+                        gap: 12px !important;
+                        justify-content: center !important;
+                    }
+                    .paso-flecha { display: none !important; }
+                    .paso-card { width: calc(50% - 12px) !important; min-width: auto !important; }
+                }
+                @media screen and (max-width: 480px) {
+                    .paso-card { width: 100% !important; }
+                }
+
+                /* ===== V2: MOVILIDAD INCLUIDA BADGE ===== */
+                .pkg-movilidad {
+                    font-size: 0.65rem !important;
+                    color: #FFB60F !important;
+                    letter-spacing: 0.05em !important;
+                    margin: -0.6em 0 1em 0 !important;
+                    font-style: italic !important;
+                }
+                .nota-movilidad-global {
+                    text-align: center !important;
+                    font-size: 0.7rem !important;
+                    color: var(--zoox-muted) !important;
+                    margin-top: 2em !important;
+                    max-width: 600px !important;
+                    margin-left: auto !important;
+                    margin-right: auto !important;
+                }
+
+                /* ===== V2: CTA BUTTONS ===== */
+                .zoox-cta {
+                    display: inline-block !important;
+                    background: var(--zoox-amarillo) !important;
+                    color: var(--zoox-negro) !important;
+                    padding: 0.9em 2em !important;
+                    border-radius: 50px !important;
+                    font-family: 'Oswald', sans-serif !important;
+                    font-weight: 600 !important;
+                    letter-spacing: 0.1em !important;
+                    text-transform: uppercase !important;
+                    font-size: 0.85rem !important;
+                    text-decoration: none !important;
+                    border: none !important;
+                    margin-top: 2em !important;
+                    transition: all 0.3s ease !important;
+                }
+                .zoox-cta:hover {
+                    background: var(--zoox-blanco) !important;
+                    transform: translateY(-2px) !important;
+                    box-shadow: 0 6px 20px rgba(255,182,15,0.3) !important;
+                }
+                .zoox-cta.inhome-cta {
+                    background: var(--zoox-blanco) !important;
+                    color: #505C47 !important;
+                }
+                .zoox-cta.inhome-cta:hover {
+                    background: var(--zoox-amarillo) !important;
+                    color: var(--zoox-negro) !important;
+                }
+                .cta-wrapper { text-align: center !important; width: 100% !important; }
+				.banner-galeria{
+  position:relative;
+  width:100%;
+  height:320px; /* ajusta: 260px en móvil, 380px desktop */
+  background: url('images/zoox-banner-dog.jpg') center 30% / cover no-repeat #0A0A0A;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.banner-galeria::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background: #0A0A0A; /* oscurece un poco para que resalte el botón amarillo */
+}
+.btn-galeria{
+  position:relative;
+  z-index:1;
+  background:#FFB60F;
+  color:#0a0a0a;
+  font-family:'Cera GR', sans-serif;
+  font-weight:900;
+  font-size:0.85em;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  padding:0.9em 1.8em;
+  border-radius:999px;
+  text-decoration:none;
+  transition:all .2s;
+}
+.btn-galeria:hover{
+  background:#e5e5e5;
+  transform:translateY(-2px);
+}
+
+</style>
+</head>
+
+<body class="landing is-preload">
+<div id="page-wrapper">
+
+	<!-- ── HEADER ─────────────────────────────── -->
+	<header id="header" class="alt">
+		<h1>
+			<a href="index.html">
+				<img src="images/logo-zoox.png" alt="ZOOX Pet Studio" style="height:40px; width:auto;" />
+			</a>
+		</h1>
+		<nav id="nav">
+			<ul>
+				<li class="special">
+					<a href="#menu" class="menuToggle"><span>Menu</span></a>
+					<div id="menu">
+						<ul>
+							<li><a href="index.html">Inicio</a></li>
+							<li><a href="galeria.html">Galería</a></li>
+							<li><a href="zooxart.html">ZOOX Art</a></li>
+							<li><a href="brandspet.html">Brands Pet</a></li>
+							<li><a href="contacto.html">Contacto</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- ── BANNER ─────────────────────────────── -->
+	<section id="banner">
+		<div class="inner">
+			<h2>Experiencias</h2>
+			<p>
+				Más que una sesión fotográfica.<br />
+				Una experiencia ZOOX está creada para fortalecer<br />
+				el vínculo único con tu mascota.
+			</p>
+		</div>
+		<a href="#one" class="more scrolly">Descubrir</a>
+	</section>
+
+	<!-- ── BIENVENIDOS ────────────────────────── -->
+	<section id="one" class="wrapper style2 special">
+		<div class="inner">
+			<header class="major">
+				<h2>¡Bienvenidos!</h2>
+			</header>
+			<p><strong>ZOOX Pet Studio</strong> nació en 2021 con la misión de crear recuerdos únicos de las mascotas de las familias. Ofrecemos sesiones fotográficas profesionales y personalizadas, con un estilo moderno que resalta la personalidad y las características de cada ejemplar.</p>
+		</div>
+	</section>
+
+	<!-- ── PROCESO 5 PASOS ────────────────────── -->
+	<section id="three" class="wrapper style3 special">
+		<div class="inner">
+			<header class="major">
+				<h2>¿Cómo es la experiencia ZOOX?</h2>
+				<p>Un proceso diseñado para que disfrutes cada etapa junto a tu mejor amigo.</p>
+			</header>
+			<div class="pasos-grid-wrapper">
+    <div class="pasos-grid">
+        <!-- las 5 paso-card y flechas aquí -->
+    </div>
+</div>
+<div class="pasos-grid-wrapper">
+    <div class="pasos-grid">
+
+        <div class="paso-card">
+            <span class="paso-num">01</span>
+            <h3>Reserva</h3>
+            <p>Elige tu paquete y agenda tu fecha.</p>
+        </div>
+        <div class="paso-flecha">→</div>
+
+        <div class="paso-card">
+            <span class="paso-num">02</span>
+            <h3>Sesión</h3>
+            <p>Disfruta una experiencia relajada con tu mascota.</p>
+        </div>
+        <div class="paso-flecha">→</div>
+
+        <div class="paso-card">
+            <span class="paso-num">03</span>
+            <h3>Selección</h3>
+            <p>Escoge tus favoritas desde una galería privada.</p>
+        </div>
+        <div class="paso-flecha">→</div>
+
+        <div class="paso-card">
+            <span class="paso-num">04</span>
+            <h3>Edición</h3>
+            <p>Aplicamos nuestro proceso artístico profesional.</p>
+        </div>
+        <div class="paso-flecha">→</div>
+
+        <div class="paso-card">
+            <span class="paso-num">05</span>
+            <h3>Entrega</h3>
+            <p>Recibes tus imágenes finales listas para compartir.</p>
+        </div>
+
+    </div>
+</div>
+	</section>
+
+	<!-- ── LÍNEA EXTERIORES INTRO ─────────────── -->
+	<section id="exteriores" class="wrapper style2">
+		<div class="inner">
+			<header class="major">
+				<h2>Al aire libre</h2>
+				<p>Tu hijo de cuatro patas, en fotos artísticas.</p>
+			</header>
+			<p>3 niveles, misma calidad ZOOX. Todos incluyen la opción de hacerlo en parque o en tu casa en Lima Metropolitana.</p>
+		</div>
+	</section>
+
+	<!-- ── PAQUETES EXTERIORES ────────────────── -->
+	<section id="paquetes-ext" class="wrapper style3">
+		<div class="inner">
+			<div class="proceso-grid">
+
+				<div class="proceso-card">
+					<div class="proceso-contenido">
+						<span class="paso">PAQUETE 01</span>
+						<h3>Petlover</h3>
+						<p class="pkg-tagline">"El primer recuerdo especial"</p>
+						<p class="pkg-tiempo">45 min. de sesión</p>
+						<p class="pkg-price"><small>S/</small>220</p>
+						<ul class="pkg-items">
+							<li>8 fotos seleccionadas.</li>
+							<li>5 ediciones profesionales.</li>
+							<li>2 Edición creativas.</li>
+							<li>Descarga en alta resolución.</li>
+							<li>Dueño puede participar.</li>
+							<li>Para un único can.</li>
+						</ul>
+						<div class="pkg-footer">
+							<p class="pkg-bonus">🎁 10% dto. todo Complemento</p>
+						
+						</div>
+					</div>
+				</div>
+
+				<div class="proceso-card featured">
+					<div class="proceso-contenido">
+						<span class="paso">PAQUETE 02</span>
+						<div class="featured-badge">Más popular</div>
+						<h3>Entre Patas</h3>
+						<p class="pkg-tagline">"Una sesión con su mejor amigo"</p>
+						<p class="pkg-tiempo">90 min. de sesión</p>
+						<p class="pkg-price"><small>S/</small>290</p>
+						<ul class="pkg-items">
+							<li>15 fotos seleccionadas.</li>
+							<li>9 ediciones profesionales.</li>
+							<li><strong>4 ediciones creativas.</strong></li>
+							<li>Descarga en alta resolución.</li>
+							<li>Dueños pueden participar.</li>
+							<li>Hasta 2 canes.</li>
+							<li><strong>1 Foto impresa 20x30.</strong></li>
+						</ul>
+						<div class="pkg-footer">
+							<p class="pkg-bonus">🎁 10% dto. todo Complemento</p>
+							
+						</div>
+					</div>
+				</div>
+
+				<div class="proceso-card">
+					<div class="proceso-contenido">
+						<span class="paso">PAQUETE 03</span>
+						<h3>La Mancha</h3>
+						<p class="pkg-tagline">"La sesión grupal definitiva"</p>
+						<p class="pkg-tiempo">120 min. de sesión</p>
+						<p class="pkg-price"><small>S/</small>370</p>
+						<ul class="pkg-items">
+							<li>20 fotos seleccionadas.</li>
+							<li>12 ediciones profesionales.</li>
+							<li><strong>6 ediciones creativas.</strong></li>
+							<li>Dueños pueden participar.</li>
+							<li>Descarga en alta resolución.</li>
+							<li>Hasta 3 canes.</li>
+							<li><strong>1 Foto impresa 20x30.</strong></li>
+							<li><strong>1 Polo personalizado.</strong></li>
+						</ul>
+						<div class="pkg-footer">
+							<p class="pkg-bonus">🎁 15% dto. todo Complemento</p>
+							
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- BOTÓN VER GALERÍA - BANNER FULL -->
+<section class="banner-galeria">
+  <a href="galeria.html" class="btn-galeria">VER GALERÍA →</a>
+</section>
+
+
+	<!-- ── FAQ EXTERIORES ─────────────────────── -->
+	<section id="faq" class="wrapper style3">
+		<div class="inner">
+			<header class="major">
+				<h2>Preguntas Frecuentes</h2>
+				<p>Todo lo que necesitas saber antes de tu sesión.</p>
+			</header>
+			<div class="faq-grid">
+
+				<div class="faq-item">
+					<button class="faq-pregunta" onclick="toggleFaq(this)">
+						¿Cuánto dura la sesión?
+						<span class="faq-icono">+</span>
+					</button>
+					<div class="faq-respuesta">
+						<p>Depende del paquete elegido. Petlover dura 45 minutos, Entre Patas 90 minutos y La Mancha 120 minutos. El tiempo incluye el desplazamiento dentro del punto de sesión y los momentos de descanso de tu can.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-pregunta" onclick="toggleFaq(this)">
+						¿Dónde se realizan las sesiones?
+						<span class="faq-icono">+</span>
+					</button>
+					<div class="faq-respuesta">
+						<p>Las sesiones de la Línea Exteriores se realizan en parques y espacios abiertos de Lima, principalmente en zonas céntricas.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-pregunta" onclick="toggleFaq(this)">
+						¿Puedo participar en las fotos con mi mascota?
+						<span class="faq-icono">+</span>
+					</button>
+					<div class="faq-respuesta">
+						<p>Sí. Todos los paquetes permiten la participación del dueño. En Entre Patas y La Mancha pueden participar varios dueños con sus respectivos canes.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-pregunta" onclick="toggleFaq(this)">
+						¿Cuándo recibo mis fotos?
+						<span class="faq-icono">+</span>
+					</button>
+					<div class="faq-respuesta">
+						<p>El tiempo de entrega es de 7 a 10 días hábiles. Primero recibirás una galería privada para seleccionar tus favoritas, y luego comenzamos el proceso de edición profesional.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-pregunta" onclick="toggleFaq(this)">
+						¿Qué pasa si mi mascota no se comporta bien?
+						<span class="faq-icono">+</span>
+					</button>
+					<div class="faq-respuesta">
+						<p>Trabajamos con la personalidad real de cada can — no buscamos poses forzadas. Si tu peludito es inquieto, tímido o muy activo, lo capturamos tal como es. Eso es lo que hace únicas a las fotos ZOOX.</p>
+					</div>
+				</div>
+
+				<div class="faq-item">
+					<button class="faq-pregunta" onclick="toggleFaq(this)">
+						¿Cómo agendo mi sesión?
+						<span class="faq-icono">+</span>
+					</button>
+					<div class="faq-respuesta">
+						<p>Escríbenos por WhatsApp o Instagram y coordinamos fecha, ubicación y paquete. La reserva se confirma con el pago del 50% del total del paquete elegido.</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	<div class="separador"></div>
+
+<!-- FORMULARIO -->
+<section id="formulario" class="wrapper">
+    <div class="inner">
+        <header class="major">
+            <h2>Reservas</h2>
+            <p>Si estás interesado en una sesión con Zoox Pet Studio, comunícate con nosotros.</p>
+        </header>
+
+        <form class="zoox-form" action="#" method="post">
+            <div class="form-group">
+                <label>Nombre y Apellido *</label>
+                <input type="text" name="nombre" required placeholder="Ej: Gustavo Herrera" />
+            </div>
+            <div class="form-group">
+                <label>WhatsApp *</label>
+                <input type="tel" name="whatsapp" required placeholder="Ej: 977325372" />
+            </div>
+            <div class="form-group">
+                <label>Correo *</label>
+                <input type="email" name="correo" required placeholder="tucorreo@email.com" />
+            </div>
+            <div class="form-group">
+                <label>Nombre de tu mascota *</label>
+                <input type="text" name="mascota" required placeholder="Ej: Thor" />
+            </div>
+            <div class="form-group full">
+                <label>Complementos</label>
+                <select name="complementos">
+                    <option value="">Selecciona si te interesa algo extra</option>
+                    <option value="impresion">Foto impresa</option>
+                    <option value="polo">Polo personalizado</option>
+                    <option value="panel">Panel epóxico</option>
+                </select>
+            </div>
+            <div class="form-group full">
+                <label>Mensaje *</label>
+                <textarea name="mensaje" required placeholder="Especificanos cuál de nuestras opciones de servicios es de tu interés. Ej: Me interesa la Experiencia Entre Patas en casa para mi perrita..."></textarea>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" id="privacidad" required />
+                
+            </div>
+            <div class="form-submit">
+                <button type="submit" class="zoox-cta" style="cursor:pointer;">Enviar</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+	<!-- ── FOOTER ─────────────────────────────── -->
+	<footer id="footer">
+		<div class="footer-inner">
+			<img src="images/logoblanco-zoox.png" alt="ZOOX Pet Studio" class="footer-logo" />
+			<p class="footer-copy">© 2026 · Lima, Perú · Todos los derechos reservados.</p>
+			<ul class="footer-redes">
+				<li>
+					<a href="https://instagram.com/zoox.petstudio" target="_blank" aria-label="Instagram">
+						<i class="icon brands fa-instagram"></i>
+					</a>
+				</li>
+				<li>
+					<a href="https://facebook.com/zooxpetstudio" target="_blank" aria-label="Facebook">
+						<i class="icon brands fa-facebook-f"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Botón flotante WhatsApp -->
+	<a href="https://wa.me/51977325372?text=Hola%20ZOOX%2C%20tengo%20una%20consulta"
+	   target="_blank"
+	   class="whatsapp-float"
+	   aria-label="WhatsApp">
+		<i class="icon brands fa-whatsapp"></i>
+		
+	</a>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+function toggleFaq(btn) {
+	const item = btn.parentElement;
+	const isActive = item.classList.contains('active');
+	document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+	if (!isActive) item.classList.add('active');
+}
+</script>
+
+</body>
+</html>
