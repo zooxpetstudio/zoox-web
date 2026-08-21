@@ -1448,106 +1448,6 @@ margin-right: auto;
     </div>
   </section>
 
-  <!-- ========== FAQ ========== -->
-  <section id="faq" class="zbp-section zbp-section-dark">
-    <div class="container">
-      <div class="row mb-5">
-        <div class="col-lg-7" style="margin: 0 auto; text-align: center;">
-          <span class="zbp-label">Preguntas frecuentes</span>
-          <h2 class="zbp-title">Lo que las marcas<br><em>suelen preguntar</em></h2>
-          <div class="zbp-divider"></div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-9">
-          <div class="faq-grid">
-
-            <div class="faq-item">
-              <button class="faq-pregunta" onclick="toggleFaq(this)">
-                ¿Qué tipo de marcas trabajan con ZOOX Brands?
-                <span class="faq-icono">+</span>
-              </button>
-              <div class="faq-respuesta">
-                <p>Tiendas pet, clínicas veterinarias, alimentos, accesorios, grooming, hoteles para mascotas y cualquier empresa que tenga animales en su propuesta de valor.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-pregunta" onclick="toggleFaq(this)">
-                ¿Trabajan solo en Lima?
-                <span class="faq-icono">+</span>
-              </button>
-              <div class="faq-respuesta">
-                <p>Principalmente Lima (Miraflores, San Isidro, Barranco). Proyectos fuera de Lima se evalúan caso a caso.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-pregunta" onclick="toggleFaq(this)">
-                ¿Cuánto tiempo toma un proyecto?
-                <span class="faq-icono">+</span>
-              </button>
-              <div class="faq-respuesta">
-                <p>Depende del alcance. Una sesión fotográfica se entrega en 5–7 días hábiles. Un pack mensual de contenido tiene calendario fijo.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-pregunta" onclick="toggleFaq(this)">
-                ¿Necesito tener mi marca definida para trabajar con ustedes?
-                <span class="faq-icono">+</span>
-              </button>
-              <div class="faq-respuesta">
-                <p>No. También ayudamos a marcas en etapa de construcción de identidad.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-pregunta" onclick="toggleFaq(this)">
-                ¿Puedo traer a mis propias mascotas para las sesiones?
-                <span class="faq-icono">+</span>
-              </button>
-              <div class="faq-respuesta">
-                <p>Sí, de hecho lo recomendamos. Las mascotas de la marca generan más autenticidad.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-pregunta" onclick="toggleFaq(this)">
-                ¿Hacen fotografía de producto sin mascotas?
-                <span class="faq-icono">+</span>
-              </button>
-              <div class="faq-respuesta">
-                <p>Sí, ofrecemos fotografía de producto estándar con composición y luz de estudio.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-pregunta" onclick="toggleFaq(this)">
-                ¿Cómo es el proceso de pago?
-                <span class="faq-icono">+</span>
-              </button>
-              <div class="faq-respuesta">
-                <p>50% al inicio del proyecto, 50% contra entrega. Facturamos con RUC.</p>
-              </div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-pregunta" onclick="toggleFaq(this)">
-                ¿Cómo empezamos?
-                <span class="faq-icono">+</span>
-              </button>
-              <div class="faq-respuesta">
-                <p>Escríbenos por WhatsApp o completa el formulario. En menos de 24h te contactamos con una propuesta.</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
 
 <!-- ========== CONTACT BRANDS - clonado de Experiencia con copy Brands ========== -->
 <section id="formulario" class="wrapper" style="background:#0A0A0A; padding: 100px 0;">
@@ -1622,7 +1522,8 @@ margin-right: auto;
   </footer>
 
   <!-- Botón flotante WhatsApp -->
-  .whatsapp-float{
+<style>
+.whatsapp-float{
   position:fixed; bottom:1.8rem; right:1.8rem;
   width:56px; height:56px;
   background:#25D366; border-radius:50%;
@@ -1638,6 +1539,11 @@ margin-right: auto;
   70%{box-shadow:0 4px 20px rgba(37,211,102,0.45), 0 0 0 14px rgba(37,211,102,0)}
   100%{box-shadow:0 4px 20px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0)}
 }
+</style>
+
+<a href="https://wa.me/51977325372" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28"><path fill="#fff" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path fill="#fff" d="M12.004 2.003C6.478 2.003 2 6.48 2 12.006c0 1.977.548 3.826 1.5 5.404L2 22l4.71-1.463a9.94 9.94 0 0 0 5.294 1.523h.005c5.526 0 10.003-4.478 10.003-10.004 0-2.674-1.041-5.187-2.933-7.08a9.95 9.95 0 0 0-7.075-2.973zm5.842 15.85c-.245.688-1.42 1.318-1.958 1.4-.499.076-1.125.108-1.815-.114-.418-.134-.955-.313-1.642-.611-2.892-1.25-4.782-4.155-4.926-4.348-.144-.192-1.174-1.562-1.174-2.98 0-1.418.744-2.115 1.008-2.404.263-.288.573-.36.764-.36.19 0 .382.002.549.01.176.008.412-.067.645.492.24.577.816 1.99.888 2.135.072.144.12.312.024.51-.096.198-.144.312-.288.48-.144.168-.302.375-.432.503-.144.144-.294.3-.126.588.168.288.746 1.232 1.601 1.996 1.101.982 2.03 1.286 2.318 1.43.288.144.456.12.624-.072.168-.192.72-.84.913-1.128.192-.288.384-.24.648-.144.264.096 1.677.792 1.965.936.288.144.48.216.552.336.072.12.072.696-.173 1.386z"/></svg>
+</a>
 
   <script>
 

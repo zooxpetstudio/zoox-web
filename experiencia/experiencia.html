@@ -611,8 +611,12 @@
         .form-group.full { grid-column:1 / -1; }
         .form-group label { font-size:0.7rem; letter-spacing:0.08em; color:#888; text-transform:uppercase; margin-bottom:6px; font-family:'Oswald'; }
         .form-group input, .form-group select, .form-group textarea {
-            background:#111; border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:12px 14px; color:#fff; font-family:'Inter'; font-size:0.85rem; outline:none; transition:border 0.3s;
-        }
+    background:#111; border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:12px 14px; color:#fff; font-family:'Inter'; font-size:0.85rem; outline:none; transition:border 0.3s;
+}
+.form-group select option {
+    background:#111;
+    color:#fff;
+}
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--zoox-amarillo); }
         .form-group textarea { min-height:110px; resize:vertical; }
         .form-check { grid-column:1 / -1; display:flex; gap:10px; align-items:flex-start; margin-top:0.5em; text-align:left; }
@@ -907,6 +911,7 @@
                     border: none !important;
                     margin-top: 2em !important;
                     transition: all 0.3s ease !important;
+					text-align: center !important;
                 }
                 .zoox-cta:hover {
                     background: var(--zoox-blanco) !important;
@@ -1156,7 +1161,7 @@
 
 	<!-- BOTÓN VER GALERÍA - BANNER FULL -->
 <section class="banner-galeria">
-  <a href="galeria.html" class="btn-galeria">VER GALERÍA →</a>
+  <a href="../galeria/index.html" class="btn-galeria">VER GALERÍA</a>
 </section>
 
 
@@ -1232,7 +1237,7 @@
 			</div>
 		</div>
 	</section>
-	<div class="separador"></div>
+	
 
 <!-- FORMULARIO -->
 <section id="formulario" class="wrapper">
