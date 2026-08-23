@@ -1438,7 +1438,12 @@ h1,h2,h3,h4,h5,h6 {
   text-transform: uppercase; text-decoration: none; border: none !important;
   transition: all 0.2s;
 }
-#zoox-menu ul li a:hover, #zoox-menu ul li a.active { color: var(--zoox-blanco) !important; padding-left: 0.5em; }
+#zoox-menu ul li a:hover { color: var(--zoox-blanco) !important; }
+#zoox-menu ul li a.active {
+  box-shadow: inset 0 0 0 1px rgba(10,10,10,0.4) !important;
+  padding-left: 0.6em !important;
+  border-radius: 4px !important;
+}
 .zoox-menu-footer { margin-top: auto; padding-top: 2em; border-top: 1px solid rgba(0,0,0,0.12); }
 .zoox-menu-footer p { font-size: 0.7rem; color: rgba(0,0,0,0.6); font-weight: 300; line-height: 1.6; margin: 0 0 1em 0; }
 .zoox-menu-social { display: flex; gap: 1em; }

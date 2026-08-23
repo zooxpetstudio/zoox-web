@@ -215,13 +215,18 @@
 }
 
 #menu ul a {
-  font-family: 'Cera GR', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-size: 0.8em;
+  letter-spacing: 0.225em;
+  text-transform: uppercase;
   color: var(--zoox-negro);
   text-decoration: none;
   transition: color 0.2s;
+}
+
+#menu ul a.active {
+  box-shadow: inset 0 0 0 1px rgba(10,10,10,0.4);
+  padding-left: 0.6em;
+  border-radius: 4px;
 }
 
 #menu ul a:hover { color: var(--zoox-blanco); }
@@ -1154,6 +1159,7 @@ margin-right: auto;
 <li><a href='../index.html'>Inicio</a></li>
 <li><a href='../experiencia/index.html'>Experiencia</a></li>
 <li><a href='../zooxart/index.html'>Zoox Art</a></li>
+<li><a href='#' class="active">Brands Pet</a></li>
 <li><a href='../galeria/index.html'>Galería</a></li>
             
             </ul>
