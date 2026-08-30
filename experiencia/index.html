@@ -600,7 +600,7 @@
 			color: var(--zoox-gris) !important;
 		}
 /* Formulario */
-        #formulario { background: var(--zoox-negro); padding:4em 2em; border-top:1px solid rgba(255,182,15,0.15); }
+        #formulario { background: var(--zoox-negro); padding:4em 2em; }
         #formulario .inner { max-width:750px; margin:0 auto; }
         #formulario header.major { text-align:center; margin-bottom:2.5em; }
         #formulario header.major h2 { color:#fff; font-size:2rem; }
@@ -609,9 +609,24 @@
         @media(max-width:600px){ .zoox-form{grid-template-columns:1fr;} }
         .form-group { display:flex; flex-direction:column; text-align:left; }
         .form-group.full { grid-column:1 / -1; }
-        .form-group label { font-size:0.7rem; letter-spacing:0.08em; color:#888; text-transform:uppercase; margin-bottom:6px; font-family:'Oswald'; }
+        .form-group label { font-size:0.7rem; letter-spacing:0.08em; color:hsl(0, 0%, 53%); text-transform:uppercase; margin-bottom:6px; font-family:'Oswald'; }
         .form-group input, .form-group select, .form-group textarea {
     background:#111; border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:12px 14px; color:#fff; font-family:'Inter'; font-size:0.85rem; outline:none; transition:border 0.3s;
+}
+.form-group select {
+    color-scheme: dark;
+    line-height: normal !important;
+    height: auto !important;
+}
+.form-group input:valid, .form-group input:invalid,
+.form-group select:valid, .form-group select:invalid,
+.form-group textarea:valid, .form-group textarea:invalid {
+    box-shadow: none !important;
+    border-color: rgba(255,255,255,0.1) !important;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--zoox-amarillo) !important;
+    box-shadow: none !important;
 }
 .form-group select option {
     background:#111;
@@ -897,22 +912,24 @@
 
                 /* ===== V2: CTA BUTTONS ===== */
                 .zoox-cta {
-                    display: inline-block !important;
-                    background: var(--zoox-amarillo) !important;
-                    color: var(--zoox-negro) !important;
-                    padding: 0.9em 2em !important;
-                    border-radius: 50px !important;
-                    font-family: 'Oswald', sans-serif !important;
-                    font-weight: 600 !important;
-                    letter-spacing: 0.1em !important;
-                    text-transform: uppercase !important;
-                    font-size: 0.85rem !important;
-                    text-decoration: none !important;
-                    border: none !important;
-                    margin-top: 2em !important;
-                    transition: all 0.3s ease !important;
-					text-align: center !important;
-                }
+    display: inline-block !important;
+    background: var(--zoox-amarillo) !important;
+    color: var(--zoox-negro) !important;
+    padding: 0.9em 2em !important;
+    border-radius: 50px !important;
+    font-family: 'Oswald', sans-serif !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+    font-size: 0.85rem !important;
+    text-decoration: none !important;
+    border: none !important;
+    margin-top: 2em !important;
+    transition: all 0.3s ease !important;
+    text-align: center !important;
+    line-height: 1 !important;
+    vertical-align: middle !important;
+}
                 .zoox-cta:hover {
                     background: var(--zoox-blanco) !important;
                     transform: translateY(-2px) !important;
@@ -930,7 +947,7 @@
 				.banner-galeria{
   position:relative;
   width:100%;
-  height:320px; /* ajusta: 260px en móvil, 380px desktop */
+  height:200px;
   background: url('images/zoox-banner-dog.jpg') center 30% / cover no-repeat #0A0A0A;
   display:flex;
   align-items:center;
@@ -950,13 +967,14 @@
   color:#0a0a0a;
   font-family:'Cera GR', sans-serif;
   font-weight:900;
-  font-size:0.85em;
+  font-size:0.75em;
   letter-spacing:0.06em;
   text-transform:uppercase;
-  padding:0.9em 1.8em;
+  padding:0.7em 1.4em;
   border-radius:999px;
   text-decoration:none;
   transition:all .2s;
+  margin:0 0.6em;
 }
 .btn-galeria:hover{
   background:#e5e5e5;
@@ -1159,9 +1177,11 @@
 		</div>
 	</section>
 
-	<!-- BOTÓN VER GALERÍA - BANNER FULL -->
+<!-- BOTÓN VER GALERÍA - BANNER FULL -->
 <section class="banner-galeria">
-  <a href="../galeria/index.html" class="btn-galeria">VER GALERÍA</a>
+  <a href="../galeria/index.html" class="btn-galeria">Galería</a>
+
+  <a href="../zooxart/index.html" class="btn-galeria">Complementos</a>
 </section>
 
 
@@ -1262,15 +1282,15 @@
             </div>
             <div class="form-group">
                 <label>Nombre de tu mascota *</label>
-                <input type="text" name="mascota" required placeholder="Ej: Thor" />
+                <input type="text" name="mascota" required placeholder="Ej: Khora" />
             </div>
             <div class="form-group full">
-                <label>Complementos</label>
+                <label>Complementos Zoox</label>
                 <select name="complementos">
-                    <option value="">Selecciona si te interesa algo extra</option>
-                    <option value="impresion">Foto impresa</option>
-                    <option value="polo">Polo personalizado</option>
-                    <option value="panel">Panel epóxico</option>
+                    <option value="" disabled selected hidden>Selecciona si te interesa algo extra</option>
+                     <option value="Polo Zoox">Polo Zoox</option>
+                    <option value="Poster Zoox">Poster Zoox</option>
+                    <option value="Banner Digital">Banner Digital</option>
                 </select>
             </div>
             <div class="form-group full">

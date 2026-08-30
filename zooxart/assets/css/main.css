@@ -4318,19 +4318,16 @@ body.is-menu-visible #menu {
 
 /* 3. IMAGEN FONDO BANNER - FORZAR VISIBILIDAD */
 #banner {
-  background:#0A0A0A url('images/banner-zoox-art.jpg') no-repeat center center !important;
+  background-color:#0A0A0A !important;
+  background-repeat:no-repeat !important;
+  background-position:center center !important;
   background-size:cover !important;
   background-attachment:scroll !important;
   position:relative !important;
   min-height:480px !important;
 }
 #banner::before {
-  content:'' !important;
-  position:absolute !important;
-  inset:0 !important;
-  background:rgba(10,10,10,0.62) !important;
-  z-index:1 !important;
-  display:block !important;
+  content:none !important;
 }
 #banner .inner { position:relative !important; z-index:2 !important; }
 
