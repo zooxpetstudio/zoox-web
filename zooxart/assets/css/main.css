@@ -4326,6 +4326,11 @@ body.is-menu-visible #menu {
   position:relative !important;
   min-height:480px !important;
 }
+@media (max-width: 736px) {
+  #banner {
+    min-height: 260px !important;
+  }
+}
 #banner::before {
   content:none !important;
 }
