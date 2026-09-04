@@ -1550,6 +1550,12 @@ input, select, textarea {
 			border-radius: 4px;
 			opacity: 0;
 		}
+		#main article#intro {
+	opacity: 1;
+	transform: translateY(0);
+	position: relative;
+	pointer-events: auto;
+}
 
 			#main article.active {
 				-moz-transform: translateY(0);

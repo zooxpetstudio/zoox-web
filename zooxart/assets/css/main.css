@@ -4178,7 +4178,7 @@ body.is-menu-visible #menu{transform:translateX(0)!important;}
 
 /* FONDOS */
 #polos-zoox{background:var(--zoox-gris)!important;}
-#posters{background:#FFFFFF!important;}
+#posters{background:var(--zoox-gris)!important;}
 #banners{background:var(--zoox-gris)!important;} /* GRIS COMO PEDISTE */
 
 /* RECTANGULOS VERDES MINI - POSTERS */
