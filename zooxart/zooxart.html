@@ -114,7 +114,14 @@
 
 <style>
 #banner{position:relative;}
-.banner-overlay{position:relative;z-index:5;max-width:520px;padding:3em 2em;color:#0A0A0A;}
+.banner-overlay{position:absolute;inset:0;z-index:5;max-width:520px;padding:3em 2em;color:#0A0A0A;}
+.banner-slide{position:relative;height:100%;}
+.banner-cta{position:absolute;left:20%;bottom:10%;}
+
+@media screen and (max-width:736px){
+  .banner-overlay{max-width:100%;padding:0;}
+  .banner-cta{left:50%;bottom:6%;transform:translateX(-50%);}
+}
 .banner-slide{display:none;}
 .banner-slide.active{display:block;}
 .banner-eyebrow{font-family:'Cera GR',sans-serif;font-size:0.75em;letter-spacing:0.2em;color:var(--zoox-amarillo);font-weight:700;text-transform:uppercase;margin-bottom:0.6em;}
@@ -129,8 +136,7 @@
   .banner-icons{gap:0.8em;}
   .banner-icon{font-size:0.65em;max-width:80px;}
 }
-.banner-cta{display:inline-flex;align-items:center;gap:0.6em;background:var(--zoox-negro);color:#fff;font-family:'Cera GR',sans-serif;font-weight:700;letter-spacing:0.05em;padding:0.9em 1.8em;border-radius:40px;text-decoration:none;text-transform:uppercase;font-size:0.85em;}
-
+.banner-cta{display:inline-flex;align-items:center;gap:0.6em;background:#505c47;color:#fff;font-family:'Cera GR',sans-serif;font-weight:700;letter-spacing:0.05em;padding:0.9em 1.8em;border-radius:40px;text-decoration:none;text-transform:uppercase;font-size:0.85em;}
 @media screen and (max-width:736px){
   .banner-overlay{padding:2em 1.2em;max-width:100%;}
 }
@@ -182,38 +188,15 @@
 <section id="banner">
   <div class="banner-overlay">
     <div class="banner-slide active" data-slide="0">
-  <p class="banner-eyebrow">ZOOX PET STUDIO</p>
-  <h1 class="banner-title">Viste el <span>amor</span> por tu mascota</h1>
-  <p class="banner-sub">Polos personalizados con el diseño de tu mascota, impresión de alta calidad.</p>
-  <div class="banner-icons">
-    <div class="banner-icon"><i class="fa-solid fa-eye"></i><span>Vista previa<br>antes de imprimir</span></div>
-    <div class="banner-icon"><i class="fa-solid fa-ruler"></i><span>Tallas<br>S · M · L · XL</span></div>
-    <div class="banner-icon"><i class="fa-solid fa-shirt"></i><span>Estampado<br>tacto cero</span></div>
+      <a href="#polos-zoox" class="banner-cta">VER POLOS <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="banner-slide" data-slide="1">
+      <a href="#posters" class="banner-cta">VER POSTERS <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="banner-slide" data-slide="2">
+      <a href="#banners" class="banner-cta">VER BANNERS <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
   </div>
-  <a href="#polos-zoox" class="banner-cta">VER POLOS <i class="fa-solid fa-arrow-right"></i></a>
-</div>
-<div class="banner-slide" data-slide="1">
-  <p class="banner-eyebrow">ZOOX PET STUDIO</p>
-  <h1 class="banner-title">Inmortaliza a tu <span>mascota</span></h1>
-  <p class="banner-sub">Pósters con acabado en Resina Epóxica que duran para siempre.</p>
-  <div class="banner-icons">
-    <div class="banner-icon"><i class="fa-solid fa-layer-group"></i><span>3 formatos<br>A4 · A3 · A2</span></div>
-    <div class="banner-icon"><i class="fa-solid fa-droplet"></i><span>Resina<br>epóxica</span></div>
-    <div class="banner-icon"><i class="fa-solid fa-star"></i><span>Acabado<br>brillante</span></div>
-  </div>
-  <a href="#posters" class="banner-cta">VER POSTERS <i class="fa-solid fa-arrow-right"></i></a>
-</div>
-<div class="banner-slide" data-slide="2">
-  <p class="banner-eyebrow">ZOOX PET STUDIO</p>
-  <h1 class="banner-title">Promociona a tu <span>ejemplar</span></h1>
-  <p class="banner-sub">Banners digitales profesionales para redes sociales y anuncios.</p>
-  <div class="banner-icons">
-    <div class="banner-icon"><i class="fa-solid fa-image"></i><span>Alta<br>resolución</span></div>
-    <div class="banner-icon"><i class="fa-solid fa-share-nodes"></i><span>Ideal para<br>redes sociales</span></div>
-    <div class="banner-icon"><i class="fa-solid fa-bolt"></i><span>Entrega<br>rápida</span></div>
-  </div>
-  <a href="#banners" class="banner-cta">VER BANNERS <i class="fa-solid fa-arrow-right"></i></a>
-</div>
 </section>
 
 <section id="zooxart-titulo" style="background:#505c47; text-align:center; padding:3em 2em;">
@@ -263,31 +246,31 @@
 <header class="major"><h2>Polos ZOOX</h2><p>Personalizamos tu estilo con la imagen de tu mascota y también con artes prediseñados. Polos básicos perfectos para hombre y mujer, todos en color negro.</p></header>
 <div class="polo-grid">
   <div class="polo-card" data-name="POLO ZOOX - Estampado frontal" data-price="65" data-type="polo" data-images="images/polo-negro-minimal.JPG,images/polo-negro-minimal-2.JPG,images/polo-negro-minimal-3.JPG,images/polo-negro-minimal-4.JPG">
-    <div class="img-wrap"><img src="images/polo-negro-minimal.JPG" alt="Polo Minimal"></div>
+    <div class="img-wrap"><img src="images\polos\producto\poloproducto1.PNG" alt="Polo Minimal"></div>
     <div class="info"><span class="marca">Polo ZOOX </span><h4>TALLA: S - M - L - XL</h4><p>Color NEGRO · Estampado frontal tacto cero</p><div class="price">s/65</div></div>
   </div>
   <div class="polo-card" data-name="POLO ZOOX - Doble estampado" data-price="69" data-type="polo" data-images="images/polo-negro-pop.JPG,images/polo-negro-pop-2.JPG,images/polo-negro-pop-3.JPG,images/polo-negro-pop-4.JPG">
-    <div class="img-wrap"><img src="images/polo-negro-pop.JPG" alt="Polo Pop"></div>
+    <div class="img-wrap"><img src="images\polos\producto\poloproducto2.PNG" alt="Polo Pop"></div>
     <div class="info"><span class="marca">Polo ZOOX</span><h4>TALLA: S - M - L - XL</h4><p>Color NEGRO · Doble estampado tacto cero</p><div class="price">s/69</div></div>
   </div>
   <div class="polo-card" data-name="PACK 3 POLOS ZOOX" data-price="180" data-type="pack" data-images="images/pack-3-polos.jpg,images/pack-3-polos-2.jpg,images/pack-3-polos-3.jpg,images/pack-3-polos-4.jpg">
-    <div class="img-wrap"><img src="images/pack-3-polos.jpg" alt="Pack"></div>
+    <div class="img-wrap"><img src="images\polos\producto\poloproducto3.PNG" alt="Pack"></div>
     <div class="info"><span class="marca">Polo ZOOX</span><h4>Pack Petlover</h4><p>3 diseños frontales · Combina tallas</p><div class="price">s/180<s></s></div></div>
   </div>
 </div>
 <div class="zoox-carousel-wrap">
   
   <div class="zoox-carousel" id="zc-polos">
-    <a href="galeria-polos.html" class="zc-item"><img src="images/polo-negro-minimal.JPG" alt="Editorial"><span>Editorial</span></a>
-    <a href="galeria-polos.html" class="zc-item"><img src="images/polo-negro-pop.JPG" alt="Pop"><span>Pop</span></a>
-    <a href="galeria-polos.html" class="zc-item"><img src="images/pack-3-polos.jpg" alt="Pack Petlover"><span>Pack Petlover</span></a>
-    <a href="galeria-polos.html" class="zc-item"><img src="images/polo-negro-minimal-2.JPG" alt="Editorial 2"><span>Editorial</span></a>
-    <a href="galeria-polos.html" class="zc-item"><img src="images/polo-negro-pop-2.JPG" alt="Pop 2"><span>Pop</span></a>
-    <a href="galeria-polos.html" class="zc-item"><img src="images/polo-negro-minimal.JPG" alt="Editorial"><span>Editorial</span></a>
-    <a href="galeria-polos.html" class="zc-item"><img src="images/polo-negro-pop.JPG" alt="Pop"><span>Pop</span></a>
-    <a href="galeria-polos.html" class="zc-item"><img src="images/pack-3-polos.jpg" alt="Pack Petlover"><span>Pack Petlover</span></a>
-    <a href="galeria-polos.html" class="zc-item"><img src="images/polo-negro-minimal-2.JPG" alt="Editorial 2"><span>Editorial</span></a>
-    <a href="galeria-polos.html" class="zc-item"><img src="images/polo-negro-pop-2.JPG" alt="Pop 2"><span>Pop</span></a>
+    <a href="galeria-polos.html" class="zc-item"><img src="images\polos\polo carrousel\polocarrousel1.png" alt="Editorial"><span>Editorial</span></a>
+    <a href="galeria-polos.html" class="zc-item"><img src="images\polos\polo carrousel\polocarrousel2.png" alt="Pop"><span>Pop</span></a>
+    <a href="galeria-polos.html" class="zc-item"><img src="images\polos\polo carrousel\polocarrousel3.png" alt="Pack Petlover"><span>Pack Petlover</span></a>
+    <a href="galeria-polos.html" class="zc-item"><img src="images\polos\polo carrousel\polocarrousel4.png" alt="Editorial 2"><span>Editorial</span></a>
+    <a href="galeria-polos.html" class="zc-item"><img src="images\polos\polo carrousel\polocarrousel5.png" alt="Pop 2"><span>Pop</span></a>
+    <a href="galeria-polos.html" class="zc-item"><img src="images\polos\polo carrousel\polocarrousel6.png" alt="Editorial"><span>Editorial</span></a>
+    <a href="galeria-polos.html" class="zc-item"><img src="images\polos\polo carrousel\polocarrousel7.png" alt="Pop"><span>Pop</span></a>
+    <a href="galeria-polos.html" class="zc-item"><img src="images\polos\polo carrousel\polocarrousel8.png" alt="Pack Petlover"><span>Pack Petlover</span></a>
+    <a href="galeria-polos.html" class="zc-item"><img src="images\polos\polo carrousel\polocarrousel9.png" alt="Editorial 2"><span>Editorial</span></a>
+    <a href="galeria-polos.html" class="zc-item"><img src="images\polos\polo carrousel\polocarrousel10.png" alt="Pop 2"><span>Pop</span></a>
   </div>
   
 </div>
@@ -302,23 +285,28 @@
 <div class="specs-verdes-mini">
   <div class="spec-verde-mini"><i class="fa-solid fa-layer-group"></i><h4>SOPORTE DE CELTEX PVC</h4><p>Base firme, liviana e ideal para complementar tu decoración.</p></div>
   <div class="spec-verde-mini"><i class="fa-solid fa-print"></i><h4>VINIL ADHESIVO</h4><p>Impresión alta resolución, colores vivos y nítidos.</p></div>
-  <div class="spec-verde-mini"><i class="fa-solid fa-droplet"></i><h4>RESINA EPÓXICA</h4><p>Capa cristalina que intensifica colores y protege para siempre.</p></div>
+  <div class="spec-verde-mini"><i class="fa-solid fa-droplet"></i><h4>CRISTAL LÍQUIDO</h4><p>Capa cristalina que intensifica colores y protege para siempre.</p></div>
 </div>
 
 <div class="polo-grid">
-  <div class="polo-card" data-name="Poster A4 - 21x29.7 cm" data-price="119" data-type="poster"><div class="img-wrap center-text"><br><strong>A4 - 21 x 29.7cm</strong></div><div class="info"><span class="marca">ZOOX ART</span><h4>POSTER A4</h4><p>Base Celtex + Resina Epóxica </p><div class="price sm">s/119</div></div></div>
-  <div class="polo-card" data-name="Poster A3 - 29.7x42 cm" data-price="139" data-type="poster"><div class="img-wrap center-text"><br><strong>A3 - 29.7 x 42cm</strong></div><div class="info"><span class="marca">ZOOX ART</span><h4>POSTER A3</h4><p>Base Celtex + Resina Epóxica </p><div class="price sm">s/139</div></div></div>
-  <div class="polo-card" data-name="Poster A2 - 42x59.4 cm" data-price="179" data-type="poster"><div class="img-wrap center-text"><br><strong>A2 - 42 x 59.4cm</strong></div><div class="info"><span class="marca">ZOOX ART</span><h4>POSTER A2</h4><p>Base Celtex + Resina Epóxica </p><div class="price sm">s/179</div></div></div>
+  <div class="polo-card" data-name="Poster A4 - 21x29.7 cm" data-price="119" data-type="poster"><div class="img-wrap"><img src="images/posters/productos/poster1.PNG" alt="Poster A4"></div><div class="info"><span class="marca">POSTERS ZOOX </span><h4>POSTER A4</h4><p>Base Celtex + Resina Epóxica </p><div class="price sm">s/119</div></div></div>
+  <div class="polo-card" data-name="Poster A3 - 29.7x42 cm" data-price="139" data-type="poster"><div class="img-wrap"><img src="images/posters/productos/poster2.PNG" alt="Poster A3"></div><div class="info"><span class="marca">POSTERS ZOOX </span><h4>POSTER A3</h4><p>Base Celtex + Resina Epóxica </p><div class="price sm">s/139</div></div></div>
+  <div class="polo-card" data-name="Poster A2 - 42x59.4 cm" data-price="179" data-type="poster"><div class="img-wrap"><img src="images/posters/productos/poster3.PNG" alt="Poster A2"></div><div class="info"><span class="marca">POSTERS ZOOX</span><h4>POSTER A2</h4><p>Base Celtex + Resina Epóxica </p><div class="price sm">s/179</div></div></div>
 </div>
 <div class="zoox-carousel-wrap">
   
   <div class="zoox-carousel" id="zc-posters">
-    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-a4.jpg" alt="Poster A4"><span>Poster A4</span></a>
-    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-a3.jpg" alt="Poster A3"><span>Poster A3</span></a>
-    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-a2.jpg" alt="Poster A2"><span>Poster A2</span></a>
-    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-a4.jpg" alt="Poster A4"><span>Poster A4</span></a>
-    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-a3.jpg" alt="Poster A3"><span>Poster A3</span></a>
-    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-a2.jpg" alt="Poster A2"><span>Poster A2</span></a>
+    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/postercarrousel1.png" alt="Poster A4"><span>Poster A4</span></a>
+    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/postercarrousel2.png" alt="Poster A3"><span>Poster A3</span></a>
+    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/postercarrousel3.png" alt="Poster A2"><span>Poster A2</span></a>
+    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/postercarrousel4.png" alt="Poster A4"><span>Poster A4</span></a>
+    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/postercarrousel5.png" alt="Poster A3"><span>Poster A3</span></a>
+    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/postercarrousel6.png" alt="Poster A2"><span>Poster A2</span></a>
+    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/postercarrousel7.png" alt="Poster A2"><span>Poster A2</span></a>
+    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/postercarrousel8.png" alt="Poster A4"><span>Poster A4</span></a>
+    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/postercarrousel9.png" alt="Poster A3"><span>Poster A3</span></a>
+    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/postercarrousel10.png" alt="Poster A2"><span>Poster A2</span></a>
+  </div>
   </div>
   
 </div>
@@ -329,19 +317,23 @@
 <div class="inner">
 <header class="major"><h2>Banners Digitales</h2><p>PROMOCIONA A TU EJEMPLAR EN MODO PROFESIONAL. Somos expertos en artes para criadores. Anuncios de alta calidad para redes sociales, revistas caninas y empresas del sector animal.</p></header>
 <div class="polo-grid">
-  <div class="polo-card" data-name="Banner Stud / Monta" data-price="60" data-type="banner"><div class="img-wrap banner-bg">STUD</div><div class="info"><span class="marca">ZOOX DIGITAL</span><h4>STUD / MONTA</h4><p>Anuncio profesional para tu ejemplar macho o hembra.</p><div class="price">s/60 · $20 · €18</div></div></div>
-  <div class="polo-card" data-name="Banner Parejas" data-price="60" data-type="banner"><div class="img-wrap banner-bg">PAREJAS</div><div class="info"><span class="marca">ZOOX DIGITAL</span><h4>PAREJAS</h4><p>Diseño elegante perfecto para anunciar la próxima camada.</p><div class="price">s/70 · $22 · €20</div></div></div>
-  <div class="polo-card" data-name="Banner Camada" data-price="80" data-type="banner"><div class="img-wrap banner-bg">CAMADA</div><div class="info"><span class="marca">ZOOX DIGITAL</span><h4>CAMADA</h4><p>Anuncio de nacimientos y reservas.</p><div class="price">s/85 · $27 · €24</div></div></div>
+  <div class="polo-card" data-name="Banner Stud / Monta" data-price="60" data-type="banner"><div class="img-wrap"><img src="images/banners/producto/banner1.PNG" alt="Banner Stud / Monta"></div><div class="info"><span class="marca">BANNER DIGITAL</span><h4>STUD / MONTA</h4><p>Anuncio profesional para tu ejemplar macho o hembra.</p><div class="price">s/60 · $20 · €18</div></div></div>
+  <div class="polo-card" data-name="Banner Parejas" data-price="60" data-type="banner"><div class="img-wrap"><img src="images/banners/producto/banner2.PNG" alt="Banner Parejas"></div><div class="info"><span class="marca">BANNER DIGITAL</span><h4>PAREJAS</h4><p>Diseño elegante perfecto para anunciar la próxima camada.</p><div class="price">s/70 · $22 · €20</div></div></div>
+  <div class="polo-card" data-name="Banner Camada" data-price="80" data-type="banner"><div class="img-wrap"><img src="images/banners/producto/banner3.PNG" alt="Banner Camada"></div><div class="info"><span class="marca">BANNER DIGITAL</span><h4>CAMADA</h4><p>Anuncio de nacimientos y reservas.</p><div class="price">s/85 · $27 · €24</div></div></div>
 </div>
 <div class="zoox-carousel-wrap">
  
   <div class="zoox-carousel" id="zc-banners">
-    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-stud.jpg" alt="Stud / Monta"><span>Stud / Monta</span></a>
-    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-parejas.jpg" alt="Parejas"><span>Parejas</span></a>
-    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-camada.jpg" alt="Camada"><span>Camada</span></a>
-    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-stud.jpg" alt="Stud / Monta"><span>Stud / Monta</span></a>
-    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-parejas.jpg" alt="Parejas"><span>Parejas</span></a>
-    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-camada.jpg" alt="Camada"><span>Camada</span></a>
+    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/bannercarrousel1.png" alt="Stud / Monta"><span>Stud / Monta</span></a>
+    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/bannercarrousel2.png" alt="Parejas"><span>Parejas</span></a>
+    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/bannercarrousel3.png" alt="Camada"><span>Camada</span></a>
+    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/bannercarrousel4.png" alt="Stud / Monta"><span>Stud / Monta</span></a>
+    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/bannercarrousel5.png" alt="Parejas"><span>Parejas</span></a>
+    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/bannercarrousel6.png" alt="Camada"><span>Camada</span></a>
+    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/bannercarrousel7.png" alt="Stud / Monta"><span>Stud / Monta</span></a>
+    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/bannercarrousel8.png" alt="Parejas"><span>Parejas</span></a>
+    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/bannercarrousel9.png" alt="Camada"><span>Camada</span></a>
+    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/bannercarrousel10.png" alt="Stud / Monta"><span>Stud / Monta</span></a>
   </div>
   </div>
   
@@ -647,10 +639,15 @@ document.addEventListener('DOMContentLoaded',()=>{
 <!-- BANNER ALEATORIO ZOOX ART -->
 <script>
 (function(){
-  const banners = [
-    'images/bannerzooxart/banner1.png',
-    'images/bannerzooxart/banner2.png',
-    'images/bannerzooxart/banner3.png'
+  const esMovil = window.innerWidth <= 736;
+  const banners = esMovil ? [
+    'images/hero/bannervertical1.png',
+    'images/hero/bannervertical2.png',
+    'images/hero/bannervertical3.png'
+  ] : [
+    'images/hero/banner1.png',
+    'images/hero/banner2.png',
+    'images/hero/banner3.png'
   ];
   const el = document.getElementById('banner');
   const slides = document.querySelectorAll('.banner-slide');
