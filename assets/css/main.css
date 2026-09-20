@@ -1377,16 +1377,16 @@ input, select, textarea {
 						background-color: rgba(255, 255, 255, 0.175);
 					}
 
-		#header nav.use-middle:after {
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0;
-			left: calc(50% - 1px);
-			width: 1px;
-			height: 100%;
-			background: #ffffff;
-		}
+	#header nav.use-middle:after {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: calc(50% - 1px);
+	width: 1px;
+	height: 100%;
+	background: #ffffff;
+}
 
 		#header nav.use-middle ul li.is-middle {
 			border-left: 0;
@@ -1710,4 +1710,33 @@ input, select, textarea {
 .whatsapp-float i {
 	color: #FFFFFF;
 	font-size: 28px;
+}
+/* Campton – tipografía de marca */
+@font-face { font-family: 'Campton'; src: url('/assets/webfonts/CamptonLight.woff') format('woff');     font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Campton'; src: url('/assets/webfonts/CamptonBook.woff') format('woff');      font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Campton'; src: url('/assets/webfonts/CamptonMedium.woff') format('woff');    font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Campton'; src: url('/assets/webfonts/CamptonBold.woff') format('woff');      font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Campton'; src: url('/assets/webfonts/CamptonExtraBold.woff') format('woff'); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Campton'; src: url('/assets/webfonts/CamptonBlack.woff') format('woff');     font-weight: 900; font-style: normal; font-display: swap; }
+
+#header .content p {
+  font-family: 'Campton', sans-serif;
+  font-weight: 700;
+}
+#header .content p span { display: block; }
+
+/* Hover amarillo, encajado en cada casilla */
+#header nav ul { overflow: hidden; }
+#header nav ul li a { transition: background-color .2s ease, color .2s ease; }
+#header nav ul li a:hover,
+#header nav ul li a:active { background-color: #FFB60F; color: #0A0A0A; }
+
+@media screen and (min-width: 481px) {
+  #header nav.use-middle ul li.is-middle { border-left: solid 1px #ffffff; }
+}
+
+@media screen and (min-width: 737px) {
+  #header nav ul { width: 38rem; }
+  #header nav ul li { flex: 1 1 0; min-width: 0; }
+  #header nav ul li a { min-width: 0; padding: 0 0 0 .2rem; text-align: center; }
 }
