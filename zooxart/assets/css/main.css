@@ -47,7 +47,7 @@
 
 /* APLICAR CERA GR A TODO ZOOX ART */
 body, p, a, li, span, div, input, textarea, button {
-  font-family:'Cera GR', 'DM Sans', sans-serif !important;
+  font-family:'Cera GR', 'Campton', sans-serif !important;
 }
 h1, h2, h3, h4, h5, h6, .btn-conoce, .faq-texto, .modal-nombre {
   font-family:'Cera GR', sans-serif !important;
@@ -158,7 +158,7 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: #fff;
-		font-family: "Open Sans", Helvetica, sans-serif;
+		font-family: "Campton", Helvetica, sans-serif;
 		font-size: 15pt;
 		font-weight: 400;
 		letter-spacing: 0.075em;
@@ -4143,16 +4143,16 @@ input, select, textarea {
 #header{background:#0A0A0A!important;position:fixed!important;top:0!important;left:0!important;width:100%!important;height:70px!important;z-index:10001!important;display:flex!important;align-items:center!important;justify-content:space-between!important;padding:0 1.8em!important;border:none!important;box-shadow:none!important;}
 #header.alt{background:#0A0A0A!important; border:none!important;}
 #header h1{margin:0!important;height:100%!important;display:flex!important;align-items:center!important;opacity:1!important;visibility:visible!important;}
-#header h1 a{display:flex!important;align-items:center!important;gap:10px!important;border:none!important;text-decoration:none!important;opacity:1!important; color:white!important; font-family:'Oswald',sans-serif!important; letter-spacing:0.1em!important;}
+#header h1 a{display:flex!important;align-items:center!important;gap:10px!important;border:none!important;text-decoration:none!important;opacity:1!important; color:white!important; font-family:'Campton',sans-serif!important; letter-spacing:0.1em!important;}
 #header h1 a img{height:38px!important;width:auto!important;min-width:100px!important;display:block!important;opacity:1!important;visibility:visible!important;}
 #header .menuToggle{color:white!important; opacity:1!important; border:none!important;}
-#header .menuToggle span{color:white!important; font-family:'Oswald',sans-serif!important;}
+#header .menuToggle span{color:white!important; font-family:'Campton',sans-serif!important;}
 
 /* MENU - UNA SOLA X */
 #menu{background:var(--zoox-amarillo)!important;position:fixed!important;top:0!important;right:0!important;width:340px!important;max-width:85vw!important;height:100vh!important;z-index:10002!important;transform:translateX(100%)!important;transition:transform 0.4s ease!important;padding:3em 2em!important;box-shadow:-10px 0 40px rgba(0,0,0,0.2)!important;}
 body.is-menu-visible #menu{transform:translateX(0)!important;}
 #menu .close{background:none!important; border:none!important; font-size:22px!important; position:absolute!important; top:1.2em!important; right:1.2em!important; color:var(--zoox-negro)!important; cursor:pointer!important;}
-#menu ul > li > a{color:var(--zoox-negro)!important;font-family:'Oswald',sans-serif!important; font-weight:500!important; border:none!important;}
+#menu ul > li > a{color:var(--zoox-negro)!important;font-family:'Campton',sans-serif!important; font-weight:500!important; border:none!important;}
 #menu ul > li{border-top:1px solid rgba(0,0,0,0.12)!important;}
 
 /* BANNER - IMAGEN FONDO + TITULO ZOOX ART */
@@ -4160,15 +4160,15 @@ body.is-menu-visible #menu{transform:translateX(0)!important;}
 #banner::before{content:''!important; position:absolute!important; inset:0!important; background:rgba(10,10,10,0.65)!important; z-index:1!important; display:block!important;}
 #banner::after{content:none!important;}
 #banner .inner{position:relative!important; z-index:2!important;}
-#banner h2{font-family:'Oswald',sans-serif!important; font-size:clamp(2rem,4vw,2.8rem)!important; letter-spacing:0.12em!important; color:white!important; margin-bottom:0.6em!important; font-weight:500!important; text-transform:uppercase!important;}
+#banner h2{font-family:'Campton',sans-serif!important; font-size:clamp(2rem,4vw,2.8rem)!important; letter-spacing:0.12em!important; color:white!important; margin-bottom:0.6em!important; font-weight:500!important; text-transform:uppercase!important;}
 #banner h2 span{color:var(--zoox-amarillo)!important;}
-#banner p{color:#E5E5E5!important; max-width:680px!important; margin:0 auto!important; line-height:1.8!important; font-size:0.95rem!important; text-transform:none!important; letter-spacing:0.02em!important; font-weight:300!important; font-family:'DM Sans',sans-serif!important;}
+#banner p{color:#E5E5E5!important; max-width:680px!important; margin:0 auto!important; line-height:1.8!important; font-size:0.95rem!important; text-transform:none!important; letter-spacing:0.02em!important; font-weight:300!important; font-family:'Campton',sans-serif!important;}
 
 /* SECCIONES - SIN LINEA BLANCA */
 .section-zoox{padding:5em 2em!important; text-align:center!important;}
 .section-zoox .inner{max-width:1140px;margin:0 auto;}
 .section-zoox header.major{margin-bottom:2.5em!important; border:none!important;}
-.section-zoox header.major h2{font-family:'Oswald',sans-serif!important; font-size:1.8rem!important; letter-spacing:0.18em!important; margin-bottom:12px!important; text-transform:uppercase!important; border:none!important; font-weight:600!important;}
+.section-zoox header.major h2{font-family:'Campton',sans-serif!important; font-size:1.8rem!important; letter-spacing:0.18em!important; margin-bottom:12px!important; text-transform:uppercase!important; border:none!important; font-weight:600!important;}
 #polos-zoox header.major h2, #posters header.major h2, #banners header.major h2{color:var(--zoox-verde)!important;}
 #polos-zoox header.major h2::after, #posters header.major h2::after, #banners header.major h2::after{content:''!important; display:block!important; width:56px!important; height:3px!important; background:var(--zoox-amarillo)!important; margin:12px auto 0!important;}
 /* QUITAR LINEA BLANCA DEBAJO */
@@ -4185,7 +4185,7 @@ body.is-menu-visible #menu{transform:translateX(0)!important;}
 .specs-verdes-mini{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:2.8em; max-width:900px; margin-left:auto; margin-right:auto; text-align:left;}
 .spec-verde-mini{background:var(--zoox-verde)!important; padding:1.2em 1.3em!important; border-radius:8px!important; color:white!important;}
 .spec-verde-mini i{color:var(--zoox-amarillo); font-size:1.2rem!important; margin-bottom:0.5em; display:block;}
-.spec-verde-mini h4{font-family:'Oswald',sans-serif; margin:0 0 0.3em; color:white; font-size:0.8rem!important; letter-spacing:0.06em;}
+.spec-verde-mini h4{font-family:'Campton',sans-serif; margin:0 0 0.3em; color:white; font-size:0.8rem!important; letter-spacing:0.06em;}
 .spec-verde-mini p{font-size:0.72rem!important; color:rgba(255,255,255,0.78); margin:0; line-height:1.5;}
 
 /* GRID UNIFICADO */
@@ -4194,30 +4194,30 @@ body.is-menu-visible #menu{transform:translateX(0)!important;}
 .polo-card:hover{transform:translateY(-8px)!important; box-shadow:0 18px 40px rgba(10,10,10,.14)!important;}
 .img-wrap{width:100%!important; aspect-ratio:3/4!important; background:var(--zoox-gris)!important; overflow:hidden!important;}
 .img-wrap img{width:100%!important; height:100%!important; object-fit:cover!important;}
-.center-text{background:var(--zoox-gris)!important; display:flex!important; align-items:center!important; justify-content:center!important; font-family:'Oswald',sans-serif!important; color:var(--zoox-negro)!important; text-align:center!important;}
-.banner-bg{background:var(--zoox-verde)!important; color:white!important; display:flex!important; align-items:center!important; justify-content:center!important; font-family:'Oswald',sans-serif!important; font-size:1.6rem!important; letter-spacing:0.12em!important;}
+.center-text{background:var(--zoox-gris)!important; display:flex!important; align-items:center!important; justify-content:center!important; font-family:'Campton',sans-serif!important; color:var(--zoox-negro)!important; text-align:center!important;}
+.banner-bg{background:var(--zoox-verde)!important; color:white!important; display:flex!important; align-items:center!important; justify-content:center!important; font-family:'Campton',sans-serif!important; font-size:1.6rem!important; letter-spacing:0.12em!important;}
 .polo-card .info{padding:16px 18px 20px!important; background:var(--zoox-blanco)!important; text-align:left!important; min-height:118px!important;}
 .polo-card .info .marca{font-size:0.65rem!important; letter-spacing:0.12em!important; color:var(--zoox-verde)!important; font-weight:600!important; text-transform:uppercase!important;}
-.polo-card .info h4{color:var(--zoox-negro)!important; font-size:0.9rem!important; margin:6px 0 4px!important; font-family:'Oswald',sans-serif!important;}
+.polo-card .info h4{color:var(--zoox-negro)!important; font-size:0.9rem!important; margin:6px 0 4px!important; font-family:'Campton',sans-serif!important;}
 .polo-card .info p{color:#666!important; font-size:0.78rem!important; margin:0!important; line-height:1.5!important;}
 .price{font-size:1.3rem!important; color:var(--zoox-negro)!important; font-weight:800!important; margin-top:10px!important;}
 .price.sm{font-size:1rem!important;}
 .price s{font-size:0.75em!important; color:#999!important; font-weight:400!important; margin-left:6px!important;}
 
 .btn-wrapper{max-width:1080px!important; margin:28px auto 0!important; display:flex!important; justify-content:flex-end!important; padding-right:4px!important;}
-.btn-conoce{background:var(--zoox-verde)!important; color:#fff!important; padding:.9em 2em!important; border-radius:4px!important; font-family:'Oswald',sans-serif!important; letter-spacing:.12em!important; text-transform:uppercase!important; text-decoration:none!important; font-size:.85rem!important; transition:all .3s!important; border:none!important; display:inline-flex!important; gap:8px!important; align-items:center!important;}
+.btn-conoce{background:var(--zoox-verde)!important; color:#fff!important; padding:.9em 2em!important; border-radius:4px!important; font-family:'Campton',sans-serif!important; letter-spacing:.12em!important; text-transform:uppercase!important; text-decoration:none!important; font-size:.85rem!important; transition:all .3s!important; border:none!important; display:inline-flex!important; gap:8px!important; align-items:center!important;}
 .btn-conoce:hover{background:var(--zoox-negro)!important; transform:translateY(-2px)!important;}
 
 /* FAQ ESTILO IMAGEN ADJUNTA - PILDORAS BLANCAS */
 #faq-posters{background:#505c47!important; padding:5em 2em!important;}
 #faq-posters .inner{max-width:760px!important; margin:0 auto!important;}
-#faq-posters header.major h2{color:#E5E5E5!important; font-family:'Oswald', serif!important; text-transform:none!important; letter-spacing:0!important; font-size:2rem!important; font-weight:600!important;}
+#faq-posters header.major h2{color:#E5E5E5!important; font-family:'Campton', serif!important; text-transform:none!important; letter-spacing:0!important; font-size:2rem!important; font-weight:600!important;}
 #faq-posters header.major h2::after{display:none!important;}
 #faq-posters header.major p{display:none!important;}
 .faq-list{display:flex; flex-direction:column; gap:14px; margin-top:2em;}
 .faq-pill{background:white!important; border-radius:999px!important; box-shadow:0 2px 12px rgba(0,0,0,0.06)!important; overflow:hidden!important; transition:all .3s ease!important; border:1px solid rgba(0,0,0,0.04)!important;}
 .faq-pill.active{border-radius:18px!important;}
-.faq-pregunta{width:100%; background:transparent!important; border:none!important; padding:16px 22px 16px 26px!important; display:flex!important; justify-content:space-between!important; align-items:center!important; font-family:'DM Sans',sans-serif!important; font-size:0.9rem!important; color:#222!important; cursor:pointer!important; text-align:left!important; font-weight:400!important;}
+.faq-pregunta{width:100%; background:transparent!important; border:none!important; padding:16px 22px 16px 26px!important; display:flex!important; justify-content:space-between!important; align-items:center!important; font-family:'Campton',sans-serif!important; font-size:0.9rem!important; color:#222!important; cursor:pointer!important; text-align:left!important; font-weight:400!important;}
 .faq-icon{width:32px!important; height:32px!important; background:#505c47!important; color:white!important; border-radius:50%!important; display:flex!important; align-items:center!important; justify-content:center!important; font-size:14px!important; flex-shrink:0!important; transition:transform .3s!important;}
 .faq-pill.active .faq-icon{transform:rotate(45deg)!important;}
 .faq-respuesta{max-height:0; overflow:hidden; transition:max-height .35s ease, padding .35s ease; padding:0 26px;}
@@ -4228,7 +4228,7 @@ body.is-menu-visible #menu{transform:translateX(0)!important;}
 #footer{background:#0A0A0A!important; padding:3em 2em!important; text-align:center!important; border:none!important;}
 .footer-inner{max-width:1140px; margin:0 auto;}
 .footer-logo{height:42px!important; width:auto!important; margin-bottom:1em!important;}
-.footer-copy{color:rgba(255,255,255,0.6)!important; font-size:0.8rem!important; margin:0 0 1em!important; font-family:'DM Sans',sans-serif!important;}
+.footer-copy{color:rgba(255,255,255,0.6)!important; font-size:0.8rem!important; margin:0 0 1em!important; font-family:'Campton',sans-serif!important;}
 .footer-redes{display:flex!important; justify-content:center!important; gap:16px!important; list-style:none!important; padding:0!important; margin:0!important;}
 .footer-redes a{color:white!important; font-size:1.2rem!important; border:none!important; transition:color .3s!important;}
 .footer-redes a:hover{color:var(--zoox-amarillo)!important;}
@@ -4260,7 +4260,7 @@ body.is-menu-visible #menu{transform:translateX(0)!important;}
 .modal-img-principal{width:100%!important; aspect-ratio:3/4!important; object-fit:cover!important; border-radius:6px!important; background:white!important;}
 .modal-detalle{padding:1.8em!important; text-align:left!important; background:white!important;}
 .modal-marca{font-size:.7rem!important; letter-spacing:.12em!important; color:var(--zoox-verde)!important; font-weight:600!important; text-transform:uppercase!important; margin:0 0 0.4em!important;}
-.modal-nombre{font-family:Oswald,sans-serif!important; font-size:1.3rem!important; color:var(--zoox-negro)!important; margin:.2em 0 .3em!important; line-height:1.2!important;}
+.modal-nombre{font-family:Campton,sans-serif!important; font-size:1.3rem!important; color:var(--zoox-negro)!important; margin:.2em 0 .3em!important; line-height:1.2!important;}
 .modal-precio{font-size:1.5rem!important; font-weight:800!important; color:var(--zoox-negro)!important; margin:0 0 0.6em!important;}
 .modal-desc{font-size:.85rem!important; color:#555!important; margin:.5em 0 1.2em!important; line-height:1.6!important;}
 .modal-label{font-size:.75rem!important; letter-spacing:.08em!important; text-transform:uppercase!important; color:var(--zoox-negro)!important; font-weight:600!important; margin-bottom:8px!important;}
@@ -4286,13 +4286,13 @@ body.is-menu-visible #menu{transform:translateX(0)!important;}
 
 /* 1. TIPOGRAFIA CERA GR - APLICADA GLOBAL SIN ROMPER LEGIBILIDAD */
 body, html, input, select, textarea, p, a, li, span, div {
-  font-family:'Cera GR', 'DM Sans', sans-serif !important;
+  font-family:'Cera GR', 'Campton', sans-serif !important;
 }
 h1, h2, h3, h4, h5, h6, .btn-conoce, .modal-nombre, .faq-pregunta {
-  font-family:'Cera GR', 'Oswald', sans-serif !important;
+  font-family:'Cera GR', 'Campton', sans-serif !important;
 }
 #banner h2, #banner h2 span {
-  font-family:'Cera GR', 'Oswald', sans-serif !important;
+  font-family:'Cera GR', 'Campton', sans-serif !important;
 }
 
 /* 2. MENU LATERAL FIX - DESPLIEGUE */
@@ -4499,10 +4499,10 @@ body.is-menu-visible {
   font-weight:700; font-style:normal; font-display:swap;
 }
 body, p, a, li, span, div, input, textarea {
-  font-family:'Cera GR', 'DM Sans', sans-serif !important;
+  font-family:'Cera GR', 'Campton', sans-serif !important;
 }
 h1, h2, h3, h4, .btn-conoce, .modal-nombre, .faq-texto {
-  font-family:'Cera GR', 'Oswald', sans-serif !important;
+  font-family:'Cera GR', 'Campton', sans-serif !important;
 }
 
 
