@@ -982,8 +982,20 @@
   background:#e5e5e5;
   transform:translateY(-2px);
 }
-
+/* ===== CARRUSEL GALERÍA (experiencia) - 5 fotos, ratio 3:4 ===== */
+.zc-galeria{background:#0A0A0A;padding:2.5em 0 2em;overflow:hidden;}
+.zc-viewport{max-width:1130px;margin:0 auto;overflow:hidden;}
+.zc-titulo{text-align:center;color:#FFB60F;font-family:'Cera GR',sans-serif;font-weight:900;font-size:0.8em;letter-spacing:0.12em;text-transform:uppercase;margin:0 0 1.5em;}
+.zc-track{display:flex;width:max-content;animation:zc-loop 40s linear infinite;}
+.zc-track:hover{animation-play-state:paused;}
+.zc-item{flex:0 0 auto;width:210px;margin-right:1em;}
+.zc-item img{width:210px;aspect-ratio:3/4;object-fit:cover;object-position:center;border-radius:12px;display:block;}
+@keyframes zc-loop{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@media screen and (max-width:736px){
+  .zc-item,.zc-item img{width:150px;}
+}
 </style>
+index.html: <link rel="stylesheet" href="assets/css/zoox-wa.css">
 </head>
 
 <body class="landing is-preload">
@@ -1002,11 +1014,10 @@
 					<a href="#menu" class="menuToggle"><span>Menu</span></a>
 					<div id="menu">
 						<ul>
-<li><a href='../index.html'>Inicio</a></li>
+<li><a href='../conocenos/index.html'>Conócenos</a></li>
 <li><a href='#' class="active">Experiencia</a></li>
 <li><a href='../zooxart/index.html'>Zoox Art</a></li>
 <li><a href='../brandspet/index.html'>Brands Pet</a></li>
-<li><a href='../galeria/index.html'>Galería</a></li>
 						</ul>
 					</div>
 				</li>
@@ -1112,7 +1123,7 @@
 							<li>Para un único can.</li>
 						</ul>
 						<div class="pkg-footer">
-							<p class="pkg-bonus">🎁 10% dto. todo Complemento</p>
+							<p class="pkg-bonus">🎁 10% dto. en todo ZOOX ART</p>
 						
 						</div>
 					</div>
@@ -1148,7 +1159,7 @@
 						<h3>La Mancha</h3>
 						<p class="pkg-tagline">"La sesión grupal definitiva"</p>
 						<p class="pkg-tiempo">120 min. de sesión</p>
-						<p class="pkg-price"><small>s/</small>399</p>
+						<p class="pkg-price"><small>s/</small>380</p>
 						<ul class="pkg-items">
 							<li>20 fotos seleccionadas.</li>
 							<li>12 ediciones profesionales.</li>
@@ -1169,13 +1180,28 @@
 		</div>
 	</section>
 
-<!-- BOTÓN VER GALERÍA - BANNER FULL -->
-<section class="banner-galeria">
-  <a href="../galeria/index.html" class="btn-galeria">Galería</a>
-
-  <a href="../zooxart/index.html" class="btn-galeria">Complementos</a>
+<!-- GALERÍA - CARRUSEL -->
+<section class="zc-galeria">
+  <h3 class="zc-titulo">Galería ZOOX</h3>
+  <div class="zc-viewport"><div class="zc-track">
+  <a href="../galeria/index.html" class="zc-item"><img src="../galeria/images/thumbs/zoox1.png" alt="Galería ZOOX 1" loading="lazy"></a>
+  <a href="../galeria/index.html" class="zc-item"><img src="../galeria/images/thumbs/zoox2.png" alt="Galería ZOOX 2" loading="lazy"></a>
+  <a href="../galeria/index.html" class="zc-item"><img src="../galeria/images/thumbs/zoox3.png" alt="Galería ZOOX 3" loading="lazy"></a>
+  <a href="../galeria/index.html" class="zc-item"><img src="../galeria/images/thumbs/zoox4.png" alt="Galería ZOOX 4" loading="lazy"></a>
+  <a href="../galeria/index.html" class="zc-item"><img src="../galeria/images/thumbs/zoox5.png" alt="Galería ZOOX 5" loading="lazy"></a>
+  <a href="../galeria/index.html" class="zc-item"><img src="../galeria/images/thumbs/zoox6.png" alt="Galería ZOOX 6" loading="lazy"></a>
+  <a href="../galeria/index.html" class="zc-item"><img src="../galeria/images/thumbs/zoox7.png" alt="Galería ZOOX 7" loading="lazy"></a>
+  <a href="../galeria/index.html" class="zc-item"><img src="../galeria/images/thumbs/zoox8.png" alt="Galería ZOOX 8" loading="lazy"></a>
+  <a href="../galeria/index.html" class="zc-item"><img src="../galeria/images/thumbs/zoox9.png" alt="Galería ZOOX 9" loading="lazy"></a>
+  <a href="../galeria/index.html" class="zc-item"><img src="../galeria/images/thumbs/zoox10.png" alt="Galería ZOOX 10" loading="lazy"></a>
+  <a href="../galeria/index.html" class="zc-item"><img src="../galeria/images/thumbs/zoox11.png" alt="Galería ZOOX 11" loading="lazy"></a>
+  </div></div>
 </section>
 
+<!-- BANNER COMPLEMENTOS -->
+<section class="banner-galeria">
+  <a href="../zooxart/index.html" class="btn-galeria">COMPLEMENTA TU SESIÓN</a>
+</section>
 
 	<!-- ── FAQ EXTERIORES ─────────────────────── -->
 	<section id="faq" class="wrapper style3">

@@ -1,0 +1,321 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+	<title>Conócenos | ZOOX Pet Studio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="Conoce ZOOX Pet Studio: estudio creativo especializado en mascotas y marcas pet friendly. Nuestra historia, filosofía y unidades de negocio." />
+	<link rel="stylesheet" href="../experiencia/assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="../experiencia/assets/css/noscript.css" /></noscript>
+	<link rel="icon" type="image/png" href="../favicon.PNG" />
+	<link rel="apple-touch-icon" href="../favicon.PNG" />
+	<link rel="stylesheet" href="../assets/css/zoox-wa.css" />
+
+	<style>
+		/* ═══ TIPOGRAFÍA CORPORATIVA: CERA GR ═══ */
+		@font-face{font-family:'Cera GR';src:url('../zooxart/assets/fonts/Cera%20GR.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap;}
+		@font-face{font-family:'Cera GR';src:url('../zooxart/assets/fonts/Cera%20GR%20Medium.otf') format('opentype');font-weight:500;font-style:normal;font-display:swap;}
+		@font-face{font-family:'Cera GR';src:url('../zooxart/assets/fonts/Cera%20GR%20Bold.otf') format('opentype');font-weight:700;font-style:normal;font-display:swap;}
+		@font-face{font-family:'Cera GR';src:url('../zooxart/assets/fonts/Cera%20GR%20Black.otf') format('opentype');font-weight:900;font-style:normal;font-display:swap;}
+
+		/* ═══ VARIABLES ZOOX ═══ */
+		:root{
+			--zoox-amarillo:#FFB60F;
+			--zoox-negro:#0A0A0A;
+			--zoox-ebano:#505C47;
+			--zoox-gris:#E5E5E5;
+			--zoox-blanco:#FFFFFF;
+			--zoox-muted:#888888;
+		}
+		body, html, #page-wrapper{overflow-x:hidden !important;}
+
+		/* ═══ MENÚ (igual que experiencia) ═══ */
+		#menu{background:var(--zoox-amarillo) !important;}
+		#menu ul > li > a{color:var(--zoox-negro) !important;}
+		#menu ul > li > a:hover{color:var(--zoox-blanco) !important;}
+		#menu ul > li{border-top-color:rgba(0,0,0,0.15) !important;}
+
+		/* ═══ BASE DE SECCIONES ═══ */
+		.kn-section{font-family:'Cera GR',sans-serif;padding:6em 2em;letter-spacing:0.01em;}
+		.kn-wrap{max-width:1100px;margin:0 auto;}
+		.kn-dark{background:var(--zoox-negro);color:var(--zoox-gris);}
+		.kn-light .kn-label{color:#B27F00;}
+		.kn-light{background:var(--zoox-blanco);color:var(--zoox-negro);}
+		.kn-label{display:block;font-weight:700;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--zoox-amarillo);margin:0 0 1em;}
+		.kn-title{font-weight:900;font-size:2.2rem;line-height:1.15;letter-spacing:0;text-transform:none;margin:0 0 0.6em;color:inherit;}
+		.kn-dark .kn-title{color:var(--zoox-blanco);}
+		.kn-text{font-weight:400;font-size:1.05rem;line-height:1.75;margin:0 0 1.2em;color:inherit;opacity:0.9;}
+		.kn-center{text-align:center;}
+		.kn-center .kn-title{max-width:22em;margin-left:auto;margin-right:auto;}
+		.kn-center .kn-text{max-width:40em;margin-left:auto;margin-right:auto;}
+
+		/* ═══ 1) HERO SLIDER ═══ */
+		#banner.kn-hero{height:100vh;height:100svh;min-height:30em;padding:0;justify-content:flex-end;text-align:left;background:var(--zoox-negro);}
+		#banner.kn-hero:after{display:none;}
+		.kn-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s ease-in-out;}
+		.kn-slide.is-active{opacity:1;}
+		.kn-hero-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,0.88) 0%,rgba(10,10,10,0.35) 45%,rgba(10,10,10,0.15) 100%);}
+		.kn-hero-inner{position:relative;z-index:2;font-family:'Cera GR',sans-serif;max-width:1100px;width:100%;margin:0 auto;padding:0 2em 4.5em;}
+		#banner.kn-hero h2{display:block;padding:0;font-weight:900;font-size:4rem;line-height:1;text-transform:none;letter-spacing:0;margin:0 0 0.35em;color:var(--zoox-blanco);}
+		#banner.kn-hero h2:before,#banner.kn-hero h2:after{display:none;}
+		#banner.kn-hero p{font-weight:500;font-size:1.2rem;line-height:1.5;max-width:28em;margin:0;text-transform:none;letter-spacing:0.01em;color:var(--zoox-gris);}
+		.kn-dots{position:absolute;z-index:3;left:0;right:0;bottom:1.6em;display:flex;justify-content:center;gap:0.6em;}
+		.kn-dots button{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,0.4);cursor:pointer;box-shadow:none;}
+		.kn-dots button.is-active{background:var(--zoox-amarillo);}
+
+		/* ═══ 2) HISTORIA ═══ */
+		.kn-historia-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:4em;align-items:start;}
+		.kn-timeline{list-style:none;margin:0;padding:0 0 0 1.6em;border-left:2px solid rgba(255,182,15,0.45);}
+		.kn-timeline li{position:relative;padding:0 0 2.2em 1.2em;margin:0;border:0;}
+		.kn-timeline li:last-child{padding-bottom:0;}
+		.kn-timeline li:before{content:'';position:absolute;left:-2.05em;top:0.35em;width:14px;height:14px;border-radius:50%;background:var(--zoox-amarillo);}
+		.kn-timeline strong{display:block;font-weight:900;font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--zoox-amarillo);margin-bottom:0.4em;}
+		.kn-timeline span{display:block;font-weight:500;font-size:1.05rem;line-height:1.55;color:var(--zoox-blanco);}
+
+		/* ═══ 3) FILOSOFÍA ═══ */
+		.kn-valores{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5em;margin-top:3em;}
+		.kn-valor{background:var(--zoox-gris);border-radius:16px;padding:2em 1.8em;text-align:left;}
+		.kn-valor h3{font-weight:900;font-size:1.15rem;text-transform:none;letter-spacing:0;margin:0 0 0.5em;color:var(--zoox-negro);}
+		.kn-valor p{font-weight:400;font-size:0.98rem;line-height:1.6;margin:0;color:#333;}
+		.kn-valor .kn-barra{display:block;width:36px;height:4px;border-radius:2px;background:var(--zoox-amarillo);margin-bottom:1.2em;}
+
+		/* ═══ 4) DIFERENTES ═══ */
+		.kn-dif-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5em;margin-top:3em;}
+		.kn-dif{border:1px solid rgba(255,255,255,0.14);border-radius:16px;padding:2em;background:rgba(255,255,255,0.03);}
+		.kn-dif .kn-num{display:block;font-weight:900;font-size:2rem;color:var(--zoox-amarillo);margin-bottom:0.4em;line-height:1;}
+		.kn-dif h3{font-weight:900;font-size:1.15rem;text-transform:none;letter-spacing:0;margin:0 0 0.5em;color:var(--zoox-blanco);}
+		.kn-dif p{font-weight:400;font-size:0.98rem;line-height:1.65;margin:0;color:var(--zoox-gris);opacity:0.85;}
+
+		/* ═══ 5) UNIDADES DE NEGOCIO ═══ */
+		.kn-unidades{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6em;margin-top:3em;text-align:left;}
+		.kn-unidad{background:var(--zoox-negro);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;}
+		.kn-unidad img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;}
+		.kn-unidad-body{padding:1.8em 1.6em 2em;display:flex;flex-direction:column;flex:1;}
+		.kn-unidad h3{font-weight:900;font-size:1.25rem;text-transform:none;letter-spacing:0;margin:0 0 0.5em;color:var(--zoox-blanco);}
+		.kn-unidad p{font-weight:400;font-size:0.98rem;line-height:1.65;margin:0 0 1.6em;color:var(--zoox-gris);opacity:0.88;flex:1;}
+		.kn-btn{display:inline-block;align-self:flex-start;background:var(--zoox-amarillo);color:var(--zoox-negro);font-family:'Cera GR',sans-serif;font-weight:900;font-size:0.75rem;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;border:0;padding:0.9em 1.6em;border-radius:999px;transition:all .2s;}
+		.kn-btn:hover{background:var(--zoox-gris);color:var(--zoox-negro);transform:translateY(-2px);}
+
+		/* ═══ 6) CTA ═══ */
+		.kn-cta{background:var(--zoox-amarillo);color:var(--zoox-negro);font-family:'Cera GR',sans-serif;text-align:center;padding:5.5em 2em;}
+		.kn-cta h2{font-weight:900;font-size:2.4rem;line-height:1.1;text-transform:none;letter-spacing:0;margin:0 0 0.5em;color:var(--zoox-negro);}
+		.kn-cta p{font-weight:500;font-size:1.1rem;margin:0 0 2em;color:var(--zoox-negro);}
+		.kn-cta-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:1em;}
+		.kn-cta .kn-btn{background:var(--zoox-negro);color:var(--zoox-blanco);align-self:auto;}
+		.kn-cta .kn-btn:hover{background:var(--zoox-blanco);color:var(--zoox-negro);}
+		.kn-cta .kn-btn.kn-btn-alt{background:transparent;color:var(--zoox-negro);box-shadow:inset 0 0 0 2px var(--zoox-negro);}
+		.kn-cta .kn-btn.kn-btn-alt:hover{background:var(--zoox-negro);color:var(--zoox-blanco);}
+
+		/* ═══ FOOTER (igual que experiencia) ═══ */
+		#footer{background-color:var(--zoox-negro) !important;padding:3em 2em !important;text-align:center !important;}
+		.footer-inner{display:flex !important;flex-direction:column !important;align-items:center !important;gap:1em !important;}
+		.footer-logo{height:36px !important;width:auto !important;opacity:0.85 !important;}
+		.footer-copy{color:#e5e5e5 !important;font-size:0.7rem !important;letter-spacing:0.08em !important;margin:0 !important;}
+		.footer-redes{list-style:none !important;padding:0 !important;margin:0 !important;display:flex !important;gap:1.5em !important;}
+		.footer-redes li a{color:#e5e5e5 !important;font-size:1.2rem !important;border:none !important;transition:color 0.3s !important;}
+		.footer-redes li a:hover{color:var(--zoox-amarillo) !important;}
+
+		/* ═══ RESPONSIVE ═══ */
+		@media screen and (max-width:980px){
+			.kn-historia-grid{grid-template-columns:1fr;gap:3em;}
+			.kn-unidades{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto;}
+			.kn-valores{grid-template-columns:1fr;}
+		}
+		@media screen and (max-width:736px){
+			.kn-section{padding:4em 1.5em;}
+			.kn-title{font-size:1.7rem;}
+			#banner.kn-hero{height:100vh;height:100svh;min-height:24em;padding:0;}
+			#banner.kn-hero h2{font-size:2.6rem;}
+			#banner.kn-hero p{font-size:1.05rem;}
+			.kn-hero-inner{padding:0 1.5em 4em;}
+			.kn-dif-grid{grid-template-columns:1fr;}
+			.kn-cta h2{font-size:1.8rem;}
+		}
+	</style>
+</head>
+
+<body class="landing is-preload">
+<div id="page-wrapper">
+
+	<!-- ── HEADER ─────────────────────────────── -->
+	<header id="header" class="alt">
+		<h1>
+			<a href="../index.html">
+				<img src="../conocenos/images/logo-zoox.png" alt="ZOOX Pet Studio" style="height:40px; width:auto;" />
+			</a>
+		</h1>
+		<nav id="nav">
+			<ul>
+				<li class="special">
+					<a href="#menu" class="menuToggle"><span>Menu</span></a>
+					<div id="menu">
+						<ul>
+<li><a href='#' class="active">Conócenos</a></li>
+<li><a href='../experiencia/index.html'>Experiencia</a></li>
+<li><a href='../zooxart/index.html'>Zoox Art</a></li>
+<li><a href='../brandspet/index.html'>Brands Pet</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- ── 1) BANNERS SLIDER ──────────────────── -->
+	<section id="banner" class="kn-hero">
+		<div class="kn-slide is-active" style="background-image:url('../experiencia/images/banner.jpg');"></div>
+		<div class="kn-slide" style="background-image:url('../galeria/images/fulls/zoox1.png');"></div>
+		<div class="kn-slide" style="background-image:url('../galeria/images/fulls/zoox3.png');"></div>
+		<div class="kn-hero-shade"></div>
+		<div class="kn-hero-inner">
+			<h2>Conócenos</h2>
+			<p>Somos el estudio creativo especializado en mascotas y marcas petfriendly.</p>
+		</div>
+		<div class="kn-dots" id="knDots">
+			<button type="button" class="is-active" aria-label="Imagen 1"></button>
+			<button type="button" aria-label="Imagen 2"></button>
+			<button type="button" aria-label="Imagen 3"></button>
+		</div>
+	</section>
+
+	<!-- ── 2) HISTORIA ZOOX ───────────────────── -->
+	<section class="kn-section kn-dark" id="historia">
+		<div class="kn-wrap">
+			<div class="kn-historia-grid">
+				<div>
+					<span class="kn-label">CREAMOS</span>
+					<h2 class="kn-title">Soluciones creativas para quienes hacen del mundo pet parte de su vida.</h2>
+					<p class="kn-text">ZOOX Pet Studio nació en octubre de 2021 como un estudio de fotografía creativa para mascotas. Empezamos enfocados en la fotografía canina pero con una idea clara: cada mascota merece un retrato con identidad propia, no una foto más.</p>
+					<p class="kn-text">Hoy vamos más allá. Creamos sesiones, arte personalizado y contenido para marcas del mundo pet, con una identidad visual construida sobre escenas de ficción digital y postproducción de alto nivel.</p>
+				</div>
+				<ul class="kn-timeline">
+					<li><strong>Octubre 2021</strong><span>Nace ZOOX Pet Studio en Lima.</span></li>
+					<li><strong>Hoy</strong><span>Tenemos 3 unidades de negocio: Experiencias, Zoox Art y Brands Pet.</span></li>
+					<li><strong>Nuestra meta</strong><span>Ser el referente definitivo en el sector pet, evolucionando de la creación de un recuerdo atractivo a consolidarnos como el estudio creativo premium para mascotas y marcas del rubro, con una identidad visual única y diferenciada.</span></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<!-- ── 3) FILOSOFÍA / PROPÓSITO ───────────── -->
+	<section class="kn-section kn-light kn-center" id="filosofia">
+		<div class="kn-wrap">
+			<span class="kn-label">FILOSOFÍA y VISIÓN</span>
+			<h2 class="kn-title">Cada proyecto tiene una historia. Nosotros lo hacemos memorable.</h2>
+			<p class="kn-text">Nuestro propósito es transformar el vínculo entre las personas y sus mascotas en experiencias que perduren, y ayudar a las marcas petfriendly a conectar con ese mismo vínculo.</p>
+			<div class="kn-valores">
+				<div class="kn-valor"><span class="kn-barra"></span><h3>ANALIZAMOS</h3><p>Entendemos la historia, personalidad y esencia de cada proyecto para encontrar aquello que lo hace único.</p></div>
+				<div class="kn-valor"><span class="kn-barra"></span><h3>CREAMOS</h3><p>Desarrollamos soluciones a medida combinando fotografía, diseño, postproducción e IA para convertir ideas en experiencias visuales.</p></div>
+				<div class="kn-valor"><span class="kn-barra"></span><h3>TRANSFORMAMOS</h3><p>Cuidamos cada detalle para convertir una idea en un resultado con personalidad, identidad y capacidad de conectar.</p></div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ── 4) QUÉ NOS HACE DIFERENTES ─────────── -->
+	<section class="kn-section kn-dark kn-center" id="diferentes">
+		<div class="kn-wrap">
+			<span class="kn-label">Qué nos hace diferentes</span>
+			<h2 class="kn-title">Una forma propia de ver a las mascotas.</h2>
+			<div class="kn-dif-grid" style="text-align:left;">
+				<div class="kn-dif"><span class="kn-num">01</span><h3>FICCIÓN DIGITAL</h3><p>Transformamos la imagen de cada mascota en escenarios imaginarios, construidos con una dirección visual propia y una estética reconocible.</p></div>
+				<div class="kn-dif"><span class="kn-num">02</span><h3>PROCESADO PROFESIONAL</h3><p>Cada imagen pasa por un proceso de edición y dirección artística que cuida cada detalle para lograr un resultado único y coherente.</p></div>
+				<div class="kn-dif"><span class="kn-num">03</span><h3>ECOSISTEMA CREATIVO</h3><p>DDesde la fotografía hasta el producto y la comunicación visual, desarrollamos una identidad coherente en cada punto de contacto.</p></div>
+				<div class="kn-dif"><span class="kn-num">04</span><h3>UNIVERSO PET</h3><p>Creamos para quienes viven el vínculo con sus mascotas y para las marcas que buscan conectar auténticamente con esta comunidad.</p></div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ── 5) UNIDADES DE NEGOCIO ZOOX ────────── -->
+	<section class="kn-section kn-light kn-center" id="unidades">
+		<div class="kn-wrap">
+			<span class="kn-label">Unidades de negocio ZOOX</span>
+			<h2 class="kn-title">Tres formas de vivir ZOOX.</h2>
+			<div class="kn-unidades">
+				<article class="kn-unidad">
+					<img src="../galeria/images/fulls/zoox2.png" alt="Experiencias ZOOX" loading="lazy" />
+					<div class="kn-unidad-body">
+						<h3>Experiencias ZOOX</h3>
+						<p>Sesiones fotográficas creativas para mascotas, en exteriores o en la comodidad de tu casa (In Home).</p>
+						<a href="../experiencia/index.html" class="kn-btn">Ver experiencias</a>
+					</div>
+				</article>
+				<article class="kn-unidad">
+					<img src="../zooxart/images/banners/thumbs/banner1.png" alt="Arte y Complementos ZOOX Art" loading="lazy" style="object-position:center 25%;" />
+					<div class="kn-unidad-body">
+						<h3>Arte &amp; Complementos</h3>
+						<p>Polos personalizados, pósters y banners digitales con el retrato de tu mascota.</p>
+						<a href="../zooxart/index.html" class="kn-btn">Ver Zoox Art</a>
+					</div>
+				</article>
+				<article class="kn-unidad">
+					<img src="../galeria/images/fulls/zoox4.png" alt="Brands Pet" loading="lazy" />
+					<div class="kn-unidad-body">
+						<h3>Brands Pet</h3>
+						<p>Contenido y campañas para marcas pet: estrategia, creatividad y contenido que conecta.</p>
+						<a href="../brandspet/index.html" class="kn-btn">Ver Brands Pet</a>
+					</div>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<!-- ── 6) CTA ─────────────────────────────── -->
+	<section class="kn-cta" id="contacto">
+		<h2>¿Listo para crear tu historia ZOOX?</h2>
+		<p>Escríbenos y cuéntanos sobre tu mascota o tu marca.</p>
+		<div class="kn-cta-btns">
+			<a href="https://wa.me/51977325372?text=Hola%20ZOOX%2C%20quiero%20conocer%20m%C3%A1s" target="_blank" rel="noopener" class="kn-btn">Escríbenos por WhatsApp</a>
+			<a href="../experiencia/index.html" class="kn-btn kn-btn-alt">Ver experiencias</a>
+		</div>
+	</section>
+
+	<!-- ── FOOTER ─────────────────────────────── -->
+	<footer id="footer">
+		<div class="footer-inner">
+			<img src="../experiencia/images/logoblanco-zoox.png" alt="ZOOX Pet Studio" class="footer-logo" />
+			<p class="footer-copy">© 2026 · Lima, Perú · Todos los derechos reservados.</p>
+			<ul class="footer-redes">
+				<li>
+					<a href="https://instagram.com/zoox.petstudio" target="_blank" aria-label="Instagram">
+						<i class="icon brands fa-instagram"></i>
+					</a>
+				</li>
+				<li>
+					<a href="https://facebook.com/zooxpetstudio" target="_blank" aria-label="Facebook">
+						<i class="icon brands fa-facebook-f"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Botón flotante WhatsApp -->
+	<a href="https://wa.me/51977325372?text=Hola%20ZOOX%2C%20tengo%20una%20consulta" class="zoox-wa" target="_blank" rel="noopener" aria-label="WhatsApp"></a>
+
+</div>
+
+<!-- Scripts -->
+<script src="../experiencia/assets/js/jquery.min.js"></script>
+<script src="../experiencia/assets/js/jquery.scrollex.min.js"></script>
+<script src="../experiencia/assets/js/jquery.scrolly.min.js"></script>
+<script src="../experiencia/assets/js/browser.min.js"></script>
+<script src="../experiencia/assets/js/breakpoints.min.js"></script>
+<script src="../experiencia/assets/js/util.js"></script>
+<script src="../experiencia/assets/js/main.js"></script>
+<script>
+// Slider del banner: cambia cada 5 segundos
+(function(){
+	var slides = document.querySelectorAll('.kn-slide');
+	var dots = document.querySelectorAll('#knDots button');
+	var i = 0, timer;
+	function show(n){
+		slides[i].classList.remove('is-active'); dots[i].classList.remove('is-active');
+		i = n; slides[i].classList.add('is-active'); dots[i].classList.add('is-active');
+	}
+	function start(){ timer = setInterval(function(){ show((i + 1) % slides.length); }, 5000); }
+	dots.forEach(function(d, n){ d.addEventListener('click', function(){ clearInterval(timer); show(n); start(); }); });
+	start();
+})();
+</script>
+</body>
+</html>
