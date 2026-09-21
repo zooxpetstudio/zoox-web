@@ -78,7 +78,7 @@
 
 @media screen and (max-width:736px){
   .banner-overlay{max-width:100%;padding:0;}
-  .banner-cta{left:50%;bottom:6%;transform:translateX(-50%);}
+  .banner-cta{left:50%;bottom:1.5%;transform:translateX(-50%);}
 }
 .banner-slide{display:none;}
 .banner-slide.active{display:block;}
@@ -116,11 +116,10 @@
 }
 </style>
 <style>
-.zoox-carousel-wrap{overflow:hidden;background:#e5e5e5;padding:2.5em 0;border-radius:12px;margin:3em 0;}
-.zoox-carousel{display:flex;gap:1em;width:max-content;animation:zc-loop 22s linear infinite;}
-.zoox-carousel:hover{animation-play-state:paused;}
-.zc-item{flex:0 0 auto;width:150px;text-decoration:none;text-align:center;}
-.zc-item img{width:150px;height:150px;object-fit:cover;border-radius:12px;display:block;}
+.zoox-carousel-wrap{overflow:hidden;background:#e5e5e5;padding:2.5em 0;border-radius:12px;margin:3em 0;container-type:inline-size;--zc-n:5;--zc-gap:1em;}
+.zoox-carousel{display:flex;gap:var(--zc-gap);width:max-content;animation:zc-loop 22s linear infinite;}
+.zc-item{flex:0 0 auto;width:calc((100cqw - (var(--zc-n) - 1) * var(--zc-gap)) / var(--zc-n));text-decoration:none;text-align:center;}
+.zc-item img{width:100%;height:auto;aspect-ratio:3 / 4;object-fit:cover;border-radius:12px;display:block;}
 .zc-item span{display:block;margin-top:0.6em;color:#fff;font-family:'Cera GR',sans-serif;font-size:0.75em;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;}
 
 @keyframes zc-loop{
@@ -129,7 +128,7 @@
 }
 
 @media screen and (max-width:736px){
-  .zc-item,.zc-item img{width:120px;height:120px;}
+  .zoox-carousel-wrap{--zc-n:2;}
 }
 </style>
 <link rel="stylesheet" href="../assets/css/zoox-wa.css">
@@ -598,31 +597,26 @@ document.addEventListener('DOMContentLoaded',()=>{
 <!-- BANNER ALEATORIO ZOOX ART -->
 <script>
 (function(){
-  const esMovil = window.innerWidth <= 736;
-  const banners = esMovil ? [
-    'images/hero/bannervertical1.png',
-    'images/hero/bannervertical2.png',
-    'images/hero/bannervertical3.png'
-  ] : [
-    'images/hero/banner1.png',
-    'images/hero/banner2.png',
-    'images/hero/banner3.png'
-  ];
+  const mq = window.matchMedia('(max-width: 736px)');
+  const vertical = ['images/hero/bannervertical1.png','images/hero/bannervertical2.png','images/hero/bannervertical3.png'];
+  const horizontal = ['images/hero/banner1.png','images/hero/banner2.png','images/hero/banner3.png'];
+  const banners = () => mq.matches ? vertical : horizontal;
   const el = document.getElementById('banner');
   const slides = document.querySelectorAll('.banner-slide');
-  let i = Math.floor(Math.random() * banners.length);
+  let i = Math.floor(Math.random() * 3);
 
   function mostrar(index){
-    el.style.setProperty('background-image', `url('${banners[index]}')`, 'important');
+    el.style.setProperty('background-image', `url('${banners()[index]}')`, 'important');
     slides.forEach(s => s.classList.remove('active'));
     document.querySelector(`.banner-slide[data-slide="${index}"]`).classList.add('active');
   }
 
   el.style.setProperty('transition', 'background-image 0.8s ease-in-out', 'important');
   mostrar(i);
+  mq.addEventListener('change', () => mostrar(i));
 
   setInterval(function(){
-    i = (i + 1) % banners.length;
+    i = (i + 1) % 3;
     mostrar(i);
   }, 4000);
 })();

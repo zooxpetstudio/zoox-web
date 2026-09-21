@@ -4326,9 +4326,16 @@ body.is-menu-visible #menu {
   position:relative !important;
   min-height:480px !important;
 }
+/* Banner: 16:9 en PC, 9:16 en celular */
+#banner {
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  aspect-ratio: 16 / 9 !important;
+}
 @media (max-width: 736px) {
   #banner {
-    min-height: 260px !important;
+    aspect-ratio: 9 / 16 !important;
   }
 }
 #banner::before {
