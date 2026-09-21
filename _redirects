@@ -1,0 +1,6 @@
+/experiencia    /zooxstudio/    301
+/experiencia/*  /zooxstudio/:splat  301
+/zooxart        /zooxarts/      301
+/zooxart/*      /zooxarts/:splat  301
+/brandspet      /zooxbrands/    301
+/brandspet/*    /zooxbrands/:splat  301
