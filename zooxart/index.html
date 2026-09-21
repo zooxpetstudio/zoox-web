@@ -13,29 +13,11 @@
 
 
 
-/* 3. EFECTO SCROLL SUTIL ZOOX */
-.reveal{
-  opacity:0;
-  transform:translateY(18px);
-  filter:blur(4px);
-  transition:opacity 0.7s ease, transform 0.7s cubic-bezier(.22,1,.36,1), filter 0.7s ease;
-  will-change:opacity, transform;
-}
-.reveal.is-visible{
-  opacity:1;
-  transform:translateY(0);
-  filter:blur(0);
-}
-/* stagger natural para grids */
-.polo-card.reveal:nth-child(2){transition-delay:0.08s}
-.polo-card.reveal:nth-child(3){transition-delay:0.16s}
-.spec-verde-mini.reveal:nth-child(2){transition-delay:0.08s}
-.spec-verde-mini.reveal:nth-child(3){transition-delay:0.16s}
 
 </style>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+</style>
 <!-- FIX PUNTUAL ZOOX - BOTONES CENTRADOS + X MENU SIN CIRCULO BLANCO -->
 <style>
 /* 1. Botones centrados */
@@ -91,6 +73,7 @@
 .polo-card.reveal:nth-child(3){transition-delay:0.16s}
 .spec-verde-mini.reveal:nth-child(2){transition-delay:0.08s}
 .spec-verde-mini.reveal:nth-child(3){transition-delay:0.16s}
+</style>
 
 
 <style>
