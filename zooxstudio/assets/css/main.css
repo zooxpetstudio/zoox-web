@@ -278,6 +278,10 @@ input, select, textarea {
 
 	.align-center {
 		text-align: center;
+		aspect-ratio: 16 / 9;
+		background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("images/hero/herostudio.png");
+		background-size: cover;
+		background-position: center;
 	}
 
 	.align-right {
@@ -3593,11 +3597,13 @@ input, select, textarea {
 		-ms-justify-content: center;
 		justify-content: center;
 		cursor: default;
-		height: 100vh;
-		min-height: 35em;
+		aspect-ratio: 16 / 9;
 		overflow: hidden;
 		position: relative;
 		text-align: center;
+		background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("images/hero/herostudio.png");
+		background-size: cover;
+		background-position: center;
 	}
 
 		#banner h2 {
@@ -3723,10 +3729,12 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#banner {
-				padding: 7em 3em 5em 3em ;
-				height: auto;
-				min-height: 0;
-			}
+			padding: 7em 3em 5em 3em ;
+			height: auto;
+			min-height: 0;
+			aspect-ratio: 9 / 16;
+			background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("images/hero/herostudiovertical.png");
+		}
 
 				#banner h2 {
 					font-size: 1.25em;
@@ -3833,7 +3841,7 @@ input, select, textarea {
 		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
+		background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/hero/herostudio.png");
 		background-attachment: fixed;
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -4055,7 +4063,7 @@ input, select, textarea {
 		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
+		background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/hero/herostudio.png");
 		background-attachment: fixed;
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -4076,7 +4084,7 @@ input, select, textarea {
 		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
+		background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/hero/herostudiovertical.png");
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
