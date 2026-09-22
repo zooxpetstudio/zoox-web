@@ -50,11 +50,11 @@
 		.kn-center .kn-text{max-width:40em;margin-left:auto;margin-right:auto;}
 
 		/* ═══ 1) HERO SLIDER ═══ */
-		#banner.kn-hero{height:100vh;height:100svh;min-height:30em;padding:0;justify-content:flex-end;text-align:left;background:var(--zoox-negro);}
+		#banner.kn-hero{height:auto;aspect-ratio:16 / 9;min-height:0;padding:0;justify-content:flex-end;text-align:left;background:var(--zoox-negro);}
 		#banner.kn-hero:after{display:none;}
 		.kn-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.2s ease-in-out;}
 		.kn-slide.is-active{opacity:1;}
-		.kn-hero-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,0.88) 0%,rgba(10,10,10,0.35) 45%,rgba(10,10,10,0.15) 100%);}
+		.kn-slide{background-image:var(--h);} 
 		.kn-hero-inner{position:relative;z-index:2;font-family:'Cera GR',sans-serif;max-width:1100px;width:100%;margin:0 auto;padding:0 2em 4.5em;}
 		#banner.kn-hero h2{display:block;padding:0;font-weight:900;font-size:4rem;line-height:1;text-transform:none;letter-spacing:0;margin:0 0 0.35em;color:var(--zoox-blanco);}
 		#banner.kn-hero h2:before,#banner.kn-hero h2:after{display:none;}
@@ -84,6 +84,8 @@
 		.kn-dif{border:1px solid rgba(255,255,255,0.14);border-radius:16px;padding:2em;background:rgba(255,255,255,0.03);}
 		.kn-dif .kn-num{display:block;font-weight:900;font-size:2rem;color:var(--zoox-amarillo);margin-bottom:0.4em;line-height:1;}
 		.kn-dif h3{font-weight:900;font-size:1.15rem;text-transform:none;letter-spacing:0;margin:0 0 0.5em;color:var(--zoox-blanco);}
+		.kn-dif{transition:all .3s ease;}
+        .kn-dif:hover{border-color:var(--zoox-amarillo);background:rgba(255,182,15,0.05);transform:translateY(-4px);}
 		.kn-dif p{font-weight:400;font-size:0.98rem;line-height:1.65;margin:0;color:var(--zoox-gris);opacity:0.85;}
 
 		/* ═══ 5) UNIDADES DE NEGOCIO ═══ */
@@ -124,7 +126,8 @@
 		@media screen and (max-width:736px){
 			.kn-section{padding:4em 1.5em;}
 			.kn-title{font-size:1.7rem;}
-			#banner.kn-hero{height:100vh;height:100svh;min-height:24em;padding:0;}
+			#banner.kn-hero{height:auto;aspect-ratio:9 / 16;min-height:0;padding:0;}
+.kn-slide{background-image:var(--v),var(--h);}
 			#banner.kn-hero h2{font-size:2.6rem;}
 			#banner.kn-hero p{font-size:1.05rem;}
 			.kn-hero-inner{padding:0 1.5em 4em;}
@@ -162,30 +165,29 @@
 		</nav>
 	</header>
 
-	<!-- ── 1) BANNERS SLIDER ──────────────────── -->
-	<section id="banner" class="kn-hero">
-		<div class="kn-slide is-active" style="background-image:url('../zooxstudio/images/banner.jpg');"></div>
-		<div class="kn-slide" style="background-image:url('../galeria/images/fulls/zoox1.png');"></div>
-		<div class="kn-slide" style="background-image:url('../galeria/images/fulls/zoox3.png');"></div>
-		<div class="kn-hero-shade"></div>
-		<div class="kn-hero-inner">
-			<h2>Conócenos</h2>
-			<p>Somos el estudio creativo especializado en mascotas y marcas petfriendly.</p>
-		</div>
-		<div class="kn-dots" id="knDots">
-			<button type="button" class="is-active" aria-label="Imagen 1"></button>
-			<button type="button" aria-label="Imagen 2"></button>
-			<button type="button" aria-label="Imagen 3"></button>
-		</div>
-	</section>
+<!-- ── 1) BANNERS SLIDER ──────────────────── -->
+<section id="banner" class="kn-hero">
+	<div class="kn-slide is-active" style="--h:url('images/hero/herosconocenos.png');--v:url('images/hero/herosconocenosmovil.png');"></div>
+	<div class="kn-slide" style="--h:url('images/hero/herosconocenos2.png');--v:url('images/hero/herosconocenosmovil2.png');"></div>
+	<div class="kn-slide" style="--h:url('images/hero/herosconocenos3.png');--v:url('images/hero/herosconocenosmovil3.png');"></div>
+	<div class="kn-hero-shade"></div>
+	<div class="kn-hero-inner">
+		
+	</div>
+	<div class="kn-dots" id="knDots">
+		<button type="button" class="is-active" aria-label="Imagen 1"></button>
+		<button type="button" aria-label="Imagen 2"></button>
+		<button type="button" aria-label="Imagen 3"></button>
+	</div>
+</section>
 
 	<!-- ── 2) HISTORIA ZOOX ───────────────────── -->
 	<section class="kn-section kn-dark" id="historia">
 		<div class="kn-wrap">
 			<div class="kn-historia-grid">
 				<div>
-					<span class="kn-label">CREAMOS</span>
-					<h2 class="kn-title">Soluciones creativas para quienes hacen del mundo pet parte de su vida.</h2>
+					<span class="kn-label">SOMOS UN STUDIO CREATIVO</span>
+					<h2 class="kn-title">Nos especializamos en mascotas y marcas petfriendly.</h2>
 					<p class="kn-text">ZOOX Pet Studio nació en octubre de 2021 como un estudio de fotografía creativa para mascotas. Empezamos enfocados en la fotografía canina pero con una idea clara: cada mascota merece un retrato con identidad propia, no una foto más.</p>
 					<p class="kn-text">Hoy vamos más allá. Creamos sesiones, arte personalizado y contenido para marcas del mundo pet, con una identidad visual construida sobre escenas de ficción digital y postproducción de alto nivel.</p>
 				</div>
