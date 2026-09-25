@@ -87,7 +87,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #0A0A0A;
+		background: #fbf3e0;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -279,7 +279,7 @@ input, select, textarea {
 	.align-center {
 		text-align: center;
 		aspect-ratio: 16 / 9;
-		background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("images/hero/herostudio.png");
+		background-image: url("images/hero/herostudio.png");
 		background-size: cover;
 		background-position: center;
 	}
@@ -2984,7 +2984,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style3 {
-			background-color: #0a0a0a;
+			background-color: #fbf3e0;
 			color: #d3d4e4;
 		}
 
@@ -3601,7 +3601,7 @@ input, select, textarea {
 		overflow: hidden;
 		position: relative;
 		text-align: center;
-		background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("images/hero/herostudio.png");
+		background-image: url("images/hero/herostudio.png");
 		background-size: cover;
 		background-position: center;
 	}
@@ -3839,7 +3839,7 @@ input, select, textarea {
 		background-image: url("images/hero/herostudio.png");
 		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/hero/herostudio.png");
+		background-image: url("../../images/hero/herostudio.png");
 		background-attachment: fixed;
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -4061,7 +4061,7 @@ input, select, textarea {
 		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/hero/herostudio.png");
+		background-image: url("../../images/hero/herostudio.png");
 		background-attachment: fixed;
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -4082,14 +4082,14 @@ input, select, textarea {
 		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/hero/herostudiovertical.png");
+		background-image: url("../../images/hero/herostudiovertical.png");
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
 
 	body.is-mobile.landing #footer {
-		background-color: #1d242a;
+		background-color: #0a0a0a;
 	}
 
 /* PROCESO ZOOX */
@@ -4118,7 +4118,7 @@ input, select, textarea {
     flex: 0 0 260px !important;
     display: flex !important;
     flex-direction: column !important;
-    background: #0a0a0a !important;
+    background: #fbf3e0!important;
     border: 2px solid rgba(252, 178, 6, 0.3) !important;
     border-radius: 16px !important;
     overflow: hidden !important;

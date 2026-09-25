@@ -19,12 +19,14 @@
 		   VARIABLES ZOOX
 		═══════════════════════════════════════ */
 		:root {
-			--zoox-amarillo:  #FFB60F;
+			--zoox-verde:     #505c47;
 			--zoox-negro:     #0A0A0A;
 			--zoox-azul:      #3A506B;
 			--zoox-gris:      #E5E5E5;
 			--zoox-blanco:    #FFFFFF;
 			--zoox-muted:     #888888;
+			--zoox-crema:     #fbf3e0;
+			--zoox-amarillo:  #ffb60f;
 		}
 
 		/* ═══════════════════════════════════════
@@ -48,21 +50,21 @@
 			color: var(--zoox-blanco) !important;
 		}
 		#menu ul > li {
-			border-top-color: rgba(0,0,0,0.15) !important;
+			border-top-color: rgba(94, 58, 58, 0.15) !important;
 		}
 
 		/* ═══════════════════════════════════════
 		   SECCIÓN 1 — BIENVENIDOS
 		═══════════════════════════════════════ */
 		#one {
-			background-color: var(--zoox-negro) !important;
+			background-color: var(--zoox-crema) !important;
 		}
 		#one .inner {
 			text-align: center !important;
 		}
 		#one header.major h2 {
 			color: var(--zoox-blanco) !important;
-			border-color: rgba(255,182,15,0.3) !important;
+			border-color: rgba(80,92,71) !important;
 		}
 		#one p {
 			color: var(--zoox-gris) !important;
@@ -81,7 +83,7 @@
 		}
 		#three header.major h2 {
 			color: var(--zoox-blanco) !important;
-			border-color: rgba(255,182,15,0.3) !important;
+			border-color: rgba(80,92,71) !important;
 		}
 		#three header.major p {
 			color: var(--zoox-gris) !important;
@@ -101,8 +103,8 @@
 			width: 160px !important;
 			min-width: 160px !important;
 			height: 160px !important;
-			background: var(--zoox-negro) !important;
-			border: 1px solid rgba(255,182,15,0.3) !important;
+			background: var(--zoox-verde) !important;
+			border: 1px solid rgba(80,92,71) !important;
 			border-radius: 8px !important;
 			display: flex !important;
 			flex-direction: column !important;
@@ -113,14 +115,14 @@
 			transition: all .3s ease !important;
 		}
 		.paso-card:hover {
-			border-color: var(--zoox-amarillo) !important;
-			background: rgba(255,182,15,0.05) !important;
+			border-color: var(--zoox-crema) !important;
+			background: rgb(56, 65, 48) !important;
 			transform: translateY(-4px) !important;
 		}
 		.paso-num {
 			font-family: 'Campton', sans-serif !important;
 			font-size: 2.2rem !important;
-			color: var(--zoox-amarillo) !important;
+			color: var(--zoox-crema) !important;
 			line-height: 1 !important;
 			margin-bottom: 0.4em !important;
 			display: block !important;
@@ -139,7 +141,7 @@
 			margin: 0 !important;
 		}
 		.paso-flecha {
-			color: var(--zoox-amarillo) !important;
+			color: var(--zoox-crema) !important;
 			font-size: 1.2rem !important;
 			padding: 0 8px !important;
 			flex-shrink: 0 !important;
@@ -149,21 +151,21 @@
 		   SECCIÓN — LÍNEA EXTERIORES INTRO
 		═══════════════════════════════════════ */
 		#exteriores {
-			background-color: var(--zoox-negro) !important;
+			background-color: var(--zoox-crema) !important;
 			text-align: center !important;
 		}
 		#exteriores .inner {
 			text-align: center !important;
 		}
 		#exteriores header.major h2 {
-			color: var(--zoox-amarillo) !important;
-			border-color: rgba(255,182,15,0.3) !important;
+			color: var(--zoox-verde) !important;
+			border-color: rgba(80,92,71) !important;
 		}
 		#exteriores header.major p {
-			color: var(--zoox-blanco) !important;
+			color: var(--zoox-verde) !important;
 		}
 		#exteriores p {
-			color: var(--zoox-gris) !important;
+			color: var(--zoox-verde) !important;
 			max-width: 700px !important;
 			margin: 0 auto 1.5em auto !important;
 			line-height: 1.8 !important;
@@ -206,7 +208,7 @@
 		}
 		.featured-badge {
 			display: inline-block !important;
-			background: var(--zoox-amarillo) !important;
+			background: var(--zoox-verde) !important;
 			color: var(--zoox-negro) !important;
 			font-size: 0.65rem !important;
 			font-weight: 700 !important;
@@ -265,7 +267,7 @@
 		}
 		.pkg-items li::before {
 			content: '●' !important;
-			color: var(--zoox-amarillo) !important;
+			color: var(--zoox-verde) !important;
 			font-size: 0.45rem !important;
 			flex-shrink: 0 !important;
 		}
@@ -278,7 +280,7 @@
 			margin-top: auto !important;
 		}
 		.pkg-bonus {
-			color: var(--zoox-amarillo) !important;
+			color: var(--zoox-verde) !important;
 			font-size: 0.72rem !important;
 			margin: 0 0 0.2em 0 !important;
 		}
@@ -291,24 +293,24 @@
 		   PAQUETES EXTERIORES
 		═══════════════════════════════════════ */
 		#paquetes-ext {
-			background-color: var(--zoox-negro) !important;
+			background-color: var(--zoox-crema) !important;
 		}
 		#paquetes-ext .inner {
 			width: 95vw !important;
 			max-width: 95vw !important;
 		}
 		#paquetes-ext .proceso-card {
-			background: #111111 !important;
-			border: 1px solid rgba(255,182,15,0.3) !important;
+			background: #0A0A0A !important;
+			border: 1px solid rgba(80,92,71) !important;
 		}
 		#paquetes-ext .proceso-card.featured {
-			border: 2px solid var(--zoox-amarillo) !important;
+			border: 2px solid var(--zoox-verde) !important;
 		}
 		#paquetes-ext .paso {
 			color: var(--zoox-muted) !important;
 		}
 		#paquetes-ext .proceso-card h3 {
-			color: var(--zoox-amarillo) !important;
+			color: var(--zoox-verde) !important;
 		}
 		#paquetes-ext .pkg-tagline {
 			color: var(--zoox-muted) !important;
@@ -340,7 +342,7 @@
 		}
 		#movilidad header.major h2 {
 			color: var(--zoox-blanco) !important;
-			border-color: rgba(255,182,15,0.3) !important;
+			border-color: rgba(80,92,71) !important;
 		}
 		#movilidad header.major p {
 			color: var(--zoox-gris) !important;
@@ -352,21 +354,21 @@
 			margin: 2em 0 1.5em 0 !important;
 		}
 		.zona-card {
-			background: #111111 !important;
-			border: 1px solid rgba(255,182,15,0.2) !important;
+			background: #0A0A0A !important;
+			border: 1px solid rgba(80,92,71) !important;
 			border-radius: 10px !important;
 			padding: 1.5em 1em !important;
 			text-align: center !important;
 			transition: border-color 0.3s !important;
 		}
 		.zona-card:hover {
-			border-color: var(--zoox-amarillo) !important;
+			border-color: var(--zoox-verde) !important;
 		}
 		.zona-label {
 			display: block !important;
 			font-size: 0.7rem !important;
 			letter-spacing: 0.2em !important;
-			color: var(--zoox-amarillo) !important;
+			color: var(--zoox-verde) !important;
 			text-transform: uppercase !important;
 			margin-bottom: 0.75em !important;
 			font-weight: 700 !important;
@@ -381,12 +383,12 @@
 			font-family: 'Campton', sans-serif !important;
 			font-size: 1.6rem !important;
 			font-weight: 600 !important;
-			color: var(--zoox-blanco) !important;
+			color: var(--zoox-gris) !important;
 			margin: 0 !important;
 		}
 		.zona-nota {
 			font-size: 0.7rem !important;
-			color: #555 !important;
+			color: var(--zoox-crema) !important;
 			font-style: italic !important;
 			margin-top: 1em !important;
 		}
@@ -435,7 +437,7 @@
 			width: 100% !important;
 			background: none !important;
 			border: none !important;
-			color: var(--zoox-blanco) !important;
+			color: var(--zoox-verde) !important;
 			font-size: 0.88rem !important;
 			font-family: inherit !important;
 			letter-spacing: 0.05em !important;
@@ -447,9 +449,9 @@
 			align-items: center !important;
 			transition: color 0.3s !important;
 		}
-		.faq-pregunta:hover { color: var(--zoox-amarillo) !important; }
+		.faq-pregunta:hover { color: var(--zoox-negro) !important; }
 		.faq-icono {
-			color: var(--zoox-amarillo) !important;
+			color: var(--zoox-verde) !important;
 			font-size: 1.4rem !important;
 			font-weight: 300 !important;
 			transition: transform 0.3s !important;
@@ -466,11 +468,11 @@
 		}
 		.faq-item.active .faq-respuesta { display: block !important; }
 		.faq-item.active .faq-icono { transform: rotate(45deg) !important; }
-		.faq-item.active .faq-pregunta { color: var(--zoox-amarillo) !important; }
+		.faq-item.active .faq-pregunta { color: var(--zoox-verde) !important; }
 
 		/* FAQ Exteriores */
 		#faq {
-			background-color: var(--zoox-negro) !important;
+			background-color: var(--zoox-crema) !important;
 		}
 		#faq .inner {
 			text-align: center !important;
@@ -478,11 +480,11 @@
 			margin: 0 auto !important;
 		}
 		#faq header.major h2 {
-			color: var(--zoox-blanco) !important;
-			border-color: rgba(255,182,15,0.3) !important;
+			color: var(--zoox-verde) !important;
+			border-color: rgba(80,92,71) !important;
 		}
-		#faq header.major p { color: var(--zoox-muted) !important; }
-		#faq .faq-respuesta p { color: var(--zoox-muted) !important; }
+		#faq header.major p { color: var(--zoox-verde) !important; }
+		#faq .faq-respuesta p { color: var(--zoox-verde) !important; }
 
 		/* ═══════════════════════════════════════
 		   SEPARADOR LÍNEA IN HOME
@@ -501,7 +503,7 @@
 		.linea-separador h2 {
 			font-family: 'Campton', sans-serif !important;
 			font-size: 2.5rem !important;
-			color: var(--zoox-amarillo) !important;
+			color: var(--zoox-verde) !important;
 			letter-spacing: 0.1em !important;
 			margin-bottom: 0.3em !important;
 		}
@@ -511,108 +513,21 @@
 			margin: 0 !important;
 		}
 
-		/* ═══════════════════════════════════════
-		   LÍNEA IN HOME — FONDO AZUL ACERO
-		═══════════════════════════════════════ */
-		.inhome-style {
-			background: #505C47 !important;
-		}
-
-		/* Intro In Home */
-		#inhome-intro .inner {
-			text-align: center !important;
-			max-width: 750px !important;
-			margin: 0 auto !important;
-		}
-		#inhome-intro header.major h2 {
-			color: var(--zoox-blanco) !important;
-			border-color: rgba(255,182,15,0.3) !important;
-		}
-		#inhome-intro p {
-			color: var(--zoox-gris) !important;
-			line-height: 1.8 !important;
-		}
-
-		/* Paquetes In Home */
-		#paquetes-inhome .inner {
-			width: 95vw !important;
-			max-width: 95vw !important;
-		}
-		.inhome-card {
-			background: rgba(0,0,0,0.2) !important;
-			border: 1px solid var(--zoox-amarillo)  !important;
-		}
-		.inhome-card.featured-inhome {
-			border: 2px solid var(--zoox-amarillo) !important;
-		}
-		.inhome-card .paso {
-			color: var(--zoox-gris) !important;
-			opacity: 0.7 !important;
-		}
-		.inhome-card h3 {
-			color: var(--zoox-amarillo) !important;
-		}
-		.inhome-card .pkg-tagline {
-			color: var(--zoox-gris) !important;
-		}
-		.inhome-card .pkg-price {
-			color: var(--zoox-blanco) !important;
-		}
-		.inhome-card .pkg-price small {
-			color: var(--zoox-blanco) !important;
-		}
-		.inhome-card .pkg-items li {
-			color: var(--zoox-gris) !important;
-		}
-		.inhome-card .pkg-items li strong {
-			color: var(--zoox-blanco) !important;
-		}
-		.inhome-card .pkg-tiempo {
-			color: var(--zoox-gris) !important;
-			opacity: 0.7 !important;
-		}
-
-		/* FAQ In Home */
-		#faq-inhome .inner {
-			max-width: 800px !important;
-			margin: 0 auto !important;
-			text-align: center !important;
-		}
-		#faq-inhome header.major h2 {
-			color: var(--zoox-blanco) !important;
-			border-color: rgba(255,182,15,0.3) !important;
-		}
-		#faq-inhome header.major p {
-			color: var(--zoox-gris) !important;
-		}
-		#faq-inhome .faq-item {
-			border-bottom: none !important;
-		}
-		#faq-inhome .faq-pregunta {
-			color: var(--zoox-gris) !important;
-		}
-		#faq-inhome .faq-pregunta:hover {
-			color: var(--zoox-amarillo) !important;
-		}
-		#faq-inhome .faq-item.active .faq-pregunta {
-			color: var(--zoox-amarillo) !important;
-		}
-		#faq-inhome .faq-respuesta p {
-			color: var(--zoox-gris) !important;
-		}
+	
+		
 /* Formulario */
-        #formulario { background: var(--zoox-negro); padding:4em 2em; }
+        #formulario { background: var(--zoox-verde); padding:4em 2em; }
         #formulario .inner { max-width:750px; margin:0 auto; }
         #formulario header.major { text-align:center; margin-bottom:2.5em; }
-        #formulario header.major h2 { color:#fff; font-size:2rem; }
-        #formulario header.major p { color:#888; max-width:600px; margin:1em auto; line-height:1.6; }
+        #formulario header.major h2 { color:#FBF3E0; font-size:2rem; }
+        #formulario header.major p { color:#505C47 max-width:600px; margin:1em auto; line-height:1.6; }
         .zoox-form { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
         @media(max-width:600px){ .zoox-form{grid-template-columns:1fr;} }
         .form-group { display:flex; flex-direction:column; text-align:left; }
         .form-group.full { grid-column:1 / -1; }
-        .form-group label { font-size:0.7rem; letter-spacing:0.08em; color:hsl(0, 0%, 53%); text-transform:uppercase; margin-bottom:6px; font-family:'Campton'; }
-        .form-group input, .form-group select, .form-group textarea {
-    background:#111; border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:12px 14px; color:#fff; font-family:'Inter'; font-size:0.85rem; outline:none; transition:border 0.3s;
+        .form-group label { font-size:0.7rem; letter-spacing:0.08em; color:var(--zoox-crema); text-transform:uppercase; margin-bottom:2px; font-family:'Campton'; }
+       .form-group input, .form-group select, .form-group textarea {
+    background:#E5E5E5; border:1px solid rgba(0,0,0,0.1); border-radius:8px; padding:12px 14px; color:#505c47; font-family:'Inter'; font-size:0.85rem; outline:none; transition:border 0.3s;
 }
 .form-group select {
     color-scheme: dark;
@@ -626,14 +541,14 @@
     border-color: rgba(255,255,255,0.1) !important;
 }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-    border-color: var(--zoox-amarillo) !important;
+    border-color: var(--zoox-negro) !important;
     box-shadow: none !important;
 }
 .form-group select option {
-    background:#111;
-    color:#fff;
+    background:#E5E5E5;
+    color:#505C47;
 }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--zoox-amarillo); }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--zoox-crema); }
         .form-group textarea { min-height:110px; resize:vertical; }
         .form-check { grid-column:1 / -1; display:flex; gap:10px; align-items:flex-start; margin-top:0.5em; text-align:left; }
         .form-check input { margin-top:4px; accent-color: var(--zoox-amarillo); }
@@ -896,7 +811,7 @@
                 /* ===== V2: MOVILIDAD INCLUIDA BADGE ===== */
                 .pkg-movilidad {
                     font-size: 0.65rem !important;
-                    color: #FFB60F !important;
+                    color: #505C47 !important;
                     letter-spacing: 0.05em !important;
                     margin: -0.6em 0 1em 0 !important;
                     font-style: italic !important;
@@ -914,7 +829,7 @@
                 /* ===== V2: CTA BUTTONS ===== */
                 .zoox-cta {
     display: inline-block !important;
-    background: var(--zoox-amarillo) !important;
+    background: var(--zoox-verde) !important;
     color: var(--zoox-negro) !important;
     padding: 0.9em 2em !important;
     border-radius: 50px !important;
@@ -934,14 +849,14 @@
                 .zoox-cta:hover {
                     background: var(--zoox-blanco) !important;
                     transform: translateY(-2px) !important;
-                    box-shadow: 0 6px 20px rgba(255,182,15,0.3) !important;
+                    box-shadow: 0 6px 20px rgba(80,92,71) !important;
                 }
                 .zoox-cta.inhome-cta {
-                    background: var(--zoox-blanco) !important;
+                    background: var(--zoox-verde) !important;
                     color: #505C47 !important;
                 }
                 .zoox-cta.inhome-cta:hover {
-                    background: var(--zoox-amarillo) !important;
+                    background: var(--zoox-verde) !important;
                     color: var(--zoox-negro) !important;
                 }
                 .cta-wrapper { text-align: center !important; width: 100% !important; }
@@ -959,13 +874,13 @@
   content:'';
   position:absolute;
   inset:0;
-  background: #0A0A0A; /* oscurece un poco para que resalte el botón amarillo */
+  background: #FBF3E0; /* oscurece un poco para que resalte el botón amarillo */
 }
 .btn-galeria{
   position:relative;
   z-index:1;
-  background:#FFB60F;
-  color:#0a0a0a;
+  background:#505C47;
+  color:#;
   font-family:'Cera GR', sans-serif;
   font-weight:900;
   font-size:0.75em;
@@ -978,13 +893,13 @@
   margin:0 0.6em;
 }
 .btn-galeria:hover{
-  background:#e5e5e5;
+  background:#0A0A0A;
   transform:translateY(-2px);
 }
 /* ===== CARRUSEL GALERÍA (experiencia) - 5 fotos, ratio 3:4 ===== */
-.zc-galeria{background:#0A0A0A;padding:2.5em 0 2em;overflow:hidden;}
+.zc-galeria{background:#FBF3E0;padding:2.5em 0 2em;overflow:hidden;}
 .zc-viewport{max-width:1130px;margin:0 auto;overflow:hidden;}
-.zc-titulo{text-align:center;color:#FFB60F;font-family:'Cera GR',sans-serif;font-weight:900;font-size:0.8em;letter-spacing:0.12em;text-transform:uppercase;margin:0 0 1.5em;}
+.zc-titulo{text-align:center;color:#505C47;font-family:'Cera GR',sans-serif;font-weight:900;font: size 0.9em;em;letter-spacing:0.12em;text-transform:uppercase;margin:0 0 1.5em;}
 .zc-track{display:flex;width:max-content;animation:zc-loop 40s linear infinite;}
 .zc-track:hover{animation-play-state:paused;}
 .zc-item{flex:0 0 auto;width:210px;margin-right:1em;}
@@ -1192,7 +1107,7 @@
 
 <!-- BANNER COMPLEMENTOS -->
 <section class="banner-galeria">
-  <a href="../zooxarts/index.html" class="btn-galeria">COMPLEMENTA TU SESIÓN</a>
+  <a href="../zooxarts/index.html" class="btn-galeria">CONOCE ZOOX ARTS</a>
 </section>
 
 	<!-- ── FAQ EXTERIORES ─────────────────────── -->
