@@ -87,7 +87,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #2e3842;
+		background: #0A0A0A;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -3733,7 +3733,7 @@ input, select, textarea {
 			height: auto;
 			min-height: 0;
 			aspect-ratio: 9 / 16;
-			background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("images/hero/herostudiovertical.png");
+			background-image: url("images/hero/herostudiovertical.png");
 		}
 
 				#banner h2 {
@@ -3770,9 +3770,7 @@ input, select, textarea {
 		opacity: 0;
 	}
 
-	body.is-preload #banner:after {
-		opacity: 1;
-	}
+
 
 /* CTA */
 
@@ -3838,7 +3836,7 @@ input, select, textarea {
 
 	#main > header {
 		padding: 12em 0 10em 0 ;
-		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
+		background-image: url("images/hero/herostudio.png");
 		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/hero/herostudio.png");
