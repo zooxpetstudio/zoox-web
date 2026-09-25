@@ -86,8 +86,11 @@
 			border-color: rgba(80,92,71) !important;
 		}
 		#three header.major p {
-			color: var(--zoox-gris) !important;
+			color: var(--zoox-verde) !important;
 		}
+		#three header.major h2, #three header.major p {
+    color: var(--zoox-verde, #505c47) !important;
+}
 
 		.pasos-grid {
 			display: flex !important;
@@ -141,7 +144,7 @@
 			margin: 0 !important;
 		}
 		.paso-flecha {
-			color: var(--zoox-crema) !important;
+			color: var(--zoox-verde) !important;
 			font-size: 1.2rem !important;
 			padding: 0 8px !important;
 			flex-shrink: 0 !important;
@@ -529,6 +532,10 @@
        .form-group input, .form-group select, .form-group textarea {
     background:#E5E5E5; border:1px solid rgba(0,0,0,0.1); border-radius:8px; padding:12px 14px; color:#505c47; font-family:'Inter'; font-size:0.85rem; outline:none; transition:border 0.3s;
 }
+.form-group input::placeholder, .form-group textarea::placeholder {
+    color: #505c47;
+    opacity: 0.6;
+}
 .form-group select {
     color-scheme: dark;
     line-height: normal !important;
@@ -546,7 +553,7 @@
 }
 .form-group select option {
     background:#E5E5E5;
-    color:#505C47;
+    color:#505c47;
 }
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--zoox-crema); }
         .form-group textarea { min-height:110px; resize:vertical; }
@@ -949,8 +956,10 @@
 	<section id="three" class="wrapper style3 special">
 		<div class="inner">
 			<header class="major">
-				<h2>¿Cómo es la experiencia ZOOX?</h2>
-				<p>Un proceso diseñado para que disfrutes cada etapa junto a tu mejor amigo.</p>
+				<h2>¿Cómo es una sesión con ZOOX?</h2>
+				<div style="max-width:700px; margin:0 auto;">
+	<p>Nuestras mascotas son una fuente inagotable de felicidad y amor puro, ¡y esa energía tan especial es justo lo que queremos inmortalizar en nuestras sesiones! Nos apasiona capturar la auténtica belleza y la personalidad única de cada compañero a través de una amplia variedad de fotografías creativas.</p>
+</div>
 			</header>
 			<div class="pasos-grid-wrapper">
     <div class="pasos-grid">
@@ -1005,7 +1014,8 @@
 				<h2>Al aire libre</h2>
 				<p>Tu hijo de cuatro patas, en fotos artísticas.</p>
 			</header>
-			<p>3 niveles, misma calidad ZOOX. Todos incluyen la opción de hacerlo en parque o en tu casa en Lima Metropolitana.</p>
+			<p>Sin importar su personalidad, nivel de energía o miedos, todos son bienvenidos a una sesión al aire libre. Nos adaptamos lo máximo posible a tu perro para respetar sus límites y garantizar su bienestar. 
+				Revisa nuestros paquetes y elige el que mejor se adapte a tu mascota. ¡Estamos listos para capturar su esencia en un recuerdo inolvidable!</p>
 		</div>
 	</section>
 
