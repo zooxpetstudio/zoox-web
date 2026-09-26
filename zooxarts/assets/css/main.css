@@ -4137,7 +4137,7 @@ input, select, textarea {
 
 
 /* === ZOOX ART - CORRECCION FINAL - COLORES OFICIALES #FFB60F #0A0A0A #505C47 #E5E5E5 === */
-:root{--zoox-amarillo:#FFB60F;--zoox-negro:#0A0A0A;--zoox-verde:#505C47;--zoox-gris:#E5E5E5;--zoox-blanco:#FFFFFF;}
+:root{--zoox-amarillo:#FFB60F;--zoox-negro:#0A0A0A;--zoox-verde:#0A0A0A;--zoox-gris:#E5E5E5;--zoox-blanco:#FFFFFF;}
 
 /* HEADER - LOGO VISIBLE - FIX */
 #header{background:#0A0A0A!important;position:fixed!important;top:0!important;left:0!important;width:100%!important;height:70px!important;z-index:10001!important;display:flex!important;align-items:center!important;justify-content:space-between!important;padding:0 1.8em!important;border:none!important;box-shadow:none!important;}
@@ -4209,7 +4209,7 @@ body.is-menu-visible #menu{transform:translateX(0)!important;}
 .btn-conoce:hover{background:var(--zoox-negro)!important; transform:translateY(-2px)!important;}
 
 /* FAQ ESTILO IMAGEN ADJUNTA - PILDORAS BLANCAS */
-#faq-posters{background:#505c47!important; padding:5em 2em!important;}
+#faq-posters{background:#0A0A0A!important; padding:5em 2em!important;}
 #faq-posters .inner{max-width:760px!important; margin:0 auto!important;}
 #faq-posters header.major h2{color:#E5E5E5!important; font-family:'Campton', serif!important; text-transform:none!important; letter-spacing:0!important; font-size:2rem!important; font-weight:600!important;}
 #faq-posters header.major h2::after{display:none!important;}
@@ -4218,11 +4218,11 @@ body.is-menu-visible #menu{transform:translateX(0)!important;}
 .faq-pill{background:white!important; border-radius:999px!important; box-shadow:0 2px 12px rgba(0,0,0,0.06)!important; overflow:hidden!important; transition:all .3s ease!important; border:1px solid rgba(0,0,0,0.04)!important;}
 .faq-pill.active{border-radius:18px!important;}
 .faq-pregunta{width:100%; background:transparent!important; border:none!important; padding:16px 22px 16px 26px!important; display:flex!important; justify-content:space-between!important; align-items:center!important; font-family:'Campton',sans-serif!important; font-size:0.9rem!important; color:#222!important; cursor:pointer!important; text-align:left!important; font-weight:400!important;}
-.faq-icon{width:32px!important; height:32px!important; background:#505c47!important; color:white!important; border-radius:50%!important; display:flex!important; align-items:center!important; justify-content:center!important; font-size:14px!important; flex-shrink:0!important; transition:transform .3s!important;}
+.faq-icon{width:32px!important; height:32px!important; background:var(--zoox-negro)!important; color:white!important; border-radius:50%!important; display:flex!important; align-items:center!important; justify-content:center!important; font-size:14px!important; flex-shrink:0!important; transition:transform .3s!important;}
 .faq-pill.active .faq-icon{transform:rotate(45deg)!important;}
 .faq-respuesta{max-height:0; overflow:hidden; transition:max-height .35s ease, padding .35s ease; padding:0 26px;}
 .faq-pill.active .faq-respuesta{max-height:300px; padding:0 26px 18px;}
-.faq-respuesta p{font-size:0.85rem!important; color:#505c47!important; line-height:1.6!important; margin:0!important; text-align:left!important;}
+.faq-respuesta p{font-size:0.85rem!important; color:#0A0A0A!important; line-height:1.6!important; margin:0!important; text-align:left!important;}
 
 /* FOOTER ORIGINAL */
 #footer{background:#0A0A0A!important; padding:3em 2em!important; text-align:center!important; border:none!important;}
@@ -4435,7 +4435,7 @@ body.is-menu-visible #menu {
   margin:0 !important;
   width:32px !important;
   height:32px !important;
-  background:#505C47 !important;
+  background:#0A0A0A !important;
   color:white !important;
   border-radius:50% !important;
   display:flex !important;
@@ -4617,7 +4617,7 @@ body.is-menu-visible {
 
 /* === FIX FAQ DEFINITIVO - TEXTO VISIBLE + AL FINAL EXTREMO DERECHO === */
 #faq-posters {
-  background:#505c47 !important; /* verde que usas */
+  background:#0A0A0A !important; /* verde que usas */
   padding:4em 1.5em !important;
 }
 
@@ -4672,7 +4672,7 @@ body.is-menu-visible {
   font-weight:500 !important;
   letter-spacing:0.06em !important;
   text-transform:uppercase !important;
-  color:#505c47 !important;
+  color:var(--zoox-negro) !important;
   line-height:1.4 !important;
   white-space:normal !important;
   word-wrap:break-word !important;
@@ -4690,7 +4690,7 @@ body.is-menu-visible {
   height:32px !important;
   min-width:32px !important;
   min-height:32px !important;
-  background:#505C47 !important;
+  background:var(--zoox-negro) !important;
   color:#FFFFFF !important;
   border-radius:50% !important;
   display:flex !important;
@@ -4812,7 +4812,7 @@ button::-moz-focus-inner {
   right:16px !important;
   top:50% !important;
   transform:translateY(-50%) !important;
-  background:#505C47 !important;
+  background:var(--zoox-negro) !important;
   border:none !important;
   outline:none !important;
 }

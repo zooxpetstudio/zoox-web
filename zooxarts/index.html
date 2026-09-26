@@ -82,7 +82,7 @@
 }
 .banner-slide{display:none;}
 .banner-slide.active{display:block;}
-.banner-eyebrow{font-family:'Cera GR',sans-serif;font-size:0.75em;letter-spacing:0.2em;color:var(--zoox-amarillo);font-weight:700;text-transform:uppercase;margin-bottom:0.6em;}
+.banner-eyebrow{font-family:'Cera GR',sans-serif;font-size:0.75em;letter-spacing:0.1em;color:var(--zoox-amarillo);font-weight:700;text-transform:uppercase;margin-bottom:0.6em;}
 .banner-title{font-family:'Cera GR',sans-serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:900;line-height:1.1;margin-bottom:0.6em;}
 .banner-title span{color:var(--zoox-amarillo);}
 .banner-sub{font-family:'Cera GR',sans-serif;font-weight:400;font-size:1rem;line-height:1.6;max-width:400px;margin-bottom:1.5em;}
@@ -94,25 +94,19 @@
   .banner-icons{gap:0.8em;}
   .banner-icon{font-size:0.65em;max-width:80px;}
 }
-.banner-cta{display:inline-flex;align-items:center;gap:0.6em;background:#505c47;color:#fff;font-family:'Cera GR',sans-serif;font-weight:700;letter-spacing:0.05em;padding:0.9em 1.8em;border-radius:40px;text-decoration:none;text-transform:uppercase;font-size:0.85em;}
+.banner-cta{display:inline-flex;align-items:center;gap:0.6em;background:#FFB60F;color:#0a0a0a;font-family:'Cera GR',sans-serif;font-weight:700;letter-spacing:0.05em;padding:0.9em 1.8em;border-radius:40px;text-decoration:none;text-transform:uppercase;font-size:0.85em;}
 @media screen and (max-width:736px){
   .banner-overlay{padding:2em 1.2em;max-width:100%;}
 }
 </style>
 <style>
-.proceso-steps{display:flex;align-items:flex-start;justify-content:center;gap:0.8em;flex-wrap:wrap;}
-.proceso-step{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:150px;}
-.proceso-icon{position:relative;width:80px;height:80px;border:2px solid var(--zoox-amarillo);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1em;background:#fff;}
-.proceso-icon i:first-child{font-size:1.6em;color:#505c47;}
-.proceso-num{position:absolute;bottom:-8px;right:-4px;background:var(--zoox-amarillo);color:#505c47;font-weight:800;font-size:0.75em;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cera GR',sans-serif;}
-.proceso-step h4{font-family:'Cera GR',sans-serif;font-size:0.85em;font-weight:800;text-transform:uppercase;color:#505c47;margin:0 0 0.4em;}
-.proceso-step p{font-family:'Campton',sans-serif;font-size:0.8em;color:#505c47;line-height:1.4;margin:0;}
-.proceso-arrow{color:#CFCABF;font-size:1.2em;align-self:center;margin-top:35px;}
+.proceso-steps-rect{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; max-width:1000px; margin:0 auto;}
+.proceso-step-rect{background:var(--zoox-amarillo)!important; padding:1.4em 1.2em!important; border-radius:8px!important; color:#0a0a0a!important; text-align:center;}
+.proceso-step-rect i{color:var(--zoox-negro); font-size:1.6rem!important; margin-bottom:0.6em; display:block;}
+.proceso-step-rect h4{font-family:'Cera GR',sans-serif; margin:0; color:#0A0A0A; font-size:0.85rem!important; text-transform:uppercase; letter-spacing:0.06em;}
 
 @media screen and (max-width:900px){
-  .proceso-arrow{display:none;}
-  .proceso-steps{gap:2em 1.5em;}
-  .proceso-step{max-width:45%;}
+  .proceso-steps-rect{grid-template-columns:repeat(2,1fr);}
 }
 </style>
 <style>
@@ -120,7 +114,7 @@
 .zoox-carousel{display:flex;gap:var(--zc-gap);width:max-content;animation:zc-loop 22s linear infinite;}
 .zc-item{flex:0 0 auto;width:calc((100cqw - (var(--zc-n) - 1) * var(--zc-gap)) / var(--zc-n));text-decoration:none;text-align:center;}
 .zc-item img{width:100%;height:auto;aspect-ratio:3 / 4;object-fit:cover;border-radius:12px;display:block;}
-.zc-item span{display:block;margin-top:0.6em;color:#fff;font-family:'Cera GR',sans-serif;font-size:0.75em;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;}
+.zc-item span{display:block;margin-top:0.6em;color:#fff;font-family:'Cera GR',sans-serif;font-size:0.75em;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;}
 
 @keyframes zc-loop{
   from{transform:translateX(0);}
@@ -158,44 +152,21 @@
   </div>
 </section>
 
-<section id="zooxart-titulo" style="background:#505c47; text-align:center; padding:3em 2em;">
+<section id="zooxart-titulo" style="background:#0a0a0a; text-align:center; padding:3em 2em;">
 <div class="inner">
 <h2 style="font-family:'Cera GR','Campton',sans-serif; font-size:clamp(2rem,4vw,2.8rem); letter-spacing:0.12em; color:#fff; margin-bottom:0.6em; font-weight:500; text-transform:uppercase;">ZOOX ARTS<span></h2>
 <p style="color:#E5E5E5; max-width:680px; margin:0 auto; line-height:1.8; font-size:0.95rem; font-weight:300; font-family:'Campton',sans-serif;">En ZOOX transformamos el amor por tu mascota en productos personalizados y exclusivos. Diseñamos polos, banners digitales y pósters físicos con acabados de alta calidad. Cada diseño es especial, el regalo perfecto para un amante de las mascotas.</p>
-</div>
-</section>
-<!-- ASI FUNCIONA - PROCESO ZOOX ART -->
-<section id="proceso-zooxart" style="background:#ffffff; padding:4em 2em;">
-<div class="inner">
-  <div style="text-align:center; margin-bottom:2.5em;">
-    <p style="font-family:'Cera GR',sans-serif; font-size:0.8em; letter-spacing:0.1em; color:#505c47; font-weight:900; text-transform:uppercase; margin-bottom:0.4em;">UN PROCESO</p>
-    <h2 style="font-family:'Cera GR',sans-serif; font-size:clamp(1.6rem,3.5vw,2.4rem); font-weight:800; color:#505c47; text-transform:uppercase; margin:0;">exclusivo y único</span></h2>
+
+  <div style="text-align:center; margin:2.2em 0 1.5em;">
+    <p style="font-family:'Cera GR',sans-serif; font-size:0.8em; letter-spacing:0.1em; color:var(--zoox-amarillo); font-weight:900; text-transform:uppercase; margin-bottom:0.4em;">UN PROCESO</p>
+    <h3 style="font-family:'Cera GR',sans-serif; font-size:clamp(1.3rem,3vw,1.8rem); font-weight:800; color:#fff; text-transform:uppercase; margin:0;">exclusivo y único</h3>
   </div>
 
-  <div class="proceso-steps">
-    <div class="proceso-step">
-      <div class="proceso-icon"><i class="fa-solid fa-image"></i><span class="proceso-num">1</span></div>
-      <h4>Envíanos la foto</h4>
-      <p></p>
-    </div>
-    <i class="fa-solid fa-arrow-right proceso-arrow"></i>
-    <div class="proceso-step">
-      <div class="proceso-icon"><i class="fa-solid fa-palette"></i><span class="proceso-num">2</span></div>
-      <h4>Selecciona un estilo</h4>
-      <p></p>
-    </div>
-    <i class="fa-solid fa-arrow-right proceso-arrow"></i>
-    <div class="proceso-step">
-      <div class="proceso-icon"><i class="fa-solid fa-square-check"></i><span class="proceso-num">3</span></div>
-      <h4>Aprueba el arte</h4>
-      <p></p>
-    </div>
-    <i class="fa-solid fa-arrow-right proceso-arrow"></i>
-    <div class="proceso-step">
-      <div class="proceso-icon"><i class="fa-solid fa-box"></i><span class="proceso-num">4</span></div>
-      <h4>Recibe tu producto</h4>
-      <p></p>
-    </div>
+  <div class="proceso-steps-rect">
+    <div class="proceso-step-rect proceso-step-rect--light"><i class="fa-solid fa-image"></i><h4>1. Envíanos la foto</h4></div>
+    <div class="proceso-step-rect proceso-step-rect--light"><i class="fa-solid fa-palette"></i><h4>2. Selecciona un estilo</h4></div>
+    <div class="proceso-step-rect proceso-step-rect--light"><i class="fa-solid fa-square-check"></i><h4>3. Aprueba el arte</h4></div>
+    <div class="proceso-step-rect proceso-step-rect--light"><i class="fa-solid fa-box"></i><h4>4. Recibe tu producto</h4></div>
   </div>
 </div>
 </section>
