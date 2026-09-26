@@ -119,7 +119,7 @@
 		}
 		.paso-card:hover {
 			border-color: var(--zoox-crema) !important;
-			background: rgb(56, 65, 48) !important;
+			background: rgb(50, 51, 41) !important;
 			transform: translateY(-4px) !important;
 		}
 		.paso-num {
@@ -303,20 +303,20 @@
 			max-width: 95vw !important;
 		}
 		#paquetes-ext .proceso-card {
-			background: #0A0A0A !important;
-			border: 1px solid rgba(80,92,71) !important;
+			background: #2d3329 !important;
+			border: 1px solid rgba(var(--zoox-verde), 0.5) !important;
 		}
 		#paquetes-ext .proceso-card.featured {
 			border: 2px solid var(--zoox-verde) !important;
 		}
 		#paquetes-ext .paso {
-			color: var(--zoox-muted) !important;
+			color: var(--zoox-crema) !important;
 		}
 		#paquetes-ext .proceso-card h3 {
-			color: var(--zoox-verde) !important;
+			color: var(--zoox-crema) !important;
 		}
 		#paquetes-ext .pkg-tagline {
-			color: var(--zoox-muted) !important;
+			color: var(--zoox-crema) !important;
 		}
 		#paquetes-ext .pkg-price {
 			color: var(--zoox-blanco) !important;
@@ -331,7 +331,7 @@
 			color: var(--zoox-blanco) !important;
 		}
 		#paquetes-ext .pkg-tiempo {
-			color: var(--zoox-muted) !important;
+			color: var(--zoox-crema) !important;
 		}
 
 		/* ═══════════════════════════════════════
@@ -530,7 +530,7 @@
         .form-group.full { grid-column:1 / -1; }
         .form-group label { font-size:0.7rem; letter-spacing:0.08em; color:var(--zoox-crema); text-transform:uppercase; margin-bottom:2px; font-family:'Campton'; }
        .form-group input, .form-group select, .form-group textarea {
-    background:#E5E5E5; border:1px solid rgba(0,0,0,0.1); border-radius:8px; padding:12px 14px; color:#505c47; font-family:'Inter'; font-size:0.85rem; outline:none; transition:border 0.3s;
+    background:#2d3329; border:1px solid rgba(0,0,0,0.1); border-radius:8px; padding:12px 14px; color:#e5e5e5; font-family:'Inter'; font-size:0.85rem; outline:none; transition:border 0.3s;
 }
 .form-group input::placeholder, .form-group textarea::placeholder {
     color: #505c47;
@@ -834,10 +834,10 @@
                 }
 
                 /* ===== V2: CTA BUTTONS ===== */
-                .zoox-cta {
+    .zoox-cta {
     display: inline-block !important;
-    background: var(--zoox-verde) !important;
-    color: var(--zoox-negro) !important;
+    background: #FBF3E0 !important;
+    color: #505C47 !important;;
     padding: 0.9em 2em !important;
     border-radius: 50px !important;
     font-family: 'Campton', sans-serif !important;
@@ -853,10 +853,11 @@
     line-height: 1 !important;
     vertical-align: middle !important;
 }
-                .zoox-cta:hover {
-                    background: var(--zoox-blanco) !important;
-                    transform: translateY(-2px) !important;
-                    box-shadow: 0 6px 20px rgba(80,92,71) !important;
+    .zoox-cta:hover {
+    background: #2D3329 !important;
+    color: #FBF3E0 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(80,92,71) !important;
                 }
                 .zoox-cta.inhome-cta {
                     background: var(--zoox-verde) !important;
@@ -867,15 +868,29 @@
                     color: var(--zoox-negro) !important;
                 }
                 .cta-wrapper { text-align: center !important; width: 100% !important; }
-				.banner-galeria{
+  .banner-galeria{
   position:relative;
   width:100%;
   height:200px;
+  padding:2.5em 1em 3em;
   background: url('images/zoox-banner-dog.jpg') center 30% / cover no-repeat #0A0A0A;
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
+  gap:1em;
   overflow:hidden;
+}
+.banner-galeria-texto{
+  position:relative;
+  z-index:1;
+  color:#505C47;
+  font-family:'Cera GR', sans-serif;
+  font-weight:700;
+  font-size:1em;
+  text-align:center;
+  max-width:600px;
+  margin:0;
 }
 .banner-galeria::before{
   content:'';
@@ -887,7 +902,7 @@
   position:relative;
   z-index:1;
   background:#505C47;
-  color:#;
+  color:#FBF3E0;
   font-family:'Cera GR', sans-serif;
   font-weight:900;
   font-size:0.75em;
@@ -900,7 +915,7 @@
   margin:0 0.6em;
 }
 .btn-galeria:hover{
-  background:#0A0A0A;
+  background:#2d3329;
   transform:translateY(-2px);
 }
 /* ===== CARRUSEL GALERÍA (experiencia) - 5 fotos, ratio 3:4 ===== */
@@ -1117,6 +1132,7 @@
 
 <!-- BANNER COMPLEMENTOS -->
 <section class="banner-galeria">
+  <p class="banner-galeria-texto">La menjor manera de complementar tu sesión es con un recuerdo físico. También ofrecemos arte sublimado e impreso.</p>
   <a href="../zooxarts/index.html" class="btn-galeria">CONOCE ZOOX ARTS</a>
 </section>
 
