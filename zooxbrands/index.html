@@ -80,45 +80,26 @@
   }
 }
 /* ── SECTION PROPUESTA DE VALOR ── */
-#propuesta-section {
-  background: var(--zoox-gris);
-  padding: 100px 0;
+.propuesta-row {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 20px !important;
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
-#propuesta-section h2 {
-  font-family: 'Cera GR', sans-serif;
-  font-size: clamp(2rem, 5vw, 3.6rem);
-  font-weight: 700;
-  color: var(--zoox-morado);
-  line-height: 1.15;
-  margin-bottom: 36px;
+@media (max-width: 991px) {
+  .propuesta-row { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 580px) {
+  .propuesta-row { grid-template-columns: 1fr !important; }
 }
 
-#propuesta-section h2 em {
-  font-style: normal;
-  color: var(--zoox-naranja);
-}
-
-#propuesta-section p {
-  font-family: 'Cera GR', sans-serif;
-  font-size: 1rem;
-  color: var(--zoox-morado);
-  line-height: 1.8;
-}
-
-.propuesta-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 60px;
-}
-
-.propuesta-item {
-  background: var(--zoox-morado);
-  border: 1.5px solid var(--zoox-naranja);
-  border-radius: 10px;
-  min-height: 300px;
-  min-width: 0;
+.propuesta-card {
+  background: var(--zoox-naranja);
+  border: 1.5px solid var(--zoox-morado);
+  border-radius: 0px;
+  min-height: 260px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -129,56 +110,40 @@
   transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.propuesta-item:hover {
-  border-color: var(--zoox-morado);
+.propuesta-card:hover {
   transform: translateY(-4px);
 }
 
-.propuesta-item .propuesta-icon-wrap {
+.propuesta-card .icon {
   width: 48px;
   height: 48px;
   background: rgba(34,28,70,0.12);
-  border-radius: 6px;
+  border-radius: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 22px;
 }
 
-.propuesta-icon {
-  width: 60px;
-  height: 60px;
+.propuesta-card .icon i {
+  font-size: 1.4rem;
   color: var(--zoox-gris);
 }
 
-.propuesta-item h3 {
+.propuesta-card h4 {
   font-family: 'Cera GR', sans-serif;
   font-size: 1.05rem;
   font-weight: 600;
-  color: var(--zoox-gris);
+  color: var(--zoox-morado);
   margin-bottom: 12px;
   line-height: 1.3;
 }
 
-.propuesta-item span {
+.propuesta-card p {
   font-size: 0.82rem;
-  color: var(--zoox-gris);
+  color: var(--zoox-morado);
   line-height: 1.6;
   margin: 0;
-}
-
-@media (max-width: 768px) {
-  #propuesta-section { padding: 70px 0; }
-  .propuesta-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  max-width: 1140px;
-  margin: 60px auto 0;
-}
-
-@media (max-width: 991px) { .propuesta-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 580px) { .propuesta-grid { grid-template-columns: 1fr; } }
 }
     /* ── HEADER (patrón estándar: logo + nav #menu, igual que zooxstudio/index.html) ── */
     #header {
@@ -665,8 +630,9 @@ margin-right: auto;
     }
 #servicios .row.gy-4 {
   display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 20px !important;
+ grid-template-columns: repeat(3, 300px);
+justify-content: center; !important;
+  gap: 8px !important;
   max-width: 1140px;
   margin: 0 auto;
 }
@@ -1272,42 +1238,38 @@ margin-right: auto;
         </div>
       </div>
 
-      <div class="row gy-4 justify-content-center flex-nowrap">
+      <div class="row gy-4 justify-content-center flex-nowrap propuesta-row">
 
-<div class="col-lg-2 col-md-4 col-4">
-  <div class="service-card">
-    <div class="icon"><i class="fas fa-camera"></i></div>
-            <h4>BRANDING y DISEÑO GRÁFICO</h4>
-            <p>Identidad visual, diseño de packaging, etiquetas, catálogos y material comercial.</p>
+<div class="razones-grid-b2b">
+        <div class="razon-b2b">
+          <div class="razon-icon"><i class="fas fa-paw"></i></div>
+          <div>
+            <h5>Especialización que se nota</h5>
+            <p>No aprendemos sobre mascotas, vivimos con ellas. Sabemos dirigir al modelo de 4 patas, lograr la toma exacta y conectar con una audiencia petlover real.</p>
           </div>
         </div>
-
-<div class="col-lg-2 col-md-4 col-4">
-  <div class="service-card">
-    <div class="icon"><i class="fas fa-photo-video"></i></div>
-            <h4>CONTENIDO SOCIAL MEDIA</h4>
-            <p>Fotografía de productos, edición creativa para contenido visual de redes sociales y publicidad.</p>
+        <div class="razon-b2b">
+          <div class="razon-icon"><i class="fas fa-layer-group"></i></div>
+          <div>
+            <h5>Todo en un mismo estudio</h5>
+            <p>Fotografía, video y diseño en un solo flujo. Un mismo criterio creativo, sin terceros, sin pérdida de tiempo ni de coherencia de marca.</p>
           </div>
         </div>
-
-<div class="col-lg-2 col-md-4 col-4">
-  <div class="service-card">
-    <div class="icon"><i class="fas fa-palette"></i></div>
-            <h4>EXPERIENCIA DIGITAL</h4>
-            <p>Diseño y desarrollo de páginas web, landing pages y soluciones digitales para marcas pet.</p>
+        <div class="razon-b2b">
+          <div class="razon-icon"><i class="fas fa-chart-line"></i></div>
+          <div>
+            <h5>Contenido pensado para vender</h5>
+            <p>No es solo que se vea bonito. Iluminación, composición y formato optimizados para e-commerce, ads y redes. Imágenes que convierten.</p>
           </div>
         </div>
-
-<div class="col-lg-2 col-md-4 col-4">
-  <div class="service-card">
-    <div class="icon"><i class="fas fa-bullseye"></i></div>
-            <h4>MARKETING & CAMPAÑAS ADS</h4>
-            <p>Gestión de campañas publicitarias, piezas promocionales y comunicación visual para lanzamientos.</p>
+        <div class="razon-b2b">
+          <div class="razon-icon"><i class="fas fa-bolt"></i></div>
+          <div>
+            <h5>Realización Profesional</h5>
+            <p>Capacidad para producción mensual recurrente sin fricción.</p>
           </div>
         </div>
-
       </div>
-    </div>
   </section>
 
   
