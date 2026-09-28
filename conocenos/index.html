@@ -63,6 +63,16 @@
 		.kn-dots{position:absolute;z-index:3;left:0;right:0;bottom:1.6em;display:flex;justify-content:center;gap:0.6em;}
 		.kn-dots button{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,0.4);cursor:pointer;box-shadow:none;}
 		.kn-dots button.is-active{background:var(--zoox-amarillo);}
+		.kn-hero-btn{position:absolute;left:7%;bottom:28%;z-index:3;display:inline-flex;align-items:center;font-family:'Campton',sans-serif;font-weight:700;letter-spacing:0.05em;padding:0.9em 1.8em;border-radius:40px;text-decoration:none;text-transform:uppercase;font-size:0.85em;}
+
+.kn-hero-btn--1{background:#2D3329;color:#fbf3e0;}
+.kn-hero-btn--2{background:#0A0A0A;color:var(--zoox-amarillo);}
+.kn-hero-btn--3{background:#f23a29;color:#e5e5e5;}
+		
+
+@media screen and (max-width:736px){
+  .kn-hero-btn{left:50%;bottom:8%;transform:translateX(-50%);}
+}
 
 		/* ═══ 2) HISTORIA ═══ */
 		.kn-historia-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:4em;align-items:start;}
@@ -159,9 +169,15 @@
 
 <!-- ── 1) BANNERS SLIDER ──────────────────── -->
 <section id="banner" class="kn-hero">
-	<div class="kn-slide is-active" style="--h:url('images/hero/herosconocenos.png');--v:url('images/hero/herosconocenosmovil.png');"></div>
-	<div class="kn-slide" style="--h:url('images/hero/herosconocenos2.png');--v:url('images/hero/herosconocenosmovil2.png');"></div>
-	<div class="kn-slide" style="--h:url('images/hero/herosconocenos3.png');--v:url('images/hero/herosconocenosmovil3.png');"></div>
+	<div class="kn-slide is-active" style="--h:url('images/hero/herosconocenos.png');--v:url('images/hero/herosconocenosmovil.png');">
+	<a href="../zooxstudio/index.html" class="kn-hero-btn kn-hero-btn--1">VER ZOOX STUDIO</a>
+</div>
+	<div class="kn-slide" style="--h:url('images/hero/herosconocenos2.png');--v:url('images/hero/herosconocenosmovil2.png');">
+	<a href="../zooxarts/index.html" class="kn-hero-btn kn-hero-btn--2">VER ZOOX ARTS</a>
+</div>
+	<div class="kn-slide" style="--h:url('images/hero/herosconocenos3.png');--v:url('images/hero/herosconocenosmovil3.png');">
+	<a href="../zooxbrands/index.html" class="kn-hero-btn kn-hero-btn--3">VER ZOOX BRANDS</a>
+</div>
 	<div class="kn-hero-shade"></div>
 	<div class="kn-hero-inner">
 		
