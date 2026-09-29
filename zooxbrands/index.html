@@ -44,7 +44,7 @@
     }
 /* ── SECTION CREATIVIDAD ── */
 #creatividad-section {
-  background: var(--zoox-morado);
+  background: var(--zoox-naranja);
   padding: 100px 0;
 }
 
@@ -59,7 +59,7 @@
 
 #creatividad-section h2 em {
   font-style: normal;
-  color: var(--zoox-naranja);
+  color: var(--zoox-morado);
 }
 
 #creatividad-section p {
@@ -593,6 +593,70 @@
 @keyframes marqueeLoop {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-25%); }
+}
+/* ── LOS 4 PILARES ── */
+.pilares-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1140px;
+  margin: 0 auto 50px;
+}
+
+.pilar-item {
+  background: var(--zoox-morado);
+  border-top: 3px solid var(--zoox-naranja);
+  padding: 30px 22px;
+}
+
+.pilar-num {
+  display: block;
+  font-family: 'Cera GR', sans-serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: var(--zoox-naranja);
+  margin-bottom: 14px;
+}
+
+.pilar-item h5 {
+  font-family: 'Cera GR', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--zoox-gris);
+  margin-bottom: 10px;
+}
+
+.pilar-item p {
+  font-size: 0.85rem;
+  color: var(--zoox-gris);
+  opacity: 0.85;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.pilares-extra {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+  color: var(--zoox-muted-dk);
+  line-height: 1.6;
+}
+#servicios .zbp-label { color: var(--zoox-naranja); }
+#servicios .zbp-title { color: var(--zoox-morado); }
+#servicios .zbp-title em { color: var(--zoox-naranja); }
+#servicios .zbp-divider { display: none; }
+#servicios .zbp-body { color: var(--zoox-morado); }
+#servicios .pilares-extra { color: var(--zoox-naranja); }
+#servicios .pilares-extra strong { color: var(--zoox-negro); }
+
+.pilares-extra strong { color: var(--zoox-negro); }
+
+@media (max-width: 991px) {
+  .pilares-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 580px) {
+  .pilares-grid { grid-template-columns: 1fr; }
 }
     @media (max-width:768px){
       .razones-grid-b2b { grid-template-columns:1fr; gap:32px; }
@@ -1279,53 +1343,46 @@ justify-content: center; !important;
 </section>
   
 
-  <!-- ========== QUÉ HACEMOS / SERVICIOS ========== -->
-  <section id="servicios" class="zbp-section zbp-section-dark">
-    <div class="container">
+<!-- ========== LOS 4 PILARES ========== -->
+<section id="servicios" class="zbp-section zbp-section-dark">
+  <div class="container">
 
-      <div class="row mb-60">
-        <div class="col-lg-7" style="margin: 0 auto; text-align: center;">
-          <span class="zbp-label">Qué hacemos</span>
-          <h2 class="zbp-title">Producción visual<br><em>especializada en pets</em></h2>
-          <div class="zbp-divider"></div>
-          <p class="zbp-body">No somos una agencia generalista. Conocemos el comportamiento animal, sabemos cómo capturar la personalidad de una mascota y entendemos qué activa a una audiencia petlover. Eso marca la diferencia.</p>
-        
-        </div>
+    <div class="row mb-60">
+      <div class="col-lg-7" style="margin: 0 auto; text-align: center;">
+        <span class="zbp-label">Cómo trabajamos</span>
+        <h2 class="zbp-title">Un sistema,<br><em>cuatro pilares</em></h2>
+        <div class="zbp-divider"></div>
+        <p class="zbp-body">Trabajamos cada marca en un orden que tiene sentido: primero pensamos, luego construimos, después mostramos y, finalmente, comunicamos.</p>
       </div>
+    </div>
 
-<div class="row gy-4 justify-content-center flex-nowrap">
-
-<div class="razones-grid-b2b">
-        <div class="razon-b2b">
-          <div class="razon-icon"><i class="fas fa-paw"></i></div>
-          <div>
-            <h5>Especialización que se nota</h5>
-            <p>No aprendemos sobre mascotas, vivimos con ellas. Sabemos dirigir al modelo de 4 patas, lograr la toma exacta y conectar con una audiencia petlover real.</p>
-          </div>
-        </div>
-        <div class="razon-b2b">
-          <div class="razon-icon"><i class="fas fa-layer-group"></i></div>
-          <div>
-            <h5>Todo en un mismo estudio</h5>
-            <p>Fotografía, video y diseño en un solo flujo. Un mismo criterio creativo, sin terceros, sin pérdida de tiempo ni de coherencia de marca.</p>
-          </div>
-        </div>
-        <div class="razon-b2b">
-          <div class="razon-icon"><i class="fas fa-chart-line"></i></div>
-          <div>
-            <h5>Contenido pensado para vender</h5>
-            <p>No es solo que se vea bonito. Iluminación, composición y formato optimizados para e-commerce, ads y redes. Imágenes que convierten.</p>
-          </div>
-        </div>
-        <div class="razon-b2b">
-          <div class="razon-icon"><i class="fas fa-bolt"></i></div>
-          <div>
-            <h5>Realización Profesional</h5>
-            <p>Capacidad para producción mensual recurrente sin fricción.</p>
-          </div>
-        </div>
+    <div class="pilares-grid">
+      <div class="pilar-item">
+        <span class="pilar-num">01</span>
+        <h5>Estrategia &amp; Concepto</h5>
+        <p>Definimos el posicionamiento, la dirección estratégica y el concepto creativo que guiarán cada proyecto.</p>
       </div>
-  </section>
+      <div class="pilar-item">
+        <span class="pilar-num">02</span>
+        <h5>Identidad &amp; Branding</h5>
+        <p>Creamos o renovamos la identidad visual de tu marca, desarrollando su sistema gráfico, packaging y aplicaciones comerciales.</p>
+      </div>
+      <div class="pilar-item">
+        <span class="pilar-num">03</span>
+        <h5>Imagen &amp; Contenido</h5>
+        <p>Creamos el universo visual de tu marca mediante fotografía con mascotas, dirección de arte, video y bancos de contenido especializados en el mundo pet.</p>
+      </div>
+      <div class="pilar-item">
+        <span class="pilar-num">04</span>
+        <h5>Comunicación</h5>
+        <p>Transformamos la identidad y el contenido de tu marca en redes sociales, campañas, piezas digitales y lanzamientos que conectan con tu audiencia.</p>
+      </div>
+    </div>
+
+    <p class="pilares-extra"><strong>¿Necesitas algo más?</strong> También desarrollamos páginas web y coordinamos servicios complementarios como publicidad digital y merchandising, según las necesidades de cada proyecto.</p>
+
+  </div>
+</section>
 
   
   <!-- ========== POR QUÉ ZOOX BRANDS - B2B RE-DISEÑO ========== -->
