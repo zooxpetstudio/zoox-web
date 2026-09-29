@@ -472,14 +472,15 @@
     }
     #formulario .form-group { display:flex; flex-direction:column; gap:8px; }
     #formulario .form-group.full { grid-column: 1 / -1; }
-    #formulario .form-group label {
-      font-family:'Cera GR',sans-serif;
-      font-size:0.78rem;
-      font-weight:600;
-      letter-spacing:0.06em;
-      text-transform:uppercase;
-      color: rgba(255,255,255,0.8);
-    }
+#formulario .form-group label {
+  font-family:'Cera GR',sans-serif;
+  font-size:0.78rem;
+  font-weight:600;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color: var(--zoox-gris);
+  opacity: 0.85;
+}
     #formulario .form-group input,
     #formulario .form-group select,
     #formulario .form-group textarea {
@@ -492,13 +493,13 @@
       background: rgba(255,255,255,0.06);
       transition: border-color 0.2s, background 0.2s;
     }
-    #formulario .form-group input:focus,
-    #formulario .form-group select:focus,
-    #formulario .form-group textarea:focus {
-      outline:none;
-      border-color: var(--zoox-amarillo);
-      background: rgba(255,255,255,0.1);
-    }
+#formulario .form-group input:focus,
+#formulario .form-group select:focus,
+#formulario .form-group textarea:focus {
+  outline:none;
+  border-color: var(--zoox-naranja);
+  background: rgba(255,255,255,0.1);
+}
     #formulario .form-group textarea { min-height:140px; resize:vertical; }
     #formulario .form-check { grid-column:1 / -1; display:flex; gap:10px; align-items:flex-start; margin-top:10px; }
     #formulario .form-check label { font-size:0.75rem; color: rgba(255,255,255,0.55); line-height:1.5; text-transform:none; letter-spacing:0; font-weight:400; }
@@ -507,12 +508,12 @@
     #formulario .form-group select {
   font-family:'Cera GR',sans-serif;
   padding: 14px 42px 14px 18px;
-  border: 1.5px solid rgba(255,255,255,0.35);
+  border: 1.5px solid rgba(242,58,41,0.55);
   border-radius: 4px;
   font-size:0.95rem;
   color: #FFFFFF;
   background-color: rgba(255,255,255,0.10);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23FFB60F' d='M0 0l6 8 6-8z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23f23a29' d='M0 0l6 8 6-8z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 16px center;
   appearance: none;
@@ -522,7 +523,7 @@
 }
 #formulario .form-group select:focus {
   outline: none;
-  border-color: #FFB60F;
+  border-color: var(--zoox-naranja);
   background-color: rgba(255,255,255,0.14);
 }
 #formulario .form-group select option {
@@ -543,31 +544,36 @@
       gap: 20px;
       align-items: flex-start;
     }
-    .razon-icon {
-      width: 52px;
-      height: 52px;
-      background: var(--zoox-negro);
-      border: 1.5px solid var(--zoox-amarillo);
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .razon-icon i { font-size: 1.2rem; color: var(--zoox-amarillo); }
-    .razon-b2b h5 {
-      font-family:'Cera GR',sans-serif;
-      font-size:1.05rem;
-      font-weight:600;
-      color: var(--zoox-negro);
-      margin-bottom:8px;
-    }
-    .razon-b2b p {
-      font-size:0.88rem;
-      color: var(--zoox-muted-dk);
-      line-height:1.65;
-      margin:0;
-    }
+.razon-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--zoox-morado);
+  border: 1.5px solid var(--zoox-naranja);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.razon-icon i { font-size: 1.2rem; color: var(--zoox-naranja); }
+.razon-b2b h5 {
+  font-family:'Cera GR',sans-serif;
+  font-size:1.05rem;
+  font-weight:600;
+  color: var(--zoox-morado);
+  margin-bottom:8px;
+}
+.razon-b2b p {
+  font-size:0.88rem;
+  color: var(--zoox-morado);
+  opacity: 0.75;
+  line-height:1.65;
+  margin:0;
+}
+#por-que-zoox .zbp-label { color: var(--zoox-naranja); }
+#por-que-zoox .zbp-title { color: var(--zoox-morado); }
+#por-que-zoox .zbp-title em { color: var(--zoox-naranja); }
+
     .logos-b2b-wrapper { text-align:center; margin-top:20px; border-top: 1px solid rgba(0,0,0,0.08); padding-top:40px; }
     .logos-label {
       font-size:0.68rem;
@@ -652,7 +658,7 @@
   max-width: 700px;
   margin: 0 auto;
   font-size: 0.9rem;
-  color: var(--zoox-muted-dk);
+  color: var(--zoox-morado);
   line-height: 1.6;
 }
 #servicios .zbp-label { color: var(--zoox-naranja); }
@@ -661,7 +667,7 @@
 #servicios .zbp-divider { display: none; }
 #servicios .zbp-body { color: var(--zoox-morado); }
 #servicios .pilares-extra { color: var(--zoox-naranja); }
-#servicios .pilares-extra strong { color: var(--zoox-negro); }
+#servicios .pilares-extra strong { color: var(--zoox-morado); }
 
 .pilares-extra strong { color: var(--zoox-negro); }
 
@@ -1434,141 +1440,48 @@ justify-content: center; !important;
   <!-- ========== POR QUÉ ZOOX BRANDS - B2B RE-DISEÑO ========== -->
   <section id="por-que-zoox" class="zbp-section">
     <div class="container">
-      <div style="max-width:700px; margin:0 auto; text-align:center; margin-bottom:60px;">
-        <span class="zbp-label" style="color: var(--zoox-negro);">Por qué ZOOX Brands</span>
-        <h2 class="zbp-title" style="color: var(--zoox-negro);">Por qué las marcas pet<br><em>nos eligen</em></h2>
-        <div class="zbp-divider"></div>
-        <p class="zbp-body" style="color: var(--zoox-muted-dk);">No somos una agencia generalista. Somos tu equipo creativo especializado en mascotas.</p>
-      </div>
-
-      <div class="razones-grid-b2b">
-        <div class="razon-b2b">
-          <div class="razon-icon"><i class="fas fa-paw"></i></div>
-          <div>
-            <h5>Especialización que se nota</h5>
-            <p>No aprendemos sobre mascotas, vivimos con ellas. Sabemos dirigir al modelo de 4 patas, lograr la toma exacta y conectar con una audiencia petlover real.</p>
-          </div>
-        </div>
-        <div class="razon-b2b">
-          <div class="razon-icon"><i class="fas fa-layer-group"></i></div>
-          <div>
-            <h5>Todo en un mismo estudio</h5>
-            <p>Fotografía, video y diseño en un solo flujo. Un mismo criterio creativo, sin terceros, sin pérdida de tiempo ni de coherencia de marca.</p>
-          </div>
-        </div>
-        <div class="razon-b2b">
-          <div class="razon-icon"><i class="fas fa-chart-line"></i></div>
-          <div>
-            <h5>Contenido pensado para vender</h5>
-            <p>No es solo que se vea bonito. Iluminación, composición y formato optimizados para e-commerce, ads y redes. Imágenes que convierten.</p>
-          </div>
-        </div>
-        <div class="razon-b2b">
-          <div class="razon-icon"><i class="fas fa-bolt"></i></div>
-          <div>
-            <h5>Realización Profesional</h5>
-            <p>Capacidad para producción mensual recurrente sin fricción.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- TIRA DE LOGOS LOOP INFINITO -->
-      <div class="logos-b2b-wrapper">
-        <span class="logos-label">Marcas que confiaron en ZOOX</span>
-        <div class="logos-marquee">
-          <div class="logos-track">
-            <div class="logos-track">
-  <div class="logo-item"><img src="assets/img/logoblanco-zoox.png" alt="Marca 1" style="filter: brightness(0);"></div>
-  <div class="logo-item"><img src="assets/img/logoblanco-zoox.png" alt="Marca 2" style="filter: brightness(0);"></div>
-  <div class="logo-item"><img src="assets/img/logoblanco-zoox.png" alt="Marca 3" style="filter: brightness(0);"></div>
-  <div class="logo-item"><img src="assets/img/logoblanco-zoox.png" alt="Marca 4" style="filter: brightness(0);"></div>
-  <div class="logo-item"><img src="assets/img/logoblanco-zoox.png" alt="Marca 5" style="filter: brightness(0);"></div>
-  <div class="logo-item"><img src="assets/img/logoblanco-zoox.png" alt="Marca 6" style="filter: brightness(0);"></div>
+   <div style="max-width:700px; margin:0 auto; text-align:center; margin-bottom:60px;">
+  <span class="zbp-label">Por qué ZOOX Brands</span>
+  <h2 class="zbp-title">Por qué las marcas pet<br><em>eligen ZOOX</em></h2>
 </div>
-        </div>
-      </div>
 
+<div class="razones-grid-b2b">
+  <div class="razon-b2b">
+    <div class="razon-icon"><i class="fas fa-paw"></i></div>
+    <div>
+      <h5>Especialización real</h5>
+      <p>No solo conocemos el mundo de las mascotas, somos parte de él. Sabemos trabajar con modelos de cuatro patas y conectar con una audiencia que comparte ese vínculo.</p>
     </div>
-  </section>
-
-  <!-- ========== PORTAFOLIO ========== -->
-  <section id="portafolio" class="zbp-section zbp-section-dark" style="padding-bottom: 0;">
-    <div class="container">
-      <span class="zbp-label">Portafolio</span>
-      <h2 class="zbp-title" style="margin-bottom: 12px;">Trabajo reciente<br>para <em>marcas petfriendly</em></h2>
-      <div class="zbp-divider"></div>
+  </div>
+  <div class="razon-b2b">
+    <div class="razon-icon"><i class="fas fa-layer-group"></i></div>
+    <div>
+      <h5>Una sola mirada creativa</h5>
+      <p>Integramos estrategia, identidad, imagen y comunicación bajo un mismo criterio creativo, manteniendo la coherencia de tu marca en cada punto de contacto.</p>
     </div>
-
-    <div class="portfolio-grid" style="margin-top: 60px;">
-
-      <!-- Items: reemplazar src con imágenes reales -->
-      <div class="portfolio-item-brands">
-        <div class="portfolio-placeholder">
-          <i class="fas fa-camera"></i>
-          <span>Proyecto 01</span>
-        </div>
-        <div class="portfolio-item-hover">
-          <span>Fotografía de Producto</span>
-          <p>Marca de accesorios</p>
-        </div>
-      </div>
-
-      <div class="portfolio-item-brands">
-        <div class="portfolio-placeholder">
-          <i class="fas fa-play-circle"></i>
-          <span>Proyecto 02</span>
-        </div>
-        <div class="portfolio-item-hover">
-          <span>Reel de Marca</span>
-          <p>Tienda petfriendly</p>
-        </div>
-      </div>
-
-      <div class="portfolio-item-brands">
-        <div class="portfolio-placeholder">
-          <i class="fas fa-paint-brush"></i>
-          <span>Proyecto 03</span>
-        </div>
-        <div class="portfolio-item-hover">
-          <span>Diseño de Campaña</span>
-          <p>Lanzamiento de producto</p>
-        </div>
-      </div>
-
-      <div class="portfolio-item-brands">
-        <div class="portfolio-placeholder">
-          <i class="fas fa-camera"></i>
-          <span>Proyecto 04</span>
-        </div>
-        <div class="portfolio-item-hover">
-          <span>Sesión Editorial</span>
-          <p>Alimentos premium</p>
-        </div>
-      </div>
-
-      <div class="portfolio-item-brands">
-        <div class="portfolio-placeholder">
-          <i class="fas fa-film"></i>
-          <span>Proyecto 05</span>
-        </div>
-        <div class="portfolio-item-hover">
-          <span>Video Institucional</span>
-          <p>Clínica veterinaria</p>
-        </div>
-      </div>
-
-      <div class="portfolio-item-brands">
-        <div class="portfolio-placeholder">
-          <i class="fas fa-bullhorn"></i>
-          <span>Proyecto 06</span>
-        </div>
-        <div class="portfolio-item-hover">
-          <span>Pack de Contenido</span>
-          <p>E-commerce de mascotas</p>
-        </div>
-      </div>
-
+  </div>
+  <div class="razon-b2b">
+    <div class="razon-icon"><i class="fas fa-map-marker-alt"></i></div>
+    <div>
+      <h5>Producción en locación</h5>
+      <p>Llevamos tu marca a entornos reales y creamos imágenes auténticas que transmiten naturalidad, personalidad y conexión con el mundo pet.</p>
     </div>
+  </div>
+  <div class="razon-b2b">
+    <div class="razon-icon"><i class="fas fa-chart-line"></i></div>
+    <div>
+      <h5>Contenido pensado para vender</h5>
+      <p>Cuidamos la composición, la iluminación y el formato para crear contenido visual adaptado a e-commerce, campañas publicitarias y redes sociales.</p>
+    </div>
+  </div>
+  <div class="razon-b2b">
+    <div class="razon-icon"><i class="fas fa-bolt"></i></div>
+    <div>
+      <h5>Producción recurrente</h5>
+      <p>Acompañamos a tu marca de forma continua, con una producción creativa organizada y flexible que permite mantener una comunicación visual consistente mes a mes.</p>
+    </div>
+  </div>
+</div>
   </section>
 
   <!-- ========== PROCESO ========== -->
@@ -1623,12 +1536,12 @@ justify-content: center; !important;
 
 
 <!-- ========== CONTACT BRANDS - clonado de Experiencia con copy Brands ========== -->
-<section id="formulario" class="wrapper" style="background:#0A0A0A; padding: 100px 0;">
+<section id="formulario" class="wrapper" style="background: var(--zoox-morado); padding: 100px 0;">
     <div class="inner" style="max-width: 760px; margin: 0 auto; padding: 0 2em;">
-        <header class="major" style="text-align:center; margin-bottom: 3em;">
-            <h2 style="font-family:'Cera GR',sans-serif; font-size: clamp(2rem,5vw,3.4rem); font-weight:700; color:#FFFFFF; margin-bottom:0.4em; line-height:1.05;">¿Tu marca está lista<br>para <em style="font-style:normal; color:#FFB60F;">crecer?</em></h2>
-            <p style="font-family:'Cera GR',sans-serif; color: rgba(255,255,255,0.70); font-size:1rem; line-height:1.7; max-width:560px; margin: 1em auto 0;">En ZOOX Brands creamos contenido visual que conecta con audiencias petlover. Cuéntanos qué necesita tu marca y te respondemos en menos de 24h con una propuesta personalizada.</p>
-        </header>
+     <header class="major" style="text-align:center; margin-bottom: 3em;">
+    <h2 style="font-family:'Cera GR',sans-serif; font-size: clamp(2rem,5vw,3.4rem); font-weight:700; color: var(--zoox-gris); margin-bottom:0.4em; line-height:1.05;">¿Tu marca está lista<br>para dar el <em style="font-style:normal; color: var(--zoox-naranja);">siguiente paso?</em></h2>
+    <p style="font-family:'Cera GR',sans-serif; color: var(--zoox-gris); opacity:0.75; font-size:1rem; line-height:1.7; max-width:560px; margin: 1em auto 0;">Cuéntanos qué necesita tu marca y agenda tu diagnóstico inicial gratuito. Te respondemos en menos de 24 horas para conversar de lo que necesites.</p>
+</header>
         <form class="zoox-form" action="https://formsubmit.co/zoox.petstudio@gmail.com" method="POST">
             <div class="form-group">
                 <label>Nombre y Apellido *</label>
@@ -1649,14 +1562,14 @@ justify-content: center; !important;
             <div class="form-group full">
                 <label>¿Qué servicio te interesa? *</label>
                 <select name="servicio" required>
-                    <option value="">Selecciona un servicio</option>
-                    <option value="fotografia-producto">Fotografía de Producto Pet</option>
-                    <option value="contenido-redes">Contenido para Redes Sociales</option>
-                    <option value="branding">Diseño Gráfico & Branding</option>
-                    <option value="campanas">Campañas de Marketing Digital</option>
-                    <option value="video">Video Institucional & Spots</option>
-                    <option value="pack-mensual">Pack Mensual de Contenido</option>
-                </select>
+    <option value="">Selecciona una opción</option>
+    <option value="estrategia-concepto">Estrategia & Concepto</option>
+    <option value="identidad-branding">Identidad & Branding</option>
+    <option value="imagen-contenido">Imagen & Contenido</option>
+    <option value="comunicacion">Comunicación</option>
+    <option value="pack-mensual">Pack mensual de contenido</option>
+    <option value="no-lo-tengo-claro">Aún no lo tengo claro</option>
+</select>
             </div>
             <div class="form-group full">
                 <label>Cuéntanos sobre tu marca *</label>
@@ -1668,7 +1581,7 @@ justify-content: center; !important;
             </div>
             <input type="hidden" name="_captcha" value="false">
             <div class="form-submit" style="text-align:center; margin-top:2em;">
-                <button type="submit" class="zoox-cta" style="cursor:pointer; display:inline-block; background:#FFB60F; color:#0A0A0A; padding:0.9em 2.5em; border-radius:50px; font-family:'Cera GR',sans-serif; font-weight:600; letter-spacing:0.06em; border:none;">Enviar solicitud</button>
+                <button type="submit" class="zoox-cta" style="cursor:pointer; display:inline-block; background: var(--zoox-naranja); color: var(--zoox-gris); padding:0.9em 2.5em; border-radius:50px; font-family:'Cera GR',sans-serif; font-weight:600; letter-spacing:0.06em; border:none;">Agenda tu diagnóstico</button>
             </div>
         </form>
     </div>
