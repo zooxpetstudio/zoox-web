@@ -80,6 +80,52 @@
   }
 }
 /* ── SECTION PROPUESTA DE VALOR ── */
+#propuesta-section {
+  background: var(--zoox-gris);
+  padding: 100px 0;
+}
+
+#propuesta-section h2 {
+  font-family: 'Cera GR', sans-serif;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  color: var(--zoox-morado);
+  line-height: 1.15;
+  margin-bottom: 36px;
+}
+
+#propuesta-section h2 em {
+  font-style: normal;
+  color: var(--zoox-naranja);
+}
+
+#propuesta-section p {
+  font-family: 'Cera GR', sans-serif;
+  font-size: 1rem;
+  color: var(--zoox-morado);
+  line-height: 1.8;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+  #propuesta-section { padding: 70px 0; }
+}
+
+.propuesta-row {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 20px !important;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+@media (max-width: 991px) {
+  .propuesta-row { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 580px) {
+  .propuesta-row { grid-template-columns: 1fr !important; }
+}
+/* ── SECTION PROPUESTA DE VALOR ── */
 .propuesta-row {
   display: grid !important;
   grid-template-columns: repeat(3, 1fr) !important;
@@ -96,8 +142,8 @@
 }
 
 .propuesta-card {
-  background: var(--zoox-naranja);
-  border: 1.5px solid var(--zoox-morado);
+  background: var(--zoox-morado);
+  border: 1.5px solid var(--zoox-naranja);
   border-radius: 0px;
   min-height: 260px;
   width: 100%;
@@ -115,9 +161,9 @@
 }
 
 .propuesta-card .icon {
-  width: 48px;
-  height: 48px;
-  background: rgba(34,28,70,0.12);
+  width: 70px;
+  height: 70px;
+  background: rgba(199, 83, 29, 0.12);
   border-radius: 3px;
   display: flex;
   align-items: center;
@@ -126,22 +172,22 @@
 }
 
 .propuesta-card .icon i {
-  font-size: 1.4rem;
-  color: var(--zoox-gris);
+  font-size: 2.2rem;
+  color: var(--zoox-naranja);
 }
 
 .propuesta-card h4 {
   font-family: 'Cera GR', sans-serif;
   font-size: 1.05rem;
   font-weight: 600;
-  color: var(--zoox-morado);
+  color: var(--zoox-gris);
   margin-bottom: 12px;
   line-height: 1.3;
 }
 
-.propuesta-card p {
+#propuesta-section .propuesta-card p {
   font-size: 0.82rem;
-  color: var(--zoox-morado);
+  color: var(--zoox-gris);
   line-height: 1.6;
   margin: 0;
 }
@@ -1202,25 +1248,34 @@ justify-content: center; !important;
       <h2>Una sola mirada creativa para <em>toda tu marca</em>.</h2>
       <p>En ZOOX unimos estrategia, identidad, fotografía con mascotas y comunicación bajo un mismo criterio. Conocemos el mundo pet: sabemos dirigir modelos de cuatro patas y conectar con quienes ven a su mascota como parte de la familia.</p>
     </div>
-    <div class="propuesta-grid">
-  <div class="propuesta-item">
-    <svg class="propuesta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12l2.5 2.5L16 9"/></svg>
-    <h3>COHERENCIA</h3>
-    <span>En todos los puntos de contacto de tu marca.</span>
+<div class="row gy-4 justify-content-center flex-nowrap propuesta-row">
+
+  <div class="col-lg-3 col-md-4 col-4">
+    <div class="propuesta-card">
+      <div class="icon"><i class="fas fa-check-circle"></i></div>
+      <h4>COHERENCIA</h4>
+      <p>En todos los puntos de contacto de tu marca.</p>
+    </div>
   </div>
-  <div class="propuesta-item">
-    <svg class="propuesta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2C8 6 6 9.5 6 13a6 6 0 0012 0c0-3.5-2-7-6-11z"/></svg>
-    <h3>ESPECIALIZACIÓN REAL</h3>
-    <span>Conocemos el mundo de las mascotas de verdad.</span>
+
+  <div class="col-lg-3 col-md-4 col-4">
+    <div class="propuesta-card">
+      <div class="icon"><i class="fas fa-paw"></i></div>
+      <h4>ESPECIALIZACIÓN REAL</h4>
+      <p>Conocemos el mundo de las mascotas de verdad.</p>
+    </div>
   </div>
-  <div class="propuesta-item">
-    <svg class="propuesta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z"/></svg>
-    <h3>PRODUCCIÓN EN LOCACIÓN</h3>
-    <span>Tu marca en su entorno, sin depender de un set.</span>
+
+  <div class="col-lg-3 col-md-4 col-4">
+    <div class="propuesta-card">
+      <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+      <h4>PRODUCCIÓN EN LOCACIÓN</h4>
+      <p>Tu marca en su entorno, sin depender de un set.</p>
+    </div>
   </div>
+
 </div>
-  </div>
-</div>
+
 </section>
   
 
@@ -1238,7 +1293,7 @@ justify-content: center; !important;
         </div>
       </div>
 
-      <div class="row gy-4 justify-content-center flex-nowrap propuesta-row">
+<div class="row gy-4 justify-content-center flex-nowrap">
 
 <div class="razones-grid-b2b">
         <div class="razon-b2b">
