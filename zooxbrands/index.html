@@ -79,6 +79,19 @@
     padding: 70px 0;
   }
 }
+/* EFECTO SCROLL SUTIL ZOOX BRANDS */
+.reveal{
+  opacity:0;
+  transform:translateY(18px);
+  filter:blur(4px);
+  transition:opacity 0.7s ease, transform 0.7s cubic-bezier(.22,1,.36,1), filter 0.7s ease;
+  will-change:opacity, transform;
+}
+.reveal.is-visible{
+  opacity:1;
+  transform:translateY(0);
+  filter:blur(0);
+}
 /* ── SECTION PROPUESTA DE VALOR ── */
 #propuesta-section {
   background: var(--zoox-gris);
@@ -936,34 +949,67 @@ justify-content: center; !important;
     .portfolio-placeholder i { font-size: 1.8rem; color: rgba(255,182,15,0.2); }
 
     /* ── PROCESO ── */
-    .proceso-steps {
+.proceso-steps {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 0;
-  max-width: 850px;
+  max-width: 1100px;
   margin: 0 auto;
   position: relative;
 }
 
-    @media (max-width: 768px) {
-      .proceso-steps { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 480px) {
-      .proceso-steps { grid-template-columns: 1fr; }
-    }
+@media (max-width: 900px) {
+  .proceso-steps { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .proceso-steps { grid-template-columns: repeat(2, 1fr); }
+}
 
     /* connector line desktop */
-    .proceso-steps::before {
-      content: '';
-      position: absolute;
-      top: 28px;
-      left: calc(12.5% + 16px);
-      right: calc(12.5% + 16px);
-      height: 1px;
-      background: linear-gradient(to right, var(--zoox-amarillo), rgba(255,182,15,0.15));
-    }
+.paso-num {
+  width: 56px;
+  height: 56px;
+  border: 1.5px solid var(--zoox-naranja);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cera GR', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--zoox-morado);
+  background: var(--zoox-naranja);
+  position: relative;
+  z-index: 1;
+  margin-bottom: 14px;
+}
+#proceso .zbp-label { color: var(--zoox-naranja); }
+#proceso .zbp-title { color: var(--zoox-morado); }
+#proceso .zbp-title em { color: var(--zoox-naranja); }
+#proceso .zbp-divider { display: none; }
 
+.proceso-nota {
+  text-align: center;
+  max-width: 600px;
+  margin: 50px auto 0;
+  font-size: 1.2rem;
+  color: var(--zoox-naranja);
+  opacity: 0.8;
+  line-height: 1.6;
+}
+/* EFECTO SCROLL SUTIL ZOOX BRANDS */
+.reveal{
+  opacity:0;
+  transform:translateY(18px);
+  filter:blur(4px);
+  transition:opacity 0.7s ease, transform 0.7s cubic-bezier(.22,1,.36,1), filter 0.7s ease;
+  will-change:opacity, transform;
+}
+.reveal.is-visible{
+  opacity:1;
+  transform:translateY(0);
+  filter:blur(0);
+}
     @media (max-width: 768px) {
       .proceso-steps::before { display: none; }
     }
@@ -974,18 +1020,18 @@ justify-content: center; !important;
     }
 
     .paso-num {
-      width: 56px;
-      height: 56px;
-      border: 1.5px solid var(--zoox-amarillo);
+      width: 50px;
+      height: 50px;
+      border: 1.5px solid var(--zoox-naranja);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'Cera GR', sans-serif;
-      font-size: 1.1rem;
+      font-size: 1.8rem;
       font-weight: 600;
-      color: var(--zoox-amarillo);
-      background: var(--zoox-negro);
+      color: var(--zoox-gris);
+      background: var(--zoox-morado);
       position: relative;
       z-index: 1;
       margin-bottom: 14px;
@@ -993,15 +1039,15 @@ justify-content: center; !important;
 
     .paso h5 {
       font-family: 'Cera GR', sans-serif;
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-weight: 500;
-      color: var(--zoox-texto);
+      color: var(--zoox-naranja);
       margin-bottom: 8px;
     }
 
     .paso p {
       font-size: 0.85rem;
-      color: var(--zoox-muted-dk);
+      color: var(--zoox-morado);
       line-height: 1.65;
       margin: 0;
     }
@@ -1529,41 +1575,49 @@ justify-content: center; !important;
   <section id="proceso" class="zbp-section zbp-section-mid">
     <div class="container">
 
-      <div class="row mb-5">
-        <div class="col-lg-8">
-          <span class="zbp-label">Cómo trabajamos</span>
-          <h2 class="zbp-title">Proceso <em>claro</em>,<br>resultados <em>concretos</em></h2>
-          <div class="zbp-divider"></div>
-        </div>
-      </div>
+<div class="row mb-5">
+  <div class="col-lg-8">
+    <span class="zbp-label">Nuestra Metodología</span>
+    <h2 class="zbp-title">Proceso <em>claro</em>,<br>resultados <em>concretos</em></h2>
+    <div class="zbp-divider"></div>
+  </div>
+</div>
 
-      <div class="proceso-steps">
+<div class="proceso-steps">
 
-        <div class="paso">
-          <div class="paso-num">1</div>
-          <h5>Brief & Diagnóstico</h5>
-          <p>Entendemos tu marca, audiencia, objetivos y qué tipo de contenido te está faltando.</p>
-        </div>
+  <div class="paso">
+    <div class="paso-num">1</div>
+    <h5>Diagnóstico</h5>
+    <p>Entendemos tu marca, tu audiencia y tus objetivos para identificar oportunidades y definir qué necesitas.</p>
+  </div>
 
-        <div class="paso">
-          <div class="paso-num">2</div>
-          <h5>Propuesta Creativa</h5>
-          <p>Desarrollamos el concepto, moodboard y plan de producción alineado a tu identidad.</p>
-        </div>
+  <div class="paso">
+    <div class="paso-num">2</div>
+    <h5>Estrategia & Concepto</h5>
+    <p>Definimos la dirección estratégica y la idea creativa que guiarán el desarrollo de tu proyecto.</p>
+  </div>
 
-        <div class="paso">
-          <div class="paso-num">3</div>
-          <h5>Producción</h5>
-          <p>Fotografía, video y diseño. Coordinamos locación, modelos (mascotas incluidas) y todo el flujo.</p>
-        </div>
+  <div class="paso">
+    <div class="paso-num">3</div>
+    <h5>Diseño & Desarrollo</h5>
+    <p>Creamos o evolucionamos la identidad visual de tu marca y desarrollamos las piezas necesarias para comunicarla.</p>
+  </div>
 
-        <div class="paso" style="padding-right: 0;">
-          <div class="paso-num">4</div>
-          <h5>Entrega & Activación</h5>
-          <p>Archivos listos para cada plataforma. Opcional: acompañamiento en publicación y estrategia.</p>
-        </div>
+  <div class="paso">
+    <div class="paso-num">4</div>
+    <h5>Producción Creativa</h5>
+    <p>Convertimos las ideas en imágenes, videos y piezas gráficas mediante dirección de arte, fotografía y producción especializada.</p>
+  </div>
 
-      </div>
+  <div class="paso" style="padding-right: 0;">
+    <div class="paso-num">5</div>
+    <h5>Entrega & Activación</h5>
+    <p>Entregamos los archivos optimizados para cada plataforma y, si lo necesitas, te acompañamos en su implementación y comunicación.</p>
+  </div>
+
+</div>
+
+<p class="proceso-nota">Puedes empezar en cualquier etapa según lo que tu marca necesite.</p>
     </div>
   </section>
 
@@ -1692,6 +1746,7 @@ document.querySelector('.menuToggle').addEventListener('click', (e) => {
           e.preventDefault();
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
+        
       });
     });
   </script>
@@ -1705,10 +1760,45 @@ document.querySelector('.menuToggle').addEventListener('click', (e) => {
     }
   </script>
 <script>
+<!-- EFECTO SCROLL ZOOX BRANDS -->
+<script>
+(function(){
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('is-visible');
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.15, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('#creatividad-section h2, #creatividad-section p, #propuesta-section h2, #propuesta-section p, .propuesta-card, #servicios h2, #servicios p, .pilar-item, #proceso h2, #proceso p, .paso, .proceso-nota').forEach(el=>{
+    el.classList.add('reveal');
+    obs.observe(el);
+  });
+})();
+</script>
 document.querySelectorAll('.logos-track').forEach(function (t) {
   var base = Array.from(t.children);
   for (var i = 0; i < 3; i++) base.forEach(function (n) { t.appendChild(n.cloneNode(true)); });
 });
+</script>
+<!-- EFECTO SCROLL ZOOX BRANDS -->
+<script>
+(function(){
+  const obs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('is-visible');
+        obs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.15, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('#creatividad-section h2, #creatividad-section p, #propuesta-section h2, #propuesta-section p, .propuesta-card').forEach(el=>{
+    el.classList.add('reveal');
+    obs.observe(el);
+    
+  });
+})();
 </script>
 </body>
 </html>
