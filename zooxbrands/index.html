@@ -954,22 +954,7 @@ justify-content: center; !important;
 
     .portfolio-placeholder i { font-size: 1.8rem; color: rgba(255,182,15,0.2); }
 
-    /* ── PROCESO ── */
-.proceso-steps {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0;
-  max-width: 1100px;
-  margin: 0 auto;
-  position: relative;
-}
 
-@media (max-width: 900px) {
-  .proceso-steps { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 600px) {
-  .proceso-steps { grid-template-columns: repeat(2, 1fr); }
-}
 
     /* connector line desktop */
 .paso-num {
@@ -993,7 +978,92 @@ justify-content: center; !important;
 #proceso .zbp-title { color: var(--zoox-morado); }
 #proceso .zbp-title em { color: var(--zoox-naranja); }
 #proceso .zbp-divider { display: none; }
+/* ── PROCESO (formas de flecha) ── */
+.proceso-track {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-width: 1150px;
+  margin: 0 auto;
+}
 
+.paso {
+  width: 170px;
+  text-align: center;
+  padding-top: 24px;
+}
+
+.paso-shape-wrap {
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.paso-arrow {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto;
+  background: var(--zoox-morado);
+  border: 6px solid #fff;
+  clip-path: polygon(0 0, 78% 0, 100% 50%, 78% 100%, 0 100%);
+  filter: drop-shadow(4px 6px 8px rgba(0,0,0,0.18));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paso-arrow i {
+  font-size: 2.7rem;
+  color: var(--zoox-gris);
+}
+
+.paso-badge {
+  position: absolute;
+  top: -14px;
+  right: 8px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--zoox-naranja);
+  color: var(--zoox-naranja);
+  font-family: 'Cera GR', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proceso-chevron {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--zoox-naranja);
+  margin-top: 74px;
+  line-height: 1;
+}
+
+.paso h5 {
+  font-family: 'Cera GR', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--zoox-naranja);
+  margin-bottom: 8px;
+}
+
+.paso p {
+  font-size: 0.82rem;
+  color: var(--zoox-morado);
+  opacity: 0.8;
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .proceso-chevron { display: none; }
+  .proceso-track { gap: 24px; }
+}
 .proceso-nota {
   text-align: center;
   max-width: 600px;
@@ -1016,47 +1086,6 @@ justify-content: center; !important;
   transform:translateY(0);
   filter:blur(0);
 }
-    @media (max-width: 768px) {
-      .proceso-steps::before { display: none; }
-    }
-
-    .paso {
-      padding: 0 20px 0 0;
-      position: relative;
-    }
-
-    .paso-num {
-      width: 50px;
-      height: 50px;
-      border: 1.5px solid var(--zoox-naranja);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Cera GR', sans-serif;
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: var(--zoox-gris);
-      background: var(--zoox-morado);
-      position: relative;
-      z-index: 1;
-      margin-bottom: 14px;
-    }
-
-    .paso h5 {
-      font-family: 'Cera GR', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--zoox-naranja);
-      margin-bottom: 8px;
-    }
-
-    .paso p {
-      font-size: 0.85rem;
-      color: var(--zoox-morado);
-      line-height: 1.65;
-      margin: 0;
-    }
 
     /* ── CTA FINAL ── */
     #cta-final {
@@ -1496,43 +1525,62 @@ justify-content: center; !important;
   </div>
 </div>
 
-<div class="proceso-steps">
+<div class="proceso-track">
 
   <div class="paso">
-    <div class="paso-num">1</div>
-    <h5>Diagnóstico</h5>
+    <div class="paso-shape-wrap">
+      <div class="paso-arrow"><i class="fas fa-search"></i></div>
+      <div class="paso-badge">1</div>
+    </div>
+    <h5>Auditoría</h5>
     <p>Entendemos tu marca, tu audiencia y tus objetivos para identificar oportunidades y definir qué necesitas.</p>
   </div>
 
+  <div class="proceso-chevron">&rsaquo;</div>
+
   <div class="paso">
-    <div class="paso-num">2</div>
-    <h5>Estrategia & Concepto</h5>
+    <div class="paso-shape-wrap">
+      <div class="paso-arrow"><i class="fas fa-lightbulb"></i></div>
+      <div class="paso-badge">2</div>
+    </div>
+    <h5>Estrategia</h5>
     <p>Definimos la dirección estratégica y la idea creativa que guiarán el desarrollo de tu proyecto.</p>
   </div>
 
+  <div class="proceso-chevron">&rsaquo;</div>
+
   <div class="paso">
-    <div class="paso-num">3</div>
-    <h5>Diseño & Desarrollo</h5>
+    <div class="paso-shape-wrap">
+      <div class="paso-arrow"><i class="fas fa-pen-nib"></i></div>
+      <div class="paso-badge">3</div>
+    </div>
+    <h5>Desarrollo</h5>
     <p>Creamos o evolucionamos la identidad visual de tu marca y desarrollamos las piezas necesarias para comunicarla.</p>
   </div>
 
+  <div class="proceso-chevron">&rsaquo;</div>
+
   <div class="paso">
-    <div class="paso-num">4</div>
-    <h5>Producción Creativa</h5>
+    <div class="paso-shape-wrap">
+      <div class="paso-arrow"><i class="fas fa-camera-retro"></i></div>
+      <div class="paso-badge">4</div>
+    </div>
+    <h5>Producción</h5>
     <p>Convertimos las ideas en imágenes, videos y piezas gráficas mediante dirección de arte, fotografía y producción especializada.</p>
   </div>
 
-  <div class="paso" style="padding-right: 0;">
-    <div class="paso-num">5</div>
-    <h5>Entrega & Activación</h5>
+  <div class="proceso-chevron">&rsaquo;</div>
+
+  <div class="paso">
+    <div class="paso-shape-wrap">
+      <div class="paso-arrow"><i class="fas fa-rocket"></i></div>
+      <div class="paso-badge">5</div>
+    </div>
+    <h5>Entrega</h5>
     <p>Entregamos los archivos optimizados para cada plataforma y, si lo necesitas, te acompañamos en su implementación y comunicación.</p>
   </div>
 
 </div>
-
-<p class="proceso-nota">Puedes empezar en cualquier etapa según lo que tu marca necesite.</p>
-    </div>
-  </section>
 
 
 <!-- ========== CONTACT BRANDS - clonado de Experiencia con copy Brands ========== -->
