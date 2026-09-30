@@ -978,7 +978,7 @@ justify-content: center; !important;
 #proceso .zbp-title { color: var(--zoox-morado); }
 #proceso .zbp-title em { color: var(--zoox-naranja); }
 #proceso .zbp-divider { display: none; }
-#proceso { padding-bottom: 200px; }
+#proceso { padding-bottom: 60px; background: var(--zoox-gris); }
 
 /* ── PROCESO (formas de flecha) ── */
 .proceso-track {
@@ -1584,6 +1584,13 @@ justify-content: center; !important;
 
 </div>
 
+<p class="proceso-nota">Puedes empezar en cualquier etapa según lo que tu marca necesite.</p>
+    </div>
+  </section>
+
+
+<!-- ========== CONTACT BRANDS - clonado de Experiencia con copy Brands ========== -->
+
 
 <!-- ========== CONTACT BRANDS - clonado de Experiencia con copy Brands ========== -->
 <section id="formulario" class="wrapper" style="background: var(--zoox-morado); padding: 60px 0;">
@@ -1741,6 +1748,8 @@ document.querySelector('.menuToggle').addEventListener('click', (e) => {
   });
 })();
 </script>
+
+<script>
 document.querySelectorAll('.logos-track').forEach(function (t) {
   var base = Array.from(t.children);
   for (var i = 0; i < 3; i++) base.forEach(function (n) { t.appendChild(n.cloneNode(true)); });
