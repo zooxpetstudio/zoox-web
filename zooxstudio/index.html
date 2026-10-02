@@ -21,7 +21,6 @@
 		:root {
 			--zoox-verde:     #505c47;
 			--zoox-negro:     #0A0A0A;
-			--zoox-azul:      #3A506B;
 			--zoox-gris:      #E5E5E5;
 			--zoox-blanco:    #FFFFFF;
 			--zoox-muted:     #888888;
@@ -139,7 +138,7 @@ line-height: 1.15;
 		.paso-card h3 {
 			color: var(--zoox-blanco) !important;
 			font-size: 0.75rem !important;
-			letter-spacing: 0.15em !important;
+			letter-spacing: 0.08em !important;
 			margin-bottom: 0.4em !important;
 			margin-top: 0 !important;
 		}
@@ -432,68 +431,96 @@ line-height: 1.15;
     }
 }
 
-		/* ═══════════════════════════════════════
-		   FAQ — COMPARTIDO
-		═══════════════════════════════════════ */
-		.faq-grid {
-			margin-top: 2em !important;
-			text-align: left !important;
-		}
-		.faq-item {
-			border-bottom: 1px solid rgba(255,255,255,0.08) !important;
-		}
-		.faq-pregunta {
-			width: 100% !important;
-			background: none !important;
-			border: none !important;
-			color: var(--zoox-verde) !important;
-			font-size: 0.88rem !important;
-			font-family: inherit !important;
-			letter-spacing: 0.05em !important;
-			text-align: left !important;
-			padding: 1.2em 0 !important;
-			cursor: pointer !important;
-			display: flex !important;
-			justify-content: space-between !important;
-			align-items: center !important;
-			transition: color 0.3s !important;
-		}
-		.faq-pregunta:hover { color: var(--zoox-negro) !important; }
-		.faq-icono {
-			color: var(--zoox-verde) !important;
-			font-size: 1.4rem !important;
-			font-weight: 300 !important;
-			transition: transform 0.3s !important;
-			flex-shrink: 0 !important;
-		}
-		.faq-respuesta {
-			display: none !important;
-			padding: 0 0 1.2em 0 !important;
-		}
-		.faq-respuesta p {
-			font-size: 0.82rem !important;
-			line-height: 1.8 !important;
-			margin: 0 !important;
-		}
-		.faq-item.active .faq-respuesta { display: block !important; }
-		.faq-item.active .faq-icono { transform: rotate(45deg) !important; }
-		.faq-item.active .faq-pregunta { color: var(--zoox-verde) !important; }
+#faq { background:#0A0A0A !important; padding:4em 1.5em !important; }
+#faq .inner { max-width:760px !important; margin:0 auto !important; text-align:center !important; }
+#faq header.major h2 { color:#E5E5E5 !important; text-transform:none !important; letter-spacing:0 !important; }
+#faq header.major h2::after { display:none !important; }
+#faq header.major p { display:none !important; }
 
-		/* FAQ Exteriores */
-		#faq {
-			background-color: var(--zoox-crema) !important;
-		}
-		#faq .inner {
-			text-align: center !important;
-			max-width: 800px !important;
-			margin: 0 auto !important;
-		}
-		#faq header.major h2 {
-			color: var(--zoox-verde) !important;
-			border-color: rgba(80,92,71) !important;
-		}
-		#faq header.major p { color: var(--zoox-verde) !important; }
-		#faq .faq-respuesta p { color: var(--zoox-verde) !important; }
+#faq .faq-list { display:flex !important; flex-direction:column !important; gap:14px !important; margin-top:2em !important; }
+
+#faq .faq-pill {
+	background:#505C47 !important;
+	border-radius:999px !important;
+	border:none !important;
+	overflow:hidden !important;
+	box-shadow:0 2px 10px rgba(0,0,0,0.25) !important;
+	position:relative !important;
+	transition:all 0.3s ease !important;
+}
+#faq .faq-pill.active { border-radius:18px !important; }
+
+#faq .faq-pregunta {
+	width:100% !important;
+	min-height:52px !important;
+	background:transparent !important;
+	border:none !important;
+	outline:none !important;
+	box-shadow:none !important;
+	-webkit-appearance:none !important;
+	appearance:none !important;
+	padding:14px 72px 14px 24px !important;
+	display:flex !important;
+	align-items:center !important;
+	justify-content:flex-start !important;
+	cursor:pointer !important;
+	position:relative !important;
+}
+
+#faq .faq-texto {
+	display:block !important;
+	width:100% !important;
+	font-family:'Cera GR', sans-serif !important;
+	font-size:0.82rem !important;
+	font-weight:500 !important;
+	letter-spacing:0.06em !important;
+	text-transform:uppercase !important;
+	color:#FBF3E0 !important;
+	line-height:1.4 !important;
+	text-align:left !important;
+}
+
+#faq .faq-icon {
+	position:absolute !important;
+	right:14px !important;
+	top:50% !important;
+	transform:translateY(-50%) !important;
+	width:32px !important;
+	height:32px !important;
+	background:#0A0A0A !important;
+	color:#FBF3E0 !important;
+	border-radius:50% !important;
+	display:flex !important;
+	align-items:center !important;
+	justify-content:center !important;
+	font-size:20px !important;
+	font-weight:300 !important;
+	line-height:1 !important;
+	flex-shrink:0 !important;
+}
+#faq .faq-pill.active .faq-icon { transform:translateY(-50%) rotate(45deg) !important; background:#2D3329 !important; }
+
+#faq .faq-respuesta {
+	max-height:0 !important;
+	overflow:hidden !important;
+	transition:max-height 0.35s ease, padding 0.35s ease !important;
+	padding:0 24px !important;
+}
+#faq .faq-pill.active .faq-respuesta { max-height:400px !important; padding:0 24px 18px !important; }
+#faq .faq-respuesta p {
+	font-family:'Cera GR', sans-serif !important;
+	font-size:0.85rem !important;
+	color:#E5E5E5 !important;
+	line-height:1.6 !important;
+	text-align:left !important;
+	margin:0 !important;
+}
+
+@media(max-width:600px){
+	#faq .faq-texto { font-size:0.72rem !important; }
+	#faq .faq-pregunta { padding:12px 64px 12px 18px !important; }
+	#faq .faq-icon { right:10px !important; width:28px !important; height:28px !important; min-width:28px !important; min-height:28px !important; }
+}
 
 		/* ═══════════════════════════════════════
 		   SEPARADOR LÍNEA IN HOME
@@ -927,7 +954,7 @@ line-height: 1.15;
 /* ===== CARRUSEL GALERÍA (experiencia) - 5 fotos, ratio 3:4 ===== */
 .zc-galeria{background:#FBF3E0;padding:2.5em 0 2em;overflow:hidden;}
 .zc-viewport{max-width:1130px;margin:0 auto;overflow:hidden;}
-.zc-titulo{text-align:center;color:#505C47;font-family:'Cera GR',sans-serif;font-weight:900;font: size 0.9em;em;letter-spacing:0.12em;text-transform:uppercase;margin:0 0 1.5em;}
+.zc-titulo{text-align:center;color:#505C47;font-family:'Cera GR',sans-serif;font-weight:900;font: size 0.9em;em;letter: spacing 0.08em;em;text-transform:uppercase;margin:0 0 1.5em;}
 .zc-track{display:flex;width:max-content;animation:zc-loop 40s linear infinite;}
 .zc-track:hover{animation-play-state:paused;}
 .zc-item{flex:0 0 auto;width:210px;margin-right:1em;}
@@ -1051,8 +1078,8 @@ line-height: 1.15;
 	<!-- ── DE LA FOTO AL ARTE ───────────────────── -->
 	<style>
 	#foto-arte{background:#505C47;}
-	.foto-arte-label{text-align:center;font-family:'Cera GR',sans-serif;font-size:0.8em;letter-spacing:0.12em;color:var(--zoox-crema);font-weight:900;text-transform:uppercase;margin:0 0 0.6em;}
-	.foto-arte-titulo{text-align:center;font-family:'Cera GR',sans-serif;font-weight:800;font-size:clamp(1.5rem,3.2vw,2.1rem);color:var(--zoox-crema);line-height:1.4;margin:0 0 0.8em;text-transform:none;}
+	.foto-arte-label{text-align:center;font-family:'Cera GR',sans-serif;font-size:0.8em;letter: spacing 0.08em;em;color:var(--zoox-crema);font-weight:900;text-transform:uppercase;margin:0 0 0.6em;}
+	.foto-arte-titulo{text-align:center;font-family:'Cera GR',sans-serif;font-weight:800;font-size:clamp(2rem,3vw,3.1rem);color:var(--zoox-crema);line-height:1;margin:0 0 0.5em;text-transform:none;}
 	.foto-arte-texto{text-align:center;font-family: 'Cera GR',sans-serif;font-size:0.95em;color:#E5E5E5;max-width:620px;margin:0 auto 2.5em;line-height:1.7;}
 
 	.ba-wrap{max-width:380px;margin:0 auto;}
@@ -1061,7 +1088,7 @@ line-height: 1.15;
 	.ba-before-wrap{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--pos)) 0 0);}
 	.ba-line{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;background:var(--zoox-crema);transform:translateX(-50%);pointer-events:none;}
 	.ba-handle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:var(--zoox-verde);color:var(--zoox-crema);display:flex;align-items:center;justify-content:center;font-size:1.1em;box-shadow:0 2px 10px #2d3329;}
-	.ba-tag{position:absolute;bottom:10px;background:#2d3329;color:var(--zoox-crema);font-family:'Cera GR',sans-serif;font-size:0.62em;letter-spacing:0.08em;padding:0.35em 0.8em;border-radius:20px;text-transform:uppercase;pointer-events:none;}
+	.ba-tag{position:absolute;bottom:10px;background:#2d3329;color:var(--zoox-crema);font-family:'Cera GR',sans-serif;font-size:0.62em;letter-spacing:0.01em;padding:0.35em 0.8em;border-radius:20px;text-transform:uppercase;pointer-events:none;}
 	.ba-tag-antes{left:10px;}
 	.ba-tag-despues{right:10px;}
 
@@ -1080,7 +1107,7 @@ line-height: 1.15;
 	<section id="foto-arte" class="wrapper style2">
 		<div class="inner">
 			<p class="foto-arte-label">De la foto al arte</p>
-			<h2 class="foto-arte-titulo">Transforma ese momento.<br>En un recuerdo único.</h2>
+			<h2 class="foto-arte-titulo">Transforma ese momento<br>en un recuerdo único.</h2>
 			<p class="foto-arte-texto">Cada imagen pasa por un proceso de selección, corrección y edición profesional para resaltar la personalidad de tu mascota y llevar cada fotografía a su mejor versión.</p>
 
 			<div class="ba-wrap">
@@ -1268,66 +1295,21 @@ line-height: 1.15;
 				<h2>Preguntas Frecuentes</h2>
 				<p>Todo lo que necesitas saber antes de tu sesión.</p>
 			</header>
-			<div class="faq-grid">
+			<div class="faq-list">
 
-				<div class="faq-item">
-					<button class="faq-pregunta" onclick="toggleFaq(this)">
-						¿Cuánto dura la sesión?
-						<span class="faq-icono">+</span>
-					</button>
-					<div class="faq-respuesta">
-						<p>Depende del paquete elegido. Petlover dura 45 minutos, Entre Patas 90 minutos y La Mancha 120 minutos. El tiempo incluye el desplazamiento dentro del punto de sesión y los momentos de descanso de tu can.</p>
-					</div>
-				</div>
+	<div class="faq-pill"><button class="faq-pregunta" onclick="toggleFaq(this)"><span class="faq-texto">¿Cuánto dura la sesión?</span><span class="faq-icon">+</span></button><div class="faq-respuesta"><p>Depende del paquete elegido. Petlover dura 45 minutos, Entre Patas 90 minutos y La Mancha 120 minutos. El tiempo incluye el desplazamiento dentro del punto de sesión y los momentos de descanso de tu can.</p></div></div>
 
-				<div class="faq-item">
-					<button class="faq-pregunta" onclick="toggleFaq(this)">
-						¿Dónde se realizan las sesiones?
-						<span class="faq-icono">+</span>
-					</button>
-					<div class="faq-respuesta">
-						<p>Las sesiones de la Línea Exteriores se realizan en parques y espacios abiertos de Lima, principalmente en zonas céntricas.</p>
-					</div>
-				</div>
+	<div class="faq-pill"><button class="faq-pregunta" onclick="toggleFaq(this)"><span class="faq-texto">¿Dónde se realizan las sesiones?</span><span class="faq-icon">+</span></button><div class="faq-respuesta"><p>Las sesiones de la Línea Exteriores se realizan en parques y espacios abiertos de Lima, principalmente en zonas céntricas.</p></div></div>
 
-				<div class="faq-item">
-					<button class="faq-pregunta" onclick="toggleFaq(this)">
-						¿Puedo participar en la sesión fotográfica?
-						<span class="faq-icono">+</span>
-					</button>
-					<div class="faq-respuesta">
-						<p>Sí. Todos los paquetes permiten la participación del dueño. En Entre Patas y La Mancha pueden participar varios dueños con sus respectivos canes.</p>
-					</div>
-				</div>
+	<div class="faq-pill"><button class="faq-pregunta" onclick="toggleFaq(this)"><span class="faq-texto">¿Puedo participar en la sesión fotográfica?</span><span class="faq-icon">+</span></button><div class="faq-respuesta"><p>Sí. Todos los paquetes permiten la participación del dueño. En Entre Patas y La Mancha pueden participar varios dueños con sus respectivos canes.</p></div></div>
 
-				<div class="faq-item">
-					<button class="faq-pregunta" onclick="toggleFaq(this)">
-						¿Cuándo recibo mis fotos?
-						<span class="faq-icono">+</span>
-					</button>
-					<div class="faq-respuesta">
-						<p>El tiempo de entrega es de 7 a 10 días hábiles. Primero recibirás una galería privada para seleccionar tus favoritas, y luego comenzamos el proceso de edición profesional.</p>
-					</div>
-				</div>
+	<div class="faq-pill"><button class="faq-pregunta" onclick="toggleFaq(this)"><span class="faq-texto">¿Cuándo recibo mis fotos?</span><span class="faq-icon">+</span></button><div class="faq-respuesta"><p>El tiempo de entrega es de 7 a 10 días hábiles. Primero recibirás una galería privada para seleccionar tus favoritas, y luego comenzamos el proceso de edición profesional.</p></div></div>
 
-				<div class="faq-item">
-					<button class="faq-pregunta" onclick="toggleFaq(this)">
-						¿Qué pasa si mi mascota no se comporta bien?
-						<span class="faq-icono">+</span>
-					</button>
-					<div class="faq-respuesta">
-						<p>Trabajamos con la personalidad real de cada can — no buscamos poses forzadas. Si tu peludito es inquieto, tímido o muy activo, lo capturamos tal como es. Eso es lo que hace únicas a las fotos ZOOX.</p>
-					</div>
-				</div>
+	<div class="faq-pill"><button class="faq-pregunta" onclick="toggleFaq(this)"><span class="faq-texto">¿Qué pasa si mi mascota no se comporta bien?</span><span class="faq-icon">+</span></button><div class="faq-respuesta"><p>Trabajamos con la personalidad real de cada can — no buscamos poses forzadas. Si tu peludito es inquieto, tímido o muy activo, lo capturamos tal como es. Eso es lo que hace únicas a las fotos ZOOX.</p></div></div>
 
-				<div class="faq-item">
-					<button class="faq-pregunta" onclick="toggleFaq(this)">
-						¿Cómo agendo mi sesión?
-						<span class="faq-icono">+</span>
-					</button>
-					<div class="faq-respuesta">
-						<p>Además del formulario que verás abajo, puedes escribirnos por WhatsApp o Instagram y coordinamos fecha, ubicación y paquete. La reserva se confirma con el pago del 50% del total del paquete elegido.</p>
-					</div>
+	<div class="faq-pill"><button class="faq-pregunta" onclick="toggleFaq(this)"><span class="faq-texto">¿Cómo agendo mi sesión?</span><span class="faq-icon">+</span></button><div class="faq-respuesta"><p>Además del formulario que verás abajo, puedes escribirnos por WhatsApp o Instagram y coordinamos fecha, ubicación y paquete. La reserva se confirma con el pago del 50% del total del paquete elegido.</p></div></div>
+
+</div>
 				</div>
 
 			</div>
@@ -1421,7 +1403,7 @@ line-height: 1.15;
 function toggleFaq(btn) {
 	const item = btn.parentElement;
 	const isActive = item.classList.contains('active');
-	document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+	document.querySelectorAll('.faq-pill').forEach(i => i.classList.remove('active'));
 	if (!isActive) item.classList.add('active');
 }
 </script>
