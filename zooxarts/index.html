@@ -590,7 +590,30 @@ document.addEventListener('DOMContentLoaded',()=>{
   }, 4000);
 })();
 </script>
-
+<script>
+document.querySelectorAll('.zc-track,.zoox-carousel').forEach(function(t){
+  var n=t.children.length, first=t.children[0];
+  for(var i=0;i<n;i++) t.appendChild(t.children[i].cloneNode(true));
+  t.style.animation='none';
+  t.style.touchAction='pan-y';
+  var x=0, speed=0.5, drag=false, moved=false, sx=0, sp=0, pauseUntil=0;
+  var canHover=matchMedia('(hover:hover)').matches;
+  function period(){return t.children[n].offsetLeft-first.offsetLeft;}
+  function render(){var p=period(); x=x%p; if(x>0)x-=p; t.style.transform='translateX('+x+'px)';}
+  t.addEventListener('touchstart',function(e){drag=true;moved=false;sx=e.touches[0].clientX;sp=x;},{passive:true});
+  t.addEventListener('touchmove',function(e){
+    if(!drag)return;
+    var dx=e.touches[0].clientX-sx;
+    if(Math.abs(dx)>6)moved=true;
+    x=sp+dx; render();
+  },{passive:true});
+  t.addEventListener('touchend',function(){drag=false;pauseUntil=Date.now()+2500;});
+  t.addEventListener('click',function(e){if(moved){e.preventDefault();moved=false;}},true);
+  (function tick(){
+    if(!drag && Date.now()>pauseUntil && !(canHover && t.matches(':hover'))){x-=speed;render();}
+    requestAnimationFrame(tick);
+  })();
+});
 </script>
 </body>
 </html>
