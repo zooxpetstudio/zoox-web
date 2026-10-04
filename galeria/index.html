@@ -13,6 +13,7 @@
 @font-face{font-family:'Cera GR';src:url('assets/fonts/Cera GR Black.otf') format('opentype');font-weight:900}
 :root{--amarillo:#FFB60F;--negro:#0A0A0A;--blanco:#fff}
 *{font-family:'Cera GR',sans-serif !important; box-sizing:border-box; margin:0; padding:0}
+.zoox-wa i{font-family:'Font Awesome 6 Brands' !important;font-weight:400 !important}
 body{background:var(--negro); color:var(--blanco); overflow-x:hidden}
 #zoox-header{position:fixed;top:0;left:0;right:0;height:64px;z-index:1000;background:rgba(10,10,10,0.92);backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;padding:0 2em;border-bottom:1px solid rgba(255,255,255,0.08)}
 #zoox-header img{height:32px}
@@ -79,6 +80,7 @@ body{background:var(--negro); color:var(--blanco); overflow-x:hidden}
 }
         </style>
 <link rel="stylesheet" href="../assets/css/zoox-wa.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link rel="stylesheet" href="../assets/css/campton.css">        
 </head>
 <body>
@@ -207,10 +209,6 @@ lb.addEventListener('touchend',e=>{
   }
 });
 </script>
-<a href="https://wa.me/51977325372?text=Hola%20ZOOX,%20tengo%20una%20consulta" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.004 2.003C6.478 2.003 2 6.48 2 12.006c0 1.977.548 3.826 1.5 5.404L2 22l4.71-1.463a9.94 9.94 0 0 0 5.294 1.523h.005c5.526 0 10.003-4.478 10.003-10.004 0-2.674-1.041-5.187-2.933-7.08a9.95 9.95 0 0 0-7.075-2.973zm5.842 15.85c-.245.688-1.42 1.318-1.958 1.4-.499.076-1.125.108-1.815-.114-.418-.134-.955-.313-1.642-.611-2.892-1.25-4.782-4.155-4.926-4.348-.144-.192-1.174-1.562-1.174-2.98 0-1.418.744-2.115 1.008-2.404.263-.288.573-.36.764-.36.19 0 .382.002.549.01.176.008.412-.067.645.492.24.577.816 1.99.888 2.135.072.144.12.312.024.51-.096.198-.144.312-.288.48-.144.168-.302.375-.432.503-.144.144-.294.3-.126.588.168.288.746 1.232 1.601 1.996 1.101.982 2.03 1.286 2.318 1.43.288.144.456.12.624-.072.168-.192.72-.84.913-1.128.192-.288.384-.24.648-.144.264.096 1.677.792 1.965.936.288.144.48.216.552.336.072.12.072.696-.173 1.386z"/>
-  </svg>
-</a>
+<a href="https://wa.me/51977325372?text=Hola%20ZOOX%2C%20tengo%20una%20consulta" target="_blank" rel="noopener" class="zoox-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 </body>
 </html>

@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="icon" type="image/png" href="../favicon.png" />
 <link rel="apple-touch-icon" href="../favicon.png" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 @font-face{font-family:'Cera GR';src:url('assets/fonts/Cera GR Light.otf') format('opentype');font-weight:300}
 @font-face{font-family:'Cera GR';src:url('assets/fonts/Cera GR Regular.otf') format('opentype');font-weight:400}
@@ -13,6 +14,7 @@
 @font-face{font-family:'Cera GR';src:url('assets/fonts/Cera GR Black.otf') format('opentype');font-weight:900}
 :root{--amarillo:#FFB60F;--negro:#0A0A0A;--blanco:#fff}
 *{font-family:'Cera GR',sans-serif !important; box-sizing:border-box; margin:0; padding:0}
+.zoox-wa i{font-family:'Font Awesome 6 Brands' !important;font-weight:400 !important}
 body{background:var(--negro); color:var(--blanco); overflow-x:hidden}
 #zoox-header{position:fixed;top:0;left:0;right:0;height:64px;z-index:1000;background:rgba(10,10,10,0.92);backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;padding:0 2em;border-bottom:1px solid rgba(255,255,255,0.08)}
 #zoox-header img{height:32px}
@@ -117,7 +119,7 @@ body{background:var(--negro); color:var(--blanco); overflow-x:hidden}
 <p>© 2026 · Lima, Perú · Todos los derechos reservados.</p>
 </div>
 </footer>
-<a href="https://wa.me/51977325372" class="whatsapp-float" target="_blank"><svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:#fff"><path d="M19.05 4.91A9.9 9.9 0 0 0 12.03 2C6.52 2 2.04 6.47 2.04 11.97c0 1.76.46 3.48 1.33 5L2 22l5.18-1.36a9.9 9.9 0 0 0 4.75 1.21h.01c5.51 0 9.99-4.47 9.99-9.97 0-2.66-1.04-5.16-2.92-7.05l-.01.06z"/></svg></a>
+<a href="https://wa.me/51977325372?text=Hola%20ZOOX%2C%20tengo%20una%20consulta" target="_blank" rel="noopener" class="zoox-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
 <script>
 const toggle=document.getElementById('zoox-menu-toggle'), close=document.getElementById('zoox-menu-close'), menu=document.getElementById('zoox-menu'), overlay=document.getElementById('zoox-menu-overlay');
 function openM(){menu.classList.add('is-active');overlay.classList.add('is-active');document.body.style.overflow='hidden'}
