@@ -1336,6 +1336,20 @@ justify-content: center; !important;
 }
 .pilar-item ul li{color:var(--zoox-gris);line-height:1.2;margin-bottom:6px}
 .pilar-item ul li::marker{color:var(--zoox-naranja)}
+#faq-brands{background:#e5e5e5;padding:70px 20px}
+#faq-brands .zfq-inner{max-width:760px;margin:0 auto;text-align:center}
+#faq-brands .zfq-title{color:#221c46;font-weight:800;margin-bottom:30px}
+#faq-brands .zfq-list{display:flex;flex-direction:column;gap:14px}
+#faq-brands .zfq-pill{background:#221c46;border-radius:999px;overflow:hidden;position:relative;transition:border-radius .3s}
+#faq-brands .zfq-pill.active{border-radius:18px}
+#faq-brands .zfq-q{width:100%;min-height:52px;background:transparent;border:0;outline:0;box-shadow:none;appearance:none;padding:14px 72px 14px 24px;display:flex;align-items:center;cursor:pointer;position:relative}
+#faq-brands .zfq-text{width:100%;text-align:left;color:#e5e5e5;font-size:.82rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;line-height:1.4}
+#faq-brands .zfq-icon{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;background:var(--zoox-naranja);color:#e5e5e5;display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1;transition:transform .3s}
+#faq-brands .zfq-pill.active .zfq-icon{transform:translateY(-50%) rotate(45deg)}
+#faq-brands .zfq-a{max-height:0;overflow:hidden;padding:0 24px;transition:max-height .35s ease,padding .35s ease}
+#faq-brands .zfq-pill.active .zfq-a{max-height:400px;padding:0 24px 18px}
+#faq-brands .zfq-a p{color:#e5e5e5;font-size:.85rem;line-height:1.6;text-align:left;margin:0}
+@media(max-width:600px){#faq-brands .zfq-text{font-size:.72rem}#faq-brands .zfq-q{padding:12px 64px 12px 18px}}
 </style>
 <link href="../assets/css/zoox-wa.css" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/campton.css">
@@ -1638,11 +1652,18 @@ justify-content: center; !important;
 <p class="proceso-nota">Puedes empezar en cualquier etapa según lo que tu marca necesite.</p>
     </div>
   </section>
-
-
-<!-- ========== CONTACT BRANDS - clonado de Experiencia con copy Brands ========== -->
-
-
+<section id="faq-brands">
+  <div class="zfq-inner">
+    <h2 class="zfq-title">Preguntas Frecuentes</h2>
+    <div class="zfq-list">
+      <div class="zfq-pill"><button class="zfq-q" onclick="toggleFaqBrands(this)"><span class="zfq-text">¿Qué tipo de marcas trabajan con ZOOX?</span><span class="zfq-icon">+</span></button><div class="zfq-a"><p>Negocios del mundo animal: veterinarias, peluquerías, adiestradores, tiendas, residencias, criadores, refugios y marcas de alimentación y accesorios.</p></div></div>
+      <div class="zfq-pill"><button class="zfq-q" onclick="toggleFaqBrands(this)"><span class="zfq-text">¿Puedo contratar un solo servicio?</span><span class="zfq-icon">+</span></button><div class="zfq-a"><p>Sí. Puedes contratar solo identidad, imagen, comunicación o web, o combinarlos en un paquete a tu medida.</p></div></div>
+      <div class="zfq-pill"><button class="zfq-q" onclick="toggleFaqBrands(this)"><span class="zfq-text">¿Trabajan proyectos personalizados?</span><span class="zfq-icon">+</span></button><div class="zfq-a"><p>Sí. Cada marca es distinta, así que armamos una propuesta según tus objetivos, tu público y tu presupuesto.</p></div></div>
+      <div class="zfq-pill"><button class="zfq-q" onclick="toggleFaqBrands(this)"><span class="zfq-text">¿Cómo se determina el precio?</span><span class="zfq-icon">+</span></button><div class="zfq-a"><p>Depende del alcance: servicios elegidos, cantidad de piezas y complejidad. El diagnóstico inicial es gratuito y, tras conocer tu proyecto, te enviamos una cotización clara.</p></div></div>
+      <div class="zfq-pill"><button class="zfq-q" onclick="toggleFaqBrands(this)"><span class="zfq-text">¿Cuánto demora un proyecto?</span><span class="zfq-icon">+</span></button><div class="zfq-a"><p>Depende del alcance. Definimos el cronograma en la cotización, y un proyecto pequeño puede estar listo en pocas semanas.</p></div></div>
+    </div>
+  </div>
+</section>
 <!-- ========== CONTACT BRANDS - clonado de Experiencia con copy Brands ========== -->
 <section id="formulario" class="wrapper" style="background: var(--zoox-morado); padding: 60px 0;">
     <div class="inner" style="max-width: 760px; margin: 0 auto; padding: 0 2em;">
@@ -1788,6 +1809,7 @@ document.querySelector('.menuToggle').addEventListener('click', (e) => {
       document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
       if (!isActive) item.classList.add('active');
     }
+    function toggleFaqBrands(b){const p=b.parentElement,a=p.classList.contains('active');document.querySelectorAll('.zfq-pill').forEach(i=>i.classList.remove('active'));if(!a)p.classList.add('active');}
   </script>
 <script>
 
