@@ -1334,8 +1334,24 @@ justify-content: center; !important;
     align-self: flex-start;
   }
 }
+.zbs-section{background:#ececee;padding:80px 0;overflow:hidden}
+.zbs-block{display:flex;align-items:center;gap:60px;padding:50px 0;border-bottom:3px solid var(--zoox-naranja)}
+.zbs-block:last-child{border-bottom:0}
+.zbs-block--inv{flex-direction:row-reverse}
+.zbs-text,.zbs-img{flex:1;opacity:0;transition:transform .8s ease,opacity .8s ease}
+.zbs-text{transform:translateX(-80px)}
+.zbs-img{transform:translateX(80px)}
+.zbs-block--inv .zbs-text{transform:translateX(80px)}
+.zbs-block--inv .zbs-img{transform:translateX(-80px)}
+.zbs-block.in .zbs-text,.zbs-block.in .zbs-img{opacity:1;transform:none}
+.zbs-text h3{color:var(--zoox-morado);font-weight:800;display:inline-block;padding-bottom:8px;border-bottom:3px solid var(--zoox-naranja)}
+.zbs-text ul{list-style:none;padding:0;margin:20px 0 0}
+.zbs-text li{color:var(--zoox-morado);font-weight:700;margin-bottom:10px}
+.zbs-text li::before{content:"→ ";color:var(--zoox-naranja)}
+.zbs-img img{width:100%;display:block;border-radius:12px}
+@media(max-width:768px){.zbs-block,.zbs-block--inv{flex-direction:column;gap:30px}}
 
-  </style>
+</style>
 <link href="../assets/css/zoox-wa.css" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/campton.css">
 </head>
@@ -1472,6 +1488,74 @@ justify-content: center; !important;
 
     <p class="pilares-extra"><strong>¿Necesitas algo más?</strong> También desarrollamos páginas web y coordinamos servicios complementarios como publicidad digital y merchandising, según las necesidades de cada proyecto.</p>
 
+  </div>
+</section>
+
+<section class="zbs-section">
+  <div class="container">
+    <div class="zbs-block">
+      <div class="zbs-text">
+        <h3>IDENTIDAD</h3>
+        <ul>
+          <li>Branding</li>
+          <li>Packaging</li>
+          <li>Identidad visual</li>
+        </ul>
+      </div>
+      <div class="zbs-img"><img src="assets/img/4pilares/identidad.png" alt="Identidad"></div>
+    </div>
+    <!-- repetir: Imagen (con zbs-block--inv), Comunicación, Digital (con zbs-block--inv) -->
+  </div>
+</section>
+
+<section class="zbs-section">
+  <div class="container">
+    <div class="zbs-block">
+      <div class="zbs-text">
+        <h3>IMAGEN</h3>
+        <ul>
+          <li>Foto Producto</li>
+          <li>Fotografías de mascotas</li>
+          <li>Video</li>
+        </ul>
+      </div>
+      <div class="zbs-img"><img src="assets/img/4pilares/imagen.png" alt="Imagen"></div>
+    </div>
+    <!-- repetir: Imagen (con zbs-block--inv), Comunicación, Digital (con zbs-block--inv) -->
+  </div>
+</section>
+
+<section class="zbs-section">
+  <div class="container">
+    <div class="zbs-block">
+      <div class="zbs-text">
+        <h3>COMUNICACIÓN</h3>
+        <ul>
+          <li>Social Media</li>
+          <li>Diseño Comercial</li>
+          <li>Campañas Ads.</li>
+        </ul>
+      </div>
+      <div class="zbs-img"><img src="assets/img/4pilares/comunicacion.png" alt="Comunicación"></div>
+    </div>
+    <!-- repetir: Imagen (con zbs-block--inv), Comunicación, Digital (con zbs-block--inv) -->
+  </div>
+</section>
+
+<section class="zbs-section">
+  <div class="container">
+    <div class="zbs-block">
+      <div class="zbs-text">
+        <h3>DIGITAL</h3>
+        <ul>
+          <li>Diseño Web</li>
+          <li>Landing Pages</li>
+          <li>Experiencias Interactivas</li>
+        </ul>
+      </div>
+      <div class="zbs-img"><img src="assets/img/4pilares/digital.png" alt="Digital"></div>
+    </div>
+    <!-- repetir: Imagen (con zbs-block--inv), Comunicación, Digital (con zbs-block--inv) -->
   </div>
 </section>
 
@@ -1783,6 +1867,8 @@ document.querySelectorAll('.logos-track').forEach(function (t) {
     
   });
 })();
+const zbsIO=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('in')),{threshold:.25});
+document.querySelectorAll('.zbs-block').forEach(b=>zbsIO.observe(b));
 </script>
 </body>
 </html>
