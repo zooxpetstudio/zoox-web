@@ -1334,22 +1334,23 @@ justify-content: center; !important;
     align-self: flex-start;
   }
 }
-.zbs-text,.zbs-img{flex:1}
-.zbs-block{opacity:0;transform:translateX(-100px);transition:transform .8s ease,opacity .8s ease}
-.zbs-block--inv{transform:translateX(100px)}
-.zbs-block.in{opacity:1;transform:none}
-.zbs-text,.zbs-img{flex:1;opacity:0;transition:transform .8s ease,opacity .8s ease}
-.zbs-text{transform:translateX(-80px)}
-.zbs-img{transform:translateX(80px)}
-.zbs-block--inv .zbs-text{transform:translateX(80px)}
-.zbs-block--inv .zbs-img{transform:translateX(-80px)}
-.zbs-block.in .zbs-text,.zbs-block.in .zbs-img{opacity:1;transform:none}
-.zbs-text h3{color:var(--zoox-morado);font-weight:800;display:inline-block;padding-bottom:8px;border-bottom:3px solid var(--zoox-naranja)}
-.zbs-text ul{list-style:none;padding:0;margin:20px 0 0}
-.zbs-text li{color:var(--zoox-morado);font-weight:700;margin-bottom:10px}
-.zbs-text li::before{content:"→ ";color:var(--zoox-naranja)}
-.zbs-img img{height:380px;width:auto;max-width:100%;display:block;margin:0 auto}
-@media(max-width:768px){.zbs-block,.zbs-block--inv{flex-direction:column;gap:30px}}
+.zbs-section{background:#EAE6FF;padding:80px 0;overflow:hidden}
+.zbs-section .zbs-block{display:grid;grid-template-columns:1fr 1fr;align-items:center; gap:100px; 0px;padding:50px 0;opacity:0;transform:translateX(-100px);transition:transform .8s ease,opacity .8s ease}
+.zbs-section .zbs-block--inv{transform:translateX(100px)}
+.zbs-section .zbs-block--inv .zbs-text{order:2}
+.zbs-section .zbs-block--inv .zbs-img{order:1}
+.zbs-section .zbs-block.in{opacity:1;transform:none}
+.zbs-section .zbs-block:not(:last-child)::after{content:"";grid-column:1/-1;order:3;justify-self:center;width:350px;height:2px;background:var(--zoox-naranja);margin-top:5px}
+.zbs-section .zbs-text{text-align:left;justify-self:end}
+.zbs-section .zbs-text h3{color:var(--zoox-morado);font-weight:800;display:inline-block;padding-bottom:8px;border-bottom:2px solid var(--zoox-naranja)}
+.zbs-section .zbs-text ul{list-style:none;padding:0;margin:20px 0 0}
+.zbs-section .zbs-text li{color:var(--zoox-morado);font-weight:700;margin-bottom:10px;text-align:left}
+.zbs-section .zbs-text li::before{content:"→ ";color:var(--zoox-naranja)}
+.zbs-section .zbs-img img{height:380px;width:auto;max-width:100%;display:block;margin:0}
+.zbs-section .zbs-img{justify-self:start}
+.zbs-section .zbs-block--inv .zbs-text{justify-self:start}
+.zbs-section .zbs-block--inv .zbs-img{justify-self:end}
+@media(max-width:768px){.zbs-section .zbs-block{grid-template-columns:1fr}.zbs-section .zbs-block--inv .zbs-text,.zbs-section .zbs-block--inv .zbs-img{order:0}}
 
 </style>
 <link href="../assets/css/zoox-wa.css" rel="stylesheet">
@@ -1493,6 +1494,7 @@ justify-content: center; !important;
 
 <section class="zbs-section">
   <div class="container">
+
     <div class="zbs-block">
       <div class="zbs-text">
         <h3>IDENTIDAD</h3>
@@ -1504,13 +1506,8 @@ justify-content: center; !important;
       </div>
       <div class="zbs-img"><img src="assets/img/4pilares/identidad.png" alt="Identidad"></div>
     </div>
-    <!-- repetir: Imagen (con zbs-block--inv), Comunicación, Digital (con zbs-block--inv) -->
-  </div>
-</section>
 
-<section class="zbs-section">
-  <div class="container">
-    <div class="zbs-block">
+    <div class="zbs-block zbs-block--inv">
       <div class="zbs-text">
         <h3>IMAGEN</h3>
         <ul>
@@ -1521,12 +1518,7 @@ justify-content: center; !important;
       </div>
       <div class="zbs-img"><img src="assets/img/4pilares/imagen.png" alt="Imagen"></div>
     </div>
-    <!-- repetir: Imagen (con zbs-block--inv), Comunicación, Digital (con zbs-block--inv) -->
-  </div>
-</section>
 
-<section class="zbs-section">
-  <div class="container">
     <div class="zbs-block">
       <div class="zbs-text">
         <h3>COMUNICACIÓN</h3>
@@ -1538,27 +1530,21 @@ justify-content: center; !important;
       </div>
       <div class="zbs-img"><img src="assets/img/4pilares/comunicacion.png" alt="Comunicación"></div>
     </div>
-    <!-- repetir: Imagen (con zbs-block--inv), Comunicación, Digital (con zbs-block--inv) -->
-  </div>
-</section>
 
-<section class="zbs-section">
-  <div class="container">
-    <div class="zbs-block">
+    <div class="zbs-block zbs-block--inv">
       <div class="zbs-text">
         <h3>DIGITAL</h3>
         <ul>
           <li>Diseño Web</li>
-          <li>Landing Pages</li>
-          <li>Experiencias Interactivas</li>
+          <li>Landing pages</li>
+          <li>Experiencias digitales</li>
         </ul>
       </div>
       <div class="zbs-img"><img src="assets/img/4pilares/digital.png" alt="Digital"></div>
     </div>
-    <!-- repetir: Imagen (con zbs-block--inv), Comunicación, Digital (con zbs-block--inv) -->
+
   </div>
 </section>
-
   
   <!-- ========== POR QUÉ ZOOX BRANDS - B2B RE-DISEÑO ========== -->
   <section id="por-que-zoox" class="zbp-section">
