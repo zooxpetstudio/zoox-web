@@ -121,6 +121,30 @@
 .zc-btn-wrap{text-align:center;margin:-1em 0 3em}
 .zc-btn{display:inline-block;background:var(--zoox-amarillo);color:var(--zoox-negro);padding:.9em 2.2em;border-radius:50px;font-family:'Cera GR',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background-color .3s ease,color .3s ease,transform .3s ease,box-shadow .3s ease}
 .zc-btn:hover{background:var(--zoox-negro);color:var(--zoox-amarillo);transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}  
+#zooxart-titulo h2,#polos-zoox header.major h2,#posters header.major h2,#banners header.major h2,#faq-posters header.major h2{font-family:'Cera GR',sans-serif!important;font-size:clamp(2rem,5vw,3.4rem)!important;font-weight:700!important;line-height:1.05!important;letter-spacing:0!important;text-transform:none!important}
+#polos-zoox header.major h2::after,#posters header.major h2::after,#banners header.major h2::after{display:none!important}
+#zooxart-titulo h2 em,#polos-zoox h2 em,#posters h2 em,#banners h2 em,#faq-posters h2 em{font-style:normal;background:linear-gradient(var(--zoox-amarillo),var(--zoox-amarillo)) no-repeat 0 100%/0 6px;padding-bottom:4px;transition:background-size .9s ease .4s}
+#zooxart-titulo h2 em,#faq-posters h2 em{color:var(--zoox-amarillo)}
+h2.is-visible em{background-size:100% 6px!important}
+/* Tarjetas de producto: zoom suave de la foto */
+.polo-card .img-wrap img{transition:transform .7s cubic-bezier(.22,1,.36,1)}
+.polo-card:hover .img-wrap img{transform:scale(1.06)}
+
+/* Carrusel: pausa al pasar el mouse + foto que se eleva */
+.zoox-carousel-wrap:hover .zoox-carousel{animation-play-state:paused}
+.zc-item img{transition:transform .4s ease,box-shadow .4s ease}
+.zc-item:hover img{transform:translateY(-6px) scale(1.03);box-shadow:0 14px 28px rgba(0,0,0,.25)}
+
+/* Proceso (amarillo) y specs */
+.proceso-step-rect{transition:background-color .35s ease,transform .35s ease,box-shadow .35s ease}
+.proceso-step-rect:hover{background:var(--zoox-negro)!important;transform:translateY(-6px);box-shadow:0 14px 28px rgba(0,0,0,.2)}
+.proceso-step-rect:hover i{color:var(--zoox-amarillo)}
+.proceso-step-rect:hover h4,.proceso-step-rect:hover p{color:#fff!important}
+.spec-verde-mini{transition:transform .35s ease,box-shadow .35s ease}
+.spec-verde-mini:hover{transform:translateY(-5px);box-shadow:0 12px 24px rgba(0,0,0,.25)}
+
+/* FAQ */
+#faq-posters .faq-pill:not(.active):hover{background:var(--zoox-amarillo)!important}
 .zoox-carousel-wrap{overflow:hidden;background:#e5e5e5;padding:2.5em 0;border-radius:12px;margin:3em 0;container-type:inline-size;--zc-n:5;--zc-gap:1em;}
 .zoox-carousel{display:flex;gap:var(--zc-gap);width:max-content;animation:zc-loop 22s linear infinite;}
 .zc-item{flex:0 0 auto;width:calc((100cqw - (var(--zc-n) - 1) * var(--zc-gap)) / var(--zc-n));text-decoration:none;text-align:center;}
@@ -134,6 +158,15 @@
 
 @media screen and (max-width:736px){
   .zoox-carousel-wrap{--zc-n:2;}
+}
+#faq-posters header.major{text-align:center!important}
+#faq-posters header.major h2{margin-left:auto!important;margin-right:auto!important}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1!important;transform:none!important;filter:none!important}
+  .zoox-carousel{animation:none!important}
+  .polo-card:hover,.zc-item:hover img,.proceso-step-rect:hover,.spec-verde-mini:hover,.zc-btn:hover{transform:none!important}
+  .polo-card:hover .img-wrap img{transform:none!important}
 }
 </style>
 <link rel="stylesheet" href="../assets/css/zoox-wa.css">
@@ -165,7 +198,7 @@
 
 <section id="zooxart-titulo" style="background:#0a0a0a; text-align:center; padding:3em 2em;">
 <div class="inner">
-<h2 style="font-family:'Cera GR','Campton',sans-serif; font-size:clamp(2rem,4vw,2.8rem); letter-spacing:0.12em; color:#fff; margin-bottom:0.6em; font-weight:500; text-transform:uppercase;">ZOOX ARTS<span></h2>
+<h2 style="font-family:'Cera GR','Campton',sans-serif; font-size:clamp(2rem,4vw,2.8rem); letter-spacing:0.12em; color:#fff; margin-bottom:0.6em; font-weight:500; text-transform:uppercase;">ZOOX <em>Arts</em></h2>
 <p style="color:#E5E5E5; max-width:680px; margin:0 auto; line-height:1.8; font-size:0.95rem; font-weight:300; font-family:'Campton',sans-serif;">En ZOOX transformamos el amor por tu mascota en productos personalizados y exclusivos. Diseñamos polos, banners digitales y pósters físicos con acabados de alta calidad. Cada diseño es especial, el regalo perfecto para un amante de las mascotas.</p>
 
   <div style="text-align:center; margin:2.2em 0 1.5em;">
@@ -184,7 +217,7 @@
 <!-- POLOS ZOOX -->
 <section id="polos-zoox" class="section-zoox">
 <div class="inner">
-<header class="major"><h2>Polos ZOOX</h2><p>Personalizamos tu estilo con la imagen de tu mascota y también con artes prediseñados. Polos básicos perfectos para hombre y mujer, todos en color negro.</p></header>
+<header class="major"><h2>Polos <em>ZOOX</em></h2><p>Personalizamos tu estilo con la imagen de tu mascota y también con artes prediseñados. Polos básicos perfectos para hombre y mujer, todos en color negro.</p></header>
 <div class="polo-grid">
   <div class="polo-card" data-name="POLO ZOOX - Estampado frontal" data-price="65" data-type="polo" data-images="images/polo-negro-minimal.JPG,images/polo-negro-minimal-2.JPG,images/polo-negro-minimal-3.JPG,images/polo-negro-minimal-4.JPG">
     <div class="img-wrap"><img src="images/polos/producto/poloproducto1.png" alt="Polo Minimal"></div>
@@ -221,7 +254,7 @@
 <!-- POSTERS ZOOX - RECTANGULOS VERDES MAS PEQUEÑOS -->
 <section id="posters" class="section-zoox">
 <div class="inner">
-<header class="major"><h2>Posters ZOOX</h2><p>CREADOS PARA INMORTALIZAR A TU MASCOTA. Nuestros Posters Zoox ofrecen un brillante acabado recubierto con Cristal líquido que hará que tu regalo dure para siempre.</p></header>
+<header class="major"><h2>Posters <em>ZOOX</em></h2><p>CREADOS PARA INMORTALIZAR A TU MASCOTA. Nuestros Posters Zoox ofrecen un brillante acabado recubierto con Cristal líquido que hará que tu regalo dure para siempre.</p></header>
 
 <div class="specs-verdes-mini">
   <div class="spec-verde-mini"><i class="fa-solid fa-layer-group"></i><h4>SOPORTE DE CELTEX PVC</h4><p>Base firme, liviana e ideal para complementar tu decoración.</p></div>
@@ -256,7 +289,7 @@
 <!-- BANNERS DIGITALES - FONDO GRIS -->
 <section id="banners" class="section-zoox">
 <div class="inner">
-<header class="major"><h2>Banners Digitales</h2><p>PROMOCIONA A TU EJEMPLAR EN MODO PROFESIONAL. Somos expertos en artes para criadores. Anuncios de alta calidad para redes sociales, revistas caninas y empresas del sector animal.</p></header>
+<header class="major"><h2>Banners <em>Digitales</em></h2><p>PROMOCIONA A TU EJEMPLAR EN MODO PROFESIONAL. Somos expertos en artes para criadores. Anuncios de alta calidad para redes sociales, revistas caninas y empresas del sector animal.</p></header>
 <div class="polo-grid">
   <div class="polo-card" data-name="Banner Stud / Monta" data-price="60" data-type="banner"><div class="img-wrap"><img src="images/banners/producto/banner1.png" alt="Banner Stud / Monta"></div><div class="info"><span class="marca">BANNER DIGITAL</span><h4>STUD / MONTA</h4><p>Anuncio profesional para tu ejemplar macho o hembra.</p><div class="price">s/60 · $20 · €18</div></div></div>
   <div class="polo-card" data-name="Banner Parejas" data-price="60" data-type="banner"><div class="img-wrap"><img src="images/banners/producto/banner2.png" alt="Banner Parejas"></div><div class="info"><span class="marca">BANNER DIGITAL</span><h4>PAREJAS</h4><p>Diseño elegante perfecto para anunciar la próxima camada.</p><div class="price">s/70 · $22 · €20</div></div></div>
@@ -285,7 +318,7 @@
 <!-- FAQ NUEVO ESTILO COMO IMAGEN ADJUNTA -->
 <section id="faq-posters">
 <div class="inner">
-<header class="major"><h2>Preguntas Frecuentes</h2></header>
+<header class="major"><h2>Preguntas <em>Frecuentes</em></h2></header>
 <div class="faq-list">
   <div class="faq-pill"><button class="faq-pregunta" onclick="toggleFaq(this)"><span class="faq-texto">¿Cuál es el tamaño de los Posters?</span><span class="faq-icon">+</span></button><div class="faq-respuesta"><p>Trabajamos 3 formatos: A4 (21 x 29.7 cm), A3 (29.7 x 42 cm) y A2 (42 x 59.4 cm). Todos con soporte de Celtex + Resina epóxica.</p></div></div>
   <div class="faq-pill"><button class="faq-pregunta" onclick="toggleFaq(this)"><span class="faq-texto">¿Puedo enviar imágenes propias?</span><span class="faq-icon">+</span></button><div class="faq-respuesta"><p>¡Claro! Todas pasan por control de calidad para asegurar resolución óptima.</p></div></div>
@@ -569,7 +602,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       }
     });
   },{threshold:0.15, rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('#polos-zoox .major h2, #polos-zoox .major p, #posters .major h2, #posters .major p, #banners .major h2, #banners .major p, #faq-posters .major h2, .polo-card, .spec-verde-mini, .faq-pill, .btn-wrapper').forEach(el=>{
+  document.querySelectorAll('#polos-zoox .major h2, #polos-zoox .major p, #posters .major h2, #posters .major p, #banners .major h2, #banners .major p, #faq-posters .major h2, .polo-card, .spec-verde-mini, .faq-pill, .btn-wrapper, #zooxart-titulo h2').forEach(el=>{
     el.classList.add('reveal');
     obs.observe(el);
   });
