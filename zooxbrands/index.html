@@ -1610,7 +1610,6 @@ document.querySelector('.menuToggle').addEventListener('click', (e) => {
       });
     });
   </script>
-
   <script>
     function toggleFaq(btn) {
       const item = btn.parentElement;
@@ -1620,7 +1619,6 @@ document.querySelector('.menuToggle').addEventListener('click', (e) => {
     }
     function toggleFaqBrands(b){const p=b.parentElement,a=p.classList.contains('active');document.querySelectorAll('.zfq-pill').forEach(i=>i.classList.remove('active'));if(!a)p.classList.add('active');}
   </script>
-<script>
 
 <!-- EFECTO SCROLL ZOOX BRANDS -->
 <script>
@@ -1641,12 +1639,6 @@ setTimeout(()=>e.target.classList.add('is-visible'),d);
   });
 })();
 </script>
-
-<script>
-document.querySelectorAll('.logos-track').forEach(function (t) {
-  var base = Array.from(t.children);
-  for (var i = 0; i < 3; i++) base.forEach(function (n) { t.appendChild(n.cloneNode(true)); });
-});
 
 </body>
 </html>
