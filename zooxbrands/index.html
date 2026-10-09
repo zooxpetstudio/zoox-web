@@ -1206,10 +1206,10 @@ justify-content: center; !important;
 #faq-brands .zfq-inner{max-width:760px;margin:0 auto;text-align:center}
 #faq-brands .zfq-title{font-family:'Cera GR',sans-serif;font-size:clamp(2rem,5vw,3.4rem);font-weight:700;line-height:1.05;color:#e5e5e5;margin-bottom:.8em}
 #faq-brands .zfq-list{display:flex;flex-direction:column;gap:14px}
-#faq-brands .zfq-pill{background:#e5e5e5;border-radius:999px;overflow:hidden;position:relative;transition:border-radius .3s}
+#faq-brands .zfq-pill{background:#221c46;border-radius:999px;overflow:hidden;position:relative;transition:border-radius .3s}
 #faq-brands .zfq-pill.active{border-radius:18px}
 #faq-brands .zfq-q{width:100%;min-height:52px;background:transparent;border:0;outline:0;box-shadow:none;appearance:none;padding:14px 72px 14px 24px;display:flex;align-items:center;cursor:pointer;position:relative}
-#faq-brands .zfq-text{width:100%;text-align:left;color:#221c46;font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;line-height:1.4;font-family:'Cera GR',sans-serif;}
+#faq-brands .zfq-text{width:100%;text-align:left;color:#e5e5e5;font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;line-height:1.4;font-family:'Cera GR',sans-serif;}
 #faq-brands .zfq-icon{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;background:var(--zoox-naranja);color:#e5e5e5;display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1;transition:transform .3s}
 #faq-brands .zfq-pill.active .zfq-icon{transform:translateY(-50%) rotate(45deg)}
 #faq-brands .zfq-a{max-height:0;overflow:hidden;padding:0 24px;transition:max-height .35s ease,padding .35s ease}
@@ -1229,6 +1229,22 @@ justify-content: center; !important;
 .znb-section .znb-pill:hover{background:var(--zoox-naranja);color:var(--zoox-gris);transform:translateY(-3px);box-shadow:0 8px 18px rgba(0,0,0,.3)}
 .znb-section .znb-pill i{transition:color .3s ease}
 .znb-section .znb-pill:hover i{color:var(--zoox-gris)}
+/* Botones */
+.btn-primary-zoox{transition:background-color .3s ease,color .3s ease,transform .3s ease,box-shadow .3s ease}
+.btn-primary-zoox:hover{background:var(--zoox-gris);color:var(--zoox-morado);opacity:1;transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
+.zoox-cta{transition:background-color .3s ease,color .3s ease,transform .3s ease,box-shadow .3s ease}
+.zoox-cta:hover{background:var(--zoox-gris)!important;color:var(--zoox-morado)!important;transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
+
+/* FAQ */
+#faq-brands .zfq-pill{transition:background-color .3s ease,border-radius .3s ease}
+#faq-brands .zfq-pill:hover{background:#181434}
+#faq-brands .zfq-icon{transition:transform .3s ease,background-color .3s ease,color .3s ease}
+#faq-brands .zfq-pill:hover .zfq-icon{background:var(--zoox-gris);color:var(--zoox-morado)}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1!important;transform:none!important;filter:none!important}
+  .pilar-item:hover,.znb-section .znb-pill:hover,.btn-primary-zoox:hover,.zoox-cta:hover{transform:none!important}
+}
 </style>
 <link href="../assets/css/zoox-wa.css" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/campton.css">
