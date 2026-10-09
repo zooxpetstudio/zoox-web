@@ -1221,6 +1221,14 @@ justify-content: center; !important;
 .pilar-item .pilar-etapa{margin-top:16px;padding-top:14px;border-top:1px solid rgba(229,229,229,.25);font-size:.85rem;line-height:1.5;color:var(--zoox-gris)}
 .pilar-item .pilar-etapa strong{color:var(--zoox-naranja)}
 .pilar-item .pilar-etapa i{color:var(--zoox-naranja)}
+.pilar-item{transition:opacity .7s ease,filter .7s ease,transform .35s ease,background-color .35s ease,box-shadow .35s ease}
+.pilar-item:hover{background:#181434;transform:translateY(-6px);box-shadow:0 14px 28px rgba(0,0,0,.25)}
+.pilar-item .pilar-ico{transition:background-color .35s ease,color .35s ease}
+.pilar-item:hover .pilar-ico{background:var(--zoox-naranja);color:var(--zoox-gris)}
+.znb-section .znb-pill{transition:opacity .7s ease,filter .7s ease,background-color .3s ease,color .3s ease,transform .3s ease,box-shadow .3s ease}
+.znb-section .znb-pill:hover{background:var(--zoox-naranja);color:var(--zoox-gris);transform:translateY(-3px);box-shadow:0 8px 18px rgba(0,0,0,.3)}
+.znb-section .znb-pill i{transition:color .3s ease}
+.znb-section .znb-pill:hover i{color:var(--zoox-gris)}
 </style>
 <link href="../assets/css/zoox-wa.css" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/campton.css">
@@ -1620,12 +1628,14 @@ document.querySelector('.menuToggle').addEventListener('click', (e) => {
   const obs = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
       if(e.isIntersecting){
-        e.target.classList.add('is-visible');
+       const i=[...e.target.parentElement.children].indexOf(e.target);
+const d=e.target.matches('.pilar-item,.znb-pill')?(i%6)*80:0;
+setTimeout(()=>e.target.classList.add('is-visible'),d);
         obs.unobserve(e.target);
       }
     });
   },{threshold:0.15, rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('#creatividad-section h2, #creatividad-section p, #propuesta-section h2, #propuesta-section p, .propuesta-card, #servicios h2, #servicios p, .pilar-item, #proceso h2, #proceso p, .paso, .proceso-nota').forEach(el=>{
+  document.querySelectorAll('#creatividad-section h2, #creatividad-section p, #propuesta-section h2, #propuesta-section p, .propuesta-card, #servicios h2, #servicios p, .pilar-item, #proceso h2, #proceso p, .paso, .proceso-nota, .znb-pill').forEach(el=>{
     el.classList.add('reveal');
     obs.observe(el);
   });
