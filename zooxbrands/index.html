@@ -1214,7 +1214,7 @@ justify-content: center; !important;
 #faq-brands .zfq-pill.active .zfq-icon{transform:translateY(-50%) rotate(45deg)}
 #faq-brands .zfq-a{max-height:0;overflow:hidden;padding:0 24px;transition:max-height .35s ease,padding .35s ease}
 #faq-brands .zfq-pill.active .zfq-a{max-height:400px;padding:0 24px 18px}
-#faq-brands .zfq-a p{color:#221c46;font-size:.85rem;line-height:1.6;text-align:left;margin:0}
+#faq-brands .zfq-a p{color:#e5e5e5;font-size:.85rem;line-height:1.6;text-align:left;margin:0}
 @media(max-width:600px){#faq-brands .zfq-text{font-size:.72rem}#faq-brands .zfq-q{padding:12px 64px 12px 18px}}
 .pilar-item{position:relative}
 .pilar-item .pilar-ico{position:absolute;top:24px;right:22px;width:52px;height:52px;border-radius:50%;background:var(--zoox-gris);color:var(--zoox-morado);display:flex;align-items:center;justify-content:center;font-size:1.4rem}
@@ -1248,6 +1248,18 @@ h2.is-visible em,h2.is-visible span{background-size:100% 3px!important}
   .reveal{opacity:1!important;transform:none!important;filter:none!important}
   .pilar-item:hover,.znb-section .znb-pill:hover,.btn-primary-zoox:hover,.zoox-cta:hover{transform:none!important}
 }
+/* Por qué ZOOX: tarjetas */
+.razones-grid-b2b{display:flex;flex-wrap:wrap;justify-content:center;gap:24px;max-width:1000px}
+.razon-b2b{flex:0 1 calc(33.333% - 16px);flex-direction:column;align-items:center;text-align:center;gap:18px;background:var(--zoox-morado);border:1.5px solid var(--zoox-naranja);padding:34px 24px;transition:opacity .7s ease,filter .7s ease,transform .35s ease,background-color .35s ease,box-shadow .35s ease}
+.razon-b2b:hover{background:#181434;transform:translateY(-6px);box-shadow:0 14px 28px rgba(0,0,0,.25)}
+.razon-icon{width:64px;height:64px;border:0;border-radius:50%;background:var(--zoox-naranja);transition:background-color .3s ease}
+.razon-icon i{font-size:1.6rem;color:var(--zoox-gris);transition:color .3s ease}
+.razon-b2b:hover .razon-icon{background:var(--zoox-gris)}
+.razon-b2b:hover .razon-icon i{color:var(--zoox-morado)}
+.razon-b2b h5{color:var(--zoox-gris);margin:0 0 10px;min-height:0}
+.razon-b2b p{color:var(--zoox-gris);opacity:.85}
+@media(max-width:900px){.razon-b2b{flex-basis:calc(50% - 12px)}}
+@media(max-width:600px){.razon-b2b{flex-basis:100%}}
 </style>
 <link href="../assets/css/zoox-wa.css" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/campton.css">
@@ -1309,39 +1321,49 @@ h2.is-visible em,h2.is-visible span{background-size:100% 3px!important}
     </div>
      
   </section>
-  <!-- ========== PROPUESTA DE VALOR ========== -->
-<section id="propuesta-section">
-  <div class="container">
-    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-      <h2>Una sola mirada creativa para <em>toda tu marca</em>.</h2>
-      <p>En ZOOX unimos estrategia, identidad, fotografía con mascotas y comunicación bajo un mismo criterio. Conocemos el mundo pet: sabemos dirigir modelos de cuatro patas y conectar con quienes ven a su mascota como parte de la familia.</p>
-    </div>
-<div class="row gy-4 justify-content-center flex-nowrap propuesta-row">
+ <!-- ========== POR QUÉ ZOOX BRANDS - B2B RE-DISEÑO ========== -->
+  <section id="por-que-zoox" class="zbp-section">
+    <div class="container">
+   <div style="max-width:700px; margin:0 auto; text-align:center; margin-bottom:60px;">
+  <h2 class="zbp-title">Por qué elegir<br><em>ZOOX Brands</em></h2>
+</div>
 
-  <div class="col-lg-3 col-md-4 col-4">
-    <div class="propuesta-card">
-      <div class="icon"><i class="fas fa-check-circle"></i></div>
-      <h4>COHERENCIA</h4>
-      <p>En todos los puntos de contacto de tu marca.</p>
-    </div>
-  </div>
-
-  <div class="col-lg-3 col-md-4 col-4">
-    <div class="propuesta-card">
-      <div class="icon"><i class="fas fa-paw"></i></div>
-      <h4>ESPECIALIZACIÓN REAL</h4>
-      <p>Conocemos el mundo de las mascotas de verdad.</p>
+<div class="razones-grid-b2b">
+  <div class="razon-b2b">
+    <div class="razon-icon"><i class="fas fa-paw"></i></div>
+    <div>
+      <h5>Especialización real</h5>
+      <p>No solo conocemos el mundo de las mascotas, somos parte de él. Sabemos trabajar con modelos de cuatro patas y conectar con una audiencia que comparte ese vínculo.</p>
     </div>
   </div>
-
-  <div class="col-lg-3 col-md-4 col-4">
-    <div class="propuesta-card">
-      <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
-      <h4>PRODUCCIÓN EN LOCACIÓN</h4>
-      <p>Tu marca en su entorno, sin depender de un set.</p>
+  <div class="razon-b2b">
+    <div class="razon-icon"><i class="fas fa-layer-group"></i></div>
+    <div>
+      <h5>Una sola mirada creativa</h5>
+      <p>Integramos estrategia, identidad, imagen y comunicación bajo un mismo criterio creativo, manteniendo la coherencia de tu marca en cada punto de contacto.</p>
     </div>
   </div>
-
+  <div class="razon-b2b">
+    <div class="razon-icon"><i class="fas fa-map-marker-alt"></i></div>
+    <div>
+      <h5>Producción en locación</h5>
+      <p>Llevamos tu marca a entornos reales y creamos imágenes auténticas que transmiten naturalidad, personalidad y conexión con el mundo pet.</p>
+    </div>
+  </div>
+  <div class="razon-b2b">
+    <div class="razon-icon"><i class="fas fa-chart-line"></i></div>
+    <div>
+      <h5>Contenido pensado para vender</h5>
+      <p>Cuidamos la composición, la iluminación y el formato para crear contenido visual adaptado a e-commerce, campañas publicitarias y redes sociales.</p>
+    </div>
+  </div>
+  <div class="razon-b2b">
+    <div class="razon-icon"><i class="fas fa-bolt"></i></div>
+    <div>
+      <h5>Producción recurrente</h5>
+      <p>Acompañamos a tu marca de forma continua, con una producción creativa organizada y flexible que permite mantener una comunicación visual consistente mes a mes.</p>
+    </div>
+  </div>
 </div>
 
 </section>
@@ -1431,53 +1453,6 @@ h2.is-visible em,h2.is-visible span{background-size:100% 3px!important}
 <p class="pilares-extra"><strong>Puedes empezar en cualquier etapa</strong> según lo que tu marca necesite.</p>
   </div>
 </section>
-
-  
-  <!-- ========== POR QUÉ ZOOX BRANDS - B2B RE-DISEÑO ========== -->
-  <section id="por-que-zoox" class="zbp-section">
-    <div class="container">
-   <div style="max-width:700px; margin:0 auto; text-align:center; margin-bottom:60px;">
-  <h2 class="zbp-title">Por qué las marcas pet<br><em>eligen ZOOX</em></h2>
-</div>
-
-<div class="razones-grid-b2b">
-  <div class="razon-b2b">
-    <div class="razon-icon"><i class="fas fa-paw"></i></div>
-    <div>
-      <h5>Especialización real</h5>
-      <p>No solo conocemos el mundo de las mascotas, somos parte de él. Sabemos trabajar con modelos de cuatro patas y conectar con una audiencia que comparte ese vínculo.</p>
-    </div>
-  </div>
-  <div class="razon-b2b">
-    <div class="razon-icon"><i class="fas fa-layer-group"></i></div>
-    <div>
-      <h5>Una sola mirada creativa</h5>
-      <p>Integramos estrategia, identidad, imagen y comunicación bajo un mismo criterio creativo, manteniendo la coherencia de tu marca en cada punto de contacto.</p>
-    </div>
-  </div>
-  <div class="razon-b2b">
-    <div class="razon-icon"><i class="fas fa-map-marker-alt"></i></div>
-    <div>
-      <h5>Producción en locación</h5>
-      <p>Llevamos tu marca a entornos reales y creamos imágenes auténticas que transmiten naturalidad, personalidad y conexión con el mundo pet.</p>
-    </div>
-  </div>
-  <div class="razon-b2b">
-    <div class="razon-icon"><i class="fas fa-chart-line"></i></div>
-    <div>
-      <h5>Contenido pensado para vender</h5>
-      <p>Cuidamos la composición, la iluminación y el formato para crear contenido visual adaptado a e-commerce, campañas publicitarias y redes sociales.</p>
-    </div>
-  </div>
-  <div class="razon-b2b">
-    <div class="razon-icon"><i class="fas fa-bolt"></i></div>
-    <div>
-      <h5>Producción recurrente</h5>
-      <p>Acompañamos a tu marca de forma continua, con una producción creativa organizada y flexible que permite mantener una comunicación visual consistente mes a mes.</p>
-    </div>
-  </div>
-</div>
-  </section>
 
   </section>
 <section id="faq-brands">
@@ -1646,13 +1621,13 @@ document.querySelector('.menuToggle').addEventListener('click', (e) => {
     entries.forEach(e=>{
       if(e.isIntersecting){
        const i=[...e.target.parentElement.children].indexOf(e.target);
-const d=e.target.matches('.pilar-item,.znb-pill')?(i%6)*80:0;
+const d=e.target.matches('.pilar-item,.znb-pill,.razon-b2b')?(i%6)*80:0;
 setTimeout(()=>e.target.classList.add('is-visible'),d);
         obs.unobserve(e.target);
       }
     });
   },{threshold:0.15, rootMargin:'0px 0px -40px 0px'});
-  document.querySelectorAll('#creatividad-section h2, #creatividad-section p, #propuesta-section h2, #propuesta-section p, .propuesta-card, #servicios h2, #servicios p, .pilar-item, #proceso h2, #proceso p, .paso, .proceso-nota, .znb-pill, .znb-title, #por-que-zoox h2, #formulario h2').forEach(el=>{
+  document.querySelectorAll('#creatividad-section h2, #creatividad-section p, #propuesta-section h2, #propuesta-section p, .propuesta-card, #servicios h2, #servicios p, .pilar-item, #proceso h2, #proceso p, .paso, .proceso-nota, .znb-pill, .znb-title, #por-que-zoox h2, #formulario h2, .razon-b2b').forEach(el=>{
     el.classList.add('reveal');
     obs.observe(el);
   });
