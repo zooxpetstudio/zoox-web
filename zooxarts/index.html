@@ -230,7 +230,7 @@ h2.is-visible em{background-size:100% 6px!important}
 
   <div class="polo-card" data-name="PACK 3 POLOS ZOOX" data-price="180" data-type="pack" data-images="images/pack-3-polos.jpg,images/pack-3-polos-2.jpg,images/pack-3-polos-3.jpg,images/pack-3-polos-4.jpg">
     <div class="img-wrap"><img src="images/polos/producto/poloproducto3.png" alt="Pack"></div>
-    <div class="info"><span class="marca">Polo ZOOX</span><h4>Pack Petlover</h4><p>3 diseños frontales · Combina tallas</p><div class="price">s/180</div></div>
+    <div class="info"><span class="marca">Polo ZOOX</span><h4>Pack Petlover</h4><p>3 diseños personalizados · Combina tallas</p><div class="price">s/180</div></div>
   </div>
 </div>
 <div class="zoox-carousel-wrap">
@@ -367,7 +367,7 @@ h2.is-visible em{background-size:100% 6px!important}
 <p class="modal-precio" id="modalPrecio"></p>
 <p class="modal-desc" id="modalDesc"></p>
 <div class="modal-tallas"><p class="modal-label">Selecciona tu talla</p><div id="modalTallasOpciones" class="tallas-grid"></div></div>
-<div style="margin:1em 0;"><p class="modal-label">Cantidad:</p><input type="number" id="cantidadZoox" value="1" min="1" max="10" style="width:80px;padding:0.5em;border-radius:8px;border:1px solid #0a0a0a;" oninput="let b=document.getElementById('modalBtnPedir'); let tallas=Array.from(document.querySelectorAll('.talla-opcion.active')).map(x=>x.textContent).join(', '); let cant=this.value; let nom=document.getElementById('modalNombre').textContent; let pre=document.getElementById('modalPrecio').textContent; b.href=`https://wa.me/51977325372?text=${encodeURIComponent('Hola ZOOX! Quiero pedir: '+nom+' - Tallas: '+tallas+' - Cant: '+cant+' )}`"></div>
+<div style="margin:1em 0;"><p class="modal-label">Cantidad:</p><input type="number" id="cantidadZoox" value="1" min="1" max="10" style="width:80px;padding:0.5em;border-radius:8px;border:1px solid #0a0a0a;background:#fff;color:#0a0a0a;font-weight:700;" oninput="let b=document.getElementById('modalBtnPedir'); let tallas=Array.from(document.querySelectorAll('.talla-opcion.active')).map(x=>x.textContent).join(', '); let cant=this.value; let nom=document.getElementById('modalNombre').textContent; let pre=document.getElementById('modalPrecio').textContent; b.href=`https://wa.me/51977325372?text=${encodeURIComponent('Hola ZOOX! Quiero pedir: '+nom+' - Tallas: '+tallas+' - Cant: '+cant)}`"></div>
 <a id="modalBtnPedir" href="#" target="_blank" class="btn-pedir-modal">Pedir por WhatsApp</a>
 <p class="modal-entrega">🕐 Entrega en 7–10 días hábiles</p>
 </div>
@@ -425,12 +425,12 @@ function abrirModalUniversal(nombre, precio, img, tipo, imagenesExtra){
   const tallasDiv=document.getElementById('modalTallasOpciones');
   tallasDiv.innerHTML='';
   let tallas = (tipo==='polo' || tipo==='pack') ? ['S','M','L','XL'] : [];
-  // si es PERSONALIZADO, solo S y M
-  if(nombre==='PERSONALIZADO'){ tallas = ['S','M']; }
+  
+  if(nombre.toUpperCase().includes('PERSONALIZADO')){ tallas = ['S','M','L','XL']; }
   const btnPedir=document.getElementById('modalBtnPedir');
   if(tallas.length===0){
     document.querySelector('.modal-tallas').style.display='none';
-    btnPedir.href=`https://wa.me/51977325372?text=${encodeURIComponent('Hola ZOOX! Quiero cotizar: '+nombre+' - '+precio)}`;
+    btnPedir.href=`https://wa.me/51977325372?text=${encodeURIComponent('Hola ZOOX! Quiero cotizar: ' + nombre)}`;
   } else {
     document.querySelector('.modal-tallas').style.display='block';
     tallas.forEach(t=>{
@@ -440,11 +440,11 @@ function abrirModalUniversal(nombre, precio, img, tipo, imagenesExtra){
         let seleccionadas = Array.from(document.querySelectorAll('.talla-opcion.active')).map(x=>x.textContent).join(', ');
         if(seleccionadas==='') seleccionadas = 'Sin talla seleccionada';
         let cant = document.getElementById('cantidadZoox') ? document.getElementById('cantidadZoox').value : '1';
-        btnPedir.href=`https://wa.me/51977325372?text=${encodeURIComponent('Hola ZOOX! Quiero pedir: '+nombre+' - Tallas: '+seleccionadas+' - Cant: '+cant+' - '+precio)}`;
+        btnPedir.href=`https://wa.me/51977325372?text=${encodeURIComponent('Hola ZOOX! Quiero pedir: ' + nombre + ' - Tallas: ' + seleccionadas + ' - Cant: ' + cant)}`;
       };
       tallasDiv.appendChild(b);
     });
-    btnPedir.href=`https://wa.me/51977325372?text=${encodeURIComponent('Hola ZOOX! Quiero pedir: '+nombre)}`;
+    btnPedir.href=`https://wa.me/51977325372?text=${encodeURIComponent('Hola ZOOX! Quiero pedir: ' + nombre)}`;
   }
   document.getElementById('modalProducto').classList.add('active'); document.body.style.overflow='hidden';
 }
@@ -515,6 +515,16 @@ document.addEventListener('DOMContentLoaded',()=>{
     });
   });
   });
+  // Activar efecto reveal al hacer scroll
+const revealObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add('is-visible');
+  });
+},{threshold:0.15});
+document.querySelectorAll('.polo-card, .spec-verde-mini, .proceso-step-rect, header.major h2').forEach(el=>{
+  el.classList.add('reveal');
+  revealObserver.observe(el);
+});
 </script>
 
 
