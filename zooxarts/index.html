@@ -118,7 +118,7 @@
 }
 </style>
 <style>
-.zc-btn-wrap{text-align:center;margin:-1em 0 3em}
+.zc-btn-wrap{text-align:center;margin:-1em 0 1em}
 .zc-btn{display:inline-block;background:var(--zoox-amarillo);color:var(--zoox-negro);padding:.9em 2.2em;border-radius:50px;font-family:'Cera GR',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background-color .3s ease,color .3s ease,transform .3s ease,box-shadow .3s ease}
 .zc-btn:hover{background:var(--zoox-negro);color:var(--zoox-amarillo);transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}  
 #zooxart-titulo h2,#polos-zoox header.major h2,#posters header.major h2,#banners header.major h2,#faq-posters header.major h2{font-family:'Cera GR',sans-serif!important;font-size:clamp(2rem,5vw,3.4rem)!important;font-weight:700!important;line-height:1.05!important;letter-spacing:0!important;text-transform:none!important}
@@ -145,9 +145,9 @@ h2.is-visible em{background-size:100% 6px!important}
 
 /* FAQ */
 #faq-posters .faq-pill:not(.active):hover{background:var(--zoox-amarillo)!important}
-.zoox-carousel-wrap{overflow:hidden;background:#e5e5e5;padding:2.5em 0;border-radius:12px;margin:3em 0;container-type:inline-size;--zc-n:5;--zc-gap:1em;}
+.zoox-carousel-wrap{overflow:hidden;background:#e5e5e5;padding:2.5em 0;border-radius:12px;margin:2em 0 1em;container-type:inline-size;--zc-n:5;--zc-gap:1em;}
 .zoox-carousel{display:flex;gap:var(--zc-gap);width:max-content;animation:zc-loop 22s linear infinite;}
-.zc-item{flex:0 0 auto;width:calc((100cqw - (var(--zc-n) - 1) * var(--zc-gap)) / var(--zc-n));text-decoration:none;text-align:center;border-bottom:1px solid #000}
+.zc-item{flex:0 0 auto;width:calc((100cqw - (var(--zc-n) - 1) * var(--zc-gap)) / var(--zc-n));text-decoration:none;text-align:center}
 .zc-item img{width:100%;height:auto;aspect-ratio:3 / 4;object-fit:cover;border-radius:12px;display:block;}
 .zc-item span{display:block;margin-top:0.6em;color:#0a0a0a;font-family:'Cera GR',sans-serif;font-size:0.75em;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;}
 
@@ -168,6 +168,10 @@ h2.is-visible em{background-size:100% 6px!important}
   .polo-card:hover,.zc-item:hover img,.proceso-step-rect:hover,.spec-verde-mini:hover,.zc-btn:hover{transform:none!important}
   .polo-card:hover .img-wrap img{transform:none!important}
 }
+.btn-pedir-modal{transition:background 0.3s ease !important;}
+.btn-pedir-modal:hover{background:#000 !important; color:#FFB60F !important;}
+.modal-cerrar{background:none !important; border:none !important; box-shadow:none !important; outline:none !important;}
+.modal-cerrar:before, .modal-cerrar:after{display:none !important;}
 </style>
 <link rel="stylesheet" href="../assets/css/zoox-wa.css">
 <link rel="stylesheet" href="../assets/css/campton.css">
@@ -219,14 +223,11 @@ h2.is-visible em{background-size:100% 6px!important}
 <div class="inner">
 <header class="major"><h2>Polos <em>ZOOX</em></h2><p>Personaliza tu estilo con la imagen de tu mascota o elige entre nuestros diseños prediseñados. Polos básicos en color negro, perfectos para hombre y mujer.</p></header>
 <div class="polo-grid">
-  <div class="polo-card" data-name="POLO ZOOX - Estampado frontal" data-price="65" data-type="polo" data-images="images/polo-negro-minimal.JPG,images/polo-negro-minimal-2.JPG,images/polo-negro-minimal-3.JPG,images/polo-negro-minimal-4.JPG">
+  <div class="polo-card" data-name="POLO ZOOX Personalizado" data-price="65" data-type="polo" data-images="images/polo-negro-minimal.JPG,images/polo-negro-minimal-2.JPG,images/polo-negro-minimal-3.JPG,images/polo-negro-minimal-4.JPG">
     <div class="img-wrap"><img src="images/polos/producto/poloproducto1.png" alt="Polo Minimal"></div>
-    <div class="info"><span class="marca">Polo ZOOX </span><h4>TALLA: S - M - L - XL</h4><p>Color NEGRO · Estampado frontal tacto cero</p><div class="price">s/65</div></div>
+    <div class="info"><span class="marca">Polo ZOOX </span><h4>TALLA: S - M - L - XL</h4><p>Color NEGRO · Estampado tacto cero</p><div class="price">s/65</div></div>
   </div>
-  <div class="polo-card" data-name="POLO ZOOX - Doble estampado" data-price="69" data-type="polo" data-images="images/polo-negro-pop.JPG,images/polo-negro-pop-2.JPG,images/polo-negro-pop-3.JPG,images/polo-negro-pop-4.JPG">
-    <div class="img-wrap"><img src="images/polos/producto/poloproducto2.png" alt="Polo Pop"></div>
-    <div class="info"><span class="marca">Polo ZOOX</span><h4>TALLA: S - M - L - XL</h4><p>Color NEGRO · Doble estampado tacto cero</p><div class="price">s/69</div></div>
-  </div>
+
   <div class="polo-card" data-name="PACK 3 POLOS ZOOX" data-price="180" data-type="pack" data-images="images/pack-3-polos.jpg,images/pack-3-polos-2.jpg,images/pack-3-polos-3.jpg,images/pack-3-polos-4.jpg">
     <div class="img-wrap"><img src="images/polos/producto/poloproducto3.png" alt="Pack"></div>
     <div class="info"><span class="marca">Polo ZOOX</span><h4>Pack Petlover</h4><p>3 diseños frontales · Combina tallas</p><div class="price">s/180</div></div>
@@ -235,16 +236,16 @@ h2.is-visible em{background-size:100% 6px!important}
 <div class="zoox-carousel-wrap">
   
   <div class="zoox-carousel" id="zc-polos">
-    <a href="galeria-polos.html" class="zc-item"><img src="images/polos/polo-carrousel/polocarrousel1.jpg" alt="Bronce Minimalista"><span>Bronce Minimalista</span></a>
-    <a href="galeria-polos.html" class="zc-item"><img src="images/polos/polo-carrousel/polocarrousel2.jpg" alt="Neón Contrastado"><span>Neón Contrastado</span></a>
-    <a href="galeria-polos.html" class="zc-item"><img src="images/polos/polo-carrousel/polocarrousel3.jpg" alt="Grabado Clásico"><span>Grabado Clásico</span></a>
-    <a href="galeria-polos.html" class="zc-item"><img src="images/polos/polo-carrousel/polocarrousel4.jpg" alt="Monocromático"><span>Monocromático</span></a>
-    <a href="galeria-polos.html" class="zc-item"><img src="images/polos/polo-carrousel/polocarrousel5.jpg" alt="Contemporaneo"><span>Contemporaneo</span></a>
-    <a href="galeria-polos.html" class="zc-item"><img src="images/polos/polo-carrousel/polocarrousel6.jpg" alt="Cine Noir"><span>Cine Noir</span></a>
-    <a href="galeria-polos.html" class="zc-item"><img src="images/polos/polo-carrousel/polocarrousel7.jpg" alt="Retro Vintage"><span>Retro Vintage</span></a>
-    <a href="galeria-polos.html" class="zc-item"><img src="images/polos/polo-carrousel/polocarrousel8.jpg" alt="Doble Exposición"><span>Doble Exposición</span></a>
-    <a href="galeria-polos.html" class="zc-item"><img src="images/polos/polo-carrousel/polocarrousel9.jpg" alt="Street Art"><span>Street Art</span></a>
-    <a href="galeria-polos.html" class="zc-item"><img src="images/polos/polo-carrousel/polocarrousel10.jpg" alt="Meme Art"><span>Meme Art</span></a>
+    <a href="galeria-polos.html" class="zc-item"><img src="images/polos/polo-carrousel/polocarrousel1.jpg" alt="Bronce Minimalista"></a>
+    <a href="galeria-polos.html" class="zc-item"><img src="images/polos/polo-carrousel/polocarrousel2.jpg" alt="Neón Contrastado"></a>
+    <a href="galeria-polos.html" class="zc-item"><img src="images/polos/polo-carrousel/polocarrousel3.jpg" alt="Grabado Clásico"></a>
+    <a href="galeria-polos.html" class="zc-item"><img src="images/polos/polo-carrousel/polocarrousel4.jpg" alt="Monocromático"></a>
+    <a href="galeria-polos.html" class="zc-item"><img src="images/polos/polo-carrousel/polocarrousel5.jpg" alt="Contemporaneo"></a>
+    <a href="galeria-polos.html" class="zc-item"><img src="images/polos/polo-carrousel/polocarrousel6.jpg" alt="Cine Noir"></a>
+    <a href="galeria-polos.html" class="zc-item"><img src="images/polos/polo-carrousel/polocarrousel7.jpg" alt="Retro Vintage"></a>
+    <a href="galeria-polos.html" class="zc-item"><img src="images/polos/polo-carrousel/polocarrousel8.jpg" alt="Doble Exposición"></a>
+    <a href="galeria-polos.html" class="zc-item"><img src="images/polos/polo-carrousel/polocarrousel9.jpg" alt="Street Art"></a>
+    <a href="galeria-polos.html" class="zc-item"><img src="images/polos/polo-carrousel/polocarrousel10.jpg" alt="Meme Art"></a>
   </div>
 </div>
 <div class="zc-btn-wrap"><a href="galeria-polos.html" class="zc-btn">Ver estilos</a></div>
@@ -270,16 +271,16 @@ h2.is-visible em{background-size:100% 6px!important}
 <div class="zoox-carousel-wrap">
   
   <div class="zoox-carousel" id="zc-posters">
-    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-carrousel/postercarrousel1.jpg" alt="Realeza"><span>Realeza</span></a>
-    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-carrousel/postercarrousel2.jpg" alt="Acuarela"><span>Acuarela</span></a>
-    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-carrousel/postercarrousel3.jpg" alt="Vectorial"><span>Vectorial</span></a>
-    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-carrousel/postercarrousel4.jpg" alt="Lifestyle B&W"><span>Lifestyle B&W</span></a>
-    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-carrousel/postercarrousel5.jpg" alt="Lienzo Floral"><span>Lienzo Floral</span></a>
-    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-carrousel/postercarrousel6.jpg" alt="Barajas"><span>Barajas</span></a>
-    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-carrousel/postercarrousel7.jpg" alt="Vector Textura"><span>Vector Textura</span></a>
-    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-carrousel/postercarrousel8.jpg" alt="Foto Estudio"><span>Foto Estudio</span></a>
-    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-carrousel/postercarrousel9.jpg" alt="Pop Art"><span>Pop Art</span></a>
-    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-carrousel/postercarrousel10.jpg" alt="Fantasía Épica"><span>Fantasía Épica</span></a>
+    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-carrousel/postercarrousel1.jpg" alt="Realeza"></a>
+    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-carrousel/postercarrousel2.jpg" alt="Acuarela"></a>
+    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-carrousel/postercarrousel3.jpg" alt="Vectorial"></a>
+    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-carrousel/postercarrousel4.jpg" alt="Lifestyle B&W"></a>
+    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-carrousel/postercarrousel5.jpg" alt="Lienzo Floral"></a>
+    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-carrousel/postercarrousel6.jpg" alt="Barajas"></a>
+    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-carrousel/postercarrousel7.jpg" alt="Vector Textura"></a>
+    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-carrousel/postercarrousel8.jpg" alt="Foto Estudio"></a>
+    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-carrousel/postercarrousel9.jpg" alt="Pop Art"></a>
+    <a href="galeria-posters.html" class="zc-item"><img src="images/posters/poster-carrousel/postercarrousel10.jpg" alt="Fantasía Épica"></a>
   </div>
   </div>
   <div class="zc-btn-wrap"><a href="galeria-posters.html" class="zc-btn">Ver Pósters</a></div>
@@ -298,16 +299,16 @@ h2.is-visible em{background-size:100% 6px!important}
 <div class="zoox-carousel-wrap">
  
   <div class="zoox-carousel" id="zc-banners">
-    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-carrousel/bannercarrousel1.jpg" alt="Stud / Monta"><span>Stud / Monta</span></a>
-    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-carrousel/bannercarrousel2.jpg" alt="Parejas"><span>Parejas</span></a>
-    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-carrousel/bannercarrousel3.jpg" alt="Camada"><span>Camada</span></a>
-    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-carrousel/bannercarrousel4.jpg" alt="Stud / Monta"><span>Stud / Monta</span></a>
-    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-carrousel/bannercarrousel5.jpg" alt="Parejas"><span>Parejas</span></a>
-    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-carrousel/bannercarrousel6.jpg" alt="Camada"><span>Camada</span></a>
-    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-carrousel/bannercarrousel7.jpg" alt="Stud / Monta"><span>Stud / Monta</span></a>
-    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-carrousel/bannercarrousel8.jpg" alt="Parejas"><span>Parejas</span></a>
-    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-carrousel/bannercarrousel9.jpg" alt="Camada"><span>Camada</span></a>
-    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-carrousel/bannercarrousel10.jpg" alt="Stud / Monta"><span>Stud / Monta</span></a>
+    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-carrousel/bannercarrousel1.jpg" alt="Stud / Monta"></a>
+    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-carrousel/bannercarrousel2.jpg" alt="Parejas"></a>
+    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-carrousel/bannercarrousel3.jpg" alt="Camada"></a>
+    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-carrousel/bannercarrousel4.jpg" alt="Stud / Monta"></a>
+    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-carrousel/bannercarrousel5.jpg" alt="Parejas"></a>
+    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-carrousel/bannercarrousel6.jpg" alt="Camada"></a>
+    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-carrousel/bannercarrousel7.jpg" alt="Stud / Monta"></a>
+    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-carrousel/bannercarrousel8.jpg" alt="Parejas"></a>
+    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-carrousel/bannercarrousel9.jpg" alt="Camada"></a>
+    <a href="galeria-banners.html" class="zc-item"><img src="images/banners/banner-carrousel/bannercarrousel10.jpg" alt="Stud / Monta"></a>
   </div>
   </div>
 <div class="zc-btn-wrap"><a href="galeria-banners.html" class="zc-btn">Ver banners</a></div>
@@ -361,12 +362,13 @@ h2.is-visible em{background-size:100% 6px!important}
 <button class="modal-cerrar" onclick="cerrarModalBtn()">✕</button>
 <div class="modal-galeria"><img id="modalImgPrincipal" src="" class="modal-img-principal" /><div class="modal-miniaturas" id="modalMiniaturas"></div></div>
 <div class="modal-detalle">
-<p class="modal-marca">ZOOX PET STUDIO</p>
+<p class="modal-marca">ZOOX Arts</p>
 <h2 class="modal-nombre" id="modalNombre"></h2>
 <p class="modal-precio" id="modalPrecio"></p>
 <p class="modal-desc" id="modalDesc"></p>
-<div class="modal-tallas"><p class="modal-label">Selecciona tu talla:</p><div id="modalTallasOpciones" class="tallas-grid"></div></div>
-<a id="modalBtnPedir" href="#" target="_blank" class="btn-pedir-modal">Pedir por WhatsApp →</a>
+<div class="modal-tallas"><p class="modal-label">Selecciona tu talla</p><div id="modalTallasOpciones" class="tallas-grid"></div></div>
+<div style="margin:1em 0;"><p class="modal-label">Cantidad:</p><input type="number" id="cantidadZoox" value="1" min="1" max="10" style="width:80px;padding:0.5em;border-radius:8px;border:1px solid #0a0a0a;" oninput="let b=document.getElementById('modalBtnPedir'); let tallas=Array.from(document.querySelectorAll('.talla-opcion.active')).map(x=>x.textContent).join(', '); let cant=this.value; let nom=document.getElementById('modalNombre').textContent; let pre=document.getElementById('modalPrecio').textContent; b.href=`https://wa.me/51977325372?text=${encodeURIComponent('Hola ZOOX! Quiero pedir: '+nom+' - Tallas: '+tallas+' - Cant: '+cant+' )}`"></div>
+<a id="modalBtnPedir" href="#" target="_blank" class="btn-pedir-modal">Pedir por WhatsApp</a>
 <p class="modal-entrega">🕐 Entrega en 7–10 días hábiles</p>
 </div>
 </div>
@@ -384,7 +386,7 @@ h2.is-visible em{background-size:100% 6px!important}
 function abrirModalUniversal(nombre, precio, img, tipo, imagenesExtra){
   document.getElementById('modalNombre').textContent=nombre;
   document.getElementById('modalPrecio').textContent= (precio.toString().includes('S/')||precio.toString().includes('Por')||precio.toString().includes('$')) ? precio : 's/ '+precio;
-  document.getElementById('modalDesc').textContent= tipo==='banner' ? 'Diseño profesional listo para redes sociales y revistas.' : tipo==='poster' ? 'Poster con soporte Celtex PVC + Cristal líquido.' : 'Algodón peruano 20/1 - Estampado tacto cero premium de alta duración.';
+  document.getElementById('modalDesc').textContent= tipo==='banner' ? 'Diseño profesional listo para redes sociales y revistas.' : tipo==='poster' ? 'Poster con soporte Celtex PVC + Cristal líquido.' : 'Algodón peruano 20/1 - Estampado tacto cero de alta duración.';
   
   // IMAGEN PRINCIPAL
   const principal = document.getElementById('modalImgPrincipal');
@@ -423,6 +425,8 @@ function abrirModalUniversal(nombre, precio, img, tipo, imagenesExtra){
   const tallasDiv=document.getElementById('modalTallasOpciones');
   tallasDiv.innerHTML='';
   let tallas = (tipo==='polo' || tipo==='pack') ? ['S','M','L','XL'] : [];
+  // si es PERSONALIZADO, solo S y M
+  if(nombre==='PERSONALIZADO'){ tallas = ['S','M']; }
   const btnPedir=document.getElementById('modalBtnPedir');
   if(tallas.length===0){
     document.querySelector('.modal-tallas').style.display='none';
@@ -432,9 +436,11 @@ function abrirModalUniversal(nombre, precio, img, tipo, imagenesExtra){
     tallas.forEach(t=>{
       const b=document.createElement('button'); b.className='talla-opcion'; b.textContent=t;
       b.onclick=()=>{
-        document.querySelectorAll('.talla-opcion').forEach(x=>x.classList.remove('active'));
-        b.classList.add('active');
-        btnPedir.href=`https://wa.me/51977325372?text=${encodeURIComponent('Hola ZOOX! Quiero pedir: '+nombre+' - Talla '+t+' - '+precio)}`;
+        b.classList.toggle('active');
+        let seleccionadas = Array.from(document.querySelectorAll('.talla-opcion.active')).map(x=>x.textContent).join(', ');
+        if(seleccionadas==='') seleccionadas = 'Sin talla seleccionada';
+        let cant = document.getElementById('cantidadZoox') ? document.getElementById('cantidadZoox').value : '1';
+        btnPedir.href=`https://wa.me/51977325372?text=${encodeURIComponent('Hola ZOOX! Quiero pedir: '+nombre+' - Tallas: '+seleccionadas+' - Cant: '+cant+' - '+precio)}`;
       };
       tallasDiv.appendChild(b);
     });
