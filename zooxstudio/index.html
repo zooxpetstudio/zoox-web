@@ -575,21 +575,21 @@ line-height: 1.15;
 	
 		
 /* Formulario */
-        #formulario { background: var(--zoox-verde); padding:4em 2em; }
+        #formulario { background: var(--zoox-fondo-alt); padding:4em 2em; }
         #formulario .inner { max-width:750px; margin:0 auto; }
         #formulario header.major { text-align:center; margin-bottom:2.5em; }
-        #formulario header.major h2 { color:#FBF3E0; font-size:2rem; }
-        #formulario header.major p { color:#505C47 max-width:600px; margin:1em auto; line-height:1.6; }
+        #formulario header.major h2 { color:#FFFFFF; padding-bottom:0em; font-size:2rem; }
+        #formulario header.major p {color:#E5E5E5; max-width:600px; margin:0.5em auto; line-height:1.6;}
         .zoox-form { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
         @media(max-width:600px){ .zoox-form{grid-template-columns:1fr;} }
         .form-group { display:flex; flex-direction:column; text-align:left; }
         .form-group.full { grid-column:1 / -1; }
-        .form-group label { font-size:0.7rem; letter-spacing:0.08em; color:var(--zoox-crema); text-transform:uppercase; margin-bottom:2px; font-family: 'Cera GR'; }
+        .form-group label { font-size:0.85rem; letter-spacing:normal; color:#FFFFFF; text-transform:none; margin-bottom:6px; font-family: 'Cera GR';font-weight:700; }
        .form-group input, .form-group select, .form-group textarea {
-    background:#2d3329; border:1px solid rgba(0,0,0,0.1); border-radius:8px; padding:12px 14px; color:#e5e5e5; font-family:'Inter'; font-size:0.85rem; outline:none; transition:border 0.3s;
+    background:#141414; border:1px solid #222222; border-radius:12px; padding:12px 14px; color:#e5e5e5; font-family:'Inter'; font-size:0.85rem; outline:none; transition:border 0.3s;
 }
 .form-group input::placeholder, .form-group textarea::placeholder {
-    color: #505c47;
+    color: #9A9A9A;
     opacity: 0.6;
 }
 .form-group select {
@@ -601,15 +601,15 @@ line-height: 1.15;
 .form-group select:valid, .form-group select:invalid,
 .form-group textarea:valid, .form-group textarea:invalid {
     box-shadow: none !important;
-    border-color: rgba(255,255,255,0.1) !important;
+    border-color:#222222 !important;
 }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-    border-color: var(--zoox-negro) !important;
+    border-color: var(--zoox-lima-suave) !important;
     box-shadow: none !important;
 }
 .form-group select option {
-    background:#E5E5E5;
-    color:#505c47;
+    background:#141414;
+    color:#E5E5E5;
 }
         .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--zoox-crema); }
         .form-group textarea { min-height:110px; resize:vertical; }
@@ -617,6 +617,8 @@ line-height: 1.15;
         .form-check input { margin-top:4px; accent-color: var(--zoox-amarillo); }
         .form-check label { font-size:0.7rem; color:#666; line-height:1.5; }
         .form-submit { grid-column:1 / -1; text-align:center; margin-top:1em; }
+		.form-submit .ba-cta-btn{cursor:pointer;height:auto;line-height:1.4;box-shadow:none;}
+        .form-submit .ba-cta-btn:hover{box-shadow:0 0 24px rgba(213,255,97,0.35);}
 		/* ═══════════════════════════════════════
 		   FOOTER
 		═══════════════════════════════════════ */
@@ -1390,7 +1392,7 @@ a:hover .btn-arr{transform:translateX(4px);}
             </div>
 
             <div class="form-submit">
-                <button type="submit" class="zoox-cta" style="cursor:pointer;">Enviar</button>
+                  <button type="submit" class="ba-cta-btn">Enviar <span class="btn-ico"><span class="btn-arr">→</span></span></button>
             </div>
         </form>
     </div>
