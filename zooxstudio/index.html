@@ -33,6 +33,11 @@
 			--zoox-muted:     #888888;
 			--zoox-crema:     #fbf3e0;
 			--zoox-amarillo:  #ffb60f;
+			--zoox-lima:      #D0FF28;
+			--zoox-lima-suave:#D5FF61;
+			--zoox-fondo-alt: #101010;
+			--zoox-card:      #141414;
+			--zoox-borde:     #222222;
 		}
 header.major h2 {
 font-size: clamp(2rem, 5vw, 3.4rem);
@@ -83,11 +88,13 @@ line-height: 1.15;
 			max-width: 700px !important;
 			margin: 0 auto 1.5em auto !important;
 			line-height: 1.8 !important;
+			#three { background: var(--zoox-negro) !important; }
 		}
 
 		/* ═══════════════════════════════════════
 		   SECCIÓN 3 — PROCESO 5 PASOS
 		═══════════════════════════════════════ */
+		#three { background: var(--zoox-negro) !important; }
 		#three .inner {
 			width: 95vw !important;
 			max-width: 95vw !important;
@@ -95,14 +102,13 @@ line-height: 1.15;
 		}
 		#three header.major h2 {
 			color: var(--zoox-blanco) !important;
-			border-color: rgba(80,92,71) !important;
+			border-color: rgba(229,229,229,0.15) !important;
+			padding-bottom: 0em !important;
 		}
 		#three header.major p {
-			color: var(--zoox-verde) !important;
+			color: var(--zoox-gris) !important;
 		}
-		#three header.major h2, #three header.major p {
-    color: var(--zoox-verde, #505c47) !important;
-}
+	
 
 		.pasos-grid {
 			display: flex !important;
@@ -118,9 +124,9 @@ line-height: 1.15;
 			width: 160px !important;
 			min-width: 160px !important;
 			height: 160px !important;
-			background: var(--zoox-verde) !important;
-			border: 1px solid rgba(80,92,71) !important;
-			border-radius: 8px !important;
+			background: var(--zoox-card) !important;
+			border: 1px solid var(--zoox-borde) !important;
+			border-radius: 20px !important;
 			display: flex !important;
 			flex-direction: column !important;
 			align-items: center !important;
@@ -130,14 +136,14 @@ line-height: 1.15;
 			transition: all .3s ease !important;
 		}
 		.paso-card:hover {
-			border-color: var(--zoox-crema) !important;
-			background: rgb(50, 51, 41) !important;
+			border-color: var(--zoox-lima-suave) !important;
+			background: #1A1E11 !important;
 			transform: translateY(-4px) !important;
 		}
 		.paso-num {
 			font-family: 'Cera GR', sans-serif !important;
 			font-size: 2.2rem !important;
-			color: var(--zoox-crema) !important;
+			color: var(--zoox-lima) !important;
 			line-height: 1 !important;
 			margin-bottom: 0.4em !important;
 			display: block !important;
@@ -156,7 +162,7 @@ line-height: 1.15;
 			margin: 0 !important;
 		}
 		.paso-flecha {
-			color: var(--zoox-verde) !important;
+			color: var(--zoox-lima-suave) !important;
 			font-size: 1.2rem !important;
 			padding: 0 8px !important;
 			flex-shrink: 0 !important;
@@ -166,23 +172,24 @@ line-height: 1.15;
 		   SECCIÓN — LÍNEA EXTERIORES INTRO
 		═══════════════════════════════════════ */
 		#exteriores {
-			background-color: var(--zoox-crema) !important;
+			background-color: var(--zoox-fondo-alt) !important;
 			text-align: center !important;
 		}
 		#exteriores .inner {
 			text-align: center !important;
 		}
-		#exteriores header.major h2 {
-			color: var(--zoox-verde) !important;
-			border-color: rgba(80,92,71) !important;
-		}
+		#exteriores header.major { margin: 0.3em 0 !important; }
+		#exteriores header.major h2 { margin: 0 0 0.3em 0 !important; 
+	color: var(--zoox-blanco) !important;
+	padding-bottom: 0em !important;
+}
 		#exteriores header.major p {
-			color: var(--zoox-verde) !important;
+			color: var(--zoox-gris) !important;
 		}
 		#exteriores p {
-			color: var(--zoox-verde) !important;
+			color: var(--zoox-gris) !important;
 			max-width: 700px !important;
-			margin: 0 auto 1.5em auto !important;
+			margin: 0 auto 0 auto !important;
 			line-height: 1.8 !important;
 		}
 
@@ -205,7 +212,7 @@ line-height: 1.15;
 			max-width: 300px !important;
 			height: auto !important;
 			max-height: none !important;
-			border-radius: 12px !important;
+			border-radius: 20px !important;
 			overflow: hidden !important;
 			display: flex !important;
 			flex-direction: column !important;
@@ -222,9 +229,11 @@ line-height: 1.15;
 			flex: 1 !important;
 		}
 		.featured-badge {
+			align-self: flex-start !important;
 			display: inline-block !important;
-			background: var(--zoox-verde) !important;
-			color: var(--zoox-negro) !important;
+			background: #282C1C !important;
+			color: var(--zoox-lima) !important;
+			border: 1px solid var(--zoox-lima-suave) !important;
 			font-size: 0.65rem !important;
 			font-weight: 700 !important;
 			letter-spacing: 0.1em !important;
@@ -282,7 +291,7 @@ line-height: 1.15;
 		}
 		.pkg-items li::before {
 			content: '●' !important;
-			color: var(--zoox-verde) !important;
+			color: var(--zoox-lima) !important;
 			font-size: 0.45rem !important;
 			flex-shrink: 0 !important;
 		}
@@ -295,7 +304,7 @@ line-height: 1.15;
 			margin-top: auto !important;
 		}
 		.pkg-bonus {
-			color: var(--zoox-verde) !important;
+			color: var(--zoox-lima) !important;
 			font-size: 0.72rem !important;
 			margin: 0 0 0.2em 0 !important;
 		}
@@ -308,27 +317,29 @@ line-height: 1.15;
 		   PAQUETES EXTERIORES
 		═══════════════════════════════════════ */
 		#paquetes-ext {
-			background-color: var(--zoox-crema) !important;
+			background-color: var(--zoox-fondo-alt) !important;
+			padding-top: 1em !important;
 		}
 		#paquetes-ext .inner {
 			width: 95vw !important;
 			max-width: 95vw !important;
 		}
 		#paquetes-ext .proceso-card {
-			background: #2d3329 !important;
-			border: 1px solid rgba(var(--zoox-verde), 0.5) !important;
+			background: var(--zoox-card) !important;
+			border: 1px solid var(--zoox-borde) !important;
 		}
 		#paquetes-ext .proceso-card.featured {
-			border: 2px solid var(--zoox-verde) !important;
+			border: 2px solid var(--zoox-lima-suave) !important;
+			background: #1A1E11 !important;
 		}
 		#paquetes-ext .paso {
-			color: var(--zoox-crema) !important;
+			color: var(--zoox-lima) !important;
 		}
 		#paquetes-ext .proceso-card h3 {
-			color: var(--zoox-crema) !important;
+			color: var(--zoox-blanco) !important;
 		}
 		#paquetes-ext .pkg-tagline {
-			color: var(--zoox-crema) !important;
+			color: var(--zoox-gris) !important;
 		}
 		#paquetes-ext .pkg-price {
 			color: var(--zoox-blanco) !important;
@@ -343,7 +354,7 @@ line-height: 1.15;
 			color: var(--zoox-blanco) !important;
 		}
 		#paquetes-ext .pkg-tiempo {
-			color: var(--zoox-crema) !important;
+			color: var(--zoox-gris) !important;
 		}
 
 		/* ═══════════════════════════════════════
@@ -439,23 +450,23 @@ line-height: 1.15;
 }
 
 #faq { background:#0A0A0A !important; padding:4em 1.5em !important; }
-#faq .inner { max-width:760px !important; margin:0 auto !important; text-align:center !important; }
-#faq header.major h2 { color:#E5E5E5 !important; text-transform:none !important; letter-spacing:0 !important; }
+#faq .inner { max-width:1100px !important; margin:0 auto !important; text-align:left !important; display:grid !important; grid-template-columns:1fr 1.4fr !important; gap:4em !important; align-items:start !important; }
+#faq header.major h2 { color:#FFFFFF !important; text-transform:none !important; letter-spacing:0 !important;padding-bottom:0em !important;}
 #faq header.major h2::after { display:none !important; }
-#faq header.major p { display:none !important; }
+#faq header.major p { display:none !important; color:#E5E5E5 !important; margin:0 !important;}
 
-#faq .faq-list { display:flex !important; flex-direction:column !important; gap:14px !important; margin-top:2em !important; }
+#faq .faq-list { display:flex !important; flex-direction:column !important; gap:0px !important; margin-top:0em !important; }
 
 #faq .faq-pill {
-	background:#505C47 !important;
-	border-radius:999px !important;
-	border:none !important;
+	background:transparent!important;
+	border-radius:0 !important;
+	border-top:1px solid #222222 !important;
 	overflow:hidden !important;
-	box-shadow:0 2px 10px rgba(0,0,0,0.25) !important;
+	box-shadow:none !important;
 	position:relative !important;
 	transition:all 0.3s ease !important;
 }
-#faq .faq-pill.active { border-radius:18px !important; }
+#faq .faq-pill.active { 0 !important; }
 
 #faq .faq-pregunta {
 	width:100% !important;
@@ -466,7 +477,7 @@ line-height: 1.15;
 	box-shadow:none !important;
 	-webkit-appearance:none !important;
 	appearance:none !important;
-	padding:14px 72px 14px 24px !important;
+	padding:22px 72px 22px 0 !important;
 	display:flex !important;
 	align-items:center !important;
 	justify-content:flex-start !important;
@@ -478,24 +489,25 @@ line-height: 1.15;
 	display:block !important;
 	width:100% !important;
 	font-family:'Cera GR', sans-serif !important;
-	font-size:0.82rem !important;
-	font-weight:500 !important;
-	letter-spacing:0.06em !important;
-	text-transform:uppercase !important;
-	color:#FBF3E0 !important;
+	font-size:1.05rem !important;
+	font-weight:600 !important;
+	letter-spacing:normal !important;
+	text-transform:none !important;
+	color:#FFFFFF !important;
 	line-height:1.4 !important;
 	text-align:left !important;
 }
 
 #faq .faq-icon {
 	position:absolute !important;
-	right:14px !important;
+	right:0 !important;
 	top:50% !important;
 	transform:translateY(-50%) !important;
 	width:32px !important;
 	height:32px !important;
-	background:#0A0A0A !important;
-	color:#FBF3E0 !important;
+	background:transparent !important;
+	color:#D0FF28!important;
+	border:1px solid #3E4720 !important;
 	border-radius:50% !important;
 	display:flex !important;
 	align-items:center !important;
@@ -505,15 +517,15 @@ line-height: 1.15;
 	line-height:1 !important;
 	flex-shrink:0 !important;
 }
-#faq .faq-pill.active .faq-icon { transform:translateY(-50%) rotate(45deg) !important; background:#2D3329 !important; }
+#faq .faq-pill.active .faq-icon { transform:translateY(-50%) rotate(45deg) !important; background:#1A1E11!important; }
 
 #faq .faq-respuesta {
 	max-height:0 !important;
 	overflow:hidden !important;
 	transition:max-height 0.35s ease, padding 0.35s ease !important;
-	padding:0 24px !important;
+	padding:0 !important;
 }
-#faq .faq-pill.active .faq-respuesta { max-height:900px !important; padding:0 24px 18px !important; }
+#faq .faq-pill.active .faq-respuesta { max-height:900px !important; padding:0 72px 22px 0 !important; }
 #faq .faq-respuesta p {
 	font-family:'Cera GR', sans-serif !important;
 	font-size:0.85rem !important;
@@ -522,11 +534,15 @@ line-height: 1.15;
 	text-align:left !important;
 	margin:0 !important;
 }
-
+#faq .faq-list{counter-reset:faq;}
+#faq .faq-pill{counter-increment:faq;}
+#faq .faq-texto::before{content:counter(faq,decimal-leading-zero);color:#D0FF28;font-weight:700;font-size:0.8rem;margin-right:1.4em;}
+#faq .faq-pill:last-child{border-bottom:1px solid #222222 !important;}
+@media(max-width:900px){#faq .inner{grid-template-columns:1fr !important;gap:2em !important;}}
 @media(max-width:600px){
 	#faq .faq-texto { font-size:0.72rem !important; }
-	#faq .faq-pregunta { padding:12px 64px 12px 18px !important; }
-	#faq .faq-icon { right:10px !important; width:28px !important; height:28px !important; min-width:28px !important; min-height:28px !important; }
+	#faq .faq-pregunta { padding:16px 56px 16px 0 !important; }
+	#faq .faq-icon { right:0 !important; width:28px !important; height:28px !important; min-width:28px !important; min-height:28px !important; }
 }
 
 		/* ═══════════════════════════════════════
@@ -924,7 +940,7 @@ line-height: 1.15;
 .banner-galeria-texto{
   position:relative;
   z-index:1;
-  color:#FBF3E0;
+  color:#FFFFFF;
   font-family:'Cera GR', sans-serif;
   font-weight:700;
   font-size:1em;
@@ -936,42 +952,44 @@ line-height: 1.15;
   content:'';
   position:absolute;
   inset:0;
-  background: #2D3329;
+  background: var(--zoox-fondo-alt);
 }
 .btn-galeria{
+  display:inline-flex;
   position:relative;
   z-index:1;
-  background:#505C47;
-  color:#FBF3E0;
+  background:#1A1E11;
+  color:#E0FF70;
   font-family:'Cera GR', sans-serif;
-  font-weight:900;
+  font-weight:700;
   font-size:0.75em;
   letter-spacing:0.06em;
   text-transform:uppercase;
-  padding:0.7em 1.4em;
+  padding:0.45em 0.5em 0.45em 1.4em;
+  border:1px solid #A5C74E;align-items:center;
   border-radius:999px;
   text-decoration:none;
   transition:all .2s;
   margin:0 0.6em;
 }
 .btn-galeria:hover{
-  background:#2d3329;
+  background:#232915;border-color:#D5FF61;
   transform:translateY(-2px);
 }
 /* ===== CARRUSEL GALERÍA (experiencia) - 5 fotos, ratio 3:4 ===== */
-.zc-galeria{background:#FBF3E0;padding:2.5em 0 2em;overflow:hidden;}
+.zc-galeria{background:var(--zoox-negro);padding:2.5em 0 2em;overflow:hidden;}
 .zc-viewport{max-width:1130px;margin:0 auto;overflow:hidden;}
-.zc-titulo{text-align:center;color:#505C47;font-family:'Cera GR',sans-serif;font-weight:900;font: size 0.9em;em;letter: spacing 0.08em;em;text-transform:uppercase;margin:0 0 1.5em;}
+.zc-titulo{text-align:center;color:var(--zoox-blanco);font-family:'Cera GR',sans-serif;font-weight:700;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:normal;line-height:1.15;margin:0 0 0.8em;}
 .zc-track{display:flex;width:max-content;animation:zc-loop 40s linear infinite;}
 .zc-track:hover{animation-play-state:paused;}
 .zc-item{flex:0 0 auto;width:210px;margin-right:1em;}
-.zc-item img{width:210px;aspect-ratio:3/4;object-fit:cover;object-position:center;border-radius:12px;display:block;}
+.zc-item img{width:210px;aspect-ratio:3/4;object-fit:cover;object-position:center;border-radius:20px;display:block;}
 @keyframes zc-loop{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 @media screen and (max-width:736px){
   .zc-item,.zc-item img{width:150px;}
 }
 .btn-ver-galeria{
-  display:block;
+  display:flex;
   width:max-content;
   margin:1.8em auto 0;
   background:#505C47;
@@ -987,7 +1005,7 @@ line-height: 1.15;
   transition:all .2s;
 }
 .btn-ver-galeria:hover{
-  background:#2D3329;
+  .btn-ico{display:inline-flex;align-items:center;justify-content:center;width:1.9em;height:1.9em;margin-left:0.8em;border-radius:50%;background:#31391C;}
 }
 </style>
 <link rel="stylesheet" href="../assets/css/zoox-wa.css">
@@ -1031,9 +1049,9 @@ line-height: 1.15;
 	<section id="three" class="wrapper style3 special">
 		<div class="inner">
 			<header class="major">
-				<h2>¿Cómo es una sesión con ZOOX?</h2>
+				<h2>¿Cómo es una sesión con <span style="color:var(--zoox-lima)">ZOOX</span>?</h2>
 				<div style="max-width:700px; margin:0 auto;">
-	<p>Nuestras mascotas son una fuente inagotable de felicidad y amor puro, ¡y esa energía tan especial es justo lo que queremos inmortalizar en nuestras sesiones! Nos apasiona capturar la auténtica belleza y la personalidad única de cada compañero a través de una amplia variedad de fotografías creativas.</p>
+	<p>En ZOOX inmortalizamos la energía y el amor de tus mascotas a través de fotografías creativas que capturan su belleza y personalidad única.</p>
 </div>
 			</header>
 			<div class="pasos-grid-wrapper">
@@ -1085,38 +1103,38 @@ line-height: 1.15;
 
 	<!-- ── DE LA FOTO AL ARTE ───────────────────── -->
 	<style>
-	#foto-arte{background:#505C47;}
-	.foto-arte-label{text-align:center;font-family:'Cera GR',sans-serif;font-size:0.8em;letter: spacing 0.08em;em;color:var(--zoox-crema);font-weight:900;text-transform:uppercase;margin:0 0 0.6em;}
-	.foto-arte-titulo{text-align:center;font-family:'Cera GR',sans-serif;font-weight:800;font-size:clamp(2rem,3vw,3.1rem);color:var(--zoox-crema);line-height:1;margin:0 0 0.5em;text-transform:none;}
-	.foto-arte-texto{text-align:center;font-family: 'Cera GR',sans-serif;font-size:0.95em;color:#E5E5E5;max-width:620px;margin:0 auto 2.5em;line-height:1.7;}
+	#foto-arte{background:var(--zoox-fondo-alt);}
+	.foto-arte-label{text-align:center;font-family:'Cera GR',sans-serif;font-size:0.8em;letter: spacing 0.12em;em;color:var(--zoox-lima);font-weight:900;text-transform:uppercase;margin:0 0 0.6em;}
+	.foto-arte-titulo{text-align:center;font-family:'Cera GR',sans-serif;font-weight:700;letter-spacing:normal !important;font-size:clamp(2rem,5vw,3.4rem);color:var(--zoox-blanco);line-height:1;margin:0 0 0.5em;text-transform:none;}
+	.foto-arte-texto{text-align:center;font-family: 'Cera GR',sans-serif;font-size:0.95em;color:#E5E5E5;max-width:620px;margin:0 auto 2.5em;line-height:1.15;}
 
 	.ba-wrap{max-width:380px;margin:0 auto;}
-	.ba-slider{position:relative;width:100%;aspect-ratio:3/4;border-radius:14px;overflow:hidden;cursor:ew-resize;user-select:none;box-shadow:0 10px 30px rgba(0,0,0,0.15);--pos:50%;}
+	.ba-slider{position:relative;width:100%;aspect-ratio:3/4;border-radius:20px;overflow:hidden;cursor:ew-resize;user-select:none;box-shadow:0 10px 30px rgba(0,0,0,0.15);--pos:50%;}
 	.ba-img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
 	.ba-before-wrap{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--pos)) 0 0);}
-	.ba-line{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;background:var(--zoox-crema);transform:translateX(-50%);pointer-events:none;}
-	.ba-handle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:var(--zoox-verde);color:var(--zoox-crema);display:flex;align-items:center;justify-content:center;font-size:1.1em;box-shadow:0 2px 10px #2d3329;}
-	.ba-tag{position:absolute;bottom:10px;background:#2d3329;color:var(--zoox-crema);font-family:'Cera GR',sans-serif;font-size:0.62em;letter-spacing:0.01em;padding:0.35em 0.8em;border-radius:20px;text-transform:uppercase;pointer-events:none;}
+	.ba-line{position:absolute;top:0;bottom:0;left:var(--pos);width:2px;background:var(--zoox-lima-suave);transform:translateX(-50%);pointer-events:none;}
+	.ba-handle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:var(--zoox-lima);color:var(--zoox-negro);display:flex;align-items:center;justify-content:center;font-size:1.1em;box-shadow:0 2px 10px rgba(0,0,0,0.5);}
+	.ba-tag{position:absolute;bottom:10px;background:rgba(10,10,10,0.75);color:var(--zoox-blanco);font-family:'Cera GR',sans-serif;font-size:0.62em;letter-spacing:0.01em;padding:0.35em 0.8em;border-radius:20px;text-transform:uppercase;pointer-events:none;}
 	.ba-tag-antes{left:10px;}
 	.ba-tag-despues{right:10px;}
 
-	.foto-arte-pregunta{text-align:center;font-family:'Cera GR',sans-serif;font-size:0.8em;letter-spacing:0.1em;color:var(--zoox-crema);font-weight:900;text-transform:uppercase;margin:3em 0 1.8em;}
+	.foto-arte-pregunta{text-align:center;font-family:'Cera GR',sans-serif;font-size:0.8em;letter-spacing:0.1em;color:var(--zoox-lima);font-weight:900;text-transform:uppercase;margin:3em 0 1.8em;}
 	.ba-bloques{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5em;max-width:960px;margin:0 auto;}
 	.ba-bloque{text-align:center;padding:0 0.6em;}
-	.ba-bloque h4{font-family:'Cera GR',sans-serif;font-size:0.82em;font-weight:900;letter-spacing:0.1em;color:var(--zoox-gris);margin:0 0 0.5em;text-transform:uppercase;}
+	.ba-bloque h4{font-family:'Cera GR',sans-serif;font-size:0.82em;font-weight:900;letter-spacing:0.1em;color:var(--zoox-blanco);margin:0 0 0.5em;text-transform:uppercase;}
 	.ba-bloque p{font-family: 'Cera GR',sans-serif;font-size:0.8em;color: var(--zoox-gris);line-height:1.5;margin:0;}
 	@media screen and (max-width:736px){.ba-bloques{grid-template-columns:1fr 1fr;gap:1.8em 1em;}}
 
 	.ba-cta-section{background:var(--zoox-negro);padding:4em 2em;text-align:center;}
-	.ba-cta-texto{font-family:'Cera GR',sans-serif;font-weight:500;font-size:clamp(1.1rem,2.4vw,1.4rem);color:var(--zoox-crema);line-height:1.6;max-width:560px;margin:0 auto 1.4em;}
-	.ba-cta-btn{display:inline-block;background:var(--zoox-verde);color:var(--zoox-crema);font-family: 'Cera GR',sans-serif;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;font-size:0.85rem;padding:0.9em 2.2em;border-radius:50px;text-decoration:none;transition:all 0.3s ease;}
-	.ba-cta-btn:hover{background:var(--zoox-crema);color:#2D3329;}
+	.ba-cta-texto{font-family:'Cera GR',sans-serif;font-weight:500;font-size:clamp(1.1rem,2.4vw,1.4rem);color:var(--zoox-blanco);line-height:1.6;max-width:560px;margin:0 auto 1.4em;}
+	.ba-cta-btn{display:inline-flex;align-items:center;background:#1A1E11;color:#E0FF70;font-family: 'Cera GR',sans-serif;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;font-size:0.85rem;padding:0.5em 0.6em 0.5em 1.8em;border-radius:50px;text-decoration:none;transition:all 0.3s ease;border:1px solid #A5C74E;}
+	.ba-cta-btn:hover{background:#232915;border-color:#D5FF61;color:#E0FF70;box-shadow:0 0 24px rgba(213,255,97,0.35);}
 	</style>
 	<section id="foto-arte" class="wrapper style2">
 		<div class="inner">
 			<p class="foto-arte-label">De la foto al arte</p>
-			<h2 class="foto-arte-titulo">Transforma ese momento<br>en un recuerdo único.</h2>
-			<p class="foto-arte-texto">Cada imagen pasa por un proceso de selección, corrección y edición profesional para resaltar la personalidad de tu mascota y llevar cada fotografía a su mejor versión.</p>
+			<h2 class="foto-arte-titulo">Transforma ese momento<br>en un <span style="color:var(--zoox-lima)">recuerdo único.</span></h2>
+			<p class="foto-arte-texto">Llevamos la fotografía de tu peludo a su mejor versión.</p>
 
 			<div class="ba-wrap">
 				<div class="ba-slider" id="baSlider">
@@ -1156,7 +1174,7 @@ line-height: 1.15;
 
 	<section class="ba-cta-section">
 		<p class="ba-cta-texto">Tu mascota ya tiene una historia.<br>Nosotros nos encargamos de convertirla en imagen.</p>
-		<a href="#formulario" class="ba-cta-btn">QUIERO MI SESIÓN ZOOX</a>
+		<a href="#formulario" class="ba-cta-btn">QUIERO MI SESIÓN ZOOX <span class="btn-ico">→</span></a>
 	</section>
 
 	<script>
@@ -1185,11 +1203,9 @@ line-height: 1.15;
 	<section id="exteriores" class="wrapper style2">
 		<div class="inner">
 			<header class="major">
-				<h2>Al aire libre</h2>
-				<p>Tu hijo de cuatro patas, en fotos artísticas.</p>
+				<h2>Es momento de un<br><span style="color:var(--zoox-lima)">día diferente</span></h2>
 			</header>
-			<p>Sin importar su personalidad, nivel de energía o miedos, todos son bienvenidos a una sesión al aire libre. Nos adaptamos lo máximo posible a tu mascota para respetar sus límites y garantizar su bienestar. 
-				Revisa nuestros paquetes y elige el que mejor se adapte a tu mascota. ¡Estamos listos para capturar su esencia en un recuerdo inolvidable!</p>
+			<p>Todos son bienvenidos a una sesión al aire libre. Revisa nuestros paquetes y elige el que mejor se adapte a tu mascota. ¡Estamos listos para capturar su esencia!</p>
 		</div>
 	</section>
 
@@ -1271,7 +1287,7 @@ line-height: 1.15;
 
 <!-- GALERÍA - CARRUSEL -->
 <section class="zc-galeria">
-  <h3 class="zc-titulo">Galería ZOOX</h3>
+  <h3 class="zc-titulo">Galería <span style="color:var(--zoox-lima)">ZOOX</span></h3>
   <div class="zc-viewport"><div class="zc-track">
   <a href="../galeria/index.html" class="zc-item"><img src="../galeria/images/thumbs/zoox1.png" alt="Galería ZOOX 1" loading="lazy"></a>
   <a href="../galeria/index.html" class="zc-item"><img src="../galeria/images/thumbs/zoox2.png" alt="Galería ZOOX 2" loading="lazy"></a>
@@ -1285,20 +1301,20 @@ line-height: 1.15;
   <a href="../galeria/index.html" class="zc-item"><img src="../galeria/images/thumbs/zoox10.png" alt="Galería ZOOX 10" loading="lazy"></a>
   <a href="../galeria/index.html" class="zc-item"><img src="../galeria/images/thumbs/zoox11.png" alt="Galería ZOOX 11" loading="lazy"></a>
   </div></div>
-  <a href="../galeria/index.html" class="btn-ver-galeria">VER GALERÍA</a>
+  <a href="../galeria/index.html" class="btn-ver-galeria">VER GALERÍA <span class="btn-ico">→</span></a>
 </section>
 
 <!-- BANNER COMPLEMENTOS -->
 <section class="banner-galeria">
   <p class="banner-galeria-texto">La mejor manera de complementar tu sesión es con un recuerdo físico.</p>
-  <a href="../zooxarts/index.html" class="btn-galeria">CONOCE ZOOX ARTS</a>
+  <a href="../zooxarts/index.html" class="btn-galeria">CONOCE ZOOX ARTS <span class="btn-ico">→</span></a>
 </section>
 
 	<!-- ── FAQ EXTERIORES ─────────────────────── -->
 	<section id="faq" class="wrapper style3">
 		<div class="inner">
 			<header class="major">
-				<h2>Preguntas Frecuentes</h2>
+				<p class="foto-arte-label" style="text-align:left">FAQ</p><h2>Preguntas<br><span style="color:var(--zoox-lima)">Frecuentes</span></h2>
 				<p>Todo lo que necesitas saber antes de tu sesión.</p>
 			</header>
 			<div class="faq-list">
