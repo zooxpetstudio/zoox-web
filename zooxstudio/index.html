@@ -962,10 +962,10 @@ line-height: 1.15;
   color:#E0FF70;
   font-family:'Cera GR', sans-serif;
   font-weight:700;
-  font-size:0.75em;
-  letter-spacing:0.06em;
+  font-size:0.85em;
+  letter-spacing:0.1em;
   text-transform:uppercase;
-  padding:0.45em 0.5em 0.45em 1.4em;
+  padding:0.5em 0.6em 0.5em 1.8em;
   border:1px solid #A5C74E;align-items:center;
   border-radius:999px;
   text-decoration:none;
@@ -973,13 +973,13 @@ line-height: 1.15;
   margin:0 0.6em;
 }
 .btn-galeria:hover{
-  background:#232915;border-color:#D5FF61;
+  background:#232915;border-color:#D5FF61; .btn-ver-galeria:hover{background:#232915;border-color:#D5FF61;box-shadow:0 0 24px rgba(213,255,97,0.35);}
   transform:translateY(-2px);
 }
 /* ===== CARRUSEL GALERÍA (experiencia) - 5 fotos, ratio 3:4 ===== */
 .zc-galeria{background:var(--zoox-negro);padding:2.5em 0 2em;overflow:hidden;}
 .zc-viewport{max-width:1130px;margin:0 auto;overflow:hidden;}
-.zc-titulo{text-align:center;color:var(--zoox-blanco);font-family:'Cera GR',sans-serif;font-weight:700;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:normal;line-height:1.15;margin:0 0 0.8em;}
+.zc-titulo{text-align:center;color:var(--zoox-blanco);font-family:'Cera GR',sans-serif;font-weight:700;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:normal;line-height:1.15;margin:0 0 0.8em;text-transform:none !important;}
 .zc-track{display:flex;width:max-content;animation:zc-loop 40s linear infinite;}
 .zc-track:hover{animation-play-state:paused;}
 .zc-item{flex:0 0 auto;width:210px;margin-right:1em;}
@@ -992,21 +992,23 @@ line-height: 1.15;
   display:flex;
   width:max-content;
   margin:1.8em auto 0;
-  background:#505C47;
-  color:#FBF3E0;
+  background:#1A1E11
+  color: #E0FF70
   font-family:'Cera GR', sans-serif;
-  font-weight:900;
-  font-size:0.75em;
-  letter-spacing:0.06em;
+  font-weight:700;
+  font-size:0.85em;
+  letter-spacing:0.1em;
   text-transform:uppercase;
-  padding:0.7em 1.4em;
+  padding:0.5em 0.6em 0.5em 1.8em;
+  border:1px solid #A5C74E;align-items:center;
   border-radius:999px;
   text-decoration:none;
   transition:all .2s;
 }
-.btn-ver-galeria:hover{
-  .btn-ico{display:inline-flex;align-items:center;justify-content:center;width:1.9em;height:1.9em;margin-left:0.8em;border-radius:50%;background:#31391C;}
-}
+  .btn-ver-galeria:hover{background:#232915;border-color:#D5FF61;box-shadow:0 0 24px rgba(213,255,97,0.35);}
+.btn-ico{display:inline-flex;align-items:center;justify-content:center;width:1.9em;height:1.9em;margin-left:0.8em;border-radius:50%;background:#31391C;}
+.btn-arr{display:inline-block;transition:transform .25s ease;}
+a:hover .btn-arr{transform:translateX(4px);}
 </style>
 <link rel="stylesheet" href="../assets/css/zoox-wa.css">
 <link rel="stylesheet" href="../assets/css/campton.css">
@@ -1174,7 +1176,7 @@ line-height: 1.15;
 
 	<section class="ba-cta-section">
 		<p class="ba-cta-texto">Tu mascota ya tiene una historia.<br>Nosotros nos encargamos de convertirla en imagen.</p>
-		<a href="#formulario" class="ba-cta-btn">QUIERO MI SESIÓN ZOOX <span class="btn-ico">→</span></a>
+		<a href="#formulario" class="ba-cta-btn">QUIERO MI SESIÓN ZOOX <span class="btn-ico"><span class="btn-arr">→</span></span></a>
 	</section>
 
 	<script>
@@ -1287,7 +1289,7 @@ line-height: 1.15;
 
 <!-- GALERÍA - CARRUSEL -->
 <section class="zc-galeria">
-  <h3 class="zc-titulo">Galería <span style="color:var(--zoox-lima)">ZOOX</span></h3>
+  <h2 class="zc-titulo">Galería <span style="color:var(--zoox-lima)">ZOOX</span></h2>
   <div class="zc-viewport"><div class="zc-track">
   <a href="../galeria/index.html" class="zc-item"><img src="../galeria/images/thumbs/zoox1.png" alt="Galería ZOOX 1" loading="lazy"></a>
   <a href="../galeria/index.html" class="zc-item"><img src="../galeria/images/thumbs/zoox2.png" alt="Galería ZOOX 2" loading="lazy"></a>
@@ -1301,13 +1303,13 @@ line-height: 1.15;
   <a href="../galeria/index.html" class="zc-item"><img src="../galeria/images/thumbs/zoox10.png" alt="Galería ZOOX 10" loading="lazy"></a>
   <a href="../galeria/index.html" class="zc-item"><img src="../galeria/images/thumbs/zoox11.png" alt="Galería ZOOX 11" loading="lazy"></a>
   </div></div>
-  <a href="../galeria/index.html" class="btn-ver-galeria">VER GALERÍA <span class="btn-ico">→</span></a>
+  <a href="../galeria/index.html" class="btn-ver-galeria">VER GALERÍA <span class="btn-ico"><span class="btn-arr">→</span></span></a>
 </section>
 
 <!-- BANNER COMPLEMENTOS -->
 <section class="banner-galeria">
   <p class="banner-galeria-texto">La mejor manera de complementar tu sesión es con un recuerdo físico.</p>
-  <a href="../zooxarts/index.html" class="btn-galeria">CONOCE ZOOX ARTS <span class="btn-ico">→</span></a>
+  <a href="../zooxarts/index.html" class="btn-galeria">CONOCE ZOOX ARTS <span class="btn-ico"><span class="btn-arr">→</span></span></a>
 </section>
 
 	<!-- ── FAQ EXTERIORES ─────────────────────── -->
