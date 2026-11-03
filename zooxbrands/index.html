@@ -39,6 +39,11 @@
       --zoox-overlay:  rgba(10,10,10,0.52);
       --zoox-naranja:  #f23a29;
       --zoox-morado:   #221c46;
+      --zoox-lima:     #D0FF28;
+      --zoox-lima-suave:#D5FF61;
+      --zoox-fondo-alt: #101010;
+      --zoox-card:      #141414;
+      --zoox-borde:     #222222;
     }
 
     * { box-sizing: border-box; }
@@ -57,7 +62,7 @@
 
 #creatividad-section h2 {
   font-family: 'Cera GR', sans-serif;
-  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-size: clamp(2rem, 5vw, 3.4rem);
   font-weight: 700;
   color: var(--zoox-gris);
   line-height: 1.15;
@@ -331,7 +336,7 @@
     /* ── HERO ── */
   #hero-brands {
   width: 100%;
-  background: var(--zoox-morado);
+  background: var(--zoox-negro);
 }
 
 .hero-video-wrap {
@@ -354,7 +359,7 @@
   position: relative;
   text-align: center;
   padding: 60px 24px 80px;
-  max-width: 860px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -363,7 +368,7 @@
       font-size: 0.72rem;
       letter-spacing: 0.28em;
       text-transform: uppercase;
-      color: var(--zoox-naranja);
+      color: var(--zoox-lima);
       margin-bottom: 20px;
       opacity: 0;
       animation: fadeUp 0.7s 0.3s forwards;
@@ -371,12 +376,12 @@
 
 .hero-content h1 {
   font-family: 'Cera GR', sans-serif;
-  font-size: clamp(2rem, 5vw, 4rem);
-  font-weight: 600;
-  line-height: 1.0;
-  letter-spacing: -0.01em;
+  font-size: clamp(2.4rem, 6vw, 4.8rem)
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: normal;
   color: var(--zoox-blanco);
-  margin-bottom: 22px;
+  margin-bottom: 14px;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
@@ -386,17 +391,18 @@
 
 .hero-content h1 em {
   font-style: normal;
-  color: var(--zoox-naranja);
+  color: var(--zoox-lima);
 }
 
     .hero-content p {
       font-size: clamp(1rem, 2vw, 1.2rem);
-      color: var(--zoox-muted);
+      color: var(--zoox-gris);
       line-height: 1.6;
       max-width: 560px;
       margin: 0 auto 36px;
       opacity: 0;
       animation: fadeUp 0.7s 0.7s forwards;
+      font-family: 'Cera GR', sans-serif;
     }
 
     .hero-ctas {
@@ -409,21 +415,24 @@
     }
 
 .btn-primary-zoox {
-  background: var(--zoox-naranja);
-  color: var(--zoox-gris);
+  background: #1A1E11;
+  color: #E0FF70;
   font-family: 'Cera GR', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.9rem;
   letter-spacing: 0.06em;
-  padding: 14px 32px;
-  border-radius: 2px;
+  padding: 8px 10px 8px 28px;
+  border-radius: 999px;
   text-decoration: none;
   transition: opacity 0.2s, transform 0.2s;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center; border: 1px solid #A5C74E;
 }
 
-    .btn-primary-zoox:hover { opacity: 0.88; transform: translateY(-2px); color: var(--zoox-morado); }
-
+  .btn-primary-zoox:hover { background:#232915; border-color:#D5FF61; color:#E0FF70; box-shadow:0 0 24px rgba(213,255,97,0.35);}
+  .btn-ico{display:inline-flex;align-items:center;justify-content:center;width:1.9em;height:1.9em;margin-left:0.8em;border-radius:50%;background:#31391C;}
+  .btn-arr{display:inline-block;transition:transform .25s ease;}
+  a:hover .btn-arr{transform:translateX(4px);}
     .btn-outline-zoox {
       border: 1.5px solid rgba(255,255,255,0.45);
       color: var(--zoox-blanco);
@@ -465,7 +474,7 @@
     .scroll-line {
       width: 1px;
       height: 44px;
-      background: linear-gradient(to bottom, var(--zoox-naranja), transparent);
+      background: linear-gradient(to bottom, var(--zoox-lima), transparent);
       animation: scrollPulse 1.8s infinite;
     }
 
@@ -1231,7 +1240,7 @@ justify-content: center; !important;
 .znb-section .znb-pill:hover i{color:var(--zoox-gris)}
 /* Botones */
 .btn-primary-zoox{transition:background-color .3s ease,color .3s ease,transform .3s ease,box-shadow .3s ease}
-.btn-primary-zoox:hover{background:var(--zoox-gris);color:var(--zoox-morado);opacity:1;transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
+
 .zoox-cta{transition:background-color .3s ease,color .3s ease,transform .3s ease,box-shadow .3s ease}
 .zoox-cta:hover{background:var(--zoox-gris)!important;color:var(--zoox-morado)!important;transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}
 
@@ -1306,7 +1315,7 @@ h2.is-visible em,h2.is-visible span{background-size:100% 3px!important}
     <h1>Construimos la <em>identidad, imagen y comunicación</em> de marcas que viven en el mundo pet.</h1>
     <p>Somos el estudio creativo especializado en mascotas y marcas petfriendly.</p>
     <div class="hero-ctas">
-      <a href="#formulario" class="btn-primary-zoox">Agenda una reunión</a>
+      <a href="#formulario" class="btn-primary-zoox">Agenda una reunión <span class="btn-ico"><span class="btn-arr">→</span></span></a>
     </div>
   </div>
 </section>
