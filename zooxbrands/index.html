@@ -586,9 +586,9 @@ font-weight: 700;
   line-height:1.65;
   margin:0;
 }
-#por-que-zoox .zbp-label { color: var(--zoox-naranja); }
-#por-que-zoox .zbp-title { color: var(--zoox-morado); }
-#por-que-zoox .zbp-title em { color: var(--zoox-naranja); }
+#por-que-zoox .zbp-label { color: var(--zoox-lima); }
+#por-que-zoox .zbp-title { color: var(--zoox-blanco); }
+#por-que-zoox .zbp-title em { color: var(--zoox-lima); }
 
     .logos-b2b-wrapper { text-align:center; margin-top:20px; border-top: 1px solid rgba(0,0,0,0.08); padding-top:40px; }
     .logos-label {
@@ -728,8 +728,8 @@ font-weight: 700;
     .zbp-title {
       font-family: 'Cera GR', sans-serif;
       font-size: clamp(2rem, 5vw, 3.4rem);
-      font-weight: 600;
-      line-height: 1.05;
+      font-weight: 700;
+      line-height: 1.15;
       color: var(--zoox-texto);
       margin-bottom: 20px;
       text-align: center;
@@ -829,7 +829,7 @@ justify-content: center; !important;
     }
 
     /* ── POR QUÉ ZOOX ── (temporalmente oculto) */
-    #por-que-zoox { display: block !important; background: var(--zoox-gris); padding: 60px 0 80px; overflow:hidden; }
+    #por-que-zoox { display: block !important; background: var(--zoox-negro); padding: 60px 0 80px; overflow:hidden; }
     .razones-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -1259,13 +1259,13 @@ h2.is-visible em,h2.is-visible span{background-size:100% 3px!important}
 }
 /* Por qué ZOOX: tarjetas */
 .razones-grid-b2b{display:flex;flex-wrap:wrap;justify-content:center;gap:24px;max-width:1000px}
-.razon-b2b{flex:0 1 calc(33.333% - 16px);flex-direction:column;align-items:center;text-align:center;gap:18px;background:var(--zoox-morado);border:1.5px solid var(--zoox-naranja);padding:34px 24px;transition:opacity .7s ease,filter .7s ease,transform .35s ease,background-color .35s ease,box-shadow .35s ease}
-.razon-b2b:hover{background:#181434;transform:translateY(-6px);box-shadow:0 14px 28px rgba(0,0,0,.25)}
-.razon-icon{width:64px;height:64px;border:0;border-radius:50%;background:var(--zoox-naranja);transition:background-color .3s ease}
-.razon-icon i{font-size:1.6rem;color:var(--zoox-gris);transition:color .3s ease}
-.razon-b2b:hover .razon-icon{background:var(--zoox-gris)}
-.razon-b2b:hover .razon-icon i{color:var(--zoox-naranja)}
-.razon-b2b h5{color:var(--zoox-gris);margin:0 0 10px;min-height:0}
+.razon-b2b{flex:0 1 calc(33.333% - 16px);flex-direction:column;align-items:center;text-align:center;gap:18px;background:var(--zoox-card);border:1px solid var(--zoox-borde);border-radius:20px;padding:34px 24px;transition:opacity .7s ease,filter .7s ease,transform .35s ease,background-color .35s ease,box-shadow .35s ease,border-color .35s ease;}
+.razon-b2b:hover{background:#1A1E11;border-color:var(--zoox-lima-suave);transform:translateY(-6px);box-shadow:0 14px 28px rgba(0,0,0,.25)}
+.razon-icon{width:64px;height:64px;border:0;border-radius:50%;background:#3E4720;transition:background-color .3s ease}
+.razon-icon i{font-size:1.6rem;color:var(--zoox-lima);transition:color .3s ease}
+.razon-b2b:hover .razon-icon{background:var(--zoox-lima)}
+.razon-b2b:hover .razon-icon i{color:var(--zoox-negro)}
+.razon-b2b h5{color:var(--zoox-blanco);margin:0 0 10px;min-height:0}
 .razon-b2b p{color:var(--zoox-gris);opacity:.85}
 @media(max-width:900px){.razon-b2b{flex-basis:calc(50% - 12px)}}
 @media(max-width:600px){.razon-b2b{flex-basis:100%}}
