@@ -1214,20 +1214,25 @@ justify-content: center; !important;
 }
 .pilar-item ul li{font-family:'Cera GR',sans-serif;font-size:.85rem;color:var(--zoox-gris);opacity:.85;line-height:1.6;margin-bottom:4px}
 .pilar-item ul li::marker{color:var(--zoox-lima)}
-#faq-brands{background:var(--zoox-naranja);padding:70px 20px}
-#faq-brands .zfq-inner{max-width:760px;margin:0 auto;text-align:center}
-#faq-brands .zfq-title{font-family:'Cera GR',sans-serif;font-size:clamp(2rem,5vw,3.4rem);font-weight:700;line-height:1.05;color:#e5e5e5;margin-bottom:.8em}
-#faq-brands .zfq-list{display:flex;flex-direction:column;gap:14px}
-#faq-brands .zfq-pill{background:#221c46;border-radius:999px;overflow:hidden;position:relative;transition:border-radius .3s}
-#faq-brands .zfq-pill.active{border-radius:18px}
-#faq-brands .zfq-q{width:100%;min-height:52px;background:transparent;border:0;outline:0;box-shadow:none;appearance:none;padding:14px 72px 14px 24px;display:flex;align-items:center;cursor:pointer;position:relative}
-#faq-brands .zfq-text{width:100%;text-align:left;color:#e5e5e5;font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;line-height:1.4;font-family:'Cera GR',sans-serif;}
-#faq-brands .zfq-icon{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;background:var(--zoox-naranja);color:#e5e5e5;display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1;transition:transform .3s}
+#faq-brands{background:var(--zoox-fondo-alt);padding:70px 20px}
+#faq-brands .zfq-inner{max-width:1100px;margin:0 auto;text-align:left;display:grid;grid-template-columns:1fr 1.4fr;gap:4em;align-items:start}
+#faq-brands .zfq-title{font-family:'Cera GR',sans-serif;font-size:clamp(2rem,5vw,3.4rem);font-weight:700;line-height:1.15;color:#FFFFFF;margin-bottom:.8em}
+#faq-brands .zfq-list{display:flex;flex-direction:column;gap:0px}
+#faq-brands .zfq-pill{background:transparent;border-radius:0px;overflow:visible;position:relative;transition:border-radius .3s;agrega border-top:1px solid #222222;}
+#faq-brands .zfq-pill.active{border-radius:0px}
+#faq-brands .zfq-q{width:100%;min-height:64px;background:transparent;border:0;outline:0;box-shadow:none;appearance:none;padding:22px 72px 22px 0;display:flex;align-items:center;cursor:pointer;position:relative}
+#faq-brands .zfq-text{width:100%;text-align:left;color:#FFFFFF;font-size:.1.05rem;font-weight:600;letter-spacing:normal;text-transform:none;line-height:1.4;font-family:'Cera GR',sans-serif;}
+#faq-brands .zfq-icon{position:absolute;right:0;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;background:transparent;color:#D0FF28;display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1;transition:transform .3s}
 #faq-brands .zfq-pill.active .zfq-icon{transform:translateY(-50%) rotate(45deg)}
 #faq-brands .zfq-a{max-height:0;overflow:hidden;padding:0 24px;transition:max-height .35s ease,padding .35s ease}
-#faq-brands .zfq-pill.active .zfq-a{max-height:400px;padding:0 24px 18px}
-#faq-brands .zfq-a p{color:#e5e5e5;font-size:.85rem;line-height:1.6;text-align:left;margin:0}
-@media(max-width:600px){#faq-brands .zfq-text{font-size:.72rem}#faq-brands .zfq-q{padding:12px 64px 12px 18px}}
+#faq-brands .zfq-pill.active .zfq-a{max-height:400px;padding:0 72px 22px 0;}
+#faq-brands .zfq-a p{color:#e5e5e5;font-size:.85rem;line-height:1.6;text-align:left;margin:0;font-family:'Cera GR',sans-serif;}
+#faq-brands .zfq-list{counter-reset:faq}
+#faq-brands .zfq-pill{counter-increment:faq}
+#faq-brands .zfq-text::before{content:counter(faq,decimal-leading-zero);color:#D0FF28;font-weight:700;font-size:.8rem;margin-right:1.4em}
+#faq-brands .zfq-pill:last-child{border-bottom:1px solid #222222}
+@media(max-width:900px){#faq-brands .zfq-inner{grid-template-columns:1fr;gap:2em}}
+@media(max-width:600px){#faq-brands .zfq-text{font-size:.72rem}#faq-brands .zfq-q{padding:16px 56px 16px 0}}
 .pilar-item{position:relative}
 .pilar-item .pilar-ico{position:absolute;top:24px;right:22px;width:52px;height:52px;border-radius:50%;background:#3E4720;color:var(--zoox-lima);display:flex;align-items:center;justify-content:center;font-size:1.4rem}
 .pilar-item .pilar-etapa{margin-top:16px;padding-top:14px;border-top:1px solid var(--zoox-borde);font-size:.85rem;line-height:1.5;color:var(--zoox-gris)}
@@ -1249,9 +1254,8 @@ justify-content: center; !important;
 
 /* FAQ */
 #faq-brands .zfq-pill{transition:background-color .3s ease,border-radius .3s ease}
-#faq-brands .zfq-pill:hover{background:#181434}
-#faq-brands .zfq-icon{transition:transform .3s ease,background-color .3s ease,color .3s ease}
-#faq-brands .zfq-pill:hover .zfq-icon{background:var(--zoox-gris);color:var(--zoox-morado)}
+#faq-brands .zfq-icon{transition:transform .3s ease,background-color .3s ease,color .3s ease,border-color .3s ease,box-shadow .3s ease}
+#faq-brands .zfq-pill:hover .zfq-icon{background:#1A1E11;border-color:#D5FF61;box-shadow:0 0 24px rgba(213,255,97,0.35)}
 /* Línea naranja animada en títulos */
 #creatividad-section h2 em,#propuesta-section h2 em,#servicios .zbp-title em,#por-que-zoox .zbp-title em,.znb-title span,#formulario h2 em{background:linear-gradient(var(--zoox-lima),var(--zoox-lima)) no-repeat 0 100%/0 3px;padding-bottom:6px;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size .9s ease .4s}
 h2.is-visible em,h2.is-visible span{background-size:100% 3px!important}
@@ -1469,7 +1473,7 @@ h2.is-visible em,h2.is-visible span{background-size:100% 3px!important}
   </section>
 <section id="faq-brands">
   <div class="zfq-inner">
-    <h2 class="zfq-title">Preguntas Frecuentes</h2>
+    <h2 class="zfq-title">Preguntas<br><span style="color:var(--zoox-lima)">Frecuentes</span></h2>
     <div class="zfq-list">
       <div class="zfq-pill"><button class="zfq-q" onclick="toggleFaqBrands(this)"><span class="zfq-text">¿Qué tipo de marcas trabajan con ZOOX?</span><span class="zfq-icon">+</span></button><div class="zfq-a"><p>Negocios del mundo animal: veterinarias, peluquerías, adiestradores, tiendas, residencias, criadores, refugios y marcas de alimentación y accesorios.</p></div></div>
       <div class="zfq-pill"><button class="zfq-q" onclick="toggleFaqBrands(this)"><span class="zfq-text">¿Puedo contratar un solo servicio?</span><span class="zfq-icon">+</span></button><div class="zfq-a"><p>Sí. Puedes contratar solo identidad, imagen, comunicación o web, o combinarlos en un paquete a tu medida.</p></div></div>
