@@ -1032,45 +1032,27 @@ justify-content: center; !important;
 
     .btn-wa:hover { background: var(--zoox-amarillo); color: var(--zoox-negro); }
 
-    /* ── FOOTER ── */
-    #footer {
-      background-color: var(--zoox-negro) !important;
-      padding: 3em 2em !important;
-      text-align: center !important;
-    }
-    .footer-inner {
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      gap: 1em !important;
-    }
-    .footer-logo {
-      height: 36px !important;
-      width: auto !important;
-      opacity: 0.85 !important;
-    }
-    .footer-copy {
-      color: #e5e5e5 !important;
-      font-size: 0.7rem !important;
-      letter-spacing: 0.08em !important;
-      margin: 0 !important;
-    }
-    .footer-redes {
-      list-style: none !important;
-      padding: 0 !important;
-      margin: 0 !important;
-      display: flex !important;
-      gap: 1.5em !important;
-    }
-    .footer-redes li a {
-      color: #e5e5e5 !important;
-      font-size: 1.2rem !important;
-      border: none !important;
-      transition: color 0.3s !important;
-    }
-    .footer-redes li a:hover {
-      color: var(--zoox-amarillo) !important;
-    }
+/* ═══════════════════════════════════════
+		   FOOTER
+═══════════════════════════════════════ */
+#footer{background-color:var(--zoox-negro) !important;border-top:1px solid #222222 !important;padding:4em 2em 2em !important;text-align:left !important;}
+.footer-inner{display:flex !important;justify-content:space-between !important;align-items:flex-start !important;gap:3em !important;max-width:1100px;margin:0 auto;}
+.footer-logo{height:36px !important;width:auto !important;}
+.footer-label{color:#D0FF28 !important;font-size:0.8rem !important;font-weight:700 !important;letter-spacing:0.15em !important;text-transform:uppercase !important;margin:1.4em 0 0.8em !important; line-height:1.6 !important;}
+.footer-right .footer-label{margin-top:0 !important;}
+.footer-desc{color:#E5E5E5 !important;font-size:1.05rem !important;line-height:1.6 !important;max-width:420px;margin:0 0 1.6em !important;}
+.footer-btns{display:flex;flex-wrap:wrap;gap:0.8em;}
+.footer-contacto{list-style:none !important;padding:0 !important;margin:0 !important;display:flex;flex-direction:column;gap:0.9em;}
+.footer-contacto li{display:flex;align-items:center;gap:0.9em;color:#E5E5E5;padding:0 !important;}
+.footer-contacto a{display:flex;align-items:center;gap:0.9em;color:#E5E5E5 !important;border:none !important;text-decoration:none;transition:color .3s;}
+.footer-contacto a:hover{color:#FFFFFF !important;}
+.fc-ico{display:flex;align-items:center;justify-content:center;width:40px;height:40px;font-size:1rem;border:1px solid #3E4720;border-radius:50%;background:#10130B;color:#D0FF28;transition:all .3s;}
+.footer-contacto a:hover .fc-ico{background:#1A1E11;border-color:#D5FF61;box-shadow:0 0 24px rgba(213,255,97,0.35);}
+.footer-redes{display:flex;gap:0.9em;margin-top:1.2em;}
+.footer-redes a{border:none !important;}
+.footer-redes a:hover .fc-ico{background:#1A1E11;border-color:#D5FF61;box-shadow:0 0 24px rgba(213,255,97,0.35);}
+.footer-copy{color:#9A9A9A !important;font-size:0.7rem !important;letter-spacing:0.08em !important;text-align:center !important;margin:3em 0 0 !important;}
+@media(max-width:736px){.footer-inner{flex-direction:column;}}
 
     .wa-float:hover { transform: scale(1.05); color: white; }
 
@@ -1541,23 +1523,31 @@ h2.is-visible em,h2.is-visible span{background-size:100% 3px!important}
 
 <!-- ========== FOOTER ========== -->
   <footer id="footer">
-    <div class="footer-inner">
+  <div class="footer-inner">
+    <div class="footer-left">
       <img src="assets/img/logoblanco-zoox.png" alt="ZOOX Pet Studio" class="footer-logo" />
-      <p class="footer-copy">© 2026 · Lima, Perú · Todos los derechos reservados.</p>
-      <ul class="footer-redes">
-        <li>
-          <a href="https://instagram.com/zoox.petstudio" target="_blank" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://facebook.com/zooxpetstudio" target="_blank" aria-label="Facebook">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-        </li>
-      </ul>
+      <p class="footer-label">Estudio creativo especializado<br>en mascotas y marcas pet friendly</p>
+      <p class="footer-desc">Tenemos los complementos perfectos pensados para cada público.</p>
+      <div class="footer-btns">
+        <a href="../zooxstudio/index.html" class="btn-primary-zoox">ZOOX Studio <span class="btn-ico"><span class="btn-arr">→</span></span></a>
+        <a href="../zooxarts/index.html" class="btn-primary-zoox">ZOOX Arts <span class="btn-ico"><span class="btn-arr">→</span></span></a>
+      </div>
     </div>
-  </footer>
+    <div class="footer-right">
+      <p class="footer-label">Contacto</p>
+      <ul class="footer-contacto">
+        <li><a href="https://wa.me/51977325372" target="_blank"><span class="fc-ico"><i class="fas fa-phone"></i></span>977 325 372</a></li>
+        <li><a href="mailto:zoox.petstudio@gmail.com"><span class="fc-ico"><i class="fas fa-envelope"></i></span>zoox.petstudio@gmail.com</a></li>
+        <li><span class="fc-ico"><i class="fas fa-map-marker-alt"></i></span>Lima, Perú</li>
+      </ul>
+      <div class="footer-redes">
+        <a href="https://facebook.com/zooxpetstudio" target="_blank" aria-label="Facebook"><span class="fc-ico"><i class="fab fa-facebook-f"></i></span></a>
+        <a href="https://instagram.com/zoox.petstudio" target="_blank" aria-label="Instagram"><span class="fc-ico"><i class="fab fa-instagram"></i></span></a>
+      </div>
+    </div>
+  </div>
+  <p class="footer-copy">© 2026 · Todos los derechos reservados.</p>
+</footer>
 
   <!-- Botón flotante WhatsApp -->
 <style>
