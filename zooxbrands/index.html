@@ -490,23 +490,23 @@ font-weight: 700;
     #formulario .form-group.full { grid-column: 1 / -1; }
 #formulario .form-group label {
   font-family:'Cera GR',sans-serif;
-  font-size:0.78rem;
-  font-weight:600;
-  letter-spacing:0.06em;
-  text-transform:uppercase;
-  color: var(--zoox-gris);
-  opacity: 0.85;
+  font-size:0.85rem;
+  font-weight:700;
+  letter-spacing:normal;
+  text-transform:none;
+  color: #FFFFFF;
+  opacity: 1;
 }
     #formulario .form-group input,
     #formulario .form-group select,
     #formulario .form-group textarea {
       font-family:'Cera GR',sans-serif;
       padding: 14px 18px;
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 4px;
+      border: 1px solid #222222;
+      border-radius: 12px;
       font-size:0.95rem;
       color: var(--zoox-blanco);
-      background: rgba(255,255,255,0.06);
+      background: #141414;
       transition: border-color 0.2s, background 0.2s;
     }
 #formulario .form-group input:focus,
@@ -524,12 +524,12 @@ font-weight: 700;
     #formulario .form-group select {
   font-family:'Cera GR',sans-serif;
   padding: 14px 42px 14px 18px;
-  border: 1.5px solid rgba(242,58,41,0.55);
-  border-radius: 4px;
+  border: 1px solid #222222;
+  border-radius: 12px;
   font-size:0.95rem;
   color: #FFFFFF;
-  background-color: rgba(255,255,255,0.10);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23f23a29' d='M0 0l6 8 6-8z'/%3E%3C/svg%3E");
+  background-color: #141414;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23D0FF28' d='M0 0l6 8 6-8z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 16px center;
   appearance: none;
@@ -539,13 +539,15 @@ font-weight: 700;
 }
 #formulario .form-group select:focus {
   outline: none;
-  border-color: var(--zoox-naranja);
-  background-color: rgba(255,255,255,0.14);
+  border-color: var(--zoox-lima-suave);
+  background-color: #141414;
 }
 #formulario .form-group select option {
   background: #1A1A1A;
   color: #FFFFFF;
 }
+  .form-submit .btn-primary-zoox{cursor:pointer;height:auto;line-height:1.4;box-shadow:none;}
+  .form-submit .btn-primary-zoox:hover{box-shadow:0 0 24px rgba(213,255,97,0.35);}
 
     /* ── POR QUÉ ZOOX B2B NUEVO ── */
     .razones-grid-b2b {
@@ -1218,11 +1220,11 @@ justify-content: center; !important;
 #faq-brands .zfq-inner{max-width:1100px;margin:0 auto;text-align:left;display:grid;grid-template-columns:1fr 1.4fr;gap:4em;align-items:start}
 #faq-brands .zfq-title{font-family:'Cera GR',sans-serif;font-size:clamp(2rem,5vw,3.4rem);font-weight:700;line-height:1.15;color:#FFFFFF;margin-bottom:.8em}
 #faq-brands .zfq-list{display:flex;flex-direction:column;gap:0px}
-#faq-brands .zfq-pill{background:transparent;border-radius:0px;overflow:visible;position:relative;transition:border-radius .3s;agrega border-top:1px solid #222222;}
+#faq-brands .zfq-pill{background:transparent;border-radius:0;overflow:visible;position:relative;transition:border-radius .3s;border-top:1px solid #222222;}
 #faq-brands .zfq-pill.active{border-radius:0px}
 #faq-brands .zfq-q{width:100%;min-height:64px;background:transparent;border:0;outline:0;box-shadow:none;appearance:none;padding:22px 72px 22px 0;display:flex;align-items:center;cursor:pointer;position:relative}
 #faq-brands .zfq-text{width:100%;text-align:left;color:#FFFFFF;font-size:.1.05rem;font-weight:600;letter-spacing:normal;text-transform:none;line-height:1.4;font-family:'Cera GR',sans-serif;}
-#faq-brands .zfq-icon{position:absolute;right:0;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;background:transparent;color:#D0FF28;display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1;transition:transform .3s}
+#faq-brands .zfq-icon{position:absolute;right:0;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;background:transparent;color:#D0FF28;display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1;transition:transform .3s;border:1px solid #3E4720;}
 #faq-brands .zfq-pill.active .zfq-icon{transform:translateY(-50%) rotate(45deg)}
 #faq-brands .zfq-a{max-height:0;overflow:hidden;padding:0 24px;transition:max-height .35s ease,padding .35s ease}
 #faq-brands .zfq-pill.active .zfq-a{max-height:400px;padding:0 72px 22px 0;}
@@ -1484,11 +1486,11 @@ h2.is-visible em,h2.is-visible span{background-size:100% 3px!important}
   </div>
 </section>
 <!-- ========== CONTACT BRANDS - clonado de Experiencia con copy Brands ========== -->
-<section id="formulario" class="wrapper" style="background: var(--zoox-morado); padding: 60px 0;">
+<section id="formulario" class="wrapper" style="background: var(--zoox-negro); padding: 60px 0;">
     <div class="inner" style="max-width: 760px; margin: 0 auto; padding: 0 2em;">
      <header class="major" style="text-align:center; margin-bottom: 3em;">
-    <h2 style="font-family:'Cera GR',sans-serif; font-size: clamp(2rem,5vw,3.4rem); font-weight:700; color: var(--zoox-gris); margin-bottom:0.4em; line-height:1.05;">¿Tu marca está lista<br>para dar el <em style="font-style:normal; color: var(--zoox-naranja);">salto?</em></h2>
-    <p style="font-family:'Cera GR',sans-serif; color: var(--zoox-gris); opacity:0.75; font-size:1rem; line-height:1.7; max-width:560px; margin: 1em auto 0;">Cuéntanos qué necesita tu marca. Te respondemos en a la brevedad posible para conversar sobre tu requerimiento.</p>
+    <h2 style="font-family:'Cera GR',sans-serif; font-size: clamp(2rem,5vw,3.4rem); font-weight:700; color: var(--zoox-blanco); margin-bottom:0.4em; line-height:1.15;">¿Tu marca está lista<br>para dar el <em style="font-style:normal; color: var(--zoox-lima);">salto?</em></h2>
+    <p style="font-family:'Cera GR',sans-serif; color: var(--zoox-blanco); opacity:0.75; font-size:1rem; line-height:1.7; max-width:560px; margin: 1em auto 0;">Cuéntanos qué necesita tu marca. Te respondemos en a la brevedad posible para conversar sobre tu requerimiento.</p>
 </header>
         <form class="zoox-form" action="https://formsubmit.co/zoox.petstudio@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="Consulta desde la web - ZOOX Brands">
@@ -1531,7 +1533,7 @@ h2.is-visible em,h2.is-visible span{background-size:100% 3px!important}
             </div>
             <input type="hidden" name="_captcha" value="false">
             <div class="form-submit" style="text-align:center; margin-top:2em;">
-                <button type="submit" class="zoox-cta" style="cursor:pointer; display:inline-block; background: var(--zoox-naranja); color: var(--zoox-gris); padding:0.9em 2.5em; border-radius:50px; font-family:'Cera GR',sans-serif; font-weight:600; letter-spacing:0.06em; border:none;">PRIMERA CONSULTA GRATIS</button>
+                  <button type="submit" class="btn-primary-zoox">PRIMERA CONSULTA GRATIS <span class="btn-ico"><span class="btn-arr">→</span></span></button>
             </div>
         </form>
     </div>
