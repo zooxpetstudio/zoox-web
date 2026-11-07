@@ -113,9 +113,9 @@
 </style>
 <style>
 .proceso-steps-rect{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; max-width:1000px; margin:0 auto;}
-.proceso-step-rect{background:var(--zoox-amarillo)!important; padding:1.4em 1.2em!important; border-radius:8px!important; color:#0a0a0a!important; text-align:center;}
-.proceso-step-rect i{color:var(--zoox-negro); font-size:1.6rem!important; margin-bottom:0.6em; display:block;}
-.proceso-step-rect h4{font-family:'Cera GR',sans-serif; margin:0; color:#0A0A0A; font-size:0.85rem!important; text-transform:uppercase; letter-spacing:0.06em;}
+.proceso-step-rect{background:var(--zoox-card)!important; padding:1.4em 1.2em!important; border-radius:20px!important; color:#FFFFFF!important; text-align:center; border:1px solid var(--zoox-borde)!important;}
+.proceso-step-rect i{color:var(--zoox-lima); font-size:1.6rem!important; margin-bottom:0.6em; display:block;}
+.proceso-step-rect h4{font-family:'Cera GR',sans-serif; margin:0; color:#FFFFFF; font-size:0.85rem!important; text-transform:uppercase; letter-spacing:0.06em;}
 
 @media screen and (max-width:900px){
   .proceso-steps-rect{grid-template-columns:repeat(2,1fr);}
@@ -125,7 +125,7 @@
 .zc-btn-wrap{text-align:center;margin:-1em 0 1em}
 .zc-btn{display:inline-block;background:var(--zoox-amarillo);color:var(--zoox-negro);padding:.9em 2.2em;border-radius:50px;font-family:'Cera GR',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background-color .3s ease,color .3s ease,transform .3s ease,box-shadow .3s ease}
 .zc-btn:hover{background:var(--zoox-negro);color:var(--zoox-amarillo);transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25)}  
-#zooxart-titulo h2,#polos-zoox header.major h2,#posters header.major h2,#banners header.major h2,#faq-posters header.major h2{font-family:'Cera GR',sans-serif!important;font-size:clamp(2rem,5vw,3.4rem)!important;font-weight:700!important;line-height:1.05!important;letter-spacing:0!important;text-transform:none!important}
+#zooxart-titulo h2,#polos-zoox header.major h2,#posters header.major h2,#banners header.major h2,#faq-posters header.major h2{font-family:'Cera GR',sans-serif!important;font-size:clamp(2rem,5vw,3.4rem)!important;font-weight:700!important;line-height:1.15!important;letter-spacing:0!important;text-transform:none!important}
 #polos-zoox header.major h2::after,#posters header.major h2::after,#banners header.major h2::after{display:none!important}
 #zooxart-titulo h2 em,#polos-zoox h2 em,#posters h2 em,#banners h2 em,#faq-posters h2 em{font-style:normal;background:linear-gradient(var(--zoox-amarillo),var(--zoox-amarillo)) no-repeat 0 100%/0 6px;padding-bottom:4px;transition:background-size .9s ease .4s}
 #zooxart-titulo h2 em,#faq-posters h2 em{color:var(--zoox-amarillo)}
@@ -140,8 +140,8 @@ h2.is-visible em{background-size:100% 6px!important}
 .zc-item:hover img{transform:translateY(-6px) scale(1.03);box-shadow:0 14px 28px rgba(0,0,0,.25)}
 
 /* Proceso (amarillo) y specs */
-.proceso-step-rect{transition:background-color .35s ease,transform .35s ease,box-shadow .35s ease}
-.proceso-step-rect:hover{background:var(--zoox-negro)!important;transform:translateY(-6px);box-shadow:0 14px 28px rgba(0,0,0,.2)}
+.proceso-step-rect{transition:background-color .35s ease,transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.proceso-step-rect:hover{background:#1A1E11!important;border-color:var(--zoox-lima-suave)!important;;transform:translateY(-6px);box-shadow:0 14px 28px rgba(0,0,0,.2)}
 .proceso-step-rect:hover i{color:var(--zoox-amarillo)}
 .proceso-step-rect:hover h4,.proceso-step-rect:hover p{color:#fff!important}
 .spec-verde-mini{transition:transform .35s ease,box-shadow .35s ease}
@@ -206,7 +206,7 @@ h2.is-visible em{background-size:100% 6px!important}
 
 <section id="zooxart-titulo" style="background:#0a0a0a; text-align:center; padding:3em 2em;">
 <div class="inner">
-<h2 style="font-family:'Cera GR','Campton',sans-serif; font-size:clamp(2rem,4vw,2.8rem); letter-spacing:0.12em; color:#fff; margin-bottom:0.6em; font-weight:500; text-transform:uppercase;">ZOOX <em>Arts</em></h2>
+<h2 style="font-family:'Cera GR','Campton',sans-serif; font-size:clamp(2rem,4vw,2.8rem); letter-spacing:0.12em; color:#fff; margin-bottom:0.3em; font-weight:500; text-transform:uppercase;">ZOOX <em>Arts</em></h2>
 <p style="color:#E5E5E5; max-width:680px; margin:0 auto; line-height:1.8; font-size:0.95rem; font-weight:300; font-family:'Campton',sans-serif;">En ZOOX transformamos el amor por tu mascota en productos personalizados y exclusivos. Diseñamos polos, banners digitales y pósters físicos con acabados de alta calidad. Cada diseño es especial, el regalo perfecto para un amante de las mascotas.</p>
 
   <div style="text-align:center; margin:2.2em 0 1.5em;">
