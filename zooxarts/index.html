@@ -172,8 +172,6 @@ h2.is-visible em{background-size:100% 6px!important}
   .polo-card:hover,.zc-item:hover img,.proceso-step-rect:hover,.spec-verde-mini:hover,.zc-btn:hover{transform:none!important}
   .polo-card:hover .img-wrap img{transform:none!important}
 }
-.btn-pedir-modal{transition:background 0.3s ease !important;}
-.btn-pedir-modal:hover{background:#000 !important; color:#FFB60F !important;}
 .modal-cerrar{background:none !important; border:none !important; box-shadow:none !important; outline:none !important;}
 .modal-cerrar:before, .modal-cerrar:after{display:none !important;}
 #polos-zoox{background:var(--zoox-fondo-alt)!important}
@@ -194,6 +192,19 @@ h2.is-visible em{background-size:100% 6px!important}
 .zc-item span{color:var(--zoox-blanco)!important}
 .zc-btn{display:inline-flex;align-items:center;background:#1A1E11;color:#E0FF70;border:1px solid #A5C74E;padding:.5em .6em .5em 1.8em;border-radius:999px}
 .zc-btn:hover{background:#232915;color:#E0FF70;border-color:#D5FF61;box-shadow:0 0 24px rgba(213,255,97,0.35);transform:none}
+.modal-overlay{background:rgba(10,10,10,0.85)!important}
+.modal-box{background:var(--zoox-card)!important;border:1px solid var(--zoox-borde)!important;border-radius:20px!important}
+.modal-cerrar{background:transparent!important;color:var(--zoox-lima)!important}
+.modal-galeria,.modal-img-principal{background:var(--zoox-fondo-alt)!important}
+.modal-img-principal{border-radius:12px!important}
+.modal-detalle{background:var(--zoox-card)!important}
+.modal-marca{color:var(--zoox-lima)!important}
+.modal-nombre,.modal-precio,.modal-label{color:var(--zoox-blanco)!important}
+.modal-desc,.modal-entrega{color:var(--zoox-gris)!important}
+.talla-opcion{background:var(--zoox-card)!important;border:1px solid var(--zoox-borde)!important;color:var(--zoox-blanco)!important;border-radius:12px!important}
+.talla-opcion.active,.talla-opcion:hover{background:#1A1E11!important;border-color:var(--zoox-lima-suave)!important;color:#E0FF70!important}
+.btn-pedir-modal{display:flex!important;align-items:center!important;justify-content:center!important;background:#1A1E11!important;color:#E0FF70!important;border:1px solid #A5C74E!important;border-radius:999px!important;transition:all .3s ease!important}
+.btn-pedir-modal:hover{background:#232915!important;border-color:#D5FF61!important;box-shadow:0 0 24px rgba(213,255,97,0.35)!important}
 </style>
 <link rel="stylesheet" href="../assets/css/zoox-wa.css">
 <link rel="stylesheet" href="../assets/css/campton.css">
@@ -390,7 +401,7 @@ h2.is-visible em{background-size:100% 6px!important}
 <p class="modal-desc" id="modalDesc"></p>
 <div class="modal-tallas"><p class="modal-label">Selecciona tu talla</p><div id="modalTallasOpciones" class="tallas-grid"></div></div>
 <div style="margin:1em 0;"><p class="modal-label">Cantidad:</p><input type="number" id="cantidadZoox" value="1" min="1" max="10" style="width:80px;padding:0.5em;border-radius:8px;border:1px solid #0a0a0a;background:#fff;color:#0a0a0a;font-weight:700;" oninput="let b=document.getElementById('modalBtnPedir'); let tallas=Array.from(document.querySelectorAll('.talla-opcion.active')).map(x=>x.textContent).join(', '); let cant=this.value; let nom=document.getElementById('modalNombre').textContent; let pre=document.getElementById('modalPrecio').textContent; b.href=`https://wa.me/51977325372?text=${encodeURIComponent('Hola ZOOX! Quiero pedir: '+nom+' - Tallas: '+tallas+' - Cant: '+cant)}`"></div>
-<a id="modalBtnPedir" href="#" target="_blank" class="btn-pedir-modal">Pedir por WhatsApp</a>
+<a id="modalBtnPedir" href="#" target="_blank" class="btn-pedir-modal">Pedir por WhatsApp <span class="btn-ico"><span class="btn-arr">→</span></span></a>
 <p class="modal-entrega">🕐 Entrega en 7–10 días hábiles</p>
 </div>
 </div>
