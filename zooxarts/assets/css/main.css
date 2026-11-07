@@ -4225,13 +4225,24 @@ body.is-menu-visible #menu{transform:translateX(0)!important;}
 .faq-respuesta p{font-size:0.85rem!important; color:#0A0A0A!important; line-height:1.6!important; margin:0!important; text-align:left!important;}
 
 /* FOOTER ORIGINAL */
-#footer{background:#0A0A0A!important; padding:3em 2em!important; text-align:center!important; border:none!important;}
-.footer-inner{max-width:1140px; margin:0 auto;}
-.footer-logo{height:42px!important; width:auto!important; margin-bottom:1em!important;}
-.footer-copy{color:rgba(255,255,255,0.6)!important; font-size:0.8rem!important; margin:0 0 1em!important; font-family:'Campton',sans-serif!important;}
-.footer-redes{display:flex!important; justify-content:center!important; gap:16px!important; list-style:none!important; padding:0!important; margin:0!important;}
-.footer-redes a{color:white!important; font-size:1.2rem!important; border:none!important; transition:color .3s!important;}
-.footer-redes a:hover{color:var(--zoox-amarillo)!important;}
+#footer{background-color:var(--zoox-negro) !important;border-top:1px solid #222222 !important;padding:4em 2em 2em !important;text-align:left !important;}
+.footer-inner{display:flex !important;justify-content:space-between !important;align-items:flex-start !important;gap:3em !important;max-width:1100px;margin:0 auto;}
+.footer-logo{height:36px !important;width:auto !important;}
+.footer-label{color:#D0FF28 !important;font-size:0.8rem !important;font-weight:700 !important;letter-spacing:0.15em !important;text-transform:uppercase !important;margin:1.4em 0 0.8em !important; line-height:1.6 !important;}
+.footer-right .footer-label{margin-top:0 !important;}
+.footer-desc{color:#E5E5E5 !important;font-size:1.05rem !important;line-height:1.6 !important;max-width:420px;margin:0 0 1.6em !important;}
+.footer-btns{display:flex;flex-wrap:wrap;gap:0.8em;}
+.footer-contacto{list-style:none !important;padding:0 !important;margin:0 !important;display:flex;flex-direction:column;gap:0.9em;}
+.footer-contacto li{display:flex;align-items:center;gap:0.9em;color:#E5E5E5;padding:0 !important;}
+.footer-contacto a{display:flex;align-items:center;gap:0.9em;color:#E5E5E5 !important;border:none !important;text-decoration:none;transition:color .3s;}
+.footer-contacto a:hover{color:#FFFFFF !important;}
+.fc-ico{display:flex;align-items:center;justify-content:center;width:40px;height:40px;font-size:1rem;border:1px solid #3E4720;border-radius:50%;background:#10130B;color:#D0FF28;transition:all .3s;}
+.footer-contacto a:hover .fc-ico{background:#1A1E11;border-color:#D5FF61;box-shadow:0 0 24px rgba(213,255,97,0.35);}
+.footer-redes{display:flex;gap:0.9em;margin-top:1.2em;}
+.footer-redes a{border:none !important;}
+.footer-redes a:hover .fc-ico{background:#1A1E11;border-color:#D5FF61;box-shadow:0 0 24px rgba(213,255,97,0.35);}
+.footer-copy{color:#9A9A9A !important;font-size:0.7rem !important;letter-spacing:0.08em !important;text-align:center !important;margin:3em 0 0 !important;}
+@media(max-width:736px){.footer-inner{flex-direction:column;}}
 
 /* WHATSAPP FLOAT */
 .whatsapp-float{
