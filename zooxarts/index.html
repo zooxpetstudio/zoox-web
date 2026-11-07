@@ -205,6 +205,24 @@ h2.is-visible em{background-size:100% 6px!important}
 .talla-opcion.active,.talla-opcion:hover{background:#1A1E11!important;border-color:var(--zoox-lima-suave)!important;color:#E0FF70!important}
 .btn-pedir-modal{display:flex!important;align-items:center!important;justify-content:center!important;background:#1A1E11!important;color:#E0FF70!important;border:1px solid #A5C74E!important;border-radius:999px!important;transition:all .3s ease!important}
 .btn-pedir-modal:hover{background:#232915!important;border-color:#D5FF61!important;box-shadow:0 0 24px rgba(213,255,97,0.35)!important}
+#faq-posters{background:var(--zoox-negro)!important}
+#faq-posters .inner{max-width:1100px!important;display:grid!important;grid-template-columns:1fr 1.4fr!important;gap:4em!important;align-items:start!important;text-align:left!important}
+#faq-posters header.major{text-align:left!important}
+#faq-posters header.major h2{margin:0!important;padding-bottom:0!important;color:#FFFFFF!important;text-align:left!important}
+#faq-posters .faq-list{max-width:none!important;gap:0!important;margin:0!important;counter-reset:faq}
+#faq-posters .faq-pill{background:transparent!important;border-radius:0!important;border:none!important;border-top:1px solid var(--zoox-borde)!important;box-shadow:none!important;overflow:visible!important;counter-increment:faq}
+#faq-posters .faq-pill:last-child{border-bottom:1px solid var(--zoox-borde)!important}
+#faq-posters .faq-pill.active{border-radius:0!important;background:transparent!important}
+#faq-posters .faq-pill:not(.active):hover{background:transparent!important}
+#faq-posters .faq-pregunta{padding:22px 72px 22px 0!important;min-height:64px!important}
+#faq-posters .faq-texto{color:#FFFFFF!important;font-size:1.05rem!important;font-weight:600!important;letter-spacing:normal!important;text-transform:none!important}
+#faq-posters .faq-texto::before{content:counter(faq,decimal-leading-zero);color:var(--zoox-lima);font-weight:700;font-size:.8rem;margin-right:1.4em}
+#faq-posters .faq-icon{right:0!important;background:transparent!important;border:1px solid #3E4720!important;color:var(--zoox-lima)!important;transition:transform .3s ease,background-color .3s ease,border-color .3s ease,box-shadow .3s ease!important}
+#faq-posters .faq-pill:hover .faq-icon{background:#1A1E11!important;border-color:var(--zoox-lima-suave)!important;box-shadow:0 0 24px rgba(213,255,97,0.35)!important}
+#faq-posters .faq-respuesta{padding:0!important}
+#faq-posters .faq-pill.active .faq-respuesta{padding:0 72px 22px 0!important}
+#faq-posters .faq-respuesta p{color:var(--zoox-gris)!important}
+@media(max-width:900px){#faq-posters .inner{grid-template-columns:1fr!important;gap:2em!important}}
 </style>
 <link rel="stylesheet" href="../assets/css/zoox-wa.css">
 <link rel="stylesheet" href="../assets/css/campton.css">
@@ -352,7 +370,7 @@ h2.is-visible em{background-size:100% 6px!important}
 <!-- FAQ NUEVO ESTILO COMO IMAGEN ADJUNTA -->
 <section id="faq-posters">
 <div class="inner">
-<header class="major"><h2>Preguntas <em>Frecuentes</em></h2></header>
+<header class="major"><h2>Preguntas<br><em>Frecuentes</em></h2></header>
 <div class="faq-list">
   <div class="faq-pill"><button class="faq-pregunta" onclick="toggleFaq(this)"><span class="faq-texto">¿Cuál es el tamaño de los Posters?</span><span class="faq-icon">+</span></button><div class="faq-respuesta"><p>Trabajamos 3 formatos: A4 (21 x 29.7 cm), A3 (29.7 x 42 cm) y A2 (42 x 59.4 cm). Todos con soporte de Celtex + Resina epóxica.</p></div></div>
   <div class="faq-pill"><button class="faq-pregunta" onclick="toggleFaq(this)"><span class="faq-texto">¿Puedo enviar imágenes propias?</span><span class="faq-icon">+</span></button><div class="faq-respuesta"><p>¡Claro! Todas pasan por control de calidad para asegurar resolución óptima.</p></div></div>
