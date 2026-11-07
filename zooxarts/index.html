@@ -102,7 +102,11 @@
   .banner-icons{gap:0.8em;}
   .banner-icon{font-size:0.65em;max-width:80px;}
 }
-.banner-cta{display:inline-flex;align-items:center;gap:0.6em;background:#FFB60F;color:#0a0a0a;font-family:'Cera GR',sans-serif;font-weight:700;letter-spacing:0.05em;padding:0.9em 1.8em;border-radius:40px;text-decoration:none;text-transform:uppercase;font-size:0.85em;}
+  .banner-cta{display:inline-flex;align-items:center;gap:0.6em;background:#1A1E11;color:#E0FF70;border:1px solid #A5C74E;font-family:'Cera GR',sans-serif;font-weight:700;letter-spacing:0.05em;padding:0.5em 0.6em 0.5em 1.8em;border-radius:999px;text-decoration:none;text-transform:uppercase;font-size:0.85em;transition:all .3s ease;}
+  .banner-cta:hover{background:#232915;border-color:#D5FF61;box-shadow:0 0 24px rgba(213,255,97,0.35);}
+  .btn-ico{display:inline-flex;align-items:center;justify-content:center;width:1.9em;height:1.9em;margin-left:0.8em;border-radius:50%;background:#31391C;}
+  .btn-arr{display:inline-block;transition:transform .25s ease;}
+  a:hover .btn-arr{transform:translateX(4px);}
 @media screen and (max-width:736px){
   .banner-overlay{padding:2em 1.2em;max-width:100%;}
 }
@@ -189,13 +193,13 @@ h2.is-visible em{background-size:100% 6px!important}
 <section id="banner">
   <div class="banner-overlay">
     <div class="banner-slide active" data-slide="0">
-      <a href="#polos-zoox" class="banner-cta">VER POLOS <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="#polos-zoox" class="banner-cta">VER POLOS   <span class="btn-ico"><span class="btn-arr"><i class="fa-solid fa-arrow-right"></i></span></span></a>
     </div>
     <div class="banner-slide" data-slide="1">
-      <a href="#posters" class="banner-cta">VER POSTERS <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="#posters" class="banner-cta">VER POSTERS   <span class="btn-ico"><span class="btn-arr"><i class="fa-solid fa-arrow-right"></i></span></span></a>
     </div>
     <div class="banner-slide" data-slide="2">
-      <a href="#banners" class="banner-cta">VER BANNERS <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="#banners" class="banner-cta">VER BANNERS   <span class="btn-ico"><span class="btn-arr"><i class="fa-solid fa-arrow-right"></i></span></span></a>
     </div>
   </div>
 </section>

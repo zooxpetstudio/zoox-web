@@ -4137,7 +4137,7 @@ input, select, textarea {
 
 
 /* === ZOOX ART - CORRECCION FINAL - COLORES OFICIALES #FFB60F #0A0A0A #505C47 #E5E5E5 === */
-:root{--zoox-amarillo:#FFB60F;--zoox-negro:#0A0A0A;--zoox-verde:#0A0A0A;--zoox-gris:#E5E5E5;--zoox-blanco:#FFFFFF;}
+:root{--zoox-amarillo:#FFB60F;--zoox-negro:#0A0A0A;--zoox-verde:#0A0A0A;--zoox-gris:#E5E5E5;--zoox-blanco:#FFFFFF;--zoox-lima:#D0FF28;--zoox-lima-suave:#D5FF61;--zoox-fondo-alt:#101010; --zoox-card:#141414; --zoox-borde:#222222;}
 
 /* HEADER - LOGO VISIBLE - FIX */
 #header{background:#0A0A0A!important;position:fixed!important;top:0!important;left:0!important;width:100%!important;height:70px!important;z-index:10001!important;display:flex!important;align-items:center!important;justify-content:space-between!important;padding:0 1.8em!important;border:none!important;box-shadow:none!important;}
