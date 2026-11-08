@@ -54,23 +54,39 @@ body{background:var(--negro); color:var(--blanco); overflow-x:hidden}
 #lightbox-inner{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center}
 #lightbox img#lb-img{max-width:90vw;max-height:84vh;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,0.7);animation:fadeIn .3s}
 @keyframes fadeIn{from{opacity:0;transform:scale(0.98)}to{opacity:1;transform:scale(1)}}
-.lb-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.15);color:#fff;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.4em;transition:all .2s;backdrop-filter:blur(6px)}
-.lb-btn:hover{background:var(--amarillo);color:#000;border-color:var(--amarillo)}
+.lb-btn{position:absolute;top:50%;transform:translateY(-50%);background:#141414;border:1px solid #222222;color:#D0FF28;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:1.4em;transition:all .2s;backdrop-filter:blur(6px)}
+.lb-btn:hover{background:#1A1E11;color:#D0FF28;border-color:#D5FF61;box-shadow:0 0 24px rgba(213,255,97,.35)}
 #lb-prev{left:2vw}
 #lb-next{right:2vw}
-#lightbox-close{position:fixed;top:1em;right:1.5em;background:none;border:none;color:#fff;font-size:2.6em;cursor:pointer;z-index:2002;line-height:1}
+#lightbox-close{position:fixed;top:1em;right:1.5em;width:44px;height:44px;border-radius:50%;background:#141414;border:1px solid #3E4720;color:#D0FF28;font-size:1.2rem;cursor:pointer;z-index:2002;line-height:1;transition:all .3s ease}
+#lightbox-close:hover{background:#1A1E11;border-color:#D5FF61;box-shadow:0 0 24px rgba(213,255,97,.35)}
 #lb-counter{position:fixed;bottom:1.5em;left:50%;transform:translateX(-50%);background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.12);padding:0.4em 1em;border-radius:20px;font-size:0.8em;font-weight:300;letter-spacing:0.06em;backdrop-filter:blur(6px)}
 #lb-caption{position:fixed;bottom:4.5em;left:50%;transform:translateX(-50%);color:#aaa;font-size:0.85em;font-weight:300;text-align:center;max-width:80vw}
 @media(max-width:600px){.lb-btn{width:40px;height:40px} #lb-prev{left:1vw} #lb-next{right:1vw}}
 
-#zoox-footer{background:#000;padding:3.5em 2em 3em 2em;text-align:center;border-top:1px solid rgba(255,255,255,0.06)}
-#zoox-footer .footer-inner{display:flex;flex-direction:column;align-items:center;gap:1.2em}
-#zoox-footer img{height:36px;opacity:0.9}
-#zoox-footer p{color:#777;font-size:0.72em;letter-spacing:0.08em;font-weight:300;margin:0}
-.footer-redes{list-style:none;display:flex;gap:1.8em;padding:0;margin:0}
-.footer-redes a{color:#aaa;font-size:0.9em;text-decoration:none;font-weight:700;letter-spacing:0.05em;border:none;display:flex;align-items:center;gap:0.4em;transition:color .2s}
-.footer-redes a:hover{color:var(--amarillo)}
-.footer-redes a svg{width:18px;height:18px;fill:currentColor}
+#footer{background-color:var(--zoox-negro) !important;border-top:1px solid #222222 !important;padding:4em 2em 2em !important;text-align:left !important;}
+.footer-inner{display:flex !important;justify-content:space-between !important;align-items:flex-start !important;gap:3em !important;max-width:1100px;margin:0 auto;}
+.footer-logo{height:36px !important;width:auto !important;}
+.footer-label{color:#D0FF28 !important;font-size:0.8rem !important;font-weight:700 !important;letter-spacing:0.15em !important;text-transform:uppercase !important;margin:1.4em 0 0.8em !important; line-height:1.6 !important;}
+.footer-right .footer-label{margin-top:0 !important;}
+.footer-desc{color:#E5E5E5 !important;font-size:1.05rem !important;line-height:1.6 !important;max-width:420px;margin:0 0 1.6em !important;}
+.footer-btns{display:flex;flex-wrap:wrap;gap:0.8em;}
+.footer-contacto{list-style:none !important;padding:0 !important;margin:0 !important;display:flex;flex-direction:column;gap:0.9em;}
+.footer-contacto li{display:flex;align-items:center;gap:0.9em;color:#E5E5E5;padding:0 !important;}
+.footer-contacto a{display:flex;align-items:center;gap:0.9em;color:#E5E5E5 !important;border:none !important;text-decoration:none;transition:color .3s;}
+.footer-contacto a:hover{color:#FFFFFF !important;}
+.fc-ico{display:flex;align-items:center;justify-content:center;width:40px;height:40px;font-size:1rem;border:1px solid #3E4720;border-radius:50%;background:#10130B;color:#D0FF28;transition:all .3s;}
+.footer-contacto a:hover .fc-ico{background:#1A1E11;border-color:#D5FF61;box-shadow:0 0 24px rgba(213,255,97,0.35);}
+.footer-redes{display:flex;gap:0.9em;margin-top:1.2em;}
+.footer-redes a{border:none !important;}
+.footer-redes a:hover .fc-ico{background:#1A1E11;border-color:#D5FF61;box-shadow:0 0 24px rgba(213,255,97,0.35);}
+.footer-copy{color:#9A9A9A !important;font-size:0.7rem !important;letter-spacing:0.08em !important;text-align:center !important;margin:3em 0 0 !important;}
+@media(max-width:736px){.footer-inner{flex-direction:column;}}
+  .ba-cta-btn{display:inline-flex;align-items:center;background:#1A1E11;color:#E0FF70;border:1px solid #A5C74E;font-weight:700;letter-spacing:.1em;padding:.5em .6em .5em 1.8em;border-radius:999px;text-decoration:none;text-transform:uppercase;font-size:.85rem;transition:all .3s ease}
+  .ba-cta-btn:hover{background:#232915;border-color:#D5FF61;box-shadow:0 0 24px rgba(213,255,97,.35)}
+  .btn-ico{display:inline-flex;align-items:center;justify-content:center;width:1.9em;height:1.9em;margin-left:.8em;border-radius:50%;background:#31391C}
+  .btn-arr{display:inline-block;transition:transform .25s ease}
+  a:hover .btn-arr{transform:translateX(4px)}
 .whatsapp-float{
   position:fixed; bottom:1.8rem; right:1.8rem;
   width:56px; height:56px;
@@ -92,6 +108,8 @@ body{background:var(--negro); color:var(--blanco); overflow-x:hidden}
   .menu-redes{display:flex;gap:.9em;margin-top:2em}
   .menu-redes a{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#0A0A0A;color:#D5FF61!important;transition:transform .3s ease,background-color .3s ease}
   .menu-redes a:hover{background:#222222;transform:translateY(-3px)}
+  .fab{font-family:'Font Awesome 6 Brands'!important;font-weight:400!important}
+.fas{font-family:'Font Awesome 6 Free'!important;font-weight:900!important}
         </style>
 <link rel="stylesheet" href="../assets/css/zoox-wa.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -156,15 +174,31 @@ body{background:var(--negro); color:var(--blanco); overflow-x:hidden}
 <div id="lb-caption"></div>
 </div>
 
-<footer id="zoox-footer">
-<div class="footer-inner">
-<img src="images/logoblanco-zoox.png" alt="ZOOX" onerror="this.style.display='none'">
-<p>© 2026 · Lima, Perú · Todos los derechos reservados.</p>
-<ul class="footer-redes">
-<li><a href="https://instagram.com/zoox.petstudio" target="_blank"><svg viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.2 5.2 0 0 1-5.2 5.2H7.8C4.6 22 2 19.4 2 16.2V7.8A5.2 5.2 0 0 1 7.8 2m-.2 2A3.2 3.2 0 0 0 4.4 7.2v8.4C4.4 17.5 5.9 19 7.8 19h8.4a3.2 3.2 0 0 0 3.2-3.2V7.2A3.2 3.2 0 0 0 16.2 4H7.6m9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg></a></li>
-<li><a href="https://facebook.com/zooxpetstudio" target="_blank"><svg viewBox="0 0 24 24"><path d="M14 8h2V4h-2c-2.2 0-4 1.8-4 4v2H8v4h2v6h4v-6h2.5l0.5-4H14V8c0-.6 0.4-1 1-1z"/></svg></a></li>
-</ul>
-</div>
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-left">
+      <img src="images/logoblanco-zoox.png" alt="ZOOX" class="footer-logo" onerror="this.style.display='none'">
+      <p class="footer-label">Estudio creativo especializado<br>en mascotas y marcas pet friendly</p>
+      <p class="footer-desc">Tenemos los complementos perfectos pensados para cada público.</p>
+      <div class="footer-btns">
+        <a href="../zooxarts/index.html" class="ba-cta-btn">ZOOX Arts <span class="btn-ico"><span class="btn-arr">→</span></span></a>
+        <a href="../zooxbrands/index.html" class="ba-cta-btn">ZOOX Brands <span class="btn-ico"><span class="btn-arr">→</span></span></a>
+      </div>
+    </div>
+    <div class="footer-right">
+      <p class="footer-label">Contacto</p>
+      <ul class="footer-contacto">
+        <li><a href="https://wa.me/51977325372" target="_blank"><span class="fc-ico"><i class="fas fa-phone"></i></span>977 325 372</a></li>
+        <li><a href="mailto:zoox.petstudio@gmail.com"><span class="fc-ico"><i class="fas fa-envelope"></i></span>zoox.petstudio@gmail.com</a></li>
+        <li><span class="fc-ico"><i class="fas fa-map-marker-alt"></i></span>Lima, Perú</li>
+      </ul>
+      <div class="footer-redes">
+        <a href="https://facebook.com/zooxpetstudio" target="_blank" aria-label="Facebook"><span class="fc-ico"><i class="fab fa-facebook-f"></i></span></a>
+        <a href="https://instagram.com/zoox.petstudio" target="_blank" aria-label="Instagram"><span class="fc-ico"><i class="fab fa-instagram"></i></span></a>
+      </div>
+    </div>
+  </div>
+  <p class="footer-copy">© 2026 · Todos los derechos reservados.</p>
 </footer>
 
 <script>
