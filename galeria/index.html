@@ -20,7 +20,7 @@
 @font-face{font-family:'Cera GR';src:url('assets/fonts/Cera GR Regular.otf') format('opentype');font-weight:400}
 @font-face{font-family:'Cera GR';src:url('assets/fonts/Cera GR Bold.otf') format('opentype');font-weight:700}
 @font-face{font-family:'Cera GR';src:url('assets/fonts/Cera GR Black.otf') format('opentype');font-weight:900}
-:root{--amarillo:#FFB60F;--negro:#0A0A0A;--blanco:#fff}
+:root{--amarillo:#D5FF61;--negro:#0A0A0A;--blanco:#fff}
 *{font-family:'Cera GR',sans-serif !important; box-sizing:border-box; margin:0; padding:0}
 .zoox-wa i{font-family:'Font Awesome 6 Brands' !important;font-weight:400 !important}
 body{background:var(--negro); color:var(--blanco); overflow-x:hidden}
@@ -32,13 +32,13 @@ body{background:var(--negro); color:var(--blanco); overflow-x:hidden}
 #zoox-menu-overlay.is-active{opacity:1;pointer-events:all}
 #zoox-menu{position:fixed;top:0;right:0;bottom:0;width:340px;max-width:85vw;background:var(--amarillo);z-index:1002;transform:translateX(100%);transition:transform .4s cubic-bezier(.77,0,.175,1);padding:2em;display:flex;flex-direction:column}
 #zoox-menu.is-active{transform:translateX(0)}
-#zoox-menu ul{list-style:none;flex:1;margin-top:3em}
+#zoox-menu ul{list-style:none;flex:0 0 auto;margin-top:3em}
 #zoox-menu ul li{border-top:1px solid rgba(0,0,0,0.12)}
-#zoox-menu ul li a{display:block;padding:1em 0;color:#0A0A0A !important;font-weight:700;text-transform:uppercase;text-decoration:none}
-#zoox-menu ul li a.active{color:#fff !important}
-.banner{padding:9em 2em 4em 2em;text-align:center;background:linear-gradient(180deg,#0A0A0A,#151515)}
-.banner h1{font-weight:900;font-size:3.2em;letter-spacing:-0.02em}
-.banner p{font-weight:300;color:#999;margin-top:0.5em}
+#zoox-menu ul li a{display:block;padding:1em 0;color:#0A0A0A !important;font-weight:700;text-decoration:none;font-size:1.15rem}
+#zoox-menu ul li a.active{color:#0A0A0A !important}
+.banner{padding:9em 2em 4em 2em;text-align:center;background:linear-gradient(180deg,#0A0A0A,#101010)}
+.banner h1{font-weight:700;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:normal;line-height:1.15}
+.banner p{font-weight:300;color:#E5E5E5;margin-top:0.5em}
 .gallery-wrap{max-width:1400px;margin:0 auto;padding:2em;display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .gallery-wrap a{position:relative;overflow:hidden;display:block;aspect-ratio:4/5;background:#111}
 .gallery-wrap a img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
@@ -87,6 +87,11 @@ body{background:var(--negro); color:var(--blanco); overflow-x:hidden}
   70%{box-shadow:0 4px 20px rgba(37,211,102,0.45), 0 0 0 14px rgba(37,211,102,0)}
   100%{box-shadow:0 4px 20px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0)}
 }
+  .menu-x{position:absolute;top:20px;right:20px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(10,10,10,.35);background:transparent;color:#0A0A0A;font-size:1rem;cursor:pointer;transition:all .3s ease}
+  .menu-x:hover{background:#0A0A0A;border-color:#0A0A0A;color:#D5FF61}
+  .menu-redes{display:flex;gap:.9em;margin-top:2em}
+  .menu-redes a{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#0A0A0A;color:#D5FF61!important;transition:transform .3s ease,background-color .3s ease}
+  .menu-redes a:hover{background:#222222;transform:translateY(-3px)}
         </style>
 <link rel="stylesheet" href="../assets/css/zoox-wa.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -95,7 +100,7 @@ body{background:var(--negro); color:var(--blanco); overflow-x:hidden}
 <body>
 <div id="zoox-menu-overlay"></div>
 <nav id="zoox-menu">
-<div style="display:flex;justify-content:space-between;align-items:center"><strong style="color:#000"></strong><button id="zoox-menu-close" style="background:none;border:none;font-size:2em;cursor:pointer">×</button></div>
+<button id="zoox-menu-close" class="menu-x" aria-label="Cerrar">✕</button>
 <ul>
 <li><a href='../index.html'>Inicio</a></li>  
 <li><a href='../conocenos/index.html'>Conócenos</a></li>
@@ -103,13 +108,17 @@ body{background:var(--negro); color:var(--blanco); overflow-x:hidden}
 <li><a href='../zooxarts/index.html'>Zoox Arts</a></li>
 <li><a href='../zooxbrands/index.html'>Zoox Brands</a></li>
 </ul>
+  <div class="menu-redes">
+    <a href="https://facebook.com/zooxpetstudio" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com/zoox.petstudio" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  </div>
 </nav>
 <header id="zoox-header">
 <a href="../index.html"><img src="images/logo-zoox.png" alt="ZOOX" onerror="this.outerHTML='ZOOX PET STUDIO'"></a>
 <button id="zoox-menu-toggle"><span></span><span></span><span></span></button>
 </header>
 <section class="banner">
-<h1>Momentos ZOOX</h1>
+<h1>Momentos <span style="color:#D0FF28">ZOOX</span></h1>
 <p>Fotos elegantes, divertidas y muy creativas. Un regalo ideal para tu mascota.</p>
 </section>
 <div class="gallery-wrap" id="gallery">
