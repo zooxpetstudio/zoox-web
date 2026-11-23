@@ -23,7 +23,7 @@ html body #menu {
   align-items: stretch !important;
   justify-content: flex-start !important;
   padding: 90px 32px 32px !important;
-  background: #D5FF61 !important;
+  background: #D0FF28 !important;
   color: #0A0A0A !important;
   border-left: 0 !important;
   box-shadow: none !important;
@@ -146,7 +146,7 @@ html body #menu .close:hover::before,
 html body #menu .close:hover::after,
 html body #menu .menu-close:hover::before,
 html body #menu .menu-close:hover::after {
-  background: #D5FF61 !important;
+  background: #D0FF28 !important;
 }
 
 /* Redes al pie del panel */
@@ -163,7 +163,7 @@ html body #menu .menu-redes a {
   width: 40px !important;
   height: 40px !important;
   font-size: 1rem !important;
-  color: #D5FF61 !important;
+  color: #D0FF28 !important;
   background: #0A0A0A !important;
   border: 1px solid #0A0A0A !important;
   border-radius: 50% !important;

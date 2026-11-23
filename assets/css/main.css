@@ -1728,7 +1728,7 @@ input, select, textarea {
 #header nav ul { overflow: hidden; }
 #header nav ul li a { transition: background-color .2s ease, color .2s ease; }
 #header nav ul li a:hover,
-#header nav ul li a:active { background-color: #D5FF61;; color: #0A0A0A; }
+#header nav ul li a:active { background-color: #D0FF28;; color: #0A0A0A; }
 
 @media screen and (min-width: 481px) {
   #header nav.use-middle ul li.is-middle { border-left: solid 1px #ffffff; }

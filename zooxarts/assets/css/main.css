@@ -4137,7 +4137,7 @@ input, select, textarea {
 
 
 /* === ZOOX ART - CORRECCION FINAL - COLORES OFICIALES #FFB60F #0A0A0A #505C47 #E5E5E5 === */
-:root{--zoox-amarillo:#D0FF28;--zoox-negro:#0A0A0A;--zoox-verde:#0A0A0A;--zoox-gris:#E5E5E5;--zoox-blanco:#FFFFFF;--zoox-lima:#D0FF28;--zoox-lima-suave:#D5FF61;--zoox-fondo-alt:#101010; --zoox-card:#141414; --zoox-borde:#222222;}
+:root{--zoox-amarillo:#D0FF28;--zoox-negro:#0A0A0A;--zoox-verde:#0A0A0A;--zoox-gris:#E5E5E5;--zoox-blanco:#FFFFFF;--zoox-lima:#D0FF28;--zoox-lima-suave:#D0FF28;--zoox-fondo-alt:#101010; --zoox-card:#141414; --zoox-borde:#222222;}
 
 /* HEADER - LOGO VISIBLE - FIX */
 #header{background:#0A0A0A!important;position:fixed!important;top:0!important;left:0!important;width:100%!important;height:70px!important;z-index:10001!important;display:flex!important;align-items:center!important;justify-content:space-between!important;padding:0 1.8em!important;border:none!important;box-shadow:none!important;}
@@ -4237,10 +4237,10 @@ body.is-menu-visible #menu{transform:translateX(0)!important;}
 .footer-contacto a{display:flex;align-items:center;gap:0.9em;color:#E5E5E5 !important;border:none !important;text-decoration:none;transition:color .3s;}
 .footer-contacto a:hover{color:#FFFFFF !important;}
 .fc-ico{display:flex;align-items:center;justify-content:center;width:40px;height:40px;font-size:1rem;border:1px solid #3E4720;border-radius:50%;background:#10130B;color:#D0FF28;transition:all .3s;}
-.footer-contacto a:hover .fc-ico{background:#1A1E11;border-color:#D5FF61;box-shadow:0 0 24px rgba(213,255,97,0.35);}
+.footer-contacto a:hover .fc-ico{background:#1A1E11;border-color:#D0FF28;box-shadow:0 0 24px rgba(208, 255, 40,0.35);}
 .footer-redes{display:flex;gap:0.9em;margin-top:1.2em;}
 .footer-redes a{border:none !important;}
-.footer-redes a:hover .fc-ico{background:#1A1E11;border-color:#D5FF61;box-shadow:0 0 24px rgba(213,255,97,0.35);}
+.footer-redes a:hover .fc-ico{background:#1A1E11;border-color:#D0FF28;box-shadow:0 0 24px rgba(208, 255, 40,0.35);}
 .footer-copy{color:#9A9A9A !important;font-size:0.7rem !important;letter-spacing:0.08em !important;text-align:center !important;margin:3em 0 0 !important;}
 @media(max-width:736px){.footer-inner{flex-direction:column;}}
 
